@@ -1,0 +1,47 @@
+
+import { Link } from "react-router-dom";
+
+const Hero = () => {
+  return (
+    <div className="relative bg-law-navy min-h-[90vh] flex items-center">
+      <div 
+        className="absolute inset-0 z-0 opacity-20 bg-cover bg-center"
+        style={{ 
+          backgroundImage: "url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=2070&auto=format')",
+        }}
+      />
+      
+      <div className="container mx-auto px-4 py-16 relative z-10">
+        <div className="max-w-3xl">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-serif font-semibold mb-6">
+            Building Trust Through <br/>
+            <span className="text-law-gold">Legal Excellence</span>
+          </h1>
+          
+          <p className="text-white/80 text-lg md:text-xl mb-10 max-w-2xl">
+            Expert legal counsel for trusts, estates, and business matters. 
+            Personalized service with a commitment to protecting your legacy.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Link 
+              to="/contact" 
+              className="bg-law-gold hover:bg-law-gold-light text-law-navy font-medium py-3 px-8 rounded transition-colors inline-block text-center"
+            >
+              Schedule a Consultation
+            </Link>
+            
+            <Link 
+              to="/services" 
+              className="border border-white text-white hover:bg-white/10 font-medium py-3 px-8 rounded transition-colors inline-block text-center"
+            >
+              Our Services
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Hero;
