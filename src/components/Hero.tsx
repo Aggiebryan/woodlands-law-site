@@ -11,10 +11,10 @@ import { cn } from "@/lib/utils";
 
 const Hero = () => {
   const images = [
-    "/woodlands_lifted photography_stock-1-3.jpg",
-    "/gwenwithclient.jpg",
-    "/woodlands_lifted photography_stock-1-4.jpg",
-    "/Bryan-in-front-of-woman.jpg"
+    "/woodlands_lifted photography_stock-1-3.webp",
+    "/gwenwithclient.webp",
+    "/woodlands_lifted photography_stock-1-4.webp",
+    "/Bryan-in-front-of-woman.webp"
   ];
   
   const [api, setApi] = useState<any>(null);
