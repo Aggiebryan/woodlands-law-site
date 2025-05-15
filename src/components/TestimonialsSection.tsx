@@ -10,22 +10,22 @@ interface Testimonial {
 const TestimonialsSection = () => {
   const testimonials: Testimonial[] = [
     {
-      quote: "Woodlands Law provided exceptional guidance through the complex process of setting up my family trust. Their attention to detail and personalized approach made all the difference.",
+      quote: "The Woodlands Law Firm provided exceptional guidance through the complex process of settling my insurance claim. Their attention to detail and personalized approach made all the difference.",
       author: "Michael Thompson",
       position: "Business Owner",
     },
     {
-      quote: "The team at Woodlands Law handled my estate planning with professionalism and care. They took the time to understand my unique situation and crafted solutions that gave me peace of mind.",
+      quote: "The team at The Woodlands Law Firm handled my case with professionalism and care. They took the time to understand my unique situation and crafted solutions that gave me peace of mind.",
       author: "Sarah Johnson",
       position: "Retired Educator",
     },
     {
-      quote: "I've worked with several law firms over the years, but none have provided the level of service and expertise that Woodlands Law offers. They truly go above and beyond for their clients.",
+      quote: "I've worked with several law firms over the years, but none have provided the level of service and expertise that The Woodlands Law Firm offers. They truly go above and beyond for their clients.",
       author: "Robert Chen",
       position: "Real Estate Investor",
     },
     {
-      quote: "During a difficult time following the loss of a family member, Woodlands Law guided us through probate with compassion and efficiency. I cannot recommend them highly enough.",
+      quote: "During a difficult time following an accident, The Woodlands Law Firm guided me through the legal process with compassion and efficiency. I cannot recommend them highly enough.",
       author: "Jennifer Martinez",
       position: "Healthcare Professional",
     },
@@ -44,7 +44,7 @@ const TestimonialsSection = () => {
   }, [testimonials.length]);
 
   return (
-    <section className="py-20 bg-law-navy text-white">
+    <section className="py-20 bg-law-purple text-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-serif font-medium mb-4">
@@ -52,12 +52,12 @@ const TestimonialsSection = () => {
           </h2>
           <div className="gold-underline mx-auto mb-5"></div>
           <p className="text-white/80 max-w-3xl mx-auto">
-            Hear what our clients have to say about their experience working with Woodlands Law.
+            Hear what our clients have to say about their experience working with The Woodlands Law Firm.
           </p>
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <div className="bg-law-navy-light p-8 md:p-12 rounded-lg shadow-lg relative">
+          <div className="bg-law-purple-light p-8 md:p-12 rounded-lg shadow-lg relative">
             <span className="text-6xl font-serif text-law-gold absolute top-6 left-6 leading-none opacity-30">
               "
             </span>

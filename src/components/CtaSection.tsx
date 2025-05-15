@@ -5,7 +5,7 @@ const CtaSection = () => {
   return (
     <section className="py-16 bg-law-gray-light">
       <div className="container mx-auto px-4">
-        <div className="bg-law-navy rounded-lg shadow-lg overflow-hidden">
+        <div className="bg-law-purple rounded-lg shadow-lg overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-2">
             {/* Image Column */}
             <div 
@@ -30,7 +30,7 @@ const CtaSection = () => {
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link 
                     to="/contact" 
-                    className="bg-law-gold hover:bg-law-gold-light text-law-navy font-medium py-3 px-8 rounded transition-colors inline-block text-center"
+                    className="bg-law-gold hover:bg-law-gold-light text-law-purple font-medium py-3 px-8 rounded transition-colors inline-block text-center"
                   >
                     Schedule a Consultation
                   </Link>

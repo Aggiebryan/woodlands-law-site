@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <div className="relative bg-law-navy min-h-[90vh] flex items-center">
+    <div className="relative bg-law-purple min-h-[90vh] flex items-center">
       <div 
         className="absolute inset-0 z-0 opacity-20 bg-cover bg-center"
         style={{ 
@@ -19,14 +19,13 @@ const Hero = () => {
           </h1>
           
           <p className="text-white/80 text-lg md:text-xl mb-10 max-w-2xl">
-            Expert legal counsel for trusts, estates, and business matters. 
-            Personalized service with a commitment to protecting your legacy.
+            Comprehensive advocacy for complex disputes and future planning—personalized service devoted to securing justice and preserving your legacy.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4">
             <Link 
               to="/contact" 
-              className="bg-law-gold hover:bg-law-gold-light text-law-navy font-medium py-3 px-8 rounded transition-colors inline-block text-center"
+              className="bg-law-gold hover:bg-law-gold-light text-law-purple font-medium py-3 px-8 rounded transition-colors inline-block text-center"
             >
               Schedule a Consultation
             </Link>

@@ -14,22 +14,21 @@ const Navbar = () => {
     <nav className="bg-white py-4 fixed w-full z-50 shadow-sm">
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link to="/" className="flex items-center">
-          <h1 className="text-law-navy font-serif text-2xl font-bold">WOODLANDS<span className="text-law-gold">LAW</span></h1>
+          <h1 className="text-law-purple font-serif text-2xl font-bold">THE WOODLANDS<span className="text-law-gold">LAW</span> FIRM</h1>
         </Link>
 
         {/* Desktop Menu */}
         <div className="hidden lg:flex space-x-8">
           <NavLink to="/" label="Home" />
-          <NavLink to="/about" label="About Us" />
-          <NavLink to="/services" label="Services" />
           <NavLink to="/attorneys" label="Attorneys" />
-          <NavLink to="/trusts" label="Trusts" />
-          <NavLink to="/contact" label="Contact" />
+          <NavLink to="/services" label="Services" />
+          <NavLink to="/news-events" label="News & Events" />
+          <NavLink to="/about" label="About Us" />
         </div>
 
         {/* Mobile Menu Button */}
         <button
-          className="lg:hidden text-law-navy"
+          className="lg:hidden text-law-purple"
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >
@@ -42,11 +41,10 @@ const Navbar = () => {
         <div className="lg:hidden bg-white absolute top-full left-0 right-0 shadow-md">
           <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
             <MobileNavLink to="/" label="Home" onClick={toggleMenu} />
-            <MobileNavLink to="/about" label="About Us" onClick={toggleMenu} />
-            <MobileNavLink to="/services" label="Services" onClick={toggleMenu} />
             <MobileNavLink to="/attorneys" label="Attorneys" onClick={toggleMenu} />
-            <MobileNavLink to="/trusts" label="Trusts" onClick={toggleMenu} />
-            <MobileNavLink to="/contact" label="Contact" onClick={toggleMenu} />
+            <MobileNavLink to="/services" label="Services" onClick={toggleMenu} />
+            <MobileNavLink to="/news-events" label="News & Events" onClick={toggleMenu} />
+            <MobileNavLink to="/about" label="About Us" onClick={toggleMenu} />
           </div>
         </div>
       )}
@@ -62,7 +60,7 @@ interface NavLinkProps {
 const NavLink = ({ to, label }: NavLinkProps) => (
   <Link 
     to={to} 
-    className="text-law-navy hover:text-law-gold transition-colors font-medium"
+    className="text-law-purple hover:text-law-gold transition-colors font-medium"
   >
     {label}
   </Link>
@@ -75,7 +73,7 @@ interface MobileNavLinkProps extends NavLinkProps {
 const MobileNavLink = ({ to, label, onClick }: MobileNavLinkProps) => (
   <Link 
     to={to} 
-    className="text-law-navy hover:text-law-gold transition-colors py-2 block font-medium"
+    className="text-law-purple hover:text-law-gold transition-colors py-2 block font-medium"
     onClick={onClick}
   >
     {label}
