@@ -6,6 +6,8 @@ import {
   CarouselContent,
   CarouselItem
 } from "@/components/ui/carousel";
+import Autoplay from 'embla-carousel-autoplay';
+import { cn } from "@/lib/utils";
 
 const Hero = () => {
   const images = [
@@ -15,24 +17,52 @@ const Hero = () => {
     "/Bryan-in-front-of-woman.jpg"
   ];
   
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  
+  const [api, setApi] = useState<any>(null);
+  const [current, setCurrent] = useState(0);
+
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 10000); // 10 seconds
+    if (!api) return;
+
+    const handleSelect = () => {
+      setCurrent(api.selectedScrollSnap());
+    };
+
+    api.on("select", handleSelect);
     
-    return () => clearInterval(interval);
-  }, []);
+    return () => {
+      api?.off("select", handleSelect);
+    };
+  }, [api]);
 
   return (
-    <div className="relative bg-law-purple min-h-[90vh] flex items-center">
-      <div 
-        className="absolute inset-0 z-0 opacity-70 bg-cover bg-center transition-opacity duration-1000"
-        style={{ 
-          backgroundImage: `url('${images[currentImageIndex]}')`,
+    <div className="relative bg-law-purple min-h-[90vh] flex items-center overflow-hidden">
+      <Carousel
+        className="absolute inset-0 z-0"
+        opts={{
+          align: "start",
+          loop: true,
         }}
-      />
+        plugins={[
+          Autoplay({
+            delay: 10000,
+          }),
+        ]}
+        setApi={setApi}
+      >
+        <CarouselContent className="h-full">
+          {images.map((image, index) => (
+            <CarouselItem key={index} className="h-full w-full">
+              <div 
+                className={cn(
+                  "w-full h-full bg-cover bg-center opacity-70 transition-opacity duration-1000",
+                  current === index ? "opacity-70" : "opacity-0"
+                )}
+                style={{ backgroundImage: `url('${image}')` }}
+              />
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+      </Carousel>
       
       <div className="container mx-auto px-4 py-16 relative z-10">
         <div className="max-w-3xl">
