@@ -1,7 +1,7 @@
 
 import { useEffect } from "react";
 
-const AttorneysPage = () => {
+const OurTeamPage = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -12,7 +12,7 @@ const AttorneysPage = () => {
       <div className="relative bg-law-purple py-16">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-5xl text-white font-serif font-semibold mb-2">
-            Our Team
+            Our Attorneys
           </h1>
           <div className="gold-underline"></div>
         </div>
