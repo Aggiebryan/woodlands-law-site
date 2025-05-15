@@ -1,13 +1,36 @@
 
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { 
+  Carousel,
+  CarouselContent,
+  CarouselItem
+} from "@/components/ui/carousel";
 
 const Hero = () => {
+  const images = [
+    "/woodlands_lifted photography_stock-1-3.jpg",
+    "/gwenwithclient.jpg",
+    "/woodlands_lifted photography_stock-1-4.jpg",
+    "/Bryan-in-front-of-woman.jpg"
+  ];
+  
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 10000); // 10 seconds
+    
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="relative bg-law-purple min-h-[90vh] flex items-center">
       <div 
-        className="absolute inset-0 z-0 opacity-70 bg-cover bg-center"
+        className="absolute inset-0 z-0 opacity-70 bg-cover bg-center transition-opacity duration-1000"
         style={{ 
-          backgroundImage: "url('https://img1.wsimg.com/isteam/ip/65c76fe5-10f4-48d4-8fb1-6e5b961c6708/blob-0008.png/:/rs=w:1535,m')",
+          backgroundImage: `url('${images[currentImageIndex]}')`,
         }}
       />
       

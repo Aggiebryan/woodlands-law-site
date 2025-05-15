@@ -20,7 +20,7 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <div className="hidden lg:flex space-x-8">
           <NavLink to="/" label="Home" />
-          <NavLink to="/attorneys" label="Attorneys" />
+          <NavLink to="/attorneys" label="Our Team" />
           <NavLink to="/services" label="Services" />
           <NavLink to="/news-events" label="News & Events" />
           <NavLink to="/about" label="About Us" />
@@ -41,7 +41,7 @@ const Navbar = () => {
         <div className="lg:hidden bg-white absolute top-full left-0 right-0 shadow-md">
           <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
             <MobileNavLink to="/" label="Home" onClick={toggleMenu} />
-            <MobileNavLink to="/attorneys" label="Attorneys" onClick={toggleMenu} />
+            <MobileNavLink to="/attorneys" label="Our Team" onClick={toggleMenu} />
             <MobileNavLink to="/services" label="Services" onClick={toggleMenu} />
             <MobileNavLink to="/news-events" label="News & Events" onClick={toggleMenu} />
             <MobileNavLink to="/about" label="About Us" onClick={toggleMenu} />
