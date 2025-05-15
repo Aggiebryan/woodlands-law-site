@@ -55,7 +55,7 @@ const Hero = () => {
               <div 
                 className={cn(
                   "w-full h-full bg-cover bg-center opacity-70 transition-opacity duration-1000",
-                  current === index ? "opacity-70" : "opacity-0"
+                  current === index ? "opacity-70" : "opacity-100"
                 )}
                 style={{ backgroundImage: `url('${image}')` }}
               />
