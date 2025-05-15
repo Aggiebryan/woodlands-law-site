@@ -12,7 +12,7 @@ const Index = () => {
   }, []);
   
   return (
-    <div className="flex flex-col">
+    <div>
       <Hero />
       <AboutSection />
       <ServicesSection />

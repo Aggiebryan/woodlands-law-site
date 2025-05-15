@@ -1,68 +1,15 @@
 
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { 
-  Carousel,
-  CarouselContent,
-  CarouselItem
-} from "@/components/ui/carousel";
-import Autoplay from 'embla-carousel-autoplay';
-import { cn } from "@/lib/utils";
 
 const Hero = () => {
-  const images = [
-    "/woodlands_lifted photography_stock-1-3.webp",
-    "/gwenwithclient.webp",
-    "/woodlands_lifted photography_stock-1-4.webp",
-    "/Bryan-in-front-of-woman.webp"
-  ];
-  
-  const [api, setApi] = useState<any>(null);
-  const [current, setCurrent] = useState(0);
-
-  useEffect(() => {
-    if (!api) return;
-
-    const handleSelect = () => {
-      setCurrent(api.selectedScrollSnap());
-    };
-
-    api.on("select", handleSelect);
-    
-    return () => {
-      api?.off("select", handleSelect);
-    };
-  }, [api]);
-
   return (
-    <div className="relative bg-law-purple min-h-[90vh] flex items-center overflow-hidden">
-      <Carousel
-        className="absolute inset-0 z-0"
-        opts={{
-          align: "start",
-          loop: true,
+    <div className="relative bg-law-purple min-h-[90vh] flex items-center">
+      <div 
+        className="absolute inset-0 z-0 opacity-70 bg-cover bg-center"
+        style={{ 
+          backgroundImage: "url('https://img1.wsimg.com/isteam/ip/65c76fe5-10f4-48d4-8fb1-6e5b961c6708/blob-0008.png/:/rs=w:1535,m')",
         }}
-        plugins={[
-          Autoplay({
-            delay: 10000,
-          }),
-        ]}
-        setApi={setApi}
-      >
-        <CarouselContent className="h-full">
-          {images.map((image, index) => (
-            <CarouselItem key={index} className="h-full w-full">
-              <div 
-                className={cn(
-                  "w-full h-full bg-cover bg-center opacity-50 transition-opacity duration-1000",
-                  current === index ? "opacity-70" : "opacity-70"
-                )}
-                style={{ backgroundImage: `url('${image}')` }}
-              />
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-      </Carousel>
+      />
       
       <div className="container mx-auto px-4 py-16 relative z-10">
         <div className="max-w-3xl">
