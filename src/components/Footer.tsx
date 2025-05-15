@@ -51,15 +51,15 @@ const Footer = () => {
             <div className="space-y-3">
               <p className="flex items-start text-sm">
                 <MapPin className="mr-2 h-5 w-5 text-law-gold flex-shrink-0" />
-                <span className="opacity-80">123 Legal Avenue, Suite 200<br />The Woodlands, TX 77380</span>
+                <span className="opacity-80">2219 Sawdust Rd., Suite 803<br />The Woodlands, TX 77380</span>
               </p>
               <p className="flex items-center text-sm">
                 <Phone className="mr-2 h-5 w-5 text-law-gold flex-shrink-0" />
-                <span className="opacity-80">(281) 555-7890</span>
+                <span className="opacity-80">(832) 626-0116</span>
               </p>
               <p className="flex items-center text-sm">
                 <Mail className="mr-2 h-5 w-5 text-law-gold flex-shrink-0" />
-                <a href="mailto:info@woodlands.law" className="opacity-80 hover:opacity-100 hover:text-law-gold transition-colors">info@woodlands.law</a>
+                <a href="mailto:admin@woodlands.law" className="opacity-80 hover:opacity-100 hover:text-law-gold transition-colors">admin@woodlands.law</a>
               </p>
             </div>
           </div>
