@@ -12,7 +12,7 @@ const AttorneysPage = () => {
       <div className="relative bg-law-purple py-16">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-5xl text-white font-serif font-semibold mb-2">
-            Our Attorneys
+            Our Team
           </h1>
           <div className="gold-underline"></div>
         </div>
