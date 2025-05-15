@@ -54,7 +54,7 @@ const Hero = () => {
             <CarouselItem key={index} className="h-full w-full">
               <div 
                 className={cn(
-                  "w-full h-full bg-cover bg-center opacity-70 transition-opacity duration-1000",
+                  "w-full h-full bg-cover bg-center opacity-50 transition-opacity duration-1000",
                   current === index ? "opacity-70" : "opacity-70"
                 )}
                 style={{ backgroundImage: `url('${image}')` }}
