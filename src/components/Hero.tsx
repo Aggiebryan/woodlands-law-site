@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <div className="relative bg-law-purple min-h-[90vh] flex items-center">
+    <div className="relative bg-law-purple opacity-0 min-h-[90vh] flex items-center">
       <div 
         className="absolute inset-0 z-0 opacity-70 bg-cover bg-center"
         style={{ 
