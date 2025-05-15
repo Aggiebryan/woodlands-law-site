@@ -27,12 +27,12 @@ const AttorneysPage = () => {
               <div className="rounded-lg overflow-hidden mb-4 aspect-[3/4] bg-gray-200">
                 <img
                   src="https://github.com/Aggiebryan/woodlands-law-site/blob/main/public/gwen600800flag.webp"
-                  alt="Raymond L. Purser, Jr."
+                  alt="Gwendolyn Simpson"
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-2xl font-serif text-law-purple mb-1">Raymond L. Purser, Jr.</h3>
-              <p className="text-law-gold font-medium mb-2">Partner</p>
+              <h3 className="text-2xl font-serif text-law-purple mb-1">Gwendolyn Simpson</h3>
+              <p className="text-law-gold font-medium mb-2">Managing Attorney</p>
               <p className="text-gray-600 mb-4">
                 Ray Purser brings nearly 30 years of experience representing clients in complex insurance and commercial litigation...
               </p>
