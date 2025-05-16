@@ -1,7 +1,5 @@
-
 import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-
 interface AttorneyInfo {
   id: string;
   name: string;
@@ -12,22 +10,22 @@ interface AttorneyInfo {
   admissions?: string[];
   awards?: string[];
 }
-
 const AttorneyProfilePage = () => {
-  const { id } = useParams<{ id: string }>();
-  
+  const {
+    id
+  } = useParams<{
+    id: string;
+  }>();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  
   const attorneys: Record<string, AttorneyInfo> = {
     "gwendolyn-simpson": {
       id: "gwendolyn-simpson",
       name: "Gwendolyn Simpson",
       title: "Managing Attorney",
       image: "/gwen600800flag.webp",
-      bio: (
-        <>
+      bio: <>
           <p className="mb-4">
             Gwendolyn Simpson is a native Houstonian and a graduate of Baylor Law School. Experienced in the legal field since 1998, and licensed in 2007, Ms. Simpson founded a general practice civil firm and has been assisting clients with legal matters involving civil litigation, transactions, probate, and personal injury ever since. In addition to her private practice, Ms. Simpson was the staff attorney to the Honorable Kathleen Hamilton in the 359th Judicial District Court in Montgomery County, Texas.
           </p>
@@ -43,54 +41,35 @@ const AttorneyProfilePage = () => {
           <p className="mb-4">
             In her downtime, Ms. Simpson enjoys time with her family, reading historical fiction, and traveling.
           </p>
-        </>
-      ),
-      education: [
-        "J.D., Baylor Law School",
-        "B.A., University of Houston"
-      ],
-      admissions: [
-        "State Bar of Texas",
-        "U.S. District Court, Southern District of Texas"
-      ],
-      awards: [
-        "Pro Bono College of the State Bar",
-        "College of the State Bar of Texas"
-      ]
+        </>,
+      education: ["J.D., Baylor Law School", "B.A., University of Houston"],
+      admissions: ["State Bar of Texas", "U.S. District Court, Southern District of Texas"],
+      awards: ["Pro Bono College of the State Bar", "College of the State Bar of Texas"]
     },
     "bryan-holman": {
       id: "bryan-holman",
       name: "Bryan C. Holman",
       title: "Associate Attorney",
       image: "/bryanflag600800.webp",
-      bio: (
-        <>
-          <p className="mb-4">
+      bio: <>
+          <p className="mb-4 text-justify">
             Born and raised in Texas, Bryan Holman has dedicated his life to professional excellence and unwavering service. A proud graduate of Texas A&M University, Bryan earned a Bachelor of Science degree, laying a solid foundation for his future academic endeavors. He continued his education by earning a Juris Doctor from the South Texas College of Law.
           </p>
-          <p className="mb-4">
+          <p className="mb-4 text-justify">
             Bryan's professional career began in 1999 as an insurance adjuster, where, for nearly 14 years, he represented some of the largest insurance companies in administering claims resulting from a wide range of natural disasters, including hurricanes, floods, blizzards, and firestorms. Bryan's work instilled in him a deep appreciation and passion for the nuances of the law, particularly regarding the legal issues associated with those claims.
           </p>
-          <p className="mb-4">
+          <p className="mb-4 text-justify">
             Ever the entrepreneur, Bryan owned and operated a furniture store in Mesquite, Texas, for several years with his wife. Simultaneously, he established a construction and home inspection company in Houston, highlighting his abilities to develop and manage multifaceted businesses.
           </p>
-          <p className="mb-4">
+          <p className="mb-4 text-justify">
             Bryan was instrumental at Reynolds & Reynolds in consulting and facilitating the sale and use of software and computer systems for automotive dealerships across the United States. His precision and attention to detail were particularly evident as he prepared contracts for some of the most prestigious automotive groups throughout the country.
           </p>
-          <p className="mb-4">
+          <p className="mb-4 text-justify">
             Away from the professional sphere, Bryan is a devoted family man. He treasures the time he spends with his wife and family. He enjoys spending time working with computers, cars, and technology. An outdoor enthusiast, Bryan and his family love to camp, fish, and explore the beauty of nature.
           </p>
-        </>
-      ),
-      education: [
-        "J.D., South Texas College of Law",
-        "B.S., Texas A&M University",
-        "A.S., Blinn College"
-      ],
-      admissions: [
-        "State Bar of Texas",
-        "U.S. District Court, Southern District of Texas"
-      ]
+        </>,
+      education: ["J.D., South Texas College of Law", "B.S., Texas A&M University", "A.S., Blinn College"],
+      admissions: ["State Bar of Texas", "U.S. District Court, Southern District of Texas"]
     },
     "courtney-fields": {
       id: "courtney-fields",
@@ -100,28 +79,19 @@ const AttorneyProfilePage = () => {
       bio: "Courtney Fields is a dedicated legal assistant who brings organization and efficiency to our practice. With meticulous attention to detail and excellent client communication skills, Courtney ensures that all administrative aspects of our cases run smoothly. Her commitment to client service and professional demeanor make her an invaluable member of our team."
     }
   };
-
   const attorney = attorneys[id as string];
-
   if (!attorney) {
-    return (
-      <div className="pt-20">
+    return <div className="pt-20">
         <div className="container mx-auto px-4 py-16 text-center">
           <h1 className="text-3xl font-serif text-law-purple mb-4">Attorney Not Found</h1>
           <p className="mb-6">The attorney profile you are looking for does not exist.</p>
-          <Link 
-            to="/our-team" 
-            className="bg-law-purple hover:bg-law-purple-light text-white font-medium py-3 px-8 rounded transition-colors inline-block"
-          >
+          <Link to="/our-team" className="bg-law-purple hover:bg-law-purple-light text-white font-medium py-3 px-8 rounded transition-colors inline-block">
             Back to Our Team
           </Link>
         </div>
-      </div>
-    );
+      </div>;
   }
-
-  return (
-    <div className="pt-20">
+  return <div className="pt-20">
       {/* Page Header */}
       <div className="relative bg-law-purple py-16">
         <div className="container mx-auto px-4">
@@ -140,50 +110,31 @@ const AttorneyProfilePage = () => {
             {/* Sidebar */}
             <div className="lg:col-span-1">
               <div className="rounded-lg overflow-hidden mb-6">
-                <img
-                  src={attorney.image}
-                  alt={attorney.name}
-                  className="w-full h-auto object-cover"
-                />
+                <img src={attorney.image} alt={attorney.name} className="w-full h-auto object-cover" />
               </div>
               
-              {attorney.education && (
-                <div className="mb-8">
+              {attorney.education && <div className="mb-8">
                   <h3 className="text-xl font-serif text-law-purple mb-3">Education</h3>
                   <ul className="space-y-2">
-                    {attorney.education.map((item, index) => (
-                      <li key={index} className="text-gray-600">{item}</li>
-                    ))}
+                    {attorney.education.map((item, index) => <li key={index} className="text-gray-600">{item}</li>)}
                   </ul>
-                </div>
-              )}
+                </div>}
               
-              {attorney.admissions && (
-                <div className="mb-8">
+              {attorney.admissions && <div className="mb-8">
                   <h3 className="text-xl font-serif text-law-purple mb-3">Bar Admissions</h3>
                   <ul className="space-y-2">
-                    {attorney.admissions.map((item, index) => (
-                      <li key={index} className="text-gray-600">{item}</li>
-                    ))}
+                    {attorney.admissions.map((item, index) => <li key={index} className="text-gray-600">{item}</li>)}
                   </ul>
-                </div>
-              )}
+                </div>}
               
-              {attorney.awards && (
-                <div className="mb-8">
+              {attorney.awards && <div className="mb-8">
                   <h3 className="text-xl font-serif text-law-purple mb-3">Honors & Awards</h3>
                   <ul className="space-y-2">
-                    {attorney.awards.map((item, index) => (
-                      <li key={index} className="text-gray-600">{item}</li>
-                    ))}
+                    {attorney.awards.map((item, index) => <li key={index} className="text-gray-600">{item}</li>)}
                   </ul>
-                </div>
-              )}
+                </div>}
               
-              <Link 
-                to="/contact" 
-                className="bg-law-gold hover:bg-law-gold-light text-law-purple font-medium py-3 px-6 rounded transition-colors inline-block w-full text-center"
-              >
+              <Link to="/contact" className="bg-law-gold hover:bg-law-gold-light text-law-purple font-medium py-3 px-6 rounded transition-colors inline-block w-full text-center">
                 Schedule a Consultation
               </Link>
             </div>
@@ -196,10 +147,7 @@ const AttorneyProfilePage = () => {
               </div>
               
               <div className="mt-10 flex flex-col sm:flex-row gap-4">
-                <Link 
-                  to="/our-team" 
-                  className="border border-law-purple text-law-purple hover:bg-law-purple hover:text-white font-medium py-3 px-6 rounded transition-colors inline-block text-center"
-                >
+                <Link to="/our-team" className="border border-law-purple text-law-purple hover:bg-law-purple hover:text-white font-medium py-3 px-6 rounded transition-colors inline-block text-center">
                   Back to Our Team
                 </Link>
               </div>
@@ -207,8 +155,6 @@ const AttorneyProfilePage = () => {
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default AttorneyProfilePage;
