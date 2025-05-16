@@ -26,7 +26,7 @@ const OurTeamPage = () => {
             <div className="flex flex-col">
               <div className="rounded-lg overflow-hidden mb-4 aspect-[3/4] bg-gray-200">
                 <img
-                  src="https://github.com/Aggiebryan/woodlands-law-site/blob/main/public/gwen600800flag.webp"
+                  src="gwen600800flag.webp"
                   alt="Gwendolyn Simpson"
                   className="w-full h-full object-cover"
                 />
