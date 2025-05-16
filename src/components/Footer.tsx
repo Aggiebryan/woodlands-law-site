@@ -1,22 +1,14 @@
-
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  
-  return (
-    <footer className="bg-law-purple text-white">
+  return <footer className="bg-law-purple text-white">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Column 1: Logo and Description */}
           <div>
             <Link to="/" className="flex items-center mb-4">
-              <img 
-                src="/lovable-uploads/d2d3dd5c-4df2-4af8-8fd5-95612381080d.png" 
-                alt="The Woodlands Law Firm" 
-                className="h-16" 
-              />
+              <img src="/lovable-uploads/d2d3dd5c-4df2-4af8-8fd5-95612381080d.png" alt="The Woodlands Law Firm" className="h-28 object-fill" />
             </Link>
             <div className="flex space-x-4 mt-4 mb-4">
               <a href="#" className="text-white hover:text-law-gold transition-colors">
@@ -92,25 +84,17 @@ const Footer = () => {
               &copy; {currentYear} The Woodlands Law Firm. All rights reserved.
             </p>
             <div className="flex space-x-4">
-              <Link 
-                to="/attorney-advertising" 
-                className="text-sm opacity-70 hover:opacity-100 hover:text-law-gold transition-colors"
-              >
+              <Link to="/attorney-advertising" className="text-sm opacity-70 hover:opacity-100 hover:text-law-gold transition-colors">
                 Attorney Advertising Notice
               </Link>
               <span className="opacity-70">|</span>
-              <Link 
-                to="/privacy-policy" 
-                className="text-sm opacity-70 hover:opacity-100 hover:text-law-gold transition-colors"
-              >
+              <Link to="/privacy-policy" className="text-sm opacity-70 hover:opacity-100 hover:text-law-gold transition-colors">
                 Privacy Policy
               </Link>
             </div>
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
