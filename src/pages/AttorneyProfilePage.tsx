@@ -26,16 +26,16 @@ const AttorneyProfilePage = () => {
       title: "Managing Attorney",
       image: "/gwen600800flag.webp",
       bio: <>
-          <p className="mb-4">
+          <p className="mb-4 text-justify">
             Gwendolyn Simpson is a native Houstonian and a graduate of Baylor Law School. Experienced in the legal field since 1998, and licensed in 2007, Ms. Simpson founded a general practice civil firm and has been assisting clients with legal matters involving civil litigation, transactions, probate, and personal injury ever since. In addition to her private practice, Ms. Simpson was the staff attorney to the Honorable Kathleen Hamilton in the 359th Judicial District Court in Montgomery County, Texas.
           </p>
-          <p className="mb-4">
+          <p className="mb-4 text-justify">
             In 2012, she was voted in by the Board of Judges to sit as a Master/Referee for the 359th District Court. In 2015, Ms. Simpson was tapped by Montgomery County to assist in the development and administration of Montgomery County's Veterans' Treatment Court. Additionally, Ms. Simpson developed curriculum that was approved by the American Bar Association. She taught legal courses in both traditional and virtual formats to students nationwide as an adjunct professor for the Center for Advanced Legal Studies.
           </p>
-          <p className="mb-4">
+          <p className="mb-4 text-justify">
             Ms. Simpson has been a member of the prestigious College of the State Bar and is a certified mediator. For several years, she has been honored for her outstanding contributions by the Pro Bono College of the State Bar for her contributions to low-income Texans.
           </p>
-          <p className="mb-4">
+          <p className="mb-4 text-justify">
             She currently practices in Montgomery, Harris, and the surrounding counties and is licensed to practice in the State of Texas and the U.S. Southern District of Texas.
           </p>
           <p className="mb-4">
