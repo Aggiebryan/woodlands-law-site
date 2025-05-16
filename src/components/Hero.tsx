@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <div className="relative bg-law-purple min-h-[90vh] flex items-center">
+    <div className="relative bg-transparent min-h-[90vh] flex items-center">
       <div 
-        className="absolute inset-0 z-0 opacity-70 bg-cover bg-center"
+        className="absolute inset-0 z-0 opacity-100 bg-cover bg-center"
         style={{ 
           backgroundImage: "url('/lovable-uploads/c63dc061-b55b-4ecb-a111-23cc282089a8.png')",
         }}
