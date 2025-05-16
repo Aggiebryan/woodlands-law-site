@@ -66,7 +66,7 @@ export default {
 				law: {
 					'purple': '#4B2E83',
 					'purple-light': '#6E59A5',
-					'gold': '#c4a45f',
+					'gold': '#d4af37',
 					'gold-light': '#d4b87f',
 					'white': '#ffffff',
 					'gray-light': '#f5f5f5',
