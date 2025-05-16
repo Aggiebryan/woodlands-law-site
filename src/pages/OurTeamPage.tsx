@@ -48,13 +48,13 @@ const OurTeamPage = () => {
             <div className="flex flex-col">
               <div className="rounded-lg overflow-hidden mb-4 aspect-[3/4] bg-gray-200">
                 <img
-                  src="https://estates.woodlands.law/wp-content/uploads/2021/03/Ray-Purser-Preferred-Head-Shot-Sized-and-Enhanced.jpg"
-                  alt="Ryan H. Briscoe"
+                  src="bryanflag600800.webp"
+                  alt="Bryan C. Holman"
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-2xl font-serif text-law-purple mb-1">Ryan H. Briscoe</h3>
-              <p className="text-law-gold font-medium mb-2">Partner</p>
+              <h3 className="text-2xl font-serif text-law-purple mb-1">Bryan C. Holman</h3>
+              <p className="text-law-gold font-medium mb-2">Associate Attorney</p>
               <p className="text-gray-600 mb-4">
                 Ryan Briscoe has specialized in offering comprehensive estate planning and business succession services...
               </p>
@@ -70,13 +70,13 @@ const OurTeamPage = () => {
             <div className="flex flex-col">
               <div className="rounded-lg overflow-hidden mb-4 aspect-[3/4] bg-gray-200">
                 <img
-                  src="https://estates.woodlands.law/wp-content/uploads/2021/03/Ray-Purser-Preferred-Head-Shot-Sized-and-Enhanced.jpg"
-                  alt="John R. Bartos"
+                  src="Courtneyblack background.webp"
+                  alt="Courtney Fields"
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-2xl font-serif text-law-purple mb-1">John R. Bartos</h3>
-              <p className="text-law-gold font-medium mb-2">Partner</p>
+              <h3 className="text-2xl font-serif text-law-purple mb-1">Courtney Fields</h3>
+              <p className="text-law-gold font-medium mb-2">Legal Assistant</p>
               <p className="text-gray-600 mb-4">
                 John Bartos focuses his practice on estate planning, probate, and retirement planning...
               </p>
