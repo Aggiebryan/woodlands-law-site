@@ -84,10 +84,12 @@ const AttorneyProfilePage = () => {
       ),
       education: [
         "J.D., South Texas College of Law",
-        "B.S., Texas A&M University"
+        "B.S., Texas A&M University",
+        "A.S., Blinn College"
       ],
       admissions: [
-        "State Bar of Texas"
+        "State Bar of Texas",
+        "U.S. District Court, Southern District of Texas"
       ]
     },
     "courtney-fields": {
