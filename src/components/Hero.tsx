@@ -7,7 +7,7 @@ const Hero = () => {
       <div 
         className="absolute inset-0 z-0 opacity-70 bg-cover bg-center"
         style={{ 
-          backgroundImage: "url('/public/woodlands_lifted%20photography_stock-1-3.webp/:/rs=w:1535,m')",
+          backgroundImage: "url('https://github.com/Aggiebryan/woodlands-law-site/blob/f78cf265180b10fabcdf829a40513ae0174e48e6/public/woodlands_lifted%20photography_stock-1-3.webp/:/rs=w:1535,m')",
         }}
       />
       
