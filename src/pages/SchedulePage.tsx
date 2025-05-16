@@ -89,7 +89,7 @@ const SchedulePage = () => {
                   </div>
                   <div>
                     <h4 className="font-medium mb-1">Phone</h4>
-                    <p className="text-gray-700">(281) 292-2522</p>
+                    <p className="text-gray-700">(832) 626-0116</p>
                     <p className="text-sm text-gray-600 mt-1">Call us to speak directly with our team</p>
                   </div>
                 </div>
@@ -100,7 +100,7 @@ const SchedulePage = () => {
                   </div>
                   <div>
                     <h4 className="font-medium mb-1">Email</h4>
-                    <p className="text-gray-700">info@woodlands.law</p>
+                    <p className="text-gray-700">admin@woodlands.law</p>
                     <p className="text-sm text-gray-600 mt-1">We'll respond to your inquiry promptly</p>
                   </div>
                 </div>
@@ -120,7 +120,7 @@ const SchedulePage = () => {
               <div className="mt-10">
                 <h4 className="text-xl font-serif mb-4">Office Location</h4>
                 <address className="not-italic text-gray-700 mb-4">
-                  26545 Cheswood Drive<br />
+                  2219 Sawdust Rd. Suite 803<br />
                   The Woodlands, TX 77380
                 </address>
               </div>
