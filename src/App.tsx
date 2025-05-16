@@ -17,6 +17,7 @@ import AttorneyProfilePage from "./pages/AttorneyProfilePage";
 import ServiceDetailPage from "./pages/ServiceDetailPage";
 import AttorneyAdvertisingPage from "./pages/AttorneyAdvertisingPage";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
+import SchedulePage from "./pages/SchedulePage";
 
 const queryClient = new QueryClient();
 
@@ -38,6 +39,7 @@ const App = () => (
               <Route path="/news-events" element={<NewsEventsPage />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/trusts" element={<TrustsPage />} />
+              <Route path="/schedule" element={<SchedulePage />} />
               <Route path="/attorney-advertising" element={<AttorneyAdvertisingPage />} />
               <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

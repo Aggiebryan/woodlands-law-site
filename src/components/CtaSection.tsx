@@ -29,7 +29,7 @@ const CtaSection = () => {
                 
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link 
-                    to="/contact" 
+                    to="/schedule" 
                     className="bg-law-gold hover:bg-law-gold-light text-law-purple font-medium py-3 px-8 rounded transition-colors inline-block text-center"
                   >
                     Schedule a Consultation
