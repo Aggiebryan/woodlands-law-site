@@ -13,6 +13,10 @@ import NewsEventsPage from "./pages/NewsEventsPage";
 import NotFound from "./pages/NotFound";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import AttorneyProfilePage from "./pages/AttorneyProfilePage";
+import ServiceDetailPage from "./pages/ServiceDetailPage";
+import AttorneyAdvertisingPage from "./pages/AttorneyAdvertisingPage";
+import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 
 const queryClient = new QueryClient();
 
@@ -28,10 +32,14 @@ const App = () => (
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/our-team" element={<OurTeamPage />} />
+              <Route path="/team/:id" element={<AttorneyProfilePage />} />
               <Route path="/services" element={<ServicesPage />} />
+              <Route path="/service/:id" element={<ServiceDetailPage />} />
               <Route path="/news-events" element={<NewsEventsPage />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/trusts" element={<TrustsPage />} />
+              <Route path="/attorney-advertising" element={<AttorneyAdvertisingPage />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>

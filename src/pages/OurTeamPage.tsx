@@ -1,5 +1,6 @@
 
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const OurTeamPage = () => {
   useEffect(() => {
@@ -34,14 +35,14 @@ const OurTeamPage = () => {
               <h3 className="text-2xl font-serif text-law-purple mb-1">Gwendolyn Simpson</h3>
               <p className="text-law-gold font-medium mb-2">Managing Attorney</p>
               <p className="text-gray-600 mb-4">
-                Ray Purser brings nearly 30 years of experience representing clients in complex insurance and commercial litigation...
+                Gwendolyn Simpson is a native Houstonian and a graduate of Baylor Law School with decades of experience in civil litigation, transactions, probate, and personal injury.
               </p>
-              <a 
-                href="#" 
+              <Link 
+                to="/team/gwendolyn-simpson" 
                 className="text-law-purple hover:text-law-gold transition-colors font-medium mt-auto"
               >
                 View Profile
-              </a>
+              </Link>
             </div>
 
             {/* Attorney 2 */}
@@ -56,14 +57,14 @@ const OurTeamPage = () => {
               <h3 className="text-2xl font-serif text-law-purple mb-1">Bryan C. Holman</h3>
               <p className="text-law-gold font-medium mb-2">Associate Attorney</p>
               <p className="text-gray-600 mb-4">
-                Ryan Briscoe has specialized in offering comprehensive estate planning and business succession services...
+                Bryan Holman brings extensive experience as a former insurance adjuster and entrepreneur, offering unique insights into insurance claims, business law, and litigation.
               </p>
-              <a 
-                href="#" 
+              <Link 
+                to="/team/bryan-holman" 
                 className="text-law-purple hover:text-law-gold transition-colors font-medium mt-auto"
               >
                 View Profile
-              </a>
+              </Link>
             </div>
 
             {/* Attorney 3 */}
@@ -78,14 +79,14 @@ const OurTeamPage = () => {
               <h3 className="text-2xl font-serif text-law-purple mb-1">Courtney Fields</h3>
               <p className="text-law-gold font-medium mb-2">Legal Assistant</p>
               <p className="text-gray-600 mb-4">
-                John Bartos focuses his practice on estate planning, probate, and retirement planning...
+                Courtney Fields provides essential administrative and client support, ensuring cases move forward efficiently while maintaining excellent client communication.
               </p>
-              <a 
-                href="#" 
+              <Link 
+                to="/team/courtney-fields" 
                 className="text-law-purple hover:text-law-gold transition-colors font-medium mt-auto"
               >
                 View Profile
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -102,12 +103,12 @@ const OurTeamPage = () => {
             offering the skill and sophistication of larger firms with the personalized attention 
             and accessibility of a local practice.
           </p>
-          <a 
-            href="/contact" 
+          <Link 
+            to="/contact" 
             className="bg-law-purple hover:bg-law-purple-light text-white font-medium py-3 px-8 rounded transition-colors inline-block"
           >
             Schedule a Consultation
-          </a>
+          </Link>
         </div>
       </section>
     </div>

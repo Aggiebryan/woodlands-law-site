@@ -1,7 +1,7 @@
-
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Check } from "lucide-react";
+import { Check, Clock, MapPin, Phone } from "lucide-react";
+import GoogleMap from "../components/GoogleMap";
 
 const AboutPage = () => {
   useEffect(() => {
@@ -169,7 +169,7 @@ const AboutPage = () => {
             </ul>
           </div>
 
-          <div>
+          <div className="mb-16">
             <h2 className="text-2xl font-serif text-law-purple mb-4">Let's Protect What Matters Most</h2>
             <p className="text-gray-600 mb-8">
               Whether you are facing a legal dispute, planning for your family's future, or protecting your business, The Woodlands Law Firm is ready to serve as your trusted legal partner. Contact us today to schedule a consultation.
@@ -180,6 +180,57 @@ const AboutPage = () => {
             >
               Schedule a Consultation
             </Link>
+          </div>
+          
+          {/* Contact Information with Map */}
+          <div className="mt-20 border-t pt-16">
+            <h2 className="text-3xl font-serif text-law-purple mb-8 text-center">Visit Our Office</h2>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+              <div>
+                <GoogleMap />
+              </div>
+              
+              <div className="bg-law-gray-light p-8 rounded-lg">
+                <div className="mb-6">
+                  <h3 className="text-xl font-serif text-law-purple mb-3">Contact Information</h3>
+                  <div className="space-y-4">
+                    <div className="flex items-start">
+                      <MapPin className="h-5 w-5 text-law-gold mr-3 mt-1" />
+                      <div>
+                        <p className="font-medium">Office Address</p>
+                        <p className="text-gray-600">2219 Sawdust Rd., Suite 803</p>
+                        <p className="text-gray-600">The Woodlands, TX 77380</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start">
+                      <Phone className="h-5 w-5 text-law-gold mr-3 mt-1" />
+                      <div>
+                        <p className="font-medium">Phone</p>
+                        <p className="text-gray-600">(832) 626-0116</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start">
+                      <Clock className="h-5 w-5 text-law-gold mr-3 mt-1" />
+                      <div>
+                        <p className="font-medium">Office Hours</p>
+                        <p className="text-gray-600">Monday - Friday: 8:30 AM - 5:00 PM</p>
+                        <p className="text-gray-600">Additional hours by appointment</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <Link 
+                  to="/contact" 
+                  className="bg-law-gold hover:bg-law-gold-light text-law-purple font-medium py-3 px-6 rounded transition-colors block text-center w-full"
+                >
+                  Schedule a Consultation
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>

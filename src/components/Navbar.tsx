@@ -14,16 +14,29 @@ const Navbar = () => {
     <nav className="bg-white py-4 fixed w-full z-50 shadow-sm">
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link to="/" className="flex items-center">
-          <h1 className="text-law-purple font-serif text-2xl font-bold">THE WOODLANDS<span className="text-law-gold">LAW</span> FIRM</h1>
+          <img 
+            src="/lovable-uploads/307c4d37-d87e-4a89-8107-73533778d172.png" 
+            alt="The Woodlands Law Firm" 
+            className="h-10" 
+          />
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden lg:flex space-x-8">
-          <NavLink to="/" label="Home" />
-          <NavLink to="/our-team" label="Our Team" />
-          <NavLink to="/services" label="Services" />
-          <NavLink to="/news-events" label="News & Events" />
-          <NavLink to="/about" label="About Us" />
+        <div className="hidden lg:flex items-center">
+          <div className="flex space-x-8 mr-8">
+            <NavLink to="/" label="Home" />
+            <NavLink to="/our-team" label="Our Team" />
+            <NavLink to="/services" label="Services" />
+            <NavLink to="/news-events" label="News & Events" />
+            <NavLink to="/about" label="About Us" />
+          </div>
+          
+          <Link 
+            to="/contact" 
+            className="bg-law-gold hover:bg-law-gold-light text-law-purple font-medium py-2 px-4 rounded transition-colors inline-block"
+          >
+            Schedule a Consultation
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -45,6 +58,13 @@ const Navbar = () => {
             <MobileNavLink to="/services" label="Services" onClick={toggleMenu} />
             <MobileNavLink to="/news-events" label="News & Events" onClick={toggleMenu} />
             <MobileNavLink to="/about" label="About Us" onClick={toggleMenu} />
+            <Link 
+              to="/contact" 
+              className="bg-law-gold hover:bg-law-gold-light text-law-purple font-medium py-2 px-4 rounded transition-colors inline-block text-center"
+              onClick={toggleMenu}
+            >
+              Schedule a Consultation
+            </Link>
           </div>
         </div>
       )}

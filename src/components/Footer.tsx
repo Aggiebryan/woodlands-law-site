@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -12,9 +12,29 @@ const Footer = () => {
           {/* Column 1: Logo and Description */}
           <div>
             <Link to="/" className="flex items-center mb-4">
-              <h3 className="font-serif text-xl font-bold">THE WOODLANDS<span className="text-law-gold">LAW</span> FIRM</h3>
+              <img 
+                src="/lovable-uploads/d2d3dd5c-4df2-4af8-8fd5-95612381080d.png" 
+                alt="The Woodlands Law Firm" 
+                className="h-16" 
+              />
             </Link>
-            <p className="text-sm opacity-80 mb-4">
+            <div className="flex space-x-4 mt-4 mb-4">
+              <a href="#" className="text-white hover:text-law-gold transition-colors">
+                <Facebook size={20} />
+              </a>
+              <a href="#" className="text-white hover:text-law-gold transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-x">
+                  <path d="M18 6 6 18"></path><path d="m6 6 12 12"></path>
+                </svg>
+              </a>
+              <a href="#" className="text-white hover:text-law-gold transition-colors">
+                <Instagram size={20} />
+              </a>
+              <a href="#" className="text-white hover:text-law-gold transition-colors">
+                <Linkedin size={20} />
+              </a>
+            </div>
+            <p className="text-sm opacity-80">
               Dedicated to providing exceptional legal services with expertise in litigation, business planning, and estate matters.
             </p>
           </div>
@@ -65,11 +85,28 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Copyright */}
-        <div className="border-t border-white/10 mt-10 pt-6 text-center">
-          <p className="text-sm opacity-70">
-            &copy; {currentYear} The Woodlands Law Firm. All rights reserved.
-          </p>
+        {/* Additional Links and Copyright */}
+        <div className="border-t border-white/10 mt-10 pt-6">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <p className="text-sm opacity-70 mb-4 md:mb-0">
+              &copy; {currentYear} The Woodlands Law Firm. All rights reserved.
+            </p>
+            <div className="flex space-x-4">
+              <Link 
+                to="/attorney-advertising" 
+                className="text-sm opacity-70 hover:opacity-100 hover:text-law-gold transition-colors"
+              >
+                Attorney Advertising Notice
+              </Link>
+              <span className="opacity-70">|</span>
+              <Link 
+                to="/privacy-policy" 
+                className="text-sm opacity-70 hover:opacity-100 hover:text-law-gold transition-colors"
+              >
+                Privacy Policy
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

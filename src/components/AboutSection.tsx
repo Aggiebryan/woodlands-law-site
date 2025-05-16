@@ -40,8 +40,8 @@ const AboutSection = () => {
               </Link>
               
               <Link 
-                to="/ourteam" 
-                className="border border-law-purple text-law-purple hover:bg-law-purple hover:text-white font-medium py-3 px-8 rounded transition-colors inline-block text-center"
+                to="/our-team" 
+                className="bg-law-gold hover:bg-law-gold-light text-law-purple font-medium py-3 px-8 rounded transition-colors inline-block text-center"
               >
                 Meet Our Team
               </Link>
