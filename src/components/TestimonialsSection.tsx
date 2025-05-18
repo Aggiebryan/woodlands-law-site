@@ -1,5 +1,6 @@
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface Testimonial {
   quote: string;
@@ -10,28 +11,29 @@ interface Testimonial {
 const TestimonialsSection = () => {
   const testimonials: Testimonial[] = [
     {
-      quote: "The Woodlands Law Firm provided exceptional guidance through the complex process of settling my insurance claim. Their attention to detail and personalized approach made all the difference.",
-      author: "Michael Thompson",
-      position: "Business Owner",
+      quote: "I really enjoyed working with Gwen and her team. They conducted themselves professionally, timely and with compassion. It was truly a pleasure!",
+      author: "Johnnie W.",
+      position: "Estate Planning Client",
     },
     {
-      quote: "The team at The Woodlands Law Firm handled my case with professionalism and care. They took the time to understand my unique situation and crafted solutions that gave me peace of mind.",
-      author: "Sarah Johnson",
-      position: "Retired Educator",
+      quote: "This is our family's second time using The Woodlands Law Firm. We are just as pleased this time as we were before. We will certainly call on them again if the need arises.",
+      author: "Joe M.",
+      position: "Repeat Client",
     },
     {
-      quote: "I've worked with several law firms over the years, but none have provided the level of service and expertise that The Woodlands Law Firm offers. They truly go above and beyond for their clients.",
-      author: "Robert Chen",
-      position: "Real Estate Investor",
+      quote: "Ms. Simpson is a true professional. Our wills and trust were completed to our satisfaction. She is knowledgeable, thorough and very helpful.",
+      author: "Cindy C.",
+      position: "Trust Client",
     },
     {
-      quote: "During a difficult time following an accident, The Woodlands Law Firm guided me through the legal process with compassion and efficiency. I cannot recommend them highly enough.",
-      author: "Jennifer Martinez",
-      position: "Healthcare Professional",
+      quote: "The Woodlands Law Firm is professional, thorough, efficient, and friendly. Our many questions were answered patiently and clearly. Gwen and her team are a pleasure to work with.",
+      author: "Kent D.",
+      position: "Business Client",
     },
   ];
 
   const [activeIndex, setActiveIndex] = useState(0);
+  const [autoplay, setAutoplay] = useState(true);
 
   const nextTestimonial = useCallback(() => {
     setActiveIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
@@ -42,6 +44,28 @@ const TestimonialsSection = () => {
       (prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length
     );
   }, [testimonials.length]);
+
+  // Auto-rotate testimonials
+  useEffect(() => {
+    if (!autoplay) return;
+    
+    const interval = setInterval(() => {
+      nextTestimonial();
+    }, 5000);
+    
+    return () => clearInterval(interval);
+  }, [autoplay, nextTestimonial]);
+
+  // Pause autoplay when user interacts with controls
+  const handleManualNavigation = (index: number) => {
+    setActiveIndex(index);
+    setAutoplay(false);
+    
+    // Resume autoplay after 10 seconds of inactivity
+    setTimeout(() => {
+      setAutoplay(true);
+    }, 10000);
+  };
 
   return (
     <section className="py-20 bg-law-purple text-white">
@@ -56,38 +80,92 @@ const TestimonialsSection = () => {
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-law-purple-light p-8 md:p-12 rounded-lg shadow-lg relative">
+        <div className="max-w-4xl mx-auto relative">
+          <div className="bg-law-purple-light p-8 md:p-12 rounded-lg shadow-lg relative min-h-[300px] flex items-center">
+            <button 
+              onClick={() => {
+                prevTestimonial();
+                handleManualNavigation(activeIndex === 0 ? testimonials.length - 1 : activeIndex - 1);
+              }}
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-law-purple/50 hover:bg-law-purple text-white rounded-full p-1 transition-colors z-10"
+              aria-label="Previous testimonial"
+            >
+              <ChevronLeft size={24} />
+            </button>
+            
             <span className="text-6xl font-serif text-law-gold absolute top-6 left-6 leading-none opacity-30">
               "
             </span>
 
-            <div className="relative z-10">
-              <p className="text-lg md:text-xl italic mb-8">
-                {testimonials[activeIndex].quote}
-              </p>
+            <div className="relative z-10 w-full">
+              {testimonials.map((testimonial, index) => (
+                <div
+                  key={index}
+                  className={`transition-all duration-500 absolute w-full ${
+                    index === activeIndex 
+                      ? "opacity-100 translate-x-0" 
+                      : index < activeIndex 
+                        ? "opacity-0 -translate-x-full" 
+                        : "opacity-0 translate-x-full"
+                  }`}
+                  style={{
+                    display: Math.abs(index - activeIndex) > 1 ? 'none' : 'block'
+                  }}
+                >
+                  <p className="text-lg md:text-xl italic mb-8">
+                    {testimonial.quote}
+                  </p>
+                  
+                  <div>
+                    <p className="text-law-gold font-medium font-serif text-lg">
+                      {testimonial.author}
+                    </p>
+                    <p className="text-white/70">
+                      {testimonial.position}
+                    </p>
+                  </div>
+                </div>
+              ))}
               
-              <div>
-                <p className="text-law-gold font-medium font-serif text-lg">
-                  {testimonials[activeIndex].author}
+              {/* Current testimonial (for layout purposes) */}
+              <div className="invisible">
+                <p className="text-lg md:text-xl italic mb-8">
+                  {testimonials[activeIndex].quote}
                 </p>
-                <p className="text-white/70">
-                  {testimonials[activeIndex].position}
-                </p>
+                <div>
+                  <p className="text-law-gold font-medium font-serif text-lg">
+                    {testimonials[activeIndex].author}
+                  </p>
+                  <p className="text-white/70">
+                    {testimonials[activeIndex].position}
+                  </p>
+                </div>
               </div>
             </div>
+            
+            <button 
+              onClick={() => {
+                nextTestimonial();
+                handleManualNavigation(activeIndex === testimonials.length - 1 ? 0 : activeIndex + 1);
+              }}
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-law-purple/50 hover:bg-law-purple text-white rounded-full p-1 transition-colors z-10"
+              aria-label="Next testimonial"
+            >
+              <ChevronRight size={24} />
+            </button>
           </div>
 
-          {/* Navigation */}
+          {/* Navigation dots */}
           <div className="flex justify-center mt-8 space-x-2">
             {testimonials.map((_, index) => (
               <button
                 key={index}
-                onClick={() => setActiveIndex(index)}
+                onClick={() => handleManualNavigation(index)}
                 className={`h-3 w-3 rounded-full transition-colors ${
                   index === activeIndex ? "bg-law-gold" : "bg-white/30 hover:bg-white/50"
                 }`}
                 aria-label={`Go to testimonial ${index + 1}`}
+                aria-current={index === activeIndex ? "true" : "false"}
               />
             ))}
           </div>
