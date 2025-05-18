@@ -1,39 +1,9 @@
+
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { CheckCircle } from "lucide-react";
-
-const ServiceCard = ({ title, icon, description, link }: { title: string; icon: string; description: string; link: string }) => (
-  <div className="bg-white p-8 rounded shadow-md hover:shadow-lg transition-shadow border-t-2 border-law-gold">
-    <div className="mb-5">
-      <div className="inline-block p-3 rounded-full bg-law-purple/5 text-law-gold mb-4">
-        <span className="text-2xl">{icon}</span>
-      </div>
-      <h3 className="text-xl font-serif font-medium text-law-purple mb-3">{title}</h3>
-    </div>
-    <p className="text-gray-600 mb-5">{description}</p>
-    <Link
-      to={link}
-      className="text-law-gold font-medium hover:underline"
-    >
-      Learn More
-    </Link>
-  </div>
-);
-
-const ServiceDetail = ({ title, description, items }: { title: string; description: string; items: string[] }) => (
-  <div className="py-12 border-b border-gray-200 last:border-0" id={title.toLowerCase().replace(/\s+/g, '-')}>
-    <h3 className="text-2xl font-serif text-law-purple mb-4">{title}</h3>
-    <p className="text-gray-600 mb-6 max-w-3xl">{description}</p>
-    <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
-      {items.map((item, index) => (
-        <li key={index} className="flex items-start">
-          <CheckCircle className="h-5 w-5 text-law-gold mr-2 flex-shrink-0 mt-0.5" />
-          <span className="text-gray-700">{item}</span>
-        </li>
-      ))}
-    </ul>
-  </div>
-);
+import ServicesPageHeader from "../components/ServicesPageHeader";
+import ServicesOverview from "../components/ServicesOverview";
+import ServicesDetails from "../components/ServicesDetails";
+import ServicesCTA from "../components/ServicesCTA";
 
 const ServicesPage = () => {
   useEffect(() => {
@@ -169,77 +139,24 @@ const ServicesPage = () => {
   return (
     <div className="pt-20">
       {/* Page Header */}
-      <div className="relative bg-law-purple py-16">
-        <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl text-white font-serif font-semibold mb-2">
-            Our Services
-          </h1>
-          <div className="gold-underline"></div>
-          <p className="text-white/80 max-w-3xl mt-6">
-            The Woodlands Law Firm delivers experienced representation for life's most important legal challenges—from protecting your business and financial future to standing up for your rights in litigation.
-          </p>
-        </div>
-      </div>
+      <ServicesPageHeader 
+        title="Our Services"
+        description="The Woodlands Law Firm delivers experienced representation for life's most important legal challenges—from protecting your business and financial future to standing up for your rights in litigation."
+      />
 
       {/* Services Overview */}
-      <section className="py-16 bg-law-gray-light">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <ServiceCard
-                key={index}
-                title={service.title}
-                icon={service.icon}
-                description={service.description}
-                link={service.link}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServicesOverview services={services} />
 
       {/* Service Details */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="mb-12">
-            <h2 className="text-3xl font-serif text-law-purple mb-4">Our Practice Areas</h2>
-            <div className="gold-underline mb-6"></div>
-            <p className="text-gray-600 max-w-4xl">
-              At The Woodlands Law Firm, we combine aggressive advocacy in civil disputes with thoughtful estate and legacy planning. We serve as trusted counsel, helping Texans protect what they've built and plan for what's next.
-            </p>
-          </div>
-
-          <div className="divide-y divide-gray-200">
-            {serviceDetails.map((detail, index) => (
-              <ServiceDetail
-                key={index}
-                title={detail.title}
-                description={detail.description}
-                items={detail.items}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServicesDetails serviceDetails={serviceDetails} />
 
       {/* Call to Action */}
-      <section className="bg-law-purple py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-serif text-white mb-4">
-            Ready to Discuss Your Legal Needs?
-          </h2>
-          <p className="max-w-2xl mx-auto text-white/80 mb-8">
-            Schedule a consultation with one of our experienced attorneys to discuss 
-            your specific legal needs and how we can help protect your interests.
-          </p>
-          <Link 
-            to="/contact" 
-            className="bg-law-gold hover:bg-law-gold-light text-law-purple font-medium py-3 px-8 rounded transition-colors inline-block"
-          >
-            Schedule a Consultation
-          </Link>
-        </div>
-      </section>
+      <ServicesCTA 
+        title="Ready to Discuss Your Legal Needs?"
+        description="Schedule a consultation with one of our experienced attorneys to discuss your specific legal needs and how we can help protect your interests."
+        buttonText="Schedule a Consultation"
+        buttonLink="/schedule"
+      />
     </div>
   );
 };
