@@ -1,9 +1,14 @@
+
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+
 const OurTeamPage = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  
   return <div className="pt-20">
       {/* Page Header */}
       <div className="relative bg-law-purple py-16">
@@ -22,7 +27,7 @@ const OurTeamPage = () => {
             {/* Attorney 1 */}
             <div className="flex flex-col">
               <div className="rounded-lg overflow-hidden mb-4 aspect-[3/4] bg-gray-200">
-                <img src="gwen600800flag.webp" alt="Gwendolyn Simpson" className="w-full h-full object-cover" />
+                <img src="/gwen600800flag.webp" alt="Gwendolyn Simpson" className="w-full h-full object-cover" />
               </div>
               <h3 className="text-2xl font-serif text-law-purple mb-1">Gwendolyn Simpson</h3>
               <p className="text-law-gold font-medium mb-2">Managing Attorney</p>
@@ -37,7 +42,7 @@ const OurTeamPage = () => {
             {/* Attorney 2 */}
             <div className="flex flex-col">
               <div className="rounded-lg overflow-hidden mb-4 aspect-[3/4] bg-gray-200">
-                <img src="bryanflag600800.webp" alt="Bryan C. Holman" className="w-full h-full object-cover" />
+                <img src="/bryanflag600800.webp" alt="Bryan C. Holman" className="w-full h-full object-cover" />
               </div>
               <h3 className="text-2xl font-serif text-law-purple mb-1">Bryan C. Holman</h3>
               <p className="text-law-gold font-medium mb-2">Associate Attorney</p>
@@ -49,15 +54,37 @@ const OurTeamPage = () => {
               </Link>
             </div>
 
-            {/* Attorney 3 */}
+            {/* Staff Member - Courtney */}
             <div className="flex flex-col">
-              <div className="rounded-lg overflow-hidden mb-4 aspect-[3/4] bg-gray-200">
-                <img src="Courtneyblack background.webp" alt="Courtney Fields" className="w-full h-full object-cover" />
+              <div className="rounded-lg overflow-hidden mb-4 aspect-[3/4] bg-gray-100 relative">
+                <img 
+                  src="/Courtneyblack background.webp" 
+                  alt="Courtney Fields" 
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    // If image fails to load, show fallback content
+                    target.style.display = 'none';
+                    const parent = target.parentElement;
+                    if (parent) {
+                      const fallback = document.createElement('div');
+                      fallback.className = 'w-full h-full flex items-center justify-center bg-gray-200';
+                      const initials = document.createElement('span');
+                      initials.className = 'text-4xl font-serif text-law-purple';
+                      initials.textContent = 'CF';
+                      fallback.appendChild(initials);
+                      parent.appendChild(fallback);
+                    }
+                  }}
+                />
+                <div className="absolute inset-0 flex items-center justify-center bg-gray-200 opacity-0">
+                  <span className="text-4xl font-serif text-law-purple">CF</span>
+                </div>
               </div>
               <h3 className="text-2xl font-serif text-law-purple mb-1">Courtney Fields</h3>
               <p className="text-law-gold font-medium mb-2">Legal Assistant</p>
               <p className="text-gray-600 mb-4 text-justify">
-                Courtney Fields provides essential administrative and client support, ensuring cases move forward efficiently while maintaining excellent client communication.
+                Courtney Fields is a skilled legal assistant with excellent organizational abilities and client communication skills. She manages case documentation, coordinates schedules, and ensures the office runs smoothly.
               </p>
               <Link to="/team/courtney-fields" className="text-law-purple hover:text-law-gold transition-colors font-medium mt-auto">
                 View Profile

@@ -1,3 +1,4 @@
+
 import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 interface AttorneyInfo {
@@ -76,7 +77,24 @@ const AttorneyProfilePage = () => {
       name: "Courtney Fields",
       title: "Legal Assistant",
       image: "/Courtneyblack background.webp",
-      bio: "Courtney Fields is a dedicated legal assistant who brings organization and efficiency to our practice. With meticulous attention to detail and excellent client communication skills, Courtney ensures that all administrative aspects of our cases run smoothly. Her commitment to client service and professional demeanor make her an invaluable member of our team."
+      bio: <>
+          <p className="mb-4 text-justify">
+            Courtney Fields is a dedicated legal assistant with several years of experience in the legal field. Her meticulous attention to detail and exceptional organizational skills are vital to the smooth operation of our firm. She manages client communications, document preparation, and case file organization with remarkable efficiency.
+          </p>
+          <p className="mb-4 text-justify">
+            As the first point of contact for many clients, Courtney excels at making people feel comfortable and understood during what can often be stressful legal situations. Her warm demeanor and professional approach help build strong client relationships from the very first interaction.
+          </p>
+          <p className="mb-4 text-justify">
+            Courtney's background includes specialized training in legal document preparation, client intake procedures, and office administration. Her technical proficiency with legal software systems and electronic filing processes ensures that all case documentation is properly managed and readily accessible.
+          </p>
+          <p className="mb-4 text-justify">
+            Working closely with our attorneys, Courtney provides crucial support by coordinating schedules, preparing correspondence, and assisting with research. Her ability to anticipate needs and solve problems proactively makes her an indispensable member of our legal team.
+          </p>
+          <p className="mb-4">
+            Outside of work, Courtney enjoys hiking, photography, and spending time with her family. Her community involvement includes volunteer work with local youth organizations.
+          </p>
+        </>,
+      education: ["Paralegal Certificate, Houston Community College", "B.A. in Communication Studies, University of Houston"]
     }
   };
   const attorney = attorneys[id as string];
