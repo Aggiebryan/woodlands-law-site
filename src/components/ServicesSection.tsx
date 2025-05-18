@@ -34,37 +34,37 @@ const ServicesSection = () => {
       title: "Insurance Litigation",
       description: "Expert representation in insurance claims disputes and bad faith litigation.",
       icon: "⚖️",
-      link: "/services#insurance-litigation"
+      link: "/practice-areas/insurance-litigation"
     },
     {
       title: "Personal Injury",
       description: "Dedicated advocacy for victims of negligence and serious injuries.",
       icon: "🏥",
-      link: "/services#personal-injury"
+      link: "/practice-areas/personal-injury"
     },
     {
       title: "Civil Litigation",
       description: "Strategic representation in business disputes, contract issues, and civil claims.",
       icon: "📜",
-      link: "/services#civil-litigation"
+      link: "/practice-areas/civil-litigation"
     },
     {
       title: "Deceptive Trade Practices Act",
       description: "Protection from unfair, deceptive, and fraudulent business practices.",
       icon: "🔍",
-      link: "/services#deceptive-trade-practices-act"
+      link: "/practice-areas/deceptive-trade-practices-act"
     },
     {
       title: "Business Planning",
       description: "Comprehensive legal solutions for business formation, growth, and succession.",
       icon: "🏢",
-      link: "/services#business-planning"
+      link: "/practice-areas/business-planning"
     },
     {
       title: "Estate Planning",
       description: "Personalized estate plans to protect your legacy and provide for your loved ones.",
       icon: "📝",
-      link: "/services#estate-planning"
+      link: "/practice-areas/estate-planning"
     }
   ];
 

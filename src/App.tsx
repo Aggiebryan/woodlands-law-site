@@ -19,6 +19,14 @@ import AttorneyAdvertisingPage from "./pages/AttorneyAdvertisingPage";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import SchedulePage from "./pages/SchedulePage";
 
+// Import practice area pages
+import PersonalInjuryPage from "./pages/practice-areas/PersonalInjuryPage";
+import InsuranceLitigationPage from "./pages/practice-areas/InsuranceLitigationPage";
+import CivilLitigationPage from "./pages/practice-areas/CivilLitigationPage";
+import DTPAPage from "./pages/practice-areas/DTPAPage";
+import BusinessPlanningPage from "./pages/practice-areas/BusinessPlanningPage";
+import EstatePlanningPage from "./pages/practice-areas/EstatePlanningPage";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -42,7 +50,16 @@ const App = () => (
               <Route path="/schedule" element={<SchedulePage />} />
               <Route path="/attorney-advertising" element={<AttorneyAdvertisingPage />} />
               <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              
+              {/* Practice Area Routes */}
+              <Route path="/practice-areas/personal-injury" element={<PersonalInjuryPage />} />
+              <Route path="/practice-areas/insurance-litigation" element={<InsuranceLitigationPage />} />
+              <Route path="/practice-areas/civil-litigation" element={<CivilLitigationPage />} />
+              <Route path="/practice-areas/deceptive-trade-practices-act" element={<DTPAPage />} />
+              <Route path="/practice-areas/business-planning" element={<BusinessPlanningPage />} />
+              <Route path="/practice-areas/estate-planning" element={<EstatePlanningPage />} />
+              
+              {/* Catch-all route */}
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>

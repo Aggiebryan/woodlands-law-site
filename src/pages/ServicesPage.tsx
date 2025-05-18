@@ -1,9 +1,8 @@
-
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { CheckCircle } from "lucide-react";
 
-const ServiceCard = ({ title, icon, description }: { title: string; icon: string; description: string }) => (
+const ServiceCard = ({ title, icon, description, link }: { title: string; icon: string; description: string; link: string }) => (
   <div className="bg-white p-8 rounded shadow-md hover:shadow-lg transition-shadow border-t-2 border-law-gold">
     <div className="mb-5">
       <div className="inline-block p-3 rounded-full bg-law-purple/5 text-law-gold mb-4">
@@ -13,7 +12,7 @@ const ServiceCard = ({ title, icon, description }: { title: string; icon: string
     </div>
     <p className="text-gray-600 mb-5">{description}</p>
     <Link
-      to={`/services#${title.toLowerCase().replace(/\s+/g, '-')}`}
+      to={link}
       className="text-law-gold font-medium hover:underline"
     >
       Learn More
@@ -45,32 +44,38 @@ const ServicesPage = () => {
     {
       title: "Insurance Litigation",
       icon: "⚖️",
-      description: "Expert representation in complex insurance claims disputes and bad faith litigation."
+      description: "Expert representation in complex insurance claims disputes and bad faith litigation.",
+      link: "/practice-areas/insurance-litigation"
     },
     {
       title: "Personal Injury",
       icon: "🏥",
-      description: "Dedicated advocacy for victims of negligence and serious injuries."
+      description: "Dedicated advocacy for victims of negligence and serious injuries.",
+      link: "/practice-areas/personal-injury"
     },
     {
       title: "Civil Litigation",
       icon: "📜",
-      description: "Strategic representation in business disputes, contract issues, and civil claims."
+      description: "Strategic representation in business disputes, contract issues, and civil claims.",
+      link: "/practice-areas/civil-litigation"
     },
     {
       title: "Deceptive Trade Practices Act",
       icon: "🔍",
-      description: "Protecting consumers and businesses from unfair, deceptive, and fraudulent practices."
+      description: "Protection from unfair, deceptive, and fraudulent business practices.",
+      link: "/practice-areas/deceptive-trade-practices-act"
     },
     {
       title: "Business Planning",
       icon: "🏢",
-      description: "Comprehensive legal solutions for business formation, growth, and succession."
+      description: "Comprehensive legal solutions for business formation, growth, and succession.",
+      link: "/practice-areas/business-planning"
     },
     {
       title: "Estate Planning",
       icon: "📝",
-      description: "Personalized estate plans to protect your legacy and provide for your loved ones."
+      description: "Personalized estate plans to protect your legacy and provide for your loved ones.",
+      link: "/practice-areas/estate-planning"
     }
   ];
 
@@ -186,6 +191,7 @@ const ServicesPage = () => {
                 title={service.title}
                 icon={service.icon}
                 description={service.description}
+                link={service.link}
               />
             ))}
           </div>
