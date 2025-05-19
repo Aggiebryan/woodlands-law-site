@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { Calendar } from "lucide-react";
@@ -124,7 +125,17 @@ const BlogPostPage = () => {
             </div>
             
             <div 
-              className="prose prose-lg max-w-none prose-h1:text-4xl prose-h2:text-3xl prose-h3:text-2xl prose-h4:text-xl prose-p:text-lg prose-headings:font-serif prose-headings:text-law-purple prose-a:text-law-gold"
+              className="prose prose-lg max-w-none 
+                prose-headings:font-serif
+                prose-h1:text-3xl md:prose-h1:text-4xl prose-h1:font-bold prose-h1:text-law-purple prose-h1:mb-6
+                prose-h2:text-2xl md:prose-h2:text-3xl prose-h2:font-semibold prose-h2:text-law-purple prose-h2:mt-8 prose-h2:mb-4
+                prose-h3:text-xl md:prose-h3:text-2xl prose-h3:font-medium prose-h3:text-law-purple prose-h3:mt-6 prose-h3:mb-3
+                prose-h4:text-lg md:prose-h4:text-xl prose-h4:font-medium prose-h4:text-law-purple
+                prose-p:text-base md:prose-p:text-lg prose-p:text-gray-700 prose-p:leading-relaxed prose-p:my-4
+                prose-a:text-law-gold prose-a:font-medium prose-a:no-underline hover:prose-a:underline
+                prose-ul:my-4 prose-ul:list-disc prose-ul:pl-5
+                prose-ol:my-4 prose-ol:list-decimal prose-ol:pl-5
+                prose-li:mb-2"
               dangerouslySetInnerHTML={{ __html: post.content?.rendered || '' }}
             />
             
