@@ -24,12 +24,14 @@ const PracticeAreaHero = ({ title, subtitle, description, image }: PracticeAreaH
             <p className="text-white/80 mt-4 mb-8 max-w-2xl">
               {description}
             </p>
-            <Link 
-              to="/schedule" 
+            <a 
+              href="https://woodlandslaw.cliogrow.com/book"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-law-gold hover:bg-law-gold-light text-law-purple font-medium py-3 px-8 rounded transition-colors inline-block"
             >
               Schedule a Free Consultation
-            </Link>
+            </a>
           </div>
           {image && (
             <div className="hidden lg:block">

@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { toast } from "@/hooks/use-toast";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -33,6 +34,7 @@ type FormValues = z.infer<typeof formSchema>;
 
 const SchedulePage = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showConfirmation, setShowConfirmation] = useState(false);
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -47,18 +49,37 @@ const SchedulePage = () => {
   const onSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
     
-    // In a real application, you would send this data to your backend
-    console.log(data);
-    
-    // Simulate API call
-    setTimeout(() => {
-      toast({
-        title: "Consultation Requested",
-        description: "We'll contact you shortly to confirm your consultation.",
+    try {
+      // Send form data to the webhook
+      const response = await fetch("https://n8n.twlf.dev/webhook-test/Consultation_Req", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
       });
-      form.reset();
+      
+      if (response.ok) {
+        setShowConfirmation(true);
+        form.reset();
+      } else {
+        console.error("Webhook error:", response.status, response.statusText);
+        toast({
+          title: "Something went wrong",
+          description: "There was an error submitting your request. Please try again later.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+      toast({
+        title: "Something went wrong",
+        description: "There was an error submitting your request. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1500);
+    }
   };
 
   return (
@@ -79,7 +100,7 @@ const SchedulePage = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Left Column - Contact Information */}
-            <div className="bg-law-gray-light p-8 rounded-lg">
+            <div className="bg-law-gray-light p-8 rounded-lg border border-gray-300">
               <h3 className="text-2xl font-serif mb-6">Contact Information</h3>
               
               <div className="space-y-6">
@@ -127,7 +148,7 @@ const SchedulePage = () => {
             </div>
             
             {/* Right Column - Form */}
-            <div>
+            <div className="border border-gray-300 p-8 rounded-lg">
               <h3 className="text-2xl font-serif mb-6">Request Your Consultation</h3>
               
               <Form {...form}>
@@ -139,7 +160,7 @@ const SchedulePage = () => {
                       <FormItem>
                         <FormLabel>Full Name</FormLabel>
                         <FormControl>
-                          <Input placeholder="John Doe" {...field} />
+                          <Input placeholder="John Doe" {...field} className="border-gray-300" />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -154,7 +175,7 @@ const SchedulePage = () => {
                         <FormItem>
                           <FormLabel>Email Address</FormLabel>
                           <FormControl>
-                            <Input type="email" placeholder="john@example.com" {...field} />
+                            <Input type="email" placeholder="john@example.com" {...field} className="border-gray-300" />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -168,7 +189,7 @@ const SchedulePage = () => {
                         <FormItem>
                           <FormLabel>Phone Number</FormLabel>
                           <FormControl>
-                            <Input placeholder="(555) 123-4567" {...field} />
+                            <Input placeholder="(555) 123-4567" {...field} className="border-gray-300" />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -184,7 +205,7 @@ const SchedulePage = () => {
                         <FormLabel>Services Needed</FormLabel>
                         <Select onValueChange={field.onChange} defaultValue={field.value}>
                           <FormControl>
-                            <SelectTrigger>
+                            <SelectTrigger className="border-gray-300">
                               <SelectValue placeholder="Select a service" />
                             </SelectTrigger>
                           </FormControl>
@@ -211,7 +232,7 @@ const SchedulePage = () => {
                         <FormControl>
                           <Textarea 
                             placeholder="Please provide details about your legal matter" 
-                            className="min-h-[120px]" 
+                            className="min-h-[120px] border-gray-300" 
                             {...field} 
                           />
                         </FormControl>
@@ -233,6 +254,26 @@ const SchedulePage = () => {
           </div>
         </div>
       </section>
+
+      {/* Confirmation Dialog */}
+      <Dialog open={showConfirmation} onOpenChange={setShowConfirmation}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle className="text-law-purple font-serif">Consultation Request Received</DialogTitle>
+            <DialogDescription>
+              Thank you for requesting a consultation. Our team will contact you shortly to schedule your appointment.
+            </DialogDescription>
+          </DialogHeader>
+          <div className="flex justify-center mt-4">
+            <Button 
+              onClick={() => setShowConfirmation(false)}
+              className="bg-law-purple hover:bg-law-purple-light text-white"
+            >
+              Close
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };

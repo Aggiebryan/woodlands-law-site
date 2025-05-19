@@ -28,12 +28,14 @@ const CtaSection = () => {
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Link 
-                    to="/schedule" 
+                  <a 
+                    href="https://woodlandslaw.cliogrow.com/book" 
+                    target="_blank"
+                    rel="noopener noreferrer" 
                     className="bg-law-gold hover:bg-law-gold-light text-law-purple font-medium py-3 px-8 rounded transition-colors inline-block text-center"
                   >
                     Schedule a Consultation
-                  </Link>
+                  </a>
                   
                   <Link 
                     to="/services" 
