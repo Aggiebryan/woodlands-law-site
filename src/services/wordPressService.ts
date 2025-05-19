@@ -58,13 +58,13 @@ export const fetchPosts = async (
   const posts = await response.json();
 
   // Get unique category IDs from all posts
-  const categoryIds = new Set<number>();
+  const uniqueCategoryIds = new Set<number>();
   posts.forEach((post: WordPressPost) => {
-    post.categories.forEach(catId => categoryIds.add(catId));
+    post.categories.forEach(catId => uniqueCategoryIds.add(catId));
   });
   
   // Fetch category data
-  const categories = await fetchCategories(Array.from(categoryIds));
+  const categories = await fetchCategories(Array.from(uniqueCategoryIds));
   
   // Enhance posts with category names
   const enhancedPosts = posts.map((post: WordPressPost) => {
