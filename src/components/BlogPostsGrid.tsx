@@ -68,8 +68,8 @@ const BlogPostsGrid = ({ categories, limit = 6 }: BlogPostsGridProps) => {
         throw new Error(`Failed to fetch categories: ${categoryResponse.status}`);
       }
       
-      const categories = await categoryResponse.json();
-      const categoryMap = categories.reduce((map: Record<number, string>, cat: { id: number, name: string }) => {
+      const categoryData = await categoryResponse.json();
+      const categoryMap = categoryData.reduce((map: Record<number, string>, cat: { id: number, name: string }) => {
         map[cat.id] = cat.name;
         return map;
       }, {});

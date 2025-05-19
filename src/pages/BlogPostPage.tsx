@@ -16,6 +16,7 @@ interface WordPressPost {
   };
   date: string;
   modified: string;
+  slug: string; // Added this property to fix the error
   _embedded?: {
     "wp:featuredmedia"?: Array<{
       source_url: string;
