@@ -1,12 +1,30 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Calendar } from "lucide-react";
 import BlogPostsGrid from "@/components/BlogPostsGrid";
+import { fetchCategories } from "@/services/wordPressService";
+import NewsletterSignup from "@/components/blog/NewsletterSignup";
 
 const NewsEventsPage = () => {
+  const [categories, setCategories] = useState<Record<number, string>>({});
+  const [loadingCategories, setLoadingCategories] = useState(true);
+
   useEffect(() => {
     window.scrollTo(0, 0);
+    loadCategories();
   }, []);
+
+  const loadCategories = async () => {
+    try {
+      setLoadingCategories(true);
+      const cats = await fetchCategories();
+      setCategories(cats);
+    } catch (err) {
+      console.error("Error loading categories:", err);
+    } finally {
+      setLoadingCategories(false);
+    }
+  };
 
   // Placeholder events (keeping these since they're not from WordPress)
   const events = [
@@ -53,6 +71,31 @@ const NewsEventsPage = () => {
             <div className="lg:col-span-3">
               <h2 className="text-2xl font-serif text-law-purple mb-8">Latest News</h2>
               <BlogPostsGrid limit={6} />
+              
+              {/* Categories Section */}
+              <div className="mt-12">
+                <h3 className="text-xl font-serif text-law-purple mb-4">Browse by Category</h3>
+                
+                {loadingCategories ? (
+                  <div className="flex flex-wrap gap-3 animate-pulse">
+                    {[...Array(6)].map((_, index) => (
+                      <div key={index} className="h-8 bg-gray-200 rounded-full w-24"></div>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="flex flex-wrap gap-3">
+                    {Object.entries(categories).map(([id, name]) => (
+                      <Link 
+                        key={id} 
+                        to={`/blog/category/${id}`} 
+                        className="inline-block px-4 py-1 rounded-full bg-law-gray-light hover:bg-law-purple hover:text-white transition-colors text-law-purple font-medium"
+                      >
+                        {name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
             
             {/* Events Sidebar - 1 column wide */}
@@ -90,19 +133,8 @@ const NewsEventsPage = () => {
               </div>
 
               {/* Newsletter Signup */}
-              <div className="mt-8 bg-law-purple p-6 rounded text-white">
-                <h3 className="font-serif text-xl mb-3">Stay Updated</h3>
-                <p className="text-white/80 mb-4 text-sm">Subscribe to our newsletter for the latest legal updates and event announcements.</p>
-                <form>
-                  <input 
-                    type="email" 
-                    placeholder="Your Email Address" 
-                    className="w-full p-2 mb-3 rounded text-gray-800"
-                  />
-                  <button type="submit" className="w-full bg-law-gold text-law-purple font-medium py-2 rounded hover:bg-law-gold-light transition-colors">
-                    Subscribe
-                  </button>
-                </form>
+              <div className="mt-8">
+                <NewsletterSignup />
               </div>
             </div>
           </div>

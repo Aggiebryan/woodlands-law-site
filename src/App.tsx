@@ -11,6 +11,7 @@ import ServicesPage from "./pages/ServicesPage";
 import AboutPage from "./pages/AboutPage";
 import NewsEventsPage from "./pages/NewsEventsPage";
 import BlogPostPage from "./pages/BlogPostPage";
+import BlogCategoryPage from "./pages/BlogCategoryPage";
 import NotFound from "./pages/NotFound";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -47,6 +48,7 @@ const App = () => (
               <Route path="/service/:id" element={<ServiceDetailPage />} />
               <Route path="/news-events" element={<NewsEventsPage />} />
               <Route path="/blog/:slug" element={<BlogPostPage />} />
+              <Route path="/blog/category/:categoryId" element={<BlogCategoryPage />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/trusts" element={<TrustsPage />} />
               <Route path="/schedule" element={<SchedulePage />} />

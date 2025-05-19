@@ -98,7 +98,7 @@ const BlogPostSidebar = ({ relatedPosts, formatDate }: BlogPostSidebarProps) => 
             {categories.map(category => (
               <div key={category.id} className="flex items-center">
                 <Link 
-                  to={`/news-events?category=${category.id}`}
+                  to={`/blog/category/${category.id}`}
                   className="text-law-purple hover:text-law-gold transition-colors font-serif"
                 >
                   {category.name}
