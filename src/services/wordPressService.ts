@@ -34,6 +34,9 @@ interface Category {
   name: string;
 }
 
+// Base URL for WordPress API
+const WP_API_BASE = "https://woodlands.law/blog/wp-json/wp/v2";
+
 export const fetchPosts = async (
   page: number = 1, 
   perPage: number = 6, 
@@ -42,7 +45,7 @@ export const fetchPosts = async (
   posts: WordPressPost[];
   totalPages: number;
 }> => {
-  let url = `/blog/wp-json/wp/v2/posts?_embed&per_page=${perPage}&page=${page}`;
+  let url = `${WP_API_BASE}/posts?_embed&per_page=${perPage}&page=${page}`;
   
   if (categoryIds?.length) {
     url += `&categories=${categoryIds.join(',')}`;
@@ -83,7 +86,7 @@ export const fetchPosts = async (
 export const fetchCategories = async (ids: number[]): Promise<Record<number, string>> => {
   if (!ids.length) return {};
   
-  const response = await fetch(`/blog/wp-json/wp/v2/categories?include=${ids.join(',')}`);
+  const response = await fetch(`${WP_API_BASE}/categories?include=${ids.join(',')}`);
   
   if (!response.ok) {
     throw new Error(`Failed to fetch categories: ${response.status}`);
@@ -98,7 +101,7 @@ export const fetchCategories = async (ids: number[]): Promise<Record<number, str
 };
 
 export const fetchPostBySlug = async (slug: string): Promise<WordPressPost> => {
-  const response = await fetch(`/blog/wp-json/wp/v2/posts?slug=${slug}&_embed`);
+  const response = await fetch(`${WP_API_BASE}/posts?slug=${slug}&_embed`);
   
   if (!response.ok) {
     throw new Error(`Failed to fetch post: ${response.status}`);
@@ -122,7 +125,7 @@ export const fetchPostBySlug = async (slug: string): Promise<WordPressPost> => {
 };
 
 export const fetchRelatedPosts = async (categoryId: number, excludePostId: number, limit: number = 3): Promise<WordPressPost[]> => {
-  const response = await fetch(`/blog/wp-json/wp/v2/posts?categories=${categoryId}&exclude=${excludePostId}&_embed&per_page=${limit}`);
+  const response = await fetch(`${WP_API_BASE}/posts?categories=${categoryId}&exclude=${excludePostId}&_embed&per_page=${limit}`);
   
   if (!response.ok) {
     throw new Error(`Failed to fetch related posts: ${response.status}`);
