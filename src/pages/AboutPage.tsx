@@ -213,7 +213,7 @@ const AboutPage = () => {
                   </div>
                 </div>
                 
-                <Link to="/contact" className="bg-law-gold hover:bg-law-gold-light text-law-purple font-medium py-3 px-6 rounded transition-colors block text-center w-full">
+                <Link to="/schedule" className="bg-law-gold hover:bg-law-gold-light text-law-purple font-medium py-3 px-6 rounded transition-colors block text-center w-full">
                   Schedule a Consultation
                 </Link>
               </div>
