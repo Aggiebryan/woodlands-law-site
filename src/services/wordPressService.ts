@@ -32,6 +32,7 @@ interface WordPressPost {
 interface Category {
   id: number;
   name: string;
+  count: number;
 }
 
 // Base URL for WordPress API
@@ -83,10 +84,14 @@ export const fetchPosts = async (
   };
 };
 
-export const fetchCategories = async (ids: number[]): Promise<Record<number, string>> => {
-  if (!ids.length) return {};
+export const fetchCategories = async (ids?: number[]): Promise<Record<number, string>> => {
+  let url = `${WP_API_BASE}/categories?per_page=100`;
   
-  const response = await fetch(`${WP_API_BASE}/categories?include=${ids.join(',')}`);
+  if (ids?.length) {
+    url += `&include=${ids.join(',')}`;
+  }
+  
+  const response = await fetch(url);
   
   if (!response.ok) {
     throw new Error(`Failed to fetch categories: ${response.status}`);

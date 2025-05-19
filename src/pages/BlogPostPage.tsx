@@ -58,7 +58,7 @@ const BlogPostPage = () => {
   }
 
   return (
-    <div className="pt-20">
+    <div className="pt-20 font-serif">
       <ServicesPageHeader 
         title={post.title.rendered} 
         description={post.category_names?.[0] || "Blog"}
