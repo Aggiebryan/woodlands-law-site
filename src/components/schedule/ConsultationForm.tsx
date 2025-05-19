@@ -50,7 +50,7 @@ const ConsultationForm = () => {
     
     try {
       // Send form data to the webhook
-      const response = await fetch("https://n8n.twlf.dev/webhook-test/Consultation_Req", {
+      const response = await fetch("https://n8n.twlf.dev/webhook/Consultation_Req", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
