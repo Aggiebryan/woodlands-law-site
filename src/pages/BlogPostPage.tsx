@@ -124,7 +124,7 @@ const BlogPostPage = () => {
             </div>
             
             <div 
-              className="prose prose-lg max-w-none prose-headings:font-serif prose-headings:text-law-purple prose-a:text-law-gold"
+              className="prose prose-lg max-w-none prose-h1:text-4x1 prose-h2:text-3x1 prose-h3:text-2x1 prose-p:text-base prose-headings:font-bold prose-headings:font-serif prose-headings:text-law-purple prose-a:text-law-gold"
               dangerouslySetInnerHTML={{ __html: post.content?.rendered || '' }}
             />
             
