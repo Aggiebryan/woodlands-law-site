@@ -1,5 +1,6 @@
 
 import { Phone, Mail, Clock } from "lucide-react";
+import GoogleMap from "@/components/GoogleMap";
 
 const ContactInfoSection = () => {
   return (
@@ -49,8 +50,8 @@ const ContactInfoSection = () => {
         </address>
       </div>
       <div>
-                <GoogleMap />
-              </div>
+        <GoogleMap />
+      </div>
     </div>
   );
 };
