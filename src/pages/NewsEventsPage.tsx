@@ -1,66 +1,14 @@
-
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Calendar } from "lucide-react";
+import BlogPostsGrid from "@/components/BlogPostsGrid";
 
 const NewsEventsPage = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  // Placeholder blog posts
-  const blogPosts = [
-    {
-      id: 1,
-      title: "Understanding Texas Insurance Law Changes in 2023",
-      excerpt: "Recent changes to Texas insurance laws are affecting how claims are processed. Learn what these changes mean for policyholders and claimants.",
-      date: "May 10, 2023",
-      category: "Insurance Litigation",
-      image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=2070&auto=format"
-    },
-    {
-      id: 2,
-      title: "Estate Planning Strategies for Business Owners",
-      excerpt: "Business owners face unique challenges when planning their estates. This post explores effective strategies to protect both your business and family interests.",
-      date: "April 25, 2023",
-      category: "Estate Planning",
-      image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2070&auto=format"
-    },
-    {
-      id: 3,
-      title: "What Constitutes Bad Faith in Insurance Claims?",
-      excerpt: "Insurance companies have a duty to handle claims fairly and promptly. Learn the warning signs of bad faith practices and what you can do about them.",
-      date: "March 18, 2023",
-      category: "Insurance Litigation",
-      image: "https://images.unsplash.com/photo-1607863680198-23d4b2565df0?q=80&w=2070&auto=format"
-    },
-    {
-      id: 4,
-      title: "Personal Injury Claims: What to Expect from Start to Finish",
-      excerpt: "The personal injury claim process can be complex and intimidating. This guide walks you through each step, from initial consultation to settlement or trial.",
-      date: "February 5, 2023",
-      category: "Personal Injury",
-      image: "https://images.unsplash.com/photo-1519452575417-564c1401ecc0?q=80&w=2070&auto=format"
-    },
-    {
-      id: 5,
-      title: "Business Succession Planning: Preparing for the Next Generation",
-      excerpt: "Transitioning business leadership requires careful planning. Learn how to create a succession plan that ensures your business thrives for generations to come.",
-      date: "January 22, 2023",
-      category: "Business Planning",
-      image: "https://images.unsplash.com/photo-1590402494610-2c378a9114c6?q=80&w=2070&auto=format"
-    },
-    {
-      id: 6,
-      title: "Texas DTPA: Your Rights as a Consumer",
-      excerpt: "The Deceptive Trade Practices Act protects Texans from unfair business practices. Find out what rights you have and how to enforce them.",
-      date: "December 14, 2022",
-      category: "DTPA",
-      image: "https://images.unsplash.com/photo-1521791055366-0d553872125f?q=80&w=2069&auto=format"
-    }
-  ];
-
-  // Placeholder events
+  // Placeholder events (keeping these since they're not from WordPress)
   const events = [
     {
       id: 1,
@@ -104,35 +52,7 @@ const NewsEventsPage = () => {
             {/* Blog Posts - 3 columns wide */}
             <div className="lg:col-span-3">
               <h2 className="text-2xl font-serif text-law-purple mb-8">Latest News</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {blogPosts.map(post => (
-                  <div key={post.id} className="bg-white rounded shadow-md overflow-hidden flex flex-col">
-                    <div className="h-48 overflow-hidden">
-                      <img 
-                        src={post.image} 
-                        alt={post.title} 
-                        className="w-full h-full object-cover transition-transform hover:scale-105 duration-300"
-                      />
-                    </div>
-                    <div className="p-6 flex flex-col flex-grow">
-                      <span className="text-sm text-law-gold font-medium mb-1">{post.category}</span>
-                      <h3 className="text-lg font-serif text-law-purple mb-2">{post.title}</h3>
-                      <p className="text-gray-600 text-sm mb-4 flex-grow">{post.excerpt}</p>
-                      <div className="flex justify-between items-center mt-auto">
-                        <span className="text-xs text-gray-500">{post.date}</span>
-                        <Link to="#" className="text-law-purple hover:text-law-gold font-medium text-sm">Read More</Link>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              
-              {/* Pagination */}
-              <div className="mt-12 flex justify-center">
-                <button className="px-4 py-2 bg-law-gray-light text-law-purple mx-1 rounded">1</button>
-                <button className="px-4 py-2 bg-white text-gray-600 mx-1 rounded hover:bg-law-gray-light">2</button>
-                <button className="px-4 py-2 bg-white text-gray-600 mx-1 rounded hover:bg-law-gray-light">Next →</button>
-              </div>
+              <BlogPostsGrid limit={6} />
             </div>
             
             {/* Events Sidebar - 1 column wide */}
