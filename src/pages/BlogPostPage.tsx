@@ -1,38 +1,10 @@
-
 import { useState, useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { Calendar } from "lucide-react";
 import ServicesPageHeader from "@/components/ServicesPageHeader";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-
-interface WordPressPost {
-  id: number;
-  title: {
-    rendered: string;
-  };
-  content: {
-    rendered: string;
-  };
-  date: string;
-  modified: string;
-  slug: string; // Added this property to fix the error
-  _embedded?: {
-    "wp:featuredmedia"?: Array<{
-      source_url: string;
-      alt_text?: string;
-    }>;
-    author?: Array<{
-      name: string;
-      avatar_urls?: {
-        [key: string]: string;
-      };
-    }>;
-  };
-  categories: number[];
-  category_names?: string[];
-  tags: number[];
-}
+import { fetchPostBySlug, fetchRelatedPosts, type WordPressPost } from "@/services/wordPressService";
 
 const BlogPostPage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -44,49 +16,23 @@ const BlogPostPage = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    fetchPost();
+    loadPost();
   }, [slug]);
 
-  const fetchPost = async () => {
+  const loadPost = async () => {
+    if (!slug) return;
+    
     setLoading(true);
+    setError(null);
+    
     try {
-      const response = await fetch(`/blog/wp-json/wp/v2/posts?slug=${slug}&_embed`);
-      
-      if (!response.ok) {
-        throw new Error(`Failed to fetch post: ${response.status}`);
-      }
-      
-      const data = await response.json();
-      
-      if (data.length === 0) {
-        throw new Error("Post not found");
-      }
-      
-      const post = data[0];
-      
-      // Fetch category names
-      if (post.categories.length > 0) {
-        const categoryResponse = await fetch(`/blog/wp-json/wp/v2/categories?include=${post.categories.join(',')}`);
-        if (categoryResponse.ok) {
-          const categories = await categoryResponse.json();
-          const categoryMap = categories.reduce((map: Record<number, string>, cat: { id: number, name: string }) => {
-            map[cat.id] = cat.name;
-            return map;
-          }, {});
-          
-          post.category_names = post.categories.map(catId => categoryMap[catId] || 'Uncategorized');
-        }
-      }
-      
+      const post = await fetchPostBySlug(slug);
       setPost(post);
       
-      // Fetch related posts (from same primary category)
+      // Fetch related posts if there are categories
       if (post.categories.length > 0) {
-        const relatedResponse = await fetch(`/blog/wp-json/wp/v2/posts?categories=${post.categories[0]}&exclude=${post.id}&_embed&per_page=3`);
-        if (relatedResponse.ok) {
-          const relatedData = await relatedResponse.json();
-          setRelatedPosts(relatedData);
-        }
+        const related = await fetchRelatedPosts(post.categories[0], post.id);
+        setRelatedPosts(related);
       }
     } catch (err) {
       console.error("Error fetching post:", err);
@@ -179,7 +125,7 @@ const BlogPostPage = () => {
             
             <div 
               className="prose prose-lg max-w-none prose-headings:font-serif prose-headings:text-law-purple prose-a:text-law-gold"
-              dangerouslySetInnerHTML={{ __html: post.content.rendered }}
+              dangerouslySetInnerHTML={{ __html: post.content?.rendered || '' }}
             />
             
             {/* Category tags */}
