@@ -48,6 +48,9 @@ const ContactInfoSection = () => {
           The Woodlands, TX 77380
         </address>
       </div>
+      <div>
+                <GoogleMap />
+              </div>
     </div>
   );
 };
