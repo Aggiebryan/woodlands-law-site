@@ -157,10 +157,10 @@ const InsuranceLitigationPage = () => {
               Schedule a Free Consultation
             </a>
             <a 
-              href="tel:+12817710611" 
+              href="tel:+18326260116" 
               className="bg-white hover:bg-gray-100 text-law-purple font-medium py-3 px-8 rounded transition-colors inline-block"
             >
-              Call (281) 771-0611
+              Call (832) 626-0116
             </a>
           </div>
         </div>
