@@ -1,18 +1,24 @@
-
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import PracticeAreaHero from "@/components/PracticeAreaHero";
 import PracticeAreaContent from "@/components/PracticeAreaContent";
 import { Link } from "react-router-dom";
 import CivilLitigationProcess from "@/components/CivilLitigationProcess";
 import CivilCaseResults from "@/components/CivilCaseResults";
 import CallToAction from "@/components/CallToAction";
+import CivilConsultationForm from "@/components/civil/CivilConsultationForm";
 
 const showCaseResults = false; // Set to false to hide, true to show
 
 const CivilLitigationPage = () => {
+  const [formOpen, setFormOpen] = useState(false);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const handleOpenForm = () => {
+    setFormOpen(true);
+  };
 
   const caseTypes = [
     { 
@@ -102,6 +108,7 @@ const CivilLitigationPage = () => {
         description="Our civil litigation team brings strategic, results-focused representation to businesses and individuals facing high-stakes legal challenges. Whether you're dealing with contract disputes, partnership conflicts, or complex commercial matters, we provide the sophisticated counsel needed to protect your interests effectively."
         image="/lovable-uploads/00199770-5714-4215-8a45-1c186a049246.png"
         ctaText="Schedule a Case Strategy Session"
+        onCtaClick={handleOpenForm}
       />
       
       <PracticeAreaContent
@@ -120,10 +127,12 @@ const CivilLitigationPage = () => {
         title="Ready to Discuss Your Civil Dispute?"
         description="Our litigation attorneys can evaluate your case, explain your options, and help develop a strategic approach tailored to your specific objectives."
         primaryButtonText="Schedule a Case Strategy Session"
-        primaryButtonLink="https://woodlandslaw.cliogrow.com/book"
+        primaryButtonOnClick={handleOpenForm}
         secondaryButtonText="Explore Our Services"
         secondaryButtonLink="/services"
       />
+
+      <CivilConsultationForm open={formOpen} onOpenChange={setFormOpen} />
     </>
   );
 };
