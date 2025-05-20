@@ -34,10 +34,10 @@ const testimonials = [
 
 const InsuranceTestimonialCarousel = () => {
   return (
-    <section className="py-16 bg-law-purple/55">
+    <section className="py-16 bg-law-purple/100">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-serif text-law-purple mb-4">Client Success Stories</h2>
+          <h2 className="text-3xl font-serif text-law-gold mb-4">Client Success Stories</h2>
           <div className="gold-underline mx-auto"></div>
           <p className="mt-6 text-gray-600 max-w-3xl mx-auto">
             Read what our clients have to say about their experience fighting against insurance companies with our help.
