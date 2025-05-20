@@ -39,7 +39,7 @@ const InsuranceTestimonialCarousel = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl font-serif text-law-gold mb-4">Client Success Stories</h2>
           <div className="gold-underline mx-auto"></div>
-          <p className="mt-6 text-white-600 max-w-3xl mx-auto">
+          <p className="mt-6 text-white max-w-3xl mx-auto">
             Read what our clients have to say about their experience fighting against insurance companies with our help.
           </p>
         </div>
