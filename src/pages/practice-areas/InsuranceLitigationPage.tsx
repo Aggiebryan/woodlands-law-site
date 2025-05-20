@@ -117,7 +117,7 @@ const InsuranceLitigationPage = () => {
         title="Texas Insurance Litigation Attorneys"
         subtitle="Fighting for Policyholders' Rights in The Woodlands"
         description="When insurance companies deny, delay, or underpay legitimate claims, our litigation team steps in to fight for the coverage you're entitled to receive. We have the expertise to level the playing field against powerful insurance companies."
-        image="out-2.webp"
+        image="/out-2.webp"
         ctaText="Get a Free Insurance Claim Review"
       />
       
