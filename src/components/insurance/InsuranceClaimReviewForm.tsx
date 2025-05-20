@@ -15,6 +15,13 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { cn } from "@/lib/utils";
 import { format } from "date-fns";
 import { Calendar as CalendarComponent } from "@/components/ui/calendar";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 const formSchema = z.object({
   firstName: z.string().min(1, { message: "First name is required" }),
@@ -32,6 +39,7 @@ const formSchema = z.object({
   }),
   insuranceCompany: z.string().min(1, { message: "Please enter your insurance company name" }),
   message: z.string().min(10, { message: "Please provide details about your case" }),
+  bestTimeToCall: z.string().min(1, { message: "Please select a time" }),
 });
 
 type FormValues = z.infer<typeof formSchema>;
@@ -54,6 +62,7 @@ const InsuranceClaimReviewForm = ({ open, onOpenChange }: InsuranceClaimReviewFo
       email: "",
       insuranceCompany: "",
       message: "",
+      bestTimeToCall: "",
     },
   });
 
@@ -310,6 +319,29 @@ const InsuranceClaimReviewForm = ({ open, onOpenChange }: InsuranceClaimReviewFo
                         {...field} 
                       />
                     </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              
+              <FormField
+                control={form.control}
+                name="bestTimeToCall"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Best Time to Contact You</FormLabel>
+                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+                      <FormControl>
+                        <SelectTrigger>
+                          <SelectValue placeholder="Select a time" />
+                        </SelectTrigger>
+                      </FormControl>
+                      <SelectContent>
+                        <SelectItem value="Morning">Morning</SelectItem>
+                        <SelectItem value="Lunch">Lunch</SelectItem>
+                        <SelectItem value="Afternoon">Afternoon</SelectItem>
+                      </SelectContent>
+                    </Select>
                     <FormMessage />
                   </FormItem>
                 )}
