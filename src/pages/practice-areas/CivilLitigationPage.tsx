@@ -7,6 +7,8 @@ import CivilLitigationProcess from "@/components/CivilLitigationProcess";
 import CivilCaseResults from "@/components/CivilCaseResults";
 import CallToAction from "@/components/CallToAction";
 
+const showCaseResults = false; // Set to false to hide, true to show
+
 const CivilLitigationPage = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
