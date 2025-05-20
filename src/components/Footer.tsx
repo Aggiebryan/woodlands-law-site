@@ -1,6 +1,7 @@
 
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   return <footer className="bg-law-purple text-white">
@@ -93,7 +94,12 @@ const Footer = () => {
                 Privacy Policy
               </Link>
               <span className="opacity-70">|</span>
-              <a href="/sitemap.xml" className="text-sm opacity-70 hover:opacity-100 hover:text-law-gold transition-colors">
+              <a 
+                href="/sitemap.xml" 
+                target="_blank" 
+                rel="noopener" 
+                className="text-sm opacity-70 hover:opacity-100 hover:text-law-gold transition-colors"
+              >
                 Sitemap
               </a>
             </div>
