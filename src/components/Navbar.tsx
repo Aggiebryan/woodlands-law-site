@@ -2,6 +2,13 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,6 +16,15 @@ const Navbar = () => {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
+  const practiceAreas = [
+    { title: "Insurance Litigation", path: "/practice-areas/insurance-litigation" },
+    { title: "Personal Injury", path: "/practice-areas/personal-injury" },
+    { title: "Civil Litigation", path: "/practice-areas/civil-litigation" },
+    { title: "Deceptive Trade Practices Act", path: "/practice-areas/deceptive-trade-practices-act" },
+    { title: "Business Planning", path: "/practice-areas/business-planning" },
+    { title: "Estate Planning", path: "/practice-areas/estate-planning" }
+  ];
 
   return (
     <nav className="bg-white py-4 fixed w-full z-50 shadow-sm">
@@ -26,7 +42,40 @@ const Navbar = () => {
           <div className="flex space-x-8 mr-8">
             <NavLink to="/" label="Home" />
             <NavLink to="/our-team" label="Our Team" />
-            <NavLink to="/services" label="Services" />
+            
+            {/* Services Dropdown */}
+            <div className="relative group">
+              <NavigationMenu>
+                <NavigationMenuList>
+                  <NavigationMenuItem>
+                    <NavigationMenuTrigger className="text-law-purple hover:text-law-gold transition-colors font-medium bg-transparent hover:bg-transparent focus:bg-transparent">
+                      Services
+                    </NavigationMenuTrigger>
+                    <NavigationMenuContent className="bg-white rounded-md shadow-lg p-2 min-w-[220px]">
+                      <div className="grid gap-1">
+                        <Link 
+                          to="/services" 
+                          className="block px-4 py-2 text-law-purple hover:text-law-gold hover:bg-gray-50 transition-colors font-medium rounded-md"
+                        >
+                          All Services
+                        </Link>
+                        <hr className="my-1" />
+                        {practiceAreas.map((area) => (
+                          <Link 
+                            key={area.path} 
+                            to={area.path} 
+                            className="block px-4 py-2 text-law-purple hover:text-law-gold hover:bg-gray-50 transition-colors font-medium rounded-md"
+                          >
+                            {area.title}
+                          </Link>
+                        ))}
+                      </div>
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
+                </NavigationMenuList>
+              </NavigationMenu>
+            </div>
+            
             <NavLink to="/news-events" label="News & Events" />
             <NavLink to="/about" label="About Us" />
           </div>
@@ -56,6 +105,19 @@ const Navbar = () => {
             <MobileNavLink to="/" label="Home" onClick={toggleMenu} />
             <MobileNavLink to="/our-team" label="Our Team" onClick={toggleMenu} />
             <MobileNavLink to="/services" label="Services" onClick={toggleMenu} />
+            
+            {/* Mobile Practice Areas Submenu */}
+            <div className="ml-4 flex flex-col space-y-2">
+              {practiceAreas.map((area) => (
+                <MobileNavLink 
+                  key={area.path} 
+                  to={area.path} 
+                  label={area.title} 
+                  onClick={toggleMenu} 
+                />
+              ))}
+            </div>
+            
             <MobileNavLink to="/news-events" label="News & Events" onClick={toggleMenu} />
             <MobileNavLink to="/about" label="About Us" onClick={toggleMenu} />
             <Link 
