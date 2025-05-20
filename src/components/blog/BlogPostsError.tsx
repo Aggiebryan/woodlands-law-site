@@ -8,8 +8,8 @@ interface BlogPostsErrorProps {
 
 const BlogPostsError: React.FC<BlogPostsErrorProps> = ({ error, onRetry }) => {
   return (
-    <div className="bg-red-50 p-4 rounded border border-red-200 text-center">
-      <p className="text-red-600">Error loading posts: {error}</p>
+    <div className="bg-red-50 p-8 rounded border border-red-200 text-center">
+      <p className="text-red-600 mb-4">Error loading posts: {error}</p>
       <button 
         className="mt-2 bg-law-purple text-white px-4 py-2 rounded hover:bg-law-purple-light"
         onClick={onRetry}

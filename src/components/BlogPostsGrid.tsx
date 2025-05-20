@@ -23,7 +23,10 @@ const BlogPostsGrid = ({ categories, limit = 6 }: BlogPostsGridProps) => {
     setError(null);
     
     try {
+      console.log("Fetching posts with params:", { currentPage, limit, categories });
       const { posts: fetchedPosts, totalPages } = await fetchPosts(currentPage, limit, categories);
+      console.log("Fetched posts:", fetchedPosts);
+      console.log("Total pages:", totalPages);
       setPosts(fetchedPosts);
       setTotalPages(totalPages);
     } catch (err) {
@@ -48,17 +51,31 @@ const BlogPostsGrid = ({ categories, limit = 6 }: BlogPostsGridProps) => {
 
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {posts.map(post => (
-          <BlogPostCard key={post.id} post={post} />
-        ))}
-      </div>
+      {posts.length === 0 && !loading && !error ? (
+        <div className="bg-gray-100 p-8 rounded text-center">
+          <p className="text-gray-600 mb-4">No blog posts found.</p>
+          <button 
+            onClick={loadPosts}
+            className="bg-law-purple text-white px-4 py-2 rounded hover:bg-law-purple-light"
+          >
+            Refresh Posts
+          </button>
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {posts.map(post => (
+            <BlogPostCard key={post.id} post={post} />
+          ))}
+        </div>
+      )}
       
-      <BlogPostsPagination 
-        currentPage={currentPage}
-        totalPages={totalPages}
-        onPageChange={(page) => setCurrentPage(page)}
-      />
+      {posts.length > 0 && (
+        <BlogPostsPagination 
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={(page) => setCurrentPage(page)}
+        />
+      )}
     </>
   );
 };
