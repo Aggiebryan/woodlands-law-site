@@ -34,7 +34,7 @@ const testimonials = [
 
 const InsuranceTestimonialCarousel = () => {
   return (
-    <section className="py-16 bg-law-purple/5">
+    <section className="py-16 bg-law-purple/55">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-serif text-law-purple mb-4">Client Success Stories</h2>
