@@ -20,6 +20,7 @@ import ServiceDetailPage from "./pages/ServiceDetailPage";
 import AttorneyAdvertisingPage from "./pages/AttorneyAdvertisingPage";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import SchedulePage from "./pages/SchedulePage";
+import InsuranceTermsGlossary from "./components/InsuranceTermsGlossary";
 
 // Import practice area pages
 import PersonalInjuryPage from "./pages/practice-areas/PersonalInjuryPage";
@@ -54,6 +55,7 @@ const App = () => (
               <Route path="/schedule" element={<SchedulePage />} />
               <Route path="/attorney-advertising" element={<AttorneyAdvertisingPage />} />
               <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+              <Route path="/insurance-glossary" element={<InsuranceTermsGlossary />} />
               
               {/* Practice Area Routes */}
               <Route path="/practice-areas/personal-injury" element={<PersonalInjuryPage />} />

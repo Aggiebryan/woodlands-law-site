@@ -1,6 +1,7 @@
 
 import React from "react";
-import { Gavel } from "lucide-react";
+import { Gavel, Shield } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const TexasInsuranceInfo = () => {
   return (
@@ -58,6 +59,17 @@ const TexasInsuranceInfo = () => {
                 </div>
                 <p className="text-gray-700 mt-2">Determined that payment of an appraisal award does not absolve insurers from statutory violations committed prior to appraisal.</p>
               </div>
+            </div>
+            <div className="mt-6 pt-4 border-t border-gray-200">
+              <div className="flex items-center">
+                <Shield className="h-5 w-5 text-law-gold mr-3" />
+                <Link to="/insurance-glossary" className="font-medium text-law-purple hover:text-law-gold transition-colors">
+                  View our Insurance Terms Glossary
+                </Link>
+              </div>
+              <p className="text-gray-700 mt-2">
+                Understanding policy language is critical to protecting your rights. Our comprehensive glossary explains common insurance terms in plain language.
+              </p>
             </div>
           </div>
         </div>

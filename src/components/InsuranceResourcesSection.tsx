@@ -2,6 +2,7 @@
 import React from "react";
 import { FileText, Shield, ShieldX } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const InsuranceResourcesSection = () => {
   return (
@@ -42,8 +43,8 @@ const InsuranceResourcesSection = () => {
               <p className="text-gray-600 mb-6">
                 Understanding complex insurance policy language is crucial. Our glossary breaks down common terms that affect your coverage.
               </p>
-              <Button className="w-full bg-law-gold hover:bg-law-gold-light text-law-purple">
-                View Insurance Glossary
+              <Button className="w-full bg-law-gold hover:bg-law-gold-light text-law-purple" asChild>
+                <Link to="/insurance-glossary">View Insurance Glossary</Link>
               </Button>
             </div>
           </div>
