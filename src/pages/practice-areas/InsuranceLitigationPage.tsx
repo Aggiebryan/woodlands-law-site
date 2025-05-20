@@ -11,6 +11,8 @@ import InsuranceResourcesSection from "@/components/InsuranceResourcesSection";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
+const showCaseResults = false; // Set to false to hide, true to show
+
 const InsuranceLitigationPage = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -131,7 +133,7 @@ const InsuranceLitigationPage = () => {
       
       <InsuranceClaimProcess />
       
-      <SettlementComparisons />
+      {showCaseResults && <SettlementComparisons />}
       
       <InsuranceTestimonialCarousel />
       
