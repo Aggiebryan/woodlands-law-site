@@ -5,6 +5,7 @@ import BlogPostsLoading from "./blog/BlogPostsLoading";
 import BlogPostsError from "./blog/BlogPostsError";
 import BlogPostsPagination from "./blog/BlogPostsPagination";
 import { fetchPosts, type WordPressPost } from "@/services/wordPressService";
+import { toast } from "@/components/ui/use-toast";
 
 interface BlogPostsGridProps {
   categories?: number[];
@@ -29,6 +30,15 @@ const BlogPostsGrid = ({ categories, limit = 6 }: BlogPostsGridProps) => {
       console.log("Total pages:", totalPages);
       setPosts(fetchedPosts);
       setTotalPages(totalPages);
+      
+      // If we got mock data, show a toast notification
+      if (fetchedPosts.length > 0 && fetchedPosts[0].id <= 6) {
+        toast({
+          title: "Using sample blog posts",
+          description: "We're currently showing sample content since the WordPress blog is unavailable.",
+          duration: 5000,
+        });
+      }
     } catch (err) {
       console.error("Error fetching posts:", err);
       setError(err instanceof Error ? err.message : "Failed to fetch posts");
