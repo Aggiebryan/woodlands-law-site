@@ -102,8 +102,29 @@ export default {
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
+			},
+			/* ── TYPOGRAPHY OVERRIDES FOR BLOG POSTS ─────────────────────────── */
+			typography: {
+				DEFAULT: {
+					css: {
+						ul: {
+							listStyleType: "disc",
+							paddingLeft: "1.5rem",   // same as Tailwind's pl-6
+						},
+						ol: {
+							listStyleType: "decimal",
+							paddingLeft: "1.5rem",
+						},
+						li: {
+							marginBottom: "0.5rem",  // breathing room between bullets
+						},
+					},
+				},
+			},
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [
+		require("tailwindcss-animate"),
+		require("@tailwindcss/typography"), // ← add this
+	],
 } satisfies Config;
