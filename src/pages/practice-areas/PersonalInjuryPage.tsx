@@ -1,5 +1,5 @@
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import PracticeAreaHero from "@/components/PracticeAreaHero";
 import PracticeAreaContent from "@/components/PracticeAreaContent";
 import { Link } from "react-router-dom";
@@ -12,8 +12,11 @@ import CallToAction from "@/components/CallToAction";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import CaseEvaluationForm from "@/components/injury/CaseEvaluationForm";
 
 const PersonalInjuryPage = () => {
+  const [showCaseEvaluationForm, setShowCaseEvaluationForm] = useState(false);
+  
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -107,6 +110,7 @@ const PersonalInjuryPage = () => {
         description="When you've been injured due to someone else's negligence, you need an experienced legal team to fight for the compensation you deserve. Our personal injury attorneys have the knowledge, resources, and determination to hold responsible parties accountable."
         image="/lovable-uploads/c63dc061-b55b-4ecb-a111-23cc282089a8.png"
         ctaText="Free Case Evaluation"
+        onCtaClick={() => setShowCaseEvaluationForm(true)}
       />
       
       <PracticeAreaContent
@@ -249,14 +253,12 @@ const PersonalInjuryPage = () => {
             Our experienced Texas personal injury attorneys are ready to review your case and explain your legal options in a free, no-obligation consultation.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a 
-              href="https://woodlandslaw.cliogrow.com/book" 
-              target="_blank" 
-              rel="noopener noreferrer"
+            <Button 
+              onClick={() => setShowCaseEvaluationForm(true)}
               className="bg-law-gold hover:bg-law-gold-light text-law-purple font-medium py-3 px-8 rounded transition-colors inline-block"
             >
-              Schedule a Free Consultation
-            </a>
+              Free Case Evaluation
+            </Button>
             <a 
               href="tel:+18326260116" 
               className="bg-white hover:bg-gray-100 text-law-purple font-medium py-3 px-8 rounded transition-colors inline-block"
@@ -266,6 +268,12 @@ const PersonalInjuryPage = () => {
           </div>
         </div>
       </section>
+      
+      {/* Case Evaluation Form */}
+      <CaseEvaluationForm
+        open={showCaseEvaluationForm}
+        onOpenChange={setShowCaseEvaluationForm}
+      />
     </>
   );
 };
