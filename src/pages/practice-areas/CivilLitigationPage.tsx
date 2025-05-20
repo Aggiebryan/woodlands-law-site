@@ -114,7 +114,7 @@ const CivilLitigationPage = () => {
 
       <CivilLitigationProcess />
       
-      <CivilCaseResults />
+      {showCaseResults && <CivilCaseResults />}
       
       <CallToAction 
         title="Ready to Discuss Your Civil Dispute?"
