@@ -1,5 +1,4 @@
-
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import PracticeAreaHero from "@/components/PracticeAreaHero";
 import PracticeAreaContent from "@/components/PracticeAreaContent";
 import { Link } from "react-router-dom";
@@ -10,11 +9,18 @@ import TexasDTPAInfo from "@/components/TexasDTPAInfo";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import DTPAConsultationForm from "@/components/dtpa/DTPAConsultationForm";
 
 const DTPAPage = () => {
+  const [isFormOpen, setIsFormOpen] = useState(false);
+  
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const handleOpenForm = () => {
+    setIsFormOpen(true);
+  };
 
   const caseTypes = [
     { 
@@ -133,6 +139,7 @@ const DTPAPage = () => {
         description="We help consumers and businesses fight back against deceptive, misleading, and fraudulent business practices. Our attorneys have extensive experience with Texas DTPA cases and know how to effectively pursue or defend these specialized claims."
         image="/lovable-uploads/d2d3dd5c-4df2-4af8-8fd5-95612381080d.png"
         ctaText="Free DTPA Claim Evaluation"
+        onCtaClick={handleOpenForm}
       />
       
       <PracticeAreaContent
@@ -301,14 +308,12 @@ const DTPAPage = () => {
             Our experienced Texas DTPA attorneys are ready to review your potential claim and explain your legal options in a free, confidential consultation.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a 
-              href="https://woodlandslaw.cliogrow.com/book" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="bg-law-gold hover:bg-law-gold-light text-law-purple font-medium py-3 px-8 rounded transition-colors inline-block"
+            <Button 
+              onClick={handleOpenForm}
+              className="bg-law-gold hover:bg-law-gold-light text-law-purple font-medium py-3 px-8 rounded transition-colors"
             >
               Schedule a Free DTPA Evaluation
-            </a>
+            </Button>
             <Link
               to="/practice-areas/deceptive-trade-practices-act/guide"
               className="bg-white hover:bg-gray-100 text-law-purple font-medium py-3 px-8 rounded transition-colors inline-block"
@@ -318,6 +323,11 @@ const DTPAPage = () => {
           </div>
         </div>
       </section>
+
+      <DTPAConsultationForm 
+        open={isFormOpen}
+        onOpenChange={setIsFormOpen}
+      />
     </>
   );
 };
