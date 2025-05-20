@@ -105,7 +105,7 @@ const OurTeamPage = () => {
             offering the skill and sophistication of larger firms with the personalized attention 
             and accessibility of a local practice.
           </p>
-          <Link to="/contact" className="bg-law-purple hover:bg-law-purple-light text-white font-medium py-3 px-8 rounded transition-colors inline-block">
+          <Link to="/schedule" className="bg-law-purple hover:bg-law-purple-light text-white font-medium py-3 px-8 rounded transition-colors inline-block">
             Schedule a Consultation
           </Link>
         </div>
