@@ -100,7 +100,7 @@ const CivilLitigationPage = () => {
         title="Strategic Civil Litigation Attorneys"
         subtitle="Results-Focused Advocacy for Complex Legal Disputes in Texas"
         description="Our civil litigation team brings strategic, results-focused representation to businesses and individuals facing high-stakes legal challenges. Whether you're dealing with contract disputes, partnership conflicts, or complex commercial matters, we provide the sophisticated counsel needed to protect your interests effectively."
-        image="/lovable-uploads/c63dc061-b55b-4ecb-a111-23cc282089a8.png"
+        image="/lovable-uploads/00199770-5714-4215-8a45-1c186a049246.png"
         ctaText="Schedule a Case Strategy Session"
       />
       
