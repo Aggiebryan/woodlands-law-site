@@ -49,11 +49,11 @@ const Footer = () => {
             <h4 className="font-serif text-lg font-medium mb-4">Practice Areas</h4>
             <ul className="space-y-2">
               <li><Link to="/practice-areas/insurance-litigation" className="text-sm opacity-80 hover:opacity-100 hover:text-law-gold transition-colors">Insurance Litigation</Link></li>
-              <li><Link to="/services#personal-injury" className="text-sm opacity-80 hover:opacity-100 hover:text-law-gold transition-colors">Personal Injury</Link></li>
-              <li><Link to="/services#civil-litigation" className="text-sm opacity-80 hover:opacity-100 hover:text-law-gold transition-colors">Civil Litigation</Link></li>
-              <li><Link to="/services#deceptive-trade-practices-act" className="text-sm opacity-80 hover:opacity-100 hover:text-law-gold transition-colors">DTPA Claims</Link></li>
-              <li><Link to="/services#business-planning" className="text-sm opacity-80 hover:opacity-100 hover:text-law-gold transition-colors">Business Planning</Link></li>
-              <li><Link to="/services#estate-planning" className="text-sm opacity-80 hover:opacity-100 hover:text-law-gold transition-colors">Estate Planning</Link></li>
+              <li><Link to="/practice-areas/personal-injury" className="text-sm opacity-80 hover:opacity-100 hover:text-law-gold transition-colors">Personal Injury</Link></li>
+              <li><Link to="/practice-areas/civil-litigation" className="text-sm opacity-80 hover:opacity-100 hover:text-law-gold transition-colors">Civil Litigation</Link></li>
+              <li><Link to="/practice-areas/deceptive-trade-practices-act" className="text-sm opacity-80 hover:opacity-100 hover:text-law-gold transition-colors">DTPA Claims</Link></li>
+              <li><Link to="/practice-areas/business-planning" className="text-sm opacity-80 hover:opacity-100 hover:text-law-gold transition-colors">Business Planning</Link></li>
+              <li><Link to="/practice-areas/estate-planning" className="text-sm opacity-80 hover:opacity-100 hover:text-law-gold transition-colors">Estate Planning</Link></li>
             </ul>
           </div>
 
