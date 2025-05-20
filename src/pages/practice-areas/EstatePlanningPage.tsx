@@ -1,16 +1,23 @@
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import PracticeAreaHero from "@/components/PracticeAreaHero";
 import PracticeAreaContent from "@/components/PracticeAreaContent";
 import { Link } from "react-router-dom";
 import EstatePlanningComparison from "@/components/EstatePlanningComparison";
 import CallToAction from "@/components/CallToAction";
 import EstatePlanningLifeStages from "@/components/EstatePlanningLifeStages";
+import EstateConsultationForm from "@/components/estate/EstateConsultationForm";
 
 const EstatePlanningPage = () => {
+  const [isFormOpen, setIsFormOpen] = useState(false);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const handleOpenForm = () => {
+    setIsFormOpen(true);
+  };
 
   const caseTypes = [
     { 
@@ -99,6 +106,7 @@ const EstatePlanningPage = () => {
         description="Our estate planning team creates comprehensive strategies that protect your assets, minimize taxes, and ensure your wishes are honored. We help you create a meaningful legacy that provides for your loved ones according to your values while preserving family harmony."
         image="/lovable-uploads/d2d3dd5c-4df2-4af8-8fd5-95612381080d.png"
         ctaText="Schedule Your Estate Planning Consultation"
+        onCtaClick={handleOpenForm}
       />
       
       <PracticeAreaContent
@@ -117,9 +125,15 @@ const EstatePlanningPage = () => {
         title="Ready to Secure Your Family's Future?"
         description="Schedule a consultation with one of our experienced estate planning attorneys to create a personalized plan that protects what matters most to you."
         primaryButtonText="Schedule Your Estate Planning Consultation"
-        primaryButtonLink="https://woodlandslaw.cliogrow.com/book"
+        primaryButtonLink="#"
+        primaryButtonOnClick={handleOpenForm}
         secondaryButtonText="Download Estate Planning Guide"
         secondaryButtonLink="/resources/estate-planning-guide"
+      />
+
+      <EstateConsultationForm
+        open={isFormOpen}
+        onOpenChange={setIsFormOpen}
       />
     </>
   );
