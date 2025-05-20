@@ -13,10 +13,10 @@ const Footer = () => {
               <img src="/lovable-uploads/d2d3dd5c-4df2-4af8-8fd5-95612381080d.png" alt="The Woodlands Law Firm" className="h-28 object-fill" />
             </Link>
             <div className="flex space-x-4 mt-4 mb-4">
-              <a href="https://www.facebook.com/woodlandslaw" className="text-white hover:text-law-gold transition-colors">
+              <a href="https://www.facebook.com/woodlandslaw/" className="text-white hover:text-law-gold transition-colors">
                 <Facebook size={20} />
               </a>
-              <a href="https://x.com/woodlands_law" className="text-white hover:text-law-gold transition-colors">
+              <a href="https://x.com/woodlands_law/" className="text-white hover:text-law-gold transition-colors">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-x">
                   <path d="M18 6 6 18"></path><path d="m6 6 12 12"></path>
                 </svg>
