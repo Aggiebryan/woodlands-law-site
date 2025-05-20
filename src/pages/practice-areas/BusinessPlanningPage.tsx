@@ -1,16 +1,23 @@
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import PracticeAreaHero from "@/components/PracticeAreaHero";
 import PracticeAreaContent from "@/components/PracticeAreaContent";
 import { Link } from "react-router-dom";
 import BusinessEntityComparison from "@/components/BusinessEntityComparison";
 import CallToAction from "@/components/CallToAction";
 import BusinessLifecycle from "@/components/BusinessLifecycle";
+import BusinessConsultationForm from "@/components/business/BusinessConsultationForm";
 
 const BusinessPlanningPage = () => {
+  const [isFormOpen, setIsFormOpen] = useState(false);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const handleOpenForm = () => {
+    setIsFormOpen(true);
+  };
 
   const caseTypes = [
     { 
@@ -99,6 +106,7 @@ const BusinessPlanningPage = () => {
         description="Our business planning team provides comprehensive legal guidance that protects your enterprise while enabling growth. We partner with entrepreneurs and established business owners to identify risks, seize opportunities, and build sustainable companies with strong legal foundations."
         image="/lovable-uploads/307c4d37-d87e-4a89-8107-73533778d172.png"
         ctaText="Schedule a Business Strategy Session"
+        onCtaClick={handleOpenForm}
       />
       
       <PracticeAreaContent
@@ -117,9 +125,14 @@ const BusinessPlanningPage = () => {
         title="Ready to Strengthen Your Business Legally?"
         description="Schedule a consultation with our business planning attorneys to identify and address potential legal issues before they impact your operations or growth."
         primaryButtonText="Schedule a Business Strategy Session"
-        primaryButtonLink="https://woodlandslaw.cliogrow.com/book"
+        primaryButtonOnClick={handleOpenForm}
         secondaryButtonText="Download Business Formation Guide"
         secondaryButtonLink="/resources/business-formation-guide"
+      />
+
+      <BusinessConsultationForm
+        open={isFormOpen}
+        onOpenChange={setIsFormOpen}
       />
     </>
   );
