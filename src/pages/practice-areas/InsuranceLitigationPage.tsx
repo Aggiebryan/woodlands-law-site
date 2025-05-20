@@ -1,5 +1,5 @@
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import PracticeAreaHero from "@/components/PracticeAreaHero";
 import PracticeAreaContent from "@/components/PracticeAreaContent";
 import InsuranceClaimProcess from "@/components/InsuranceClaimProcess";
@@ -10,10 +10,13 @@ import InsuranceFAQSection from "@/components/InsuranceFAQSection";
 import InsuranceResourcesSection from "@/components/InsuranceResourcesSection";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import InsuranceClaimReviewForm from "@/components/insurance/InsuranceClaimReviewForm";
 
 const showCaseResults = false; // Set to false to hide, true to show
 
 const InsuranceLitigationPage = () => {
+  const [showClaimReviewForm, setShowClaimReviewForm] = useState(false);
+  
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -121,6 +124,7 @@ const InsuranceLitigationPage = () => {
         description="When insurance companies deny, delay, or underpay legitimate claims, our litigation team steps in to fight for the coverage you're entitled to receive. We have the expertise to level the playing field against powerful insurance companies."
         image="/out-2.webp"
         ctaText="Get a Free Insurance Claim Review"
+        onCtaClick={() => setShowClaimReviewForm(true)}
       />
       
       <PracticeAreaContent
@@ -150,14 +154,12 @@ const InsuranceLitigationPage = () => {
             Don't let insurance companies deny you the coverage you paid for. Our experienced Texas insurance litigation attorneys are ready to review your case.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a 
-              href="https://woodlandslaw.cliogrow.com/book" 
-              target="_blank" 
-              rel="noopener noreferrer"
+            <button
+              onClick={() => setShowClaimReviewForm(true)}
               className="bg-law-gold hover:bg-law-gold-light text-law-purple font-medium py-3 px-8 rounded transition-colors inline-block"
             >
-              Schedule a Free Consultation
-            </a>
+              Get a Free Insurance Claim Review
+            </button>
             <a 
               href="tel:+18326260116" 
               className="bg-white hover:bg-gray-100 text-law-purple font-medium py-3 px-8 rounded transition-colors inline-block"
@@ -167,6 +169,12 @@ const InsuranceLitigationPage = () => {
           </div>
         </div>
       </section>
+      
+      {/* Insurance Claim Review Form */}
+      <InsuranceClaimReviewForm 
+        open={showClaimReviewForm}
+        onOpenChange={setShowClaimReviewForm}
+      />
     </>
   );
 };
