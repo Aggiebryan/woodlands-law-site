@@ -48,7 +48,7 @@ const Footer = () => {
           <div>
             <h4 className="font-serif text-lg font-medium mb-4">Practice Areas</h4>
             <ul className="space-y-2">
-              <li><Link to="/services#insurance-litigation" className="text-sm opacity-80 hover:opacity-100 hover:text-law-gold transition-colors">Insurance Litigation</Link></li>
+              <li><Link to="/practice-areas/insurance-litigation" className="text-sm opacity-80 hover:opacity-100 hover:text-law-gold transition-colors">Insurance Litigation</Link></li>
               <li><Link to="/services#personal-injury" className="text-sm opacity-80 hover:opacity-100 hover:text-law-gold transition-colors">Personal Injury</Link></li>
               <li><Link to="/services#civil-litigation" className="text-sm opacity-80 hover:opacity-100 hover:text-law-gold transition-colors">Civil Litigation</Link></li>
               <li><Link to="/services#deceptive-trade-practices-act" className="text-sm opacity-80 hover:opacity-100 hover:text-law-gold transition-colors">DTPA Claims</Link></li>
