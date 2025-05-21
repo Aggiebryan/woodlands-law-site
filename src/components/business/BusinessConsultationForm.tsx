@@ -53,7 +53,7 @@ const BusinessConsultationForm = ({ open, onOpenChange }: BusinessConsultationFo
 
     try {
       // Use the correct N8N webhook URL
-      const webhookUrl = "https://n8n.twlf.dev/webhook-test/businessplan";
+      const webhookUrl = "https://n8n.twlf.dev/webhook/businessplan";
       
       const response = await fetch(webhookUrl, {
         method: "POST",
