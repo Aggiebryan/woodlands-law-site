@@ -65,4 +65,8 @@
       <loc>https://woodlands.law/trusts</loc>
       <priority>0.7</priority>
    </url>
+   <url>
+      <loc>https://woodlands.law/sitemap</loc>
+      <priority>0.6</priority>
+   </url>
 </urlset>

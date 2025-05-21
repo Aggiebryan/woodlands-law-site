@@ -95,7 +95,7 @@ const Footer = () => {
               </Link>
               <span className="opacity-70">|</span>
               <Link 
-                to="/sitemap.xml" 
+                to="/sitemap" 
                 className="text-sm opacity-70 hover:opacity-100 hover:text-law-gold transition-colors"
               >
                 Sitemap
