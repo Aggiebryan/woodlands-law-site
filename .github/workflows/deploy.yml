@@ -1,3 +1,4 @@
+
 name: Build and Deploy to HostGator
 
 on:
@@ -23,6 +24,9 @@ jobs:
 
       - name: Build the project
         run: npm run build
+
+      - name: Copy .htaccess to build directory
+        run: cp .htaccess ./dist/
 
       - name: Deploy to HostGator via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4

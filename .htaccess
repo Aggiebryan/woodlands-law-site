@@ -1,0 +1,21 @@
+
+# Handle WordPress API and admin requests
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  
+  # Send WordPress API requests to WordPress
+  RewriteRule ^blog/wp-json(/.*)?$ /blog/index.php [L]
+  
+  # Send WordPress admin requests to WordPress
+  RewriteRule ^blog/wp-admin(/.*)?$ /blog/index.php [L]
+  
+  # Route all other /blog/ requests to React app
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^blog/(.*)$ /index.html [L]
+  
+  # For all other non-file, non-directory routes, serve the React app
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.*)$ /index.html [L]
+</IfModule>
