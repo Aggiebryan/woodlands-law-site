@@ -104,7 +104,7 @@ const BusinessPlanningPage = () => {
         title="Strategic Business Legal Counsel"
         subtitle="Forward-Thinking Solutions for Texas Entrepreneurs and Companies"
         description="Our business planning team provides comprehensive legal guidance that protects your enterprise while enabling growth. We partner with entrepreneurs and established business owners to identify risks, seize opportunities, and build sustainable companies with strong legal foundations."
-        image="/lovable-uploads/307c4d37-d87e-4a89-8107-73533778d172.png"
+        image="/houston-texas-usa.webp"
         ctaText="Schedule a Business Strategy Session"
         onCtaClick={handleOpenForm}
       />
