@@ -35,9 +35,20 @@ const AttorneyAdvertisingPage = () => {
               Providing a mobile number to the firm for contact shall be construed as express consent to utilize such a number for SMS and text messaging for the purpose of occasional notifications. You may opt out at any time by providing us notice at admin@woodlands.law or replying STOP.
             </p>
             
+            <h2 className="text-3xl md:text-4xl font-serif font-medium text-law-purple mb-4">
+              No Attorney-Client Relationship
+            </h2>
+            
+            <div className="gold-underline mb-6"></div>
+            
             <p>
               Communication with The Woodlands Law Firm through this website does not create an attorney-client relationship. Please do not send confidential information to us until an attorney-client relationship has been established.
             </p>
+            <h2 className="text-3xl md:text-4xl font-serif font-medium text-law-purple mb-4">
+             Limitations
+            </h2>
+            
+            <div className="gold-underline mb-6"></div>
             
             <p>
               The Woodlands Law Firm practices law only in jurisdictions where its attorneys are admitted to practice. Attorneys at The Woodlands Law Firm are admitted to practice law in the State of Texas. The materials on this website have been prepared for informational purposes only and are not legal advice.
