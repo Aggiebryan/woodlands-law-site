@@ -39,7 +39,7 @@ interface CaseEvaluationFormProps {
 const CaseEvaluationForm = ({ 
   open, 
   onOpenChange,
-  webhookUrl = "https://hooks.zapier.com/hooks/catch/123456/abcdef/" // Replace with actual webhook URL
+  webhookUrl = "https://n8n.twlf.dev/webhook-test/PersonalInjury" // Replace with actual webhook URL
 }: CaseEvaluationFormProps) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
