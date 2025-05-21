@@ -52,8 +52,8 @@ const BusinessConsultationForm = ({ open, onOpenChange }: BusinessConsultationFo
     setIsSubmitting(true);
 
     try {
-      // Replace with your actual webhook URL
-      const webhookUrl = "https://hooks.zapier.com/hooks/catch/your-webhook";
+      // Use the correct N8N webhook URL
+      const webhookUrl = "https://n8n.twlf.dev/webhook-test/businessplan";
       
       const response = await fetch(webhookUrl, {
         method: "POST",

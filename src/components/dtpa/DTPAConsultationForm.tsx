@@ -67,8 +67,8 @@ const DTPAConsultationForm = ({ open, onOpenChange }: DTPAConsultationFormProps)
     setIsSubmitting(true);
     
     try {
-      // Replace with your webhook URL
-      const webhookUrl = "https://n8n.twlf.dev/webhook-test/DTPA";
+      // Use the correct N8N webhook URL
+      const webhookUrl = "https://n8n.twlf.dev/webhook-test/dtpa";
       
       const response = await fetch(webhookUrl, {
         method: "POST",

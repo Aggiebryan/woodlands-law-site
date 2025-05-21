@@ -65,8 +65,8 @@ const CivilConsultationForm = ({ open, onOpenChange }: CivilConsultationFormProp
     setIsSubmitting(true);
     
     try {
-      // Replace with your webhook URL
-      const webhookUrl = "https://hooks.zapier.com/hooks/catch/your-webhook-id";
+      // Use the correct N8N webhook URL
+      const webhookUrl = "https://n8n.twlf.dev/webhook-test/civlit";
       
       const response = await fetch(webhookUrl, {
         method: "POST",

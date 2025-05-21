@@ -44,7 +44,7 @@ interface EstateConsultationFormProps {
 const EstateConsultationForm = ({ 
   open, 
   onOpenChange,
-  webhookUrl = "https://hooks.zapier.com/hooks/catch/123456/abcdef/" // Replace with actual webhook URL
+  webhookUrl = "https://n8n.twlf.dev/webhook-test/estateplan" // Updated webhook URL
 }: EstateConsultationFormProps) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
@@ -73,7 +73,11 @@ const EstateConsultationForm = ({
           "Content-Type": "application/json",
         },
         mode: "no-cors",
-        body: JSON.stringify(data),
+        body: JSON.stringify({
+          ...data,
+          formType: "Estate Planning Consultation",
+          submittedAt: new Date().toISOString(),
+        }),
       });
 
       toast({
