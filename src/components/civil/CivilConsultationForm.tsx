@@ -73,7 +73,6 @@ const CivilConsultationForm = ({ open, onOpenChange }: CivilConsultationFormProp
         headers: {
           "Content-Type": "application/json",
         },
-        mode: "no-cors",
         body: JSON.stringify({
           ...data,
           formType: "Civil Litigation Case Strategy",
