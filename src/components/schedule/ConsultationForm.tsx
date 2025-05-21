@@ -10,6 +10,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { toast } from "@/hooks/use-toast";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { PhoneInput } from "@/components/ui/phone-input";
 
 const formSchema = z.object({
   firstName: z.string().min(2, {
@@ -22,7 +23,7 @@ const formSchema = z.object({
     message: "Please enter a valid email address.",
   }),
   phone: z.string().min(10, {
-    message: "Please enter a valid phone number.",
+    message: "Please enter a valid 10-digit phone number.",
   }),
   service: z.string({
     required_error: "Please select a service.",
@@ -147,7 +148,11 @@ const ConsultationForm = () => {
                   <FormItem>
                     <FormLabel>Phone Number</FormLabel>
                     <FormControl>
-                      <Input placeholder="(555) 123-4567" {...field} className="border-gray-300" />
+                      <PhoneInput 
+                        value={field.value} 
+                        onChange={field.onChange}
+                        className="border-gray-300" 
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>

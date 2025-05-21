@@ -22,11 +22,12 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { PhoneInput } from "@/components/ui/phone-input";
 
 const formSchema = z.object({
   firstName: z.string().min(1, { message: "First name is required" }),
   lastName: z.string().min(1, { message: "Last name is required" }),
-  phone: z.string().min(10, { message: "Please enter a valid phone number" }),
+  phone: z.string().min(10, { message: "Please enter a valid 10-digit phone number" }),
   email: z.string().email({ message: "Please enter a valid email address" }),
   dateOfLoss: z.date({
     required_error: "Please select the date of loss",
@@ -156,7 +157,7 @@ const InsuranceClaimReviewForm = ({ open, onOpenChange }: InsuranceClaimReviewFo
                     <FormItem>
                       <FormLabel>Phone Number</FormLabel>
                       <FormControl>
-                        <Input placeholder="(555) 123-4567" {...field} />
+                        <PhoneInput value={field.value} onChange={field.onChange} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>

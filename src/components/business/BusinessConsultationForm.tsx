@@ -11,12 +11,13 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
+import { PhoneInput } from "@/components/ui/phone-input";
 
 const formSchema = z.object({
   firstName: z.string().min(1, "First name is required"),
   lastName: z.string().min(1, "Last name is required"),
-  phoneNumber: z.string().min(10, "Phone number is required"),
-  email: z.string().email("Invalid email address"),
+  phoneNumber: z.string().min(10, "Please enter a valid 10-digit phone number"),
+  email: z.string().email("Please enter a valid email address"),
   companyName: z.string().min(1, "Company name is required"),
   isOperational: z.enum(["yes", "no"]),
   service: z.string().min(1, "Please select a service"),
@@ -139,7 +140,10 @@ const BusinessConsultationForm = ({ open, onOpenChange }: BusinessConsultationFo
                   <FormItem>
                     <FormLabel>Phone Number</FormLabel>
                     <FormControl>
-                      <Input placeholder="(555) 123-4567" {...field} />
+                      <PhoneInput 
+                        value={field.value} 
+                        onChange={field.onChange} 
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -153,7 +157,7 @@ const BusinessConsultationForm = ({ open, onOpenChange }: BusinessConsultationFo
                   <FormItem>
                     <FormLabel>Email</FormLabel>
                     <FormControl>
-                      <Input placeholder="your-email@example.com" {...field} />
+                      <Input type="email" placeholder="your-email@example.com" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>

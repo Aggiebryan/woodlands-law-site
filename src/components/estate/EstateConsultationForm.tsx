@@ -12,12 +12,13 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { PhoneInput } from "@/components/ui/phone-input";
 
 const formSchema = z.object({
   firstName: z.string().min(1, { message: "First name is required" }),
   lastName: z.string().min(1, { message: "Last name is required" }),
-  phone: z.string().min(10, { message: "Valid phone number is required" }),
-  email: z.string().email({ message: "Valid email is required" }),
+  phone: z.string().min(10, { message: "Please enter a valid 10-digit phone number" }),
+  email: z.string().email({ message: "Please enter a valid email address" }),
   hasWillOrTrust: z.enum(["yes", "no"], {
     required_error: "Please select if you already have a will or trust",
   }),
@@ -152,7 +153,7 @@ const EstateConsultationForm = ({
                   <FormItem>
                     <FormLabel>Phone Number</FormLabel>
                     <FormControl>
-                      <Input placeholder="(555) 123-4567" {...field} />
+                      <PhoneInput value={field.value} onChange={field.onChange} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>

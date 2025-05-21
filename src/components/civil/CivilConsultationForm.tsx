@@ -29,12 +29,13 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { toast } from "@/hooks/use-toast";
+import { PhoneInput } from "@/components/ui/phone-input";
 
 const formSchema = z.object({
   firstName: z.string().min(1, { message: "First name is required" }),
   lastName: z.string().min(1, { message: "Last name is required" }),
-  phone: z.string().min(10, { message: "Valid phone number is required" }),
-  email: z.string().email({ message: "Valid email is required" }),
+  phone: z.string().min(10, { message: "Please enter a valid 10-digit phone number" }),
+  email: z.string().email({ message: "Please enter a valid email address" }),
   caseDetails: z.string().min(1, { message: "Please tell us about your matter" }),
   bestTimeToCall: z.string().min(1, { message: "Please select a time" }),
 });
@@ -149,7 +150,7 @@ const CivilConsultationForm = ({ open, onOpenChange }: CivilConsultationFormProp
                   <FormItem>
                     <FormLabel>Phone Number</FormLabel>
                     <FormControl>
-                      <Input placeholder="(123) 456-7890" {...field} />
+                      <PhoneInput value={field.value} onChange={field.onChange} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
