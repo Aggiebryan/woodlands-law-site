@@ -66,7 +66,7 @@ const CivilConsultationForm = ({ open, onOpenChange }: CivilConsultationFormProp
     
     try {
       // Use the correct N8N webhook URL
-      const webhookUrl = "https://n8n.twlf.dev/webhook-test/civlit";
+      const webhookUrl = "https://n8n.twlf.dev/webhook/civlit";
       
       const response = await fetch(webhookUrl, {
         method: "POST",
