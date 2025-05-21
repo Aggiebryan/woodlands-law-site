@@ -71,7 +71,7 @@ const InsuranceClaimReviewForm = ({ open, onOpenChange }: InsuranceClaimReviewFo
     
     try {
       // Send form data to the webhook
-      const response = await fetch("https://n8n.twlf.dev/webhook/InsuranceLead", {
+      const response = await fetch("https://n8n.twlf.dev/webhook-test/PersonalInjury", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
