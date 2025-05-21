@@ -65,7 +65,6 @@ const BusinessConsultationForm = ({ open, onOpenChange }: BusinessConsultationFo
           formType: "Business Strategy Session",
           submittedAt: new Date().toISOString()
         }),
-        mode: "no-cors" // Handle CORS issues with webhook
       });
 
       // Since we're using no-cors, we won't get a proper response status
