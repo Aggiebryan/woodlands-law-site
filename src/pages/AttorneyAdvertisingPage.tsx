@@ -24,28 +24,25 @@ const AttorneyAdvertisingPage = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto prose prose-lg">
             <p>
-              The content on this website has been prepared by The Woodlands Law Firm for informational purposes only and should not be construed as legal advice. This information is not intended to create, and receipt of it does not constitute, an attorney-client relationship. Internet subscribers and online readers should not act upon this information without seeking professional counsel.
+              This website is designed for general information only. The information presented at this site should not be construed as formal legal advice or the formation of a lawyer-client relationship. The principal office is located in The Woodlands, Texas. Attorney Gwendolyn Simpson is responsible for the content of this website.
             </p>
             
             <p>
-              The information presented on this site about legal issues, legal terms, and legal procedures is to provide general information only. While we strive to ensure the information on this site is accurate, complete, and current, we make no warranty or guarantee concerning the accuracy or reliability of the content at this site or at other sites to which we link.
+              While the information on this site is about legal issues, it is not legal advice. Moreover, due to the rapidly changing nature of the law and reliance on information provided by outside sources, the firm and its attorney(s) make no warranty or guarantee concerning the accuracy or reliability of the content at this site or at other sites to which this website links.
             </p>
             
             <p>
-              The choice of an attorney is an important decision and should not be based solely on advertising. Past results afford no guarantee of future results. Every case is different and must be judged on its own merits. No representation is made that the quality of the legal services to be performed is greater than the quality of legal services performed by other lawyers.
+              Providing a mobile number to the firm for contact shall be construed as express consent to utilize such a number for SMS and text messaging for the purpose of occasional notifications. You may opt out at any time by providing us notice at admin@woodlands.law or replying STOP.
             </p>
             
             <p>
-              Some images on this website are stock photography used to illustrate concepts discussed and may not depict actual clients or events. Any resemblance to actual events, locales, or persons, living or dead, is entirely coincidental.
+              Communication with The Woodlands Law Firm through this website does not create an attorney-client relationship. Please do not send confidential information to us until an attorney-client relationship has been established.
             </p>
             
             <p>
-              In accordance with rules established by state bar associations and other professional regulatory bodies, this website may constitute attorney advertising in some jurisdictions. Prior results do not guarantee a similar outcome.
+              The Woodlands Law Firm practices law only in jurisdictions where its attorneys are admitted to practice. Attorneys at The Woodlands Law Firm are admitted to practice law in the State of Texas. The materials on this website have been prepared for informational purposes only and are not legal advice.
             </p>
             
-            <p>
-              All written and visual content on this site is the property of The Woodlands Law Firm and is protected by U.S. and international copyright laws. The information contained on this website may not be copied, reproduced, distributed, or displayed without the express written permission of The Woodlands Law Firm.
-            </p>
           </div>
           
           <div className="text-center mt-12">
