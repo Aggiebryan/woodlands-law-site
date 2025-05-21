@@ -137,7 +137,7 @@ const DTPAPage = () => {
         title="Texas Deceptive Trade Practices Act Attorneys"
         subtitle="Protecting Consumers & Businesses in The Woodlands"
         description="We help consumers and businesses fight back against deceptive, misleading, and fraudulent business practices. Our attorneys have extensive experience with Texas DTPA cases and know how to effectively pursue or defend these specialized claims."
-        image="/close-up-of-a-lot-of-law-reports-in-library-2025-04-04-15-21-02-utc.jpg"
+        image="/lawlibrary.webp"
         ctaText="Free DTPA Claim Evaluation"
         onCtaClick={handleOpenForm}
       />
