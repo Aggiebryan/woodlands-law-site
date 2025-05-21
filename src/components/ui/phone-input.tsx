@@ -1,5 +1,5 @@
 
-import React, { useRef, useState, useEffect, forwardRef } from "react";
+import React, { useRef, useState, forwardRef } from "react";
 import { Input } from "./input";
 import { cn } from "@/lib/utils";
 
@@ -10,10 +10,8 @@ interface PhoneInputProps extends Omit<React.InputHTMLAttributes<HTMLInputElemen
 
 const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
   ({ className, value, onChange, ...props }, ref) => {
-    // Track cursor position
     const inputRef = useRef<HTMLInputElement | null>(null);
-    const [cursorPosition, setCursorPosition] = useState<number | null>(null);
-
+    
     // Format the phone number with mask
     const formatPhoneNumber = (value: string) => {
       if (!value) return "";
@@ -36,48 +34,55 @@ const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
       }
     };
 
-    // Calculate cursor position after formatting
-    const calculateCursorPosition = (formattedValue: string, previousValue: string, previousCursorPosition: number) => {
-      // Current format: (XXX) XXX-XXXX
-      // Parenthesis at positions 0, 4
-      // Space at position 5
-      // Dash at position 9
-      
-      const valueBeforeCursor = previousValue.slice(0, previousCursorPosition);
-      const digitsBeforeCursor = valueBeforeCursor.replace(/\D/g, "").length;
-      
-      if (digitsBeforeCursor <= 3) {
-        // Account for opening parenthesis
-        return digitsBeforeCursor + 1; 
-      } else if (digitsBeforeCursor <= 6) {
-        // Account for opening parenthesis, closing parenthesis, and space
-        return digitsBeforeCursor + 3; 
-      } else {
-        // Account for opening parenthesis, closing parenthesis, space, and dash
-        return digitsBeforeCursor + 4; 
-      }
-    };
-
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       const inputValue = e.target.value;
-      const cursorPos = e.target.selectionStart;
+      const cursorPos = e.target.selectionStart || 0;
+      const previousFormattedValue = formatPhoneNumber(value);
       
-      // Save cursor position before formatting
-      if (cursorPos !== null) {
-        setCursorPosition(calculateCursorPosition(formatPhoneNumber(inputValue), value, cursorPos));
+      // Count non-digit characters before cursor in the current input value
+      let nonDigitsBefore = 0;
+      for (let i = 0; i < cursorPos; i++) {
+        if (!/\d/.test(inputValue[i])) {
+          nonDigitsBefore++;
+        }
       }
       
-      // Pass the raw digits to the parent component
-      onChange(inputValue.replace(/\D/g, ""));
+      // Get the digits from the input
+      const newDigits = inputValue.replace(/\D/g, "").slice(0, 10);
+      
+      // Update the parent with just the digits
+      onChange(newDigits);
+      
+      // After React updates, we need to set the cursor position properly
+      // This scheduling ensures our cursor update happens after React's render
+      setTimeout(() => {
+        if (inputRef.current) {
+          const newFormattedValue = formatPhoneNumber(newDigits);
+          
+          // Calculate new cursor position
+          const digitsPortion = cursorPos - nonDigitsBefore;
+          
+          // Adjust for special positions (right after formatting characters)
+          let newPosition = digitsPortion;
+          
+          if (digitsPortion <= 3) {
+            // Account for opening parenthesis
+            newPosition = digitsPortion + 1;
+          } else if (digitsPortion <= 6) {
+            // Account for opening parenthesis, closing parenthesis, and space
+            newPosition = digitsPortion + 3;
+          } else {
+            // Account for opening parenthesis, closing parenthesis, space, and dash
+            newPosition = digitsPortion + 4;
+          }
+          
+          // Ensure cursor position is within bounds
+          newPosition = Math.min(newPosition, newFormattedValue.length);
+          
+          inputRef.current.setSelectionRange(newPosition, newPosition);
+        }
+      }, 0);
     };
-
-    // Update the displayed value with formatting
-    useEffect(() => {
-      if (inputRef.current && cursorPosition !== null) {
-        inputRef.current.selectionStart = cursorPosition;
-        inputRef.current.selectionEnd = cursorPosition;
-      }
-    }, [value, cursorPosition]);
 
     return (
       <Input
