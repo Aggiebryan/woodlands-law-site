@@ -73,7 +73,6 @@ const CaseEvaluationForm = ({
         headers: {
           "Content-Type": "application/json",
         },
-        mode: "no-cors",
         body: JSON.stringify(formattedData),
       });
 
