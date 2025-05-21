@@ -1,7 +1,7 @@
 
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Sitemap } from "lucide-react";
+import { FileText } from "lucide-react";
 
 interface SitemapCategory {
   title: string;
@@ -58,7 +58,7 @@ const SitemapPage = () => {
       <div className="relative bg-law-purple py-12">
         <div className="container mx-auto px-4">
           <h1 className="text-3xl md:text-4xl text-white font-serif font-semibold mb-2 flex items-center">
-            <Sitemap className="mr-3" size={32} />
+            <FileText className="mr-3" size={32} />
             Sitemap
           </h1>
           <div className="gold-underline"></div>
@@ -109,7 +109,7 @@ const SitemapPage = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Sitemap className="mr-2" size={16} />
+                <FileText className="mr-2" size={16} />
                 View XML Sitemap
               </a>
             </div>
