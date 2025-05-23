@@ -40,7 +40,7 @@ interface CaseEvaluationFormProps {
 const CaseEvaluationForm = ({ 
   open, 
   onOpenChange,
-  webhookUrl = "https://n8n.twlf.dev/webhook-test/PersonalInjury" // This is already correct
+  webhookUrl = "https://n8n.twlf.dev/webhook/PersonalInjury" // This is already correct
 }: CaseEvaluationFormProps) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
