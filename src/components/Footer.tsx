@@ -94,6 +94,10 @@ const Footer = () => {
                 Privacy Policy
               </Link>
               <span className="opacity-70">|</span>
+              <Link to="/terms-of-service" className="text-sm opacity-70 hover:opacity-100 hover:text-law-gold transition-colors">
+                Terms of Service
+              </Link>
+              <span className="opacity-70">|</span>
               <Link 
                 to="/sitemap" 
                 className="text-sm opacity-70 hover:opacity-100 hover:text-law-gold transition-colors"

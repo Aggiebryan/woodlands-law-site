@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -22,6 +21,7 @@ import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import SchedulePage from "./pages/SchedulePage";
 import InsuranceTermsGlossary from "./components/InsuranceTermsGlossary";
 import SitemapPage from "./pages/SitemapPage";
+import TermsOfServicePage from "./pages/TermsOfServicePage";
 
 // Import practice area pages
 import PersonalInjuryPage from "./pages/practice-areas/PersonalInjuryPage";
@@ -56,6 +56,7 @@ const App = () => (
               <Route path="/schedule" element={<SchedulePage />} />
               <Route path="/attorney-advertising" element={<AttorneyAdvertisingPage />} />
               <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+              <Route path="/terms-of-service" element={<TermsOfServicePage />} />
               <Route path="/insurance-glossary" element={<InsuranceTermsGlossary />} />
               <Route path="/sitemap" element={<SitemapPage />} />
               
