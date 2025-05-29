@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import ServicesPageHeader from "@/components/ServicesPageHeader";
@@ -136,7 +135,7 @@ const BlogCategoryPage = () => {
                   <div key={post.id} className="flex flex-col md:flex-row gap-6 pb-8 border-b border-gray-200 last:border-0">
                     {/* Thumbnail */}
                     <div className="md:w-1/3 flex-shrink-0">
-                      <Link to={`/blog/${post.slug}`}>
+                      <Link to={`/wp/${post.slug}`}>
                         {post._embedded?.["wp:featuredmedia"]?.[0]?.source_url ? (
                           <img 
                             src={post._embedded["wp:featuredmedia"][0].source_url}
@@ -154,7 +153,7 @@ const BlogCategoryPage = () => {
                     {/* Content */}
                     <div className="md:w-2/3">
                       <Link 
-                        to={`/blog/${post.slug}`}
+                        to={`/wp/${post.slug}`}
                         className="text-law-purple hover:text-law-gold transition-colors"
                       >
                         <h2 
@@ -180,7 +179,7 @@ const BlogCategoryPage = () => {
                       />
                       
                       <Link 
-                        to={`/blog/${post.slug}`}
+                        to={`/wp/${post.slug}`}
                         className="text-law-gold hover:text-law-purple font-medium transition-colors"
                       >
                         Read More →
@@ -257,7 +256,7 @@ const BlogCategoryPage = () => {
                   {Object.entries(allCategories).map(([id, name]) => (
                     <div key={id} className="flex items-center">
                       <Link 
-                        to={`/blog/category/${id}`}
+                        to={`/wp/category/${id}`}
                         className={`text-${parseInt(id) === parseInt(categoryId || '0') ? 'law-gold' : 'law-purple'} hover:text-law-gold transition-colors font-serif`}
                       >
                         {name}
