@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
@@ -48,7 +47,7 @@ const BlogPostCard: React.FC<BlogPostCardProps> = ({ post }) => {
           dangerouslySetInnerHTML={{ __html: post.excerpt.rendered.substring(0, 150) + "..." }} />
         <div className="flex justify-between items-center mt-auto">
           <span className="text-xs text-gray-500">{formatDate(post.date)}</span>
-          <Link to={`/blog/${post.slug}`} className="text-law-purple hover:text-law-gold font-medium text-sm">
+          <Link to={`/wp/${post.slug}`} className="text-law-purple hover:text-law-gold font-medium text-sm">
             Read More
           </Link>
         </div>
