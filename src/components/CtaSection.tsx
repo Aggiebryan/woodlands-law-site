@@ -106,18 +106,18 @@ const CtaSection = () => {
           {/* Service Area */}
           <div className="border-t border-white/20 pt-8">
             <h4 className="text-lg font-semibold text-white mb-4">
-              Serving Montgomery County Communities
+              Serving Montgomery and Harris County Communities
             </h4>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-2 text-white/80 text-sm">
               <div>The Woodlands</div>
               <div>Conroe</div>
-              <div>Spring</div>
               <div>Magnolia</div>
+              <div>Spring</div>
               <div>Tomball</div>
               <div>Cypress</div>
-              <div>Cut and Shoot</div>
-              <div>Pinehurst</div>
-              <div>Splendora</div>
+              <div>Houston</div>
+              <div>Kingwood</div>
+              <div>Shenandoah</div>
               <div>New Caney</div>
               <div>Porter</div>
               <div>Humble</div>
