@@ -38,7 +38,7 @@ const ServicesSection = () => {
       title: "Personal Injury Law",
       icon: "🚗",
       shortDescription: "Motor vehicle accidents, premises liability, and negligence claims",
-      detailedDescription: "Aggressive representation for injury victims throughout Montgomery County. Our practice includes motor vehicle accidents, premises liability, product liability, and wrongful death claims with focus on maximum compensation recovery.",
+      detailedDescription: "Aggressive representation for injury victims throughout Montgomery County and Harris County. Our practice includes motor vehicle accidents, premises liability, product liability, and wrongful death claims with focus on maximum compensation recovery.",
       keyServices: [
         "Motor vehicle accident litigation",
         "Premises liability claims",
@@ -49,6 +49,38 @@ const ServicesSection = () => {
       ],
       link: "/practice-areas/personal-injury",
       caseTypes: "Auto accidents, slip and fall, product defects, medical negligence, wrongful death"
+    },
+    {
+      title: "Civil Litigation",
+      icon: "🏛️",
+      shortDescription: "Complex commercial disputes and breach of contract litigation",
+      detailedDescription: "Strategic representation in business disputes, contract breaches, and commercial litigation matters. Our experience includes partnership disputes, construction litigation, employment disputes, and general commercial litigation throughout Texas state courts.",
+      keyServices: [
+        "Breach of contract litigation",
+        "Partnership and business disputes",
+        "Construction defect claims",
+        "Employment litigation",
+        "Commercial tort claims",
+        "Breach of fiduciary duty claims"
+      ],
+      link: "/practice-areas/civil-litigation",
+      caseTypes: "Contract disputes, business litigation, partnership disputes, construction claims"
+    },
+    {
+      title: "Business Planning",
+      icon: "📊",
+      shortDescription: "Entity formation, contracts, and strategic business counsel",
+      detailedDescription: "Comprehensive business planning services including entity formation, contract drafting and review, business succession planning, and strategic counsel for growing enterprises. Our practice emphasizes practical solutions for Texas businesses operating under state commercial law.",
+      keyServices: [
+        "Business entity formation and structure",
+        "Contract drafting and negotiation",
+        "Business succession planning",
+        "Buy-sell agreement preparation",
+        "Employment agreement drafting",
+        "Corporate governance and compliance"
+      ],
+      link: "/practice-areas/business-planning",
+      caseTypes: "Entity formation, contracts, business succession, corporate governance"
     },
     {
       title: "Estate Planning & Probate",
@@ -79,7 +111,7 @@ const ServicesSection = () => {
             </h2>
             <div className="gold-underline mx-auto mb-6"></div>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              The Woodlands Law Firm provides focused legal representation across four core practice areas, with extensive experience in Texas state and federal courts throughout Montgomery County and surrounding jurisdictions.
+              The Woodlands Law Firm provides focused legal representation across six core practice areas, with extensive experience in Texas state and federal courts throughout Montgomery County, Harris County, and surrounding jurisdictions.
             </p>
           </div>
 
@@ -146,7 +178,7 @@ const ServicesSection = () => {
                 Texas Court Experience & Jurisdictional Coverage
               </h3>
               <p className="text-white/90 max-w-3xl mx-auto">
-                Licensed to practice in Texas state courts and federal district courts, with regular appearances throughout Montgomery County and surrounding jurisdictions.
+                Licensed to practice in Texas state courts and the U.S. District Court for the Southern District of Texas, with regular appearances throughout Montgomery County and Harris County district courts.
               </p>
             </div>
 
@@ -165,22 +197,26 @@ const ServicesSection = () => {
               </div>
 
               <div>
-                <h4 className="font-semibold mb-3">Federal Court Experience</h4>
+                <h4 className="font-semibold mb-3">Harris County District Courts</h4>
                 <div className="text-white/80 text-sm space-y-1">
-                  <div>• U.S. District Court, Southern District of Texas</div>
-                  <div>• U.S. District Court, Eastern District of Texas</div>
-                  <div>• Fifth Circuit Court of Appeals</div>
-                  <div>• Bankruptcy Courts</div>
+                  <div>• 11th Judicial District</div>
+                  <div>• 55th Judicial District</div>
+                  <div>• 80th Judicial District</div>
+                  <div>• 127th Judicial District</div>
+                  <div>• 152nd Judicial District</div>
+                  <div>• 157th Judicial District</div>
+                  <div>• 164th Judicial District</div>
+                  <div>• 165th Judicial District</div>
                 </div>
               </div>
 
               <div>
-                <h4 className="font-semibold mb-3">Appellate Experience</h4>
+                <h4 className="font-semibold mb-3">Federal Court Practice</h4>
                 <div className="text-white/80 text-sm space-y-1">
-                  <div>• Texas Court of Appeals</div>
-                  <div>• Texas Supreme Court</div>
-                  <div>• Fifth Circuit Appeals</div>
-                  <div>• Federal Circuit Appeals</div>
+                  <div>• U.S. District Court, Southern District of Texas</div>
+                  <div>• Houston Division</div>
+                  <div>• Galveston Division</div>
+                  <div>• Victoria Division</div>
                 </div>
               </div>
             </div>
