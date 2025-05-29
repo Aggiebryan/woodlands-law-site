@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Card } from "@/components/ui/card";
@@ -67,7 +66,7 @@ const BlogPostSidebar = ({ relatedPosts, formatDate }: BlogPostSidebarProps) => 
                 )}
                 <div>
                   <Link 
-                    to={`/blog/${relatedPost.slug}`} 
+                    to={`/wp/${relatedPost.slug}`} 
                     className="font-medium text-law-purple hover:text-law-gold line-clamp-2 font-serif"
                     dangerouslySetInnerHTML={{ __html: relatedPost.title.rendered }}
                   />
@@ -98,7 +97,7 @@ const BlogPostSidebar = ({ relatedPosts, formatDate }: BlogPostSidebarProps) => 
             {categories.map(category => (
               <div key={category.id} className="flex items-center">
                 <Link 
-                  to={`/blog/category/${category.id}`}
+                  to={`/wp/category/${category.id}`}
                   className="text-law-purple hover:text-law-gold transition-colors font-serif"
                 >
                   {category.name}
