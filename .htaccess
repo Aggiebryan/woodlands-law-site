@@ -1,4 +1,3 @@
-
 # Handle WordPress API and admin requests
 <IfModule mod_rewrite.c>
   RewriteEngine On
@@ -9,13 +8,29 @@
   # Send WordPress admin requests to WordPress
   RewriteRule ^blog/wp-admin(/.*)?$ /blog/index.php [L]
   
-  # Route all other /blog/ requests to React app
+  # Send WordPress login/core files to WordPress
+  RewriteRule ^blog/wp-login\.php$ /blog/wp-login.php [L]
+  RewriteRule ^blog/wp-content(/.*)?$ /blog/wp-content$1 [L]
+  RewriteRule ^blog/wp-includes(/.*)?$ /blog/wp-includes$1 [L]
+  
+  # Block WordPress from handling individual blog post URLs (React will handle these)
+  # This prevents WordPress from trying to serve blog posts directly
+  RewriteCond %{REQUEST_URI} ^/blog/[^/]+/?$
+  RewriteCond %{REQUEST_URI} !^/blog/(wp-|xmlrpc|feed|sitemap)
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule ^blog/(.*)$ /index.html [L]
+  
+  # Allow WordPress to handle category pages if you want WordPress categories
+  # Comment out the next line if you want React to handle category pages too
+  RewriteRule ^blog/category(/.*)?$ /blog/index.php [L]
   
   # For all other non-file, non-directory routes, serve the React app
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule ^(.*)$ /index.html [L]
 </IfModule>
+
+# Optional: Prevent WordPress from creating its own rewrites for blog posts
+# Add this to your WordPress wp-config.php file:
+# define('WP_USE_THEMES', false);
