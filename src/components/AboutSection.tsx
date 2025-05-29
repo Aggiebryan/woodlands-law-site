@@ -83,8 +83,8 @@ const AboutSection = () => {
             </div>
             <div>
               <Scale className="h-8 w-8 text-law-gold mx-auto mb-4" />
-              <h3 className="text-2xl font-bold mb-2">Four Practice Areas</h3>
-              <p className="text-white/90">DTPA, Insurance, Personal Injury & Estate Planning</p>
+              <h3 className="text-2xl font-bold mb-2">Our Practice Areas</h3>
+              <p className="text-white/90">DTPA, Insurance, Personal Injury, Civil Litigation, Business Planning & Estate Planning</p>
             </div>
             <div>
               <Shield className="h-8 w-8 text-law-gold mx-auto mb-4" />
