@@ -49,8 +49,8 @@ const App = () => (
               <Route path="/services" element={<ServicesPage />} />
               <Route path="/service/:id" element={<ServiceDetailPage />} />
               <Route path="/news-events" element={<NewsEventsPage />} />
-              <Route path="/blog/:slug" element={<BlogPostPage />} />
-              <Route path="/blog/category/:categoryId" element={<BlogCategoryPage />} />
+              <Route path="/wp/:slug" element={<BlogPostPage />} />
+              <Route path="/wp/category/:categoryId" element={<BlogCategoryPage />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/trusts" element={<TrustsPage />} />
               <Route path="/schedule" element={<SchedulePage />} />
