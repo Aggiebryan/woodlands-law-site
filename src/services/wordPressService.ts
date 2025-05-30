@@ -28,6 +28,7 @@ interface WordPressPost {
   tags?: number[];
 }
 
+// Updated interface for WordPress Events
 interface WordPressEvent {
   id: number;
   title: {
@@ -53,23 +54,12 @@ interface WordPressEvent {
       };
     }>;
   };
-  // Event-specific fields (these would come from custom fields or meta)
-  acf?: {
-    event_date?: string;
-    event_time?: string;
-    event_location?: string;
-    event_end_date?: string;
-    event_end_time?: string;
-    registration_link?: string;
-  };
-  meta?: {
-    event_date?: string;
-    event_time?: string;
-    event_location?: string;
-    event_end_date?: string;
-    event_end_time?: string;
-    registration_link?: string;
-  };
+  // Custom fields are now directly on the object (thanks to register_rest_field)
+  event_date?: string;
+  event_time?: string;
+  event_end_time?: string;
+  event_location?: string;
+  registration_link?: string;
 }
 
 interface Category {
@@ -193,13 +183,11 @@ const MOCK_EVENTS: WordPressEvent[] = [
     },
     date: "2025-06-01T10:00:00",
     slug: "estate-planning-workshop-june-2025",
-    acf: {
-      event_date: "2025-06-15",
-      event_time: "6:00 PM",
-      event_end_time: "8:00 PM",
-      event_location: "The Woodlands Community Center, 5310 Research Forest Dr, The Woodlands, TX 77381",
-      registration_link: "/schedule"
-    }
+    event_date: "2025-06-15",
+    event_time: "18:00",
+    event_end_time: "20:00",
+    event_location: "The Woodlands Community Center, 5310 Research Forest Dr, The Woodlands, TX 77381",
+    registration_link: "/schedule"
   },
   {
     id: 102,
@@ -214,13 +202,11 @@ const MOCK_EVENTS: WordPressEvent[] = [
     },
     date: "2025-05-15T08:00:00",
     slug: "business-legal-summit-july-2025",
-    acf: {
-      event_date: "2025-07-22",
-      event_time: "9:00 AM",
-      event_end_time: "4:00 PM",
-      event_location: "The Woodlands Waterway Marriott, 1601 Lake Robbins Dr, The Woodlands, TX 77380",
-      registration_link: "/schedule"
-    }
+    event_date: "2025-07-22",
+    event_time: "09:00",
+    event_end_time: "16:00",
+    event_location: "The Woodlands Waterway Marriott, 1601 Lake Robbins Dr, The Woodlands, TX 77380",
+    registration_link: "/schedule"
   },
   {
     id: 103,
@@ -235,13 +221,11 @@ const MOCK_EVENTS: WordPressEvent[] = [
     },
     date: "2025-05-20T11:00:00",
     slug: "insurance-claims-webinar-august-2025",
-    acf: {
-      event_date: "2025-08-10",
-      event_time: "12:00 PM",
-      event_end_time: "1:30 PM",
-      event_location: "Online Webinar (Zoom link provided upon registration)",
-      registration_link: "/schedule"
-    }
+    event_date: "2025-08-10",
+    event_time: "12:00",
+    event_end_time: "13:30",
+    event_location: "Online Webinar (Zoom link provided upon registration)",
+    registration_link: "/schedule"
   }
 ];
 
@@ -349,7 +333,6 @@ export const fetchEvents = async (
   // First try the real API
   if (!USE_MOCK_DATA) {
     try {
-      // Try custom post type first, then fall back to posts with event category
       let url = `${WP_API_BASE}/events?_embed&per_page=${perPage}&page=${page}`;
       
       // If upcoming events only, add date filter
@@ -358,22 +341,11 @@ export const fetchEvents = async (
         url += `&meta_key=event_date&meta_value=${today}&meta_compare=>=`;
       }
       
-      let response = await fetch(url, {
+      const response = await fetch(url, {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
         mode: 'cors'
       });
-      
-      // If custom post type doesn't exist, try posts with events category
-      if (!response.ok) {
-        console.log("Custom events post type not found, trying posts with events category");
-        url = `${WP_API_BASE}/posts?_embed&per_page=${perPage}&page=${page}&categories=events`;
-        response = await fetch(url, {
-          method: 'GET',
-          headers: { 'Content-Type': 'application/json' },
-          mode: 'cors'
-        });
-      }
       
       if (!response.ok) {
         throw new Error(`Failed to fetch events: ${response.status}`);
@@ -381,6 +353,8 @@ export const fetchEvents = async (
 
       const totalPages = parseInt(response.headers.get('X-WP-TotalPages') || '1', 10);
       const events = await response.json();
+      
+      console.log("Fetched events from WordPress:", events); // Debug log
       
       return {
         events: events,
@@ -399,7 +373,7 @@ export const fetchEvents = async (
   if (upcoming) {
     const today = new Date();
     filteredEvents = filteredEvents.filter(event => {
-      const eventDate = new Date(event.acf?.event_date || event.date);
+      const eventDate = new Date(event.event_date || event.date);
       return eventDate >= today;
     });
   }
@@ -419,21 +393,11 @@ export const fetchEventBySlug = async (slug: string): Promise<WordPressEvent> =>
   // First try the real API
   if (!USE_MOCK_DATA) {
     try {
-      // Try custom post type first
-      let response = await fetch(`${WP_API_BASE}/events?slug=${slug}&_embed`, {
+      const response = await fetch(`${WP_API_BASE}/events?slug=${slug}&_embed`, {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
         mode: 'cors'
       });
-      
-      // If custom post type doesn't exist, try posts
-      if (!response.ok) {
-        response = await fetch(`${WP_API_BASE}/posts?slug=${slug}&_embed`, {
-          method: 'GET',
-          headers: { 'Content-Type': 'application/json' },
-          mode: 'cors'
-        });
-      }
       
       if (!response.ok) {
         throw new Error(`Failed to fetch event: ${response.status}`);
@@ -444,6 +408,8 @@ export const fetchEventBySlug = async (slug: string): Promise<WordPressEvent> =>
       if (events.length === 0) {
         throw new Error("Event not found");
       }
+      
+      console.log("Fetched event by slug:", events[0]); // Debug log
       
       return events[0];
     } catch (err) {
