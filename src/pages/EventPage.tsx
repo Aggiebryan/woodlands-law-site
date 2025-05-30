@@ -48,7 +48,7 @@ const EventPage = () => {
 
   // Function to format event date with day of week
   const formatEventDate = (event: WordPressEvent) => {
-    const eventDate = event.acf?.event_date || event.meta?.event_date;
+    const eventDate = event.event_date;
     if (eventDate) {
       const date = new Date(eventDate);
       return date.toLocaleDateString('en-US', { 
@@ -63,30 +63,48 @@ const EventPage = () => {
 
   // Function to get event time
   const getEventTime = (event: WordPressEvent) => {
-    const startTime = event.acf?.event_time || event.meta?.event_time;
-    const endTime = event.acf?.event_end_time || event.meta?.event_end_time;
+    const startTime = event.event_time;
+    const endTime = event.event_end_time;
     
     if (startTime && endTime) {
-      return `${startTime} - ${endTime}`;
+      // Convert 24-hour format to 12-hour format for display
+      const formatTime = (time: string) => {
+        if (!time) return '';
+        const [hours, minutes] = time.split(':');
+        const hour = parseInt(hours);
+        const ampm = hour >= 12 ? 'PM' : 'AM';
+        const displayHour = hour % 12 || 12;
+        return `${displayHour}:${minutes} ${ampm}`;
+      };
+      
+      return `${formatTime(startTime)} - ${formatTime(endTime)}`;
     } else if (startTime) {
-      return startTime;
+      const formatTime = (time: string) => {
+        if (!time) return '';
+        const [hours, minutes] = time.split(':');
+        const hour = parseInt(hours);
+        const ampm = hour >= 12 ? 'PM' : 'AM';
+        const displayHour = hour % 12 || 12;
+        return `${displayHour}:${minutes} ${ampm}`;
+      };
+      return formatTime(startTime);
     }
     return "Time TBA";
   };
 
   // Function to get event location
   const getEventLocation = (event: WordPressEvent) => {
-    return event.acf?.event_location || event.meta?.event_location || "Location TBA";
+    return event.event_location || "Location TBA";
   };
 
   // Function to get registration link
   const getRegistrationLink = (event: WordPressEvent) => {
-    return event.acf?.registration_link || event.meta?.registration_link || "/schedule";
+    return event.registration_link || "/schedule";
   };
 
   // Function to check if event is in the past
   const isEventPast = (event: WordPressEvent) => {
-    const eventDate = event.acf?.event_date || event.meta?.event_date;
+    const eventDate = event.event_date;
     if (eventDate) {
       const today = new Date();
       const eventDateObj = new Date(eventDate);
