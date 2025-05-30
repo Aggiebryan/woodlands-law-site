@@ -13,15 +13,15 @@ const AboutSection = () => {
             </h2>
             <div className="gold-underline mb-6"></div>
             
-            <p className="text-lg text-gray-700 mb-6 leading-relaxed text-justify">
+            <p className="text-lg text-gray-700 mb-6 leading-relaxed">
               The Woodlands Law Firm represents plaintiffs in complex civil litigation matters throughout Montgomery County and Harris County. Our practice focuses exclusively on cases where individuals and businesses need aggressive advocacy against insurance companies, deceptive business practices, and personal injury claims.
             </p>
             
-            <p className="text-gray-700 mb-6 leading-relaxed text-justify">
+            <p className="text-gray-700 mb-6 leading-relaxed">
               We concentrate our practice in four core areas: Texas Deceptive Trade Practices Act violations, insurance coverage disputes under Texas Insurance Code Chapters 541 and 542, personal injury litigation, and comprehensive estate planning. This focused approach allows us to develop deep expertise in the specific laws, procedures, and strategies that benefit our clients.
             </p>
             
-            <p className="text-gray-700 mb-8 leading-relaxed text-justify">
+            <p className="text-gray-700 mb-8 leading-relaxed">
               Licensed to practice in Texas state courts and the U.S. District Court for the Southern District of Texas, we handle cases in Montgomery County District Courts, Harris County District Courts, and federal court when appropriate. Our litigation experience spans from initial demand letters through jury trials and post-judgment collection.
             </p>
 
@@ -126,10 +126,10 @@ const AboutSection = () => {
         {/* Legal Philosophy & Approach */}
         <div className="bg-law-gray-light p-8 rounded-lg text-center">
           <h3 className="text-2xl font-serif text-law-purple mb-6">Our Legal Philosophy</h3>
-          <p className="text-lg text-gray-700 mb-6 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-lg text-gray-700 mb-6 max-w-4xl mx-auto leading-relaxed text-justify">
             Effective civil litigation requires thorough preparation, aggressive advocacy, and deep understanding of applicable law. We believe in holding defendants accountable for their actions, whether through insurance bad faith, deceptive trade practices, negligence, or other wrongful conduct. Our approach combines meticulous case preparation with strategic negotiation and trial-ready advocacy.
           </p>
-          <p className="text-gray-700 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-gray-700 max-w-3xl mx-auto leading-relaxed text-justify">
             Every client receives personal attention from experienced attorneys who understand both the legal complexities and practical realities of civil litigation in Texas courts. We work on a contingency fee basis for most litigation matters, ensuring our interests align with achieving the best possible outcome for our clients.
           </p>
         </div>
