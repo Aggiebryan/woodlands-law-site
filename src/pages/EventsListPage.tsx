@@ -51,7 +51,7 @@ const EventsListPage = () => {
 
   // Function to format event date with day of week
   const formatEventDate = (event: WordPressEvent) => {
-    const eventDate = event.event_date;
+    const eventDate = event.acf?.event_date || event.meta?.event_date;
     if (eventDate) {
       const date = new Date(eventDate);
       return date.toLocaleDateString('en-US', { 
@@ -66,8 +66,8 @@ const EventsListPage = () => {
 
   // Function to get event time
   const getEventTime = (event: WordPressEvent) => {
-    const startTime = event.event_time;
-    const endTime = event.event_end_time;
+    const startTime = event.acf?.event_time || event.meta?.event_time;
+    const endTime = event.acf?.event_end_time || event.meta?.event_end_time;
     
     if (startTime && endTime) {
       return `${startTime} - ${endTime}`;
@@ -79,17 +79,17 @@ const EventsListPage = () => {
 
   // Function to get event location
   const getEventLocation = (event: WordPressEvent) => {
-    return event.event_location || "Location TBA";
+    return event.acf?.event_location || event.meta?.event_location || "Location TBA";
   };
 
   // Function to get registration link
   const getRegistrationLink = (event: WordPressEvent) => {
-    return event.registration_link || "/schedule";
+    return event.acf?.registration_link || event.meta?.registration_link || "/schedule";
   };
 
   // Function to check if event is in the past
   const isEventPast = (event: WordPressEvent) => {
-    const eventDate = event.event_date;
+    const eventDate = event.acf?.event_date || event.meta?.event_date;
     if (eventDate) {
       const today = new Date();
       const eventDateObj = new Date(eventDate);

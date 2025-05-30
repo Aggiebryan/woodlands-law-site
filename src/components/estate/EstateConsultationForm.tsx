@@ -45,7 +45,7 @@ interface EstateConsultationFormProps {
 const EstateConsultationForm = ({ 
   open, 
   onOpenChange,
-  webhookUrl = "https://n8n.twlf.dev/webhook-test/estateplan"
+  webhookUrl = "https://n8n.twlf.dev/webhook-test/estateplan" // Updated webhook URL
 }: EstateConsultationFormProps) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
@@ -61,61 +61,39 @@ const EstateConsultationForm = ({
     }
   });
 
-  const submitWithRetry = async (data: FormValues, attempt: number = 1): Promise<boolean> => {
-    const maxRetries = 3;
-    
+  const onSubmit = async (data: FormValues) => {
+    setIsSubmitting(true);
+
     try {
+      console.log("Submitting consultation request:", data);
+      
+      // Send the data to the webhook
       const response = await fetch(webhookUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
+        mode: "no-cors",
         body: JSON.stringify({
           ...data,
           formType: "Estate Planning Consultation",
           submittedAt: new Date().toISOString(),
-          userAgent: navigator.userAgent,
-          referrer: document.referrer,
         }),
       });
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
-      return true;
-    } catch (error) {
-      if (attempt < maxRetries) {
-        // Exponential backoff: wait 1s, then 2s, then 4s
-        await new Promise(resolve => setTimeout(resolve, Math.pow(2, attempt - 1) * 1000));
-        return submitWithRetry(data, attempt + 1);
-      }
-      throw error;
-    }
-  };
-
-  const onSubmit = async (data: FormValues) => {
-    setIsSubmitting(true);
-
-    try {
-      await submitWithRetry(data);
 
       toast({
         title: "Consultation Request Submitted",
         description: "We'll contact you soon to schedule your estate planning consultation.",
       });
 
+      // Close the form and reset values
       form.reset();
       onOpenChange(false);
     } catch (error) {
-      const isNetworkError = error instanceof TypeError && error.message.includes('fetch');
-      const errorMessage = isNetworkError 
-        ? "Network connection failed. Please check your internet connection and try again."
-        : "There was an error submitting your consultation request. Please try again or contact us directly.";
-
+      console.error("Error submitting form:", error);
       toast({
         title: "Submission Failed",
-        description: errorMessage,
+        description: "There was an error submitting your consultation request. Please try again later.",
         variant: "destructive",
       });
     } finally {
@@ -275,7 +253,7 @@ const EstateConsultationForm = ({
                         <FormControl>
                           <RadioGroupItem value="yes" />
                         </FormControl>
-                        <FormLabel className="font-normal cursor-pointer">No</FormLabel>
+                        <FormLabel className="font-normal cursor-pointer">Yes</FormLabel>
                       </FormItem>
                       <FormItem className="flex items-center space-x-2 space-y-0">
                         <FormControl>
