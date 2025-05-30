@@ -56,7 +56,7 @@ const NewsEventsPage = () => {
 
   // Function to format event date (from custom field or fallback to post date)
   const formatEventDate = (event: WordPressEvent) => {
-    const eventDate = event.acf?.event_date || event.meta?.event_date;
+    const eventDate = event.event_date;
     if (eventDate) {
       return formatDate(eventDate);
     }
@@ -65,20 +65,38 @@ const NewsEventsPage = () => {
 
   // Function to get event time
   const getEventTime = (event: WordPressEvent) => {
-    const startTime = event.acf?.event_time || event.meta?.event_time;
-    const endTime = event.acf?.event_end_time || event.meta?.event_end_time;
+    const startTime = event.event_time;
+    const endTime = event.event_end_time;
     
     if (startTime && endTime) {
-      return `${startTime} - ${endTime}`;
+      // Convert 24-hour format to 12-hour format for display
+      const formatTime = (time: string) => {
+        if (!time) return '';
+        const [hours, minutes] = time.split(':');
+        const hour = parseInt(hours);
+        const ampm = hour >= 12 ? 'PM' : 'AM';
+        const displayHour = hour % 12 || 12;
+        return `${displayHour}:${minutes} ${ampm}`;
+      };
+      
+      return `${formatTime(startTime)} - ${formatTime(endTime)}`;
     } else if (startTime) {
-      return startTime;
+      const formatTime = (time: string) => {
+        if (!time) return '';
+        const [hours, minutes] = time.split(':');
+        const hour = parseInt(hours);
+        const ampm = hour >= 12 ? 'PM' : 'AM';
+        const displayHour = hour % 12 || 12;
+        return `${displayHour}:${minutes} ${ampm}`;
+      };
+      return formatTime(startTime);
     }
     return "Time TBA";
   };
 
   // Function to get event location
   const getEventLocation = (event: WordPressEvent) => {
-    return event.acf?.event_location || event.meta?.event_location || "Location TBA";
+    return event.event_location || "Location TBA";
   };
 
   return (
@@ -195,9 +213,9 @@ const NewsEventsPage = () => {
                               >
                                 Event Details
                               </Link>
-                              {(event.acf?.registration_link || event.meta?.registration_link) && (
+                              {(event.registration_link) && (
                                 <Link 
-                                  to={event.acf?.registration_link || event.meta?.registration_link || "/schedule"}
+                                  to={event.registration_link || "/schedule"}
                                   className="text-law-purple hover:text-law-gold font-medium text-sm block"
                                 >
                                   Register Now
