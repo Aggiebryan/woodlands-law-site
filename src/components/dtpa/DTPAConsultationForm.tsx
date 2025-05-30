@@ -50,6 +50,7 @@ interface DTPAConsultationFormProps {
 
 const DTPAConsultationForm = ({ open, onOpenChange }: DTPAConsultationFormProps) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [retryCount, setRetryCount] = useState(0);
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -64,38 +65,63 @@ const DTPAConsultationForm = ({ open, onOpenChange }: DTPAConsultationFormProps)
     },
   });
 
-  const onSubmit = async (data: FormValues) => {
-    setIsSubmitting(true);
+  const submitWithRetry = async (data: FormValues, attempt: number = 1): Promise<boolean> => {
+    const webhookUrl = "https://n8n.twlf.dev/webhook-test/dtpa";
+    const maxRetries = 3;
     
     try {
-      // Use the correct N8N webhook URL
-      const webhookUrl = "https://n8n.twlf.dev/webhook-test/dtpa";
-      
       const response = await fetch(webhookUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        mode: "no-cors",
         body: JSON.stringify({
           ...data,
           formType: "DTPA Claim Evaluation",
           submittedAt: new Date().toISOString(),
+          userAgent: navigator.userAgent,
+          referrer: document.referrer,
         }),
       });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      return true;
+    } catch (error) {
+      if (attempt < maxRetries) {
+        // Exponential backoff: wait 1s, then 2s, then 4s
+        await new Promise(resolve => setTimeout(resolve, Math.pow(2, attempt - 1) * 1000));
+        return submitWithRetry(data, attempt + 1);
+      }
+      throw error;
+    }
+  };
+
+  const onSubmit = async (data: FormValues) => {
+    setIsSubmitting(true);
+    setRetryCount(0);
+    
+    try {
+      await submitWithRetry(data);
       
       toast({
-        title: "Form submitted",
+        title: "Form submitted successfully",
         description: "We'll contact you shortly to discuss your DTPA claim.",
       });
       
       form.reset();
       onOpenChange(false);
     } catch (error) {
-      console.error("Form submission error:", error);
+      const isNetworkError = error instanceof TypeError && error.message.includes('fetch');
+      const errorMessage = isNetworkError 
+        ? "Network connection failed. Please check your internet connection and try again."
+        : "There was an error submitting your form. Please try again or contact us directly.";
+      
       toast({
-        title: "Submission error",
-        description: "There was an error submitting your form. Please try again.",
+        title: "Submission failed",
+        description: errorMessage,
         variant: "destructive",
       });
     } finally {
