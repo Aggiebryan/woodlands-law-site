@@ -1,4 +1,3 @@
-
 interface WordPressPost {
   id: number;
   title: {
@@ -27,6 +26,50 @@ interface WordPressPost {
   categories: number[];
   category_names?: string[];
   tags?: number[];
+}
+
+interface WordPressEvent {
+  id: number;
+  title: {
+    rendered: string;
+  };
+  excerpt: {
+    rendered: string;
+  };
+  content?: {
+    rendered: string;
+  };
+  date: string;
+  slug: string;
+  _embedded?: {
+    "wp:featuredmedia"?: Array<{
+      source_url: string;
+      alt_text?: string;
+    }>;
+    author?: Array<{
+      name: string;
+      avatar_urls?: {
+        [key: string]: string;
+      };
+    }>;
+  };
+  // Event-specific fields (these would come from custom fields or meta)
+  acf?: {
+    event_date?: string;
+    event_time?: string;
+    event_location?: string;
+    event_end_date?: string;
+    event_end_time?: string;
+    registration_link?: string;
+  };
+  meta?: {
+    event_date?: string;
+    event_time?: string;
+    event_location?: string;
+    event_end_date?: string;
+    event_end_time?: string;
+    registration_link?: string;
+  };
 }
 
 interface Category {
@@ -135,6 +178,73 @@ const MOCK_POSTS: WordPressPost[] = [
   }
 ];
 
+// Mock events for when the API is unavailable
+const MOCK_EVENTS: WordPressEvent[] = [
+  {
+    id: 101,
+    title: {
+      rendered: "Estate Planning Workshop: Protecting Your Legacy"
+    },
+    excerpt: {
+      rendered: "Join us for an informative workshop on estate planning fundamentals, including wills, trusts, and asset protection strategies under Texas law."
+    },
+    content: {
+      rendered: "<p>This comprehensive workshop will cover the essential components of estate planning for Texas residents. Topics include creating effective wills, understanding different types of trusts, tax planning strategies, and protecting your assets for future generations.</p><p>Light refreshments will be provided. Registration is required due to limited seating.</p>"
+    },
+    date: "2025-06-01T10:00:00",
+    slug: "estate-planning-workshop-june-2025",
+    acf: {
+      event_date: "2025-06-15",
+      event_time: "6:00 PM",
+      event_end_time: "8:00 PM",
+      event_location: "The Woodlands Community Center, 5310 Research Forest Dr, The Woodlands, TX 77381",
+      registration_link: "/schedule"
+    }
+  },
+  {
+    id: 102,
+    title: {
+      rendered: "Business Owner Legal Summit: Protecting Your Enterprise"
+    },
+    excerpt: {
+      rendered: "A comprehensive legal summit for business owners covering entity formation, contracts, employment law, and litigation prevention strategies."
+    },
+    content: {
+      rendered: "<p>This full-day summit is designed for business owners who want to understand the legal landscape affecting their enterprises. We'll cover business formation, contract essentials, employment law compliance, and strategies to prevent costly litigation.</p><p>Includes continental breakfast, lunch, and networking opportunities with other business owners and legal professionals.</p>"
+    },
+    date: "2025-05-15T08:00:00",
+    slug: "business-legal-summit-july-2025",
+    acf: {
+      event_date: "2025-07-22",
+      event_time: "9:00 AM",
+      event_end_time: "4:00 PM",
+      event_location: "The Woodlands Waterway Marriott, 1601 Lake Robbins Dr, The Woodlands, TX 77380",
+      registration_link: "/schedule"
+    }
+  },
+  {
+    id: 103,
+    title: {
+      rendered: "Insurance Claims: Know Your Rights"
+    },
+    excerpt: {
+      rendered: "Learn about your rights when dealing with insurance companies and what to do when claims are wrongfully denied or delayed."
+    },
+    content: {
+      rendered: "<p>This informational session will help you understand your rights as a policyholder under Texas law. We'll discuss common insurance bad faith practices, the claims process, and when you may need legal representation.</p><p>This webinar format allows for interactive Q&A with our insurance litigation attorneys.</p>"
+    },
+    date: "2025-05-20T11:00:00",
+    slug: "insurance-claims-webinar-august-2025",
+    acf: {
+      event_date: "2025-08-10",
+      event_time: "12:00 PM",
+      event_end_time: "1:30 PM",
+      event_location: "Online Webinar (Zoom link provided upon registration)",
+      registration_link: "/schedule"
+    }
+  }
+];
+
 // Mock categories for when the API is unavailable
 const MOCK_CATEGORIES: Record<number, string> = {
   1: "Estate Planning",
@@ -226,6 +336,129 @@ export const fetchPosts = async (
     posts: paginatedPosts,
     totalPages
   };
+};
+
+export const fetchEvents = async (
+  page: number = 1,
+  perPage: number = 10,
+  upcoming: boolean = true
+): Promise<{
+  events: WordPressEvent[];
+  totalPages: number;
+}> => {
+  // First try the real API
+  if (!USE_MOCK_DATA) {
+    try {
+      // Try custom post type first, then fall back to posts with event category
+      let url = `${WP_API_BASE}/events?_embed&per_page=${perPage}&page=${page}`;
+      
+      // If upcoming events only, add date filter
+      if (upcoming) {
+        const today = new Date().toISOString().split('T')[0];
+        url += `&meta_key=event_date&meta_value=${today}&meta_compare=>=`;
+      }
+      
+      let response = await fetch(url, {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
+        mode: 'cors'
+      });
+      
+      // If custom post type doesn't exist, try posts with events category
+      if (!response.ok) {
+        console.log("Custom events post type not found, trying posts with events category");
+        url = `${WP_API_BASE}/posts?_embed&per_page=${perPage}&page=${page}&categories=events`;
+        response = await fetch(url, {
+          method: 'GET',
+          headers: { 'Content-Type': 'application/json' },
+          mode: 'cors'
+        });
+      }
+      
+      if (!response.ok) {
+        throw new Error(`Failed to fetch events: ${response.status}`);
+      }
+
+      const totalPages = parseInt(response.headers.get('X-WP-TotalPages') || '1', 10);
+      const events = await response.json();
+      
+      return {
+        events: events,
+        totalPages
+      };
+    } catch (err) {
+      console.error("WordPress API error, falling back to mock events:", err);
+      USE_MOCK_DATA = true;  // Switch to mock data for future requests
+    }
+  }
+  
+  // If we get here, either USE_MOCK_DATA was true or the API request failed
+  let filteredEvents = [...MOCK_EVENTS];
+  
+  // Filter for upcoming events if requested
+  if (upcoming) {
+    const today = new Date();
+    filteredEvents = filteredEvents.filter(event => {
+      const eventDate = new Date(event.acf?.event_date || event.date);
+      return eventDate >= today;
+    });
+  }
+  
+  // Simulate pagination
+  const startIndex = (page - 1) * perPage;
+  const paginatedEvents = filteredEvents.slice(startIndex, startIndex + perPage);
+  const totalPages = Math.ceil(filteredEvents.length / perPage);
+  
+  return {
+    events: paginatedEvents,
+    totalPages
+  };
+};
+
+export const fetchEventBySlug = async (slug: string): Promise<WordPressEvent> => {
+  // First try the real API
+  if (!USE_MOCK_DATA) {
+    try {
+      // Try custom post type first
+      let response = await fetch(`${WP_API_BASE}/events?slug=${slug}&_embed`, {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
+        mode: 'cors'
+      });
+      
+      // If custom post type doesn't exist, try posts
+      if (!response.ok) {
+        response = await fetch(`${WP_API_BASE}/posts?slug=${slug}&_embed`, {
+          method: 'GET',
+          headers: { 'Content-Type': 'application/json' },
+          mode: 'cors'
+        });
+      }
+      
+      if (!response.ok) {
+        throw new Error(`Failed to fetch event: ${response.status}`);
+      }
+      
+      const events = await response.json();
+      
+      if (events.length === 0) {
+        throw new Error("Event not found");
+      }
+      
+      return events[0];
+    } catch (err) {
+      console.error("WordPress API error, falling back to mock event data:", err);
+      USE_MOCK_DATA = true;  // Switch to mock data for future requests
+    }
+  }
+  
+  // If we get here, either USE_MOCK_DATA was true or the API request failed
+  const mockEvent = MOCK_EVENTS.find(event => event.slug === slug);
+  if (!mockEvent) {
+    throw new Error("Event not found");
+  }
+  
+  return mockEvent;
 };
 
 export const fetchCategories = async (ids?: number[]): Promise<Record<number, string>> => {
@@ -344,4 +577,4 @@ export const fetchRelatedPosts = async (categoryId: number, excludePostId: numbe
     .slice(0, limit);
 };
 
-export type { WordPressPost };
+export type { WordPressPost, WordPressEvent };
