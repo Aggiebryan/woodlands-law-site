@@ -24,7 +24,7 @@ const Index = () => {
               Texas Civil Litigation Excellence
             </h2>
             <div className="gold-underline mx-auto mb-6"></div>
-            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto text-justify">
               The Woodlands Law Firm provides specialized civil litigation representation in Montgomery County and Harris County District Courts, focusing on plaintiff-side advocacy in insurance disputes, consumer protection, personal injury, and estate planning matters.
             </p>
           </div>
