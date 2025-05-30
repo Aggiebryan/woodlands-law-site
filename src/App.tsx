@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -22,6 +23,8 @@ import SchedulePage from "./pages/SchedulePage";
 import InsuranceTermsGlossary from "./components/InsuranceTermsGlossary";
 import SitemapPage from "./pages/SitemapPage";
 import TermsOfServicePage from "./pages/TermsOfServicePage";
+import EventsListPage from "./pages/EventsListPage";
+import EventPage from "./pages/EventPage";
 
 // Import practice area pages
 import PersonalInjuryPage from "./pages/practice-areas/PersonalInjuryPage";
