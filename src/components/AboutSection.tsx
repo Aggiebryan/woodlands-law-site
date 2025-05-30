@@ -13,15 +13,15 @@ const AboutSection = () => {
             </h2>
             <div className="gold-underline mb-6"></div>
             
-            <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+            <p className="text-lg text-gray-700 mb-6 leading-relaxed text-justify">
               The Woodlands Law Firm represents plaintiffs in complex civil litigation matters throughout Montgomery County and Harris County. Our practice focuses exclusively on cases where individuals and businesses need aggressive advocacy against insurance companies, deceptive business practices, and personal injury claims.
             </p>
             
-            <p className="text-gray-700 mb-6 leading-relaxed">
+            <p className="text-gray-700 mb-6 leading-relaxed text-justify">
               We concentrate our practice in four core areas: Texas Deceptive Trade Practices Act violations, insurance coverage disputes under Texas Insurance Code Chapters 541 and 542, personal injury litigation, and comprehensive estate planning. This focused approach allows us to develop deep expertise in the specific laws, procedures, and strategies that benefit our clients.
             </p>
             
-            <p className="text-gray-700 mb-8 leading-relaxed">
+            <p className="text-gray-700 mb-8 leading-relaxed text-justify">
               Licensed to practice in Texas state courts and the U.S. District Court for the Southern District of Texas, we handle cases in Montgomery County District Courts, Harris County District Courts, and federal court when appropriate. Our litigation experience spans from initial demand letters through jury trials and post-judgment collection.
             </p>
 
