@@ -94,7 +94,7 @@ const AttorneyProfilePage = () => {
             Outside of work, Courtney enjoys hiking, photography, and spending time with her family. Her community involvement includes volunteer work with local youth organizations.
           </p>
         </>,
-      education: ["Paralegal Certificate, Houston Community College", "B.A. in Communication Studies, University of Houston"]
+      education: ["Paralegal Certificate, Lone Star College", "B.A. in Communication Studies, Texas A&M University"]
     },
     "julie-dunlap": {
       id: "julie-dunlap",
