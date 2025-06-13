@@ -91,7 +91,7 @@ const AttorneyProfilePage = () => {
             Working closely with our attorneys, Courtney provides crucial support by coordinating schedules, preparing correspondence, and assisting with research. Her ability to anticipate needs and solve problems proactively makes her an indispensable member of our legal team.
           </p>
           <p className="mb-4">
-            Outside of work, Courtney enjoys hiking, photography, and spending time with her family. Her community involvement includes volunteer work with local youth organizations.
+            Outside of work, Courtney enjoys hiking, photography, and spending time with her family. 
           </p>
         </>,
       education: ["Paralegal Certificate, Lone Star College", "B.A. in Communication Studies, Texas A&M University"]
