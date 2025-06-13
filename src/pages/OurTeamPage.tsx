@@ -90,6 +90,43 @@ const OurTeamPage = () => {
                 View Profile
               </Link>
             </div>
+
+            {/* Staff Member - Julie */}
+            <div className="flex flex-col">
+              <div className="rounded-lg overflow-hidden mb-4 aspect-[3/4] bg-gray-100 relative">
+                <img 
+                  src="/lovable-uploads/22e7fa10-9dd9-40c8-afa7-eee7672da620.png" 
+                  alt="Julie Dunlap" 
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    // If image fails to load, show fallback content
+                    target.style.display = 'none';
+                    const parent = target.parentElement;
+                    if (parent) {
+                      const fallback = document.createElement('div');
+                      fallback.className = 'w-full h-full flex items-center justify-center bg-gray-200';
+                      const initials = document.createElement('span');
+                      initials.className = 'text-4xl font-serif text-law-purple';
+                      initials.textContent = 'JD';
+                      fallback.appendChild(initials);
+                      parent.appendChild(fallback);
+                    }
+                  }}
+                />
+                <div className="absolute inset-0 flex items-center justify-center bg-gray-200 opacity-0">
+                  <span className="text-4xl font-serif text-law-purple">JD</span>
+                </div>
+              </div>
+              <h3 className="text-2xl font-serif text-law-purple mb-1">Julie Dunlap</h3>
+              <p className="text-law-gold font-medium mb-2">Office Manager</p>
+              <p className="text-gray-600 mb-4 text-justify">
+                Julie Dunlap brings diverse professional experience as a former Certified Real Estate Appraiser and small business owner. Her dedication to community service and organizational skills make her an invaluable part of our team.
+              </p>
+              <Link to="/team/julie-dunlap" className="text-law-purple hover:text-law-gold transition-colors font-medium mt-auto">
+                View Profile
+              </Link>
+            </div>
           </div>
         </div>
       </section>

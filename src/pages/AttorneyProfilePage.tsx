@@ -95,14 +95,38 @@ const AttorneyProfilePage = () => {
           </p>
         </>,
       education: ["Paralegal Certificate, Houston Community College", "B.A. in Communication Studies, University of Houston"]
+    },
+    "julie-dunlap": {
+      id: "julie-dunlap",
+      name: "Julie Dunlap",
+      title: "Office Manager",
+      image: "/lovable-uploads/22e7fa10-9dd9-40c8-afa7-eee7672da620.png",
+      bio: <>
+          <p className="mb-4 text-justify">
+            Julie Dunlap brings a wealth of diverse professional experience to her role as Office Manager at Woodlands Law. With 18 years as a Certified Real Estate Appraiser, Julie developed exceptional analytical skills and attention to detail that serve her well in managing the administrative operations of our firm.
+          </p>
+          <p className="mb-4 text-justify">
+            Prior to joining our team, Julie was a successful small business owner in the Cypress area, where she operated an ice cream shop for 2.5 years. This entrepreneurial experience gave her valuable insights into business operations, customer service, and the challenges that small business owners face - knowledge that helps her better understand and serve our clients' needs.
+          </p>
+          <p className="mb-4 text-justify">
+            Julie is deeply committed to her community and believes in helping others however she can. She has organized events gathering prom dresses for high school girls and is currently planning a free clothing swap exchange for locals in her area. Her dedication to community service reflects the same caring approach she brings to her work with our clients.
+          </p>
+          <p className="mb-4 text-justify">
+            Outside of work, Julie enjoys listening to live music with friends, hiking, photography, and has recently discovered a passion for birdwatching. Her diverse interests and warm personality make her an excellent first point of contact for clients visiting our office.
+          </p>
+          <p className="mb-4">
+            Julie's educational background includes studies in Education at Sam Houston State University, which has helped her develop strong communication and organizational skills that benefit both our team and our clients.
+          </p>
+        </>,
+      education: ["Education Studies, Sam Houston State University"]
     }
   };
   const attorney = attorneys[id as string];
   if (!attorney) {
     return <div className="pt-20">
         <div className="container mx-auto px-4 py-16 text-center">
-          <h1 className="text-3xl font-serif text-law-purple mb-4">Attorney Not Found</h1>
-          <p className="mb-6">The attorney profile you are looking for does not exist.</p>
+          <h1 className="text-3xl font-serif text-law-purple mb-4">Team Member Not Found</h1>
+          <p className="mb-6">The team member profile you are looking for does not exist.</p>
           <Link to="/our-team" className="bg-law-purple hover:bg-law-purple-light text-white font-medium py-3 px-8 rounded transition-colors inline-block">
             Back to Our Team
           </Link>
