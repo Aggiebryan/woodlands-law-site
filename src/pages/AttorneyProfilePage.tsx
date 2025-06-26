@@ -43,7 +43,7 @@ const AttorneyProfilePage = () => {
             In her downtime, Ms. Simpson enjoys time with her family, reading historical fiction, and traveling.
           </p>
         </>,
-      education: ["J.D., Baylor Law School", "B.A., University of Houston"],
+      education: ["J.D., Baylor Law School", "B.B.A., LeTourneau University, summa cum laude"],
       admissions: ["State Bar of Texas", "U.S. District Court, Southern District of Texas"],
       awards: ["Pro Bono College of the State Bar", "College of the State Bar of Texas"]
     },
