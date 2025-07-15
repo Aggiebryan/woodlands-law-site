@@ -123,7 +123,7 @@ const InsuranceLitigationPage = () => {
         subtitle="Fighting for Policyholders' Rights in The Woodlands"
         description="When insurance companies deny, delay, or underpay legitimate claims, our litigation team steps in to fight for the coverage you're entitled to receive. We have the expertise to level the playing field against powerful insurance companies."
         image="/out-2.webp"
-        ctaText="Get a Free Insurance Claim Review"
+        ctaText="Request an Insurance Claim Evaluation"
         onCtaClick={() => setShowClaimReviewForm(true)}
       />
       
@@ -158,7 +158,7 @@ const InsuranceLitigationPage = () => {
               onClick={() => setShowClaimReviewForm(true)}
               className="bg-law-gold hover:bg-law-gold-light text-law-purple font-medium py-3 px-8 rounded transition-colors inline-block"
             >
-              Get a Free Insurance Claim Review
+              Schedule Your Claim Strategy Session
             </button>
             <a 
               href="tel:+18326260116" 
