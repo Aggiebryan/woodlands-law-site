@@ -51,7 +51,7 @@ const EventsListPage = () => {
 
   // Function to format event date with day of week
   const formatEventDate = (event: WordPressEvent) => {
-    const eventDate = event.acf?.event_date || event.meta?.event_date;
+    const eventDate = event.event_date;
     if (eventDate) {
       const date = new Date(eventDate);
       return date.toLocaleDateString('en-US', { 
@@ -66,8 +66,8 @@ const EventsListPage = () => {
 
   // Function to get event time
   const getEventTime = (event: WordPressEvent) => {
-    const startTime = event.acf?.event_time || event.meta?.event_time;
-    const endTime = event.acf?.event_end_time || event.meta?.event_end_time;
+    const startTime = event.event_time;
+    const endTime = event.event_end_time;
     
     if (startTime && endTime) {
       return `${startTime} - ${endTime}`;
@@ -79,17 +79,17 @@ const EventsListPage = () => {
 
   // Function to get event location
   const getEventLocation = (event: WordPressEvent) => {
-    return event.acf?.event_location || event.meta?.event_location || "Location TBA";
+    return event.event_location || "Location TBA";
   };
 
   // Function to get registration link
   const getRegistrationLink = (event: WordPressEvent) => {
-    return event.acf?.registration_link || event.meta?.registration_link || "/schedule";
+    return event.registration_link || "/schedule";
   };
 
   // Function to check if event is in the past
   const isEventPast = (event: WordPressEvent) => {
-    const eventDate = event.acf?.event_date || event.meta?.event_date;
+    const eventDate = event.event_date;
     if (eventDate) {
       const today = new Date();
       const eventDateObj = new Date(eventDate);
@@ -132,7 +132,6 @@ const EventsListPage = () => {
             </div>
 
             {loading ? (
-              // Loading state
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {[...Array(6)].map((_, index) => (
                   <Card key={index} className="animate-pulse">
@@ -149,7 +148,6 @@ const EventsListPage = () => {
                 ))}
               </div>
             ) : error ? (
-              // Error state
               <div className="bg-red-50 border-l-4 border-red-500 p-6 rounded">
                 <div className="flex">
                   <div className="ml-3">
@@ -165,7 +163,6 @@ const EventsListPage = () => {
                 </div>
               </div>
             ) : events.length === 0 ? (
-              // No events state
               <div className="text-center py-12">
                 <Calendar className="mx-auto text-gray-400 w-16 h-16 mb-6" />
                 <h3 className="text-2xl font-serif text-law-purple mb-4">
@@ -181,7 +178,6 @@ const EventsListPage = () => {
                 )}
               </div>
             ) : (
-              // Events grid
               <>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   {events.map(event => {
@@ -256,11 +252,9 @@ const EventsListPage = () => {
                   })}
                 </div>
                 
-                {/* Pagination */}
                 {totalPages > 1 && (
                   <div className="flex justify-center mt-12">
                     <div className="flex items-center gap-2">
-                      {/* Previous page button */}
                       <button
                         onClick={() => handlePageChange(currentPage - 1)}
                         disabled={currentPage === 1}
@@ -273,7 +267,6 @@ const EventsListPage = () => {
                         Previous
                       </button>
                       
-                      {/* Page numbers */}
                       {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
                         <button
                           key={page}
@@ -288,7 +281,6 @@ const EventsListPage = () => {
                         </button>
                       ))}
                       
-                      {/* Next page button */}
                       <button
                         onClick={() => handlePageChange(currentPage + 1)}
                         disabled={currentPage === totalPages}
@@ -307,9 +299,7 @@ const EventsListPage = () => {
             )}
           </div>
           
-          {/* Sidebar */}
           <div className="lg:w-1/4">
-            {/* Quick Info Card */}
             <Card className="bg-law-purple text-white mb-8">
               <CardContent className="p-6">
                 <h3 className="text-xl font-serif font-bold mb-4">Stay Informed</h3>
@@ -325,7 +315,6 @@ const EventsListPage = () => {
               </CardContent>
             </Card>
             
-            {/* Newsletter Signup */}
             <NewsletterSignup />
           </div>
         </div>
