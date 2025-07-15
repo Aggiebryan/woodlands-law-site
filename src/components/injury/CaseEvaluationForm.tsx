@@ -332,7 +332,7 @@ const CaseEvaluationForm = ({
             </form>
           </Form>
         ) : (
-          <div className="space-y-4">
+          <div className="space-y-6">
             <div className="flex items-center gap-2 mb-4">
               <Button 
                 variant="outline" 
@@ -348,28 +348,45 @@ const CaseEvaluationForm = ({
               </span>
             </div>
             
-            <div className="w-full">
-              <iframe
-                src="https://woodlandslaw.cliogrow.com/book/75b00066bd4e140e9ddb2f15927c4d05"
-                width="100%"
-                height="600"
-                frameBorder="0"
-                className="rounded-lg border"
-                title="Schedule Consultation Appointment"
-                sandbox="allow-same-origin allow-scripts allow-forms allow-popups"
-              />
+            <div className="text-center space-y-4 py-8">
+              <div className="mx-auto w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
+                <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              
+              <h3 className="text-xl font-semibold text-gray-900">
+                Case Evaluation Submitted Successfully
+              </h3>
+              
+              <p className="text-gray-600 max-w-md mx-auto">
+                Your case evaluation has been submitted. Now let's schedule your consultation appointment to discuss your case in detail.
+              </p>
+              
+              <div className="pt-4">
+                <Button 
+                  onClick={() => {
+                    window.open('https://woodlandslaw.cliogrow.com/book/75b00066bd4e140e9ddb2f15927c4d05', '_blank');
+                  }}
+                  className="bg-law-purple hover:bg-law-purple-light text-white px-8 py-3 text-lg"
+                >
+                  Schedule Your Consultation
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </div>
+              
+              <p className="text-sm text-muted-foreground">
+                This will open our scheduling system in a new tab
+              </p>
             </div>
             
-            <div className="flex justify-between pt-4">
+            <div className="flex justify-center pt-4 border-t">
               <Button 
                 variant="outline" 
                 onClick={handleCloseDialog}
               >
                 Close
               </Button>
-              <p className="text-sm text-muted-foreground self-center">
-                You may close this window after scheduling your appointment
-              </p>
             </div>
           </div>
         )}
