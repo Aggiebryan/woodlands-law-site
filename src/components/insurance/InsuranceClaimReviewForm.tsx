@@ -111,9 +111,9 @@ const InsuranceClaimReviewForm = ({ open, onOpenChange }: InsuranceClaimReviewFo
       <Dialog open={open} onOpenChange={onOpenChange}>
         <DialogContent className="sm:max-w-xl">
           <DialogHeader>
-            <DialogTitle className="text-2xl font-serif text-law-purple">Free Insurance Claim Review</DialogTitle>
+            <DialogTitle className="text-2xl font-serif text-law-purple">Book Your Insurance Claim Strategy Session</DialogTitle>
             <DialogDescription>
-              Complete this form to have an attorney review your insurance claim at no cost.
+              Complete this form to have an experienced attorney evaluate your insurance claim and explain your legal options.
             </DialogDescription>
           </DialogHeader>
           
