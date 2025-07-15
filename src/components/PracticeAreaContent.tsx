@@ -122,7 +122,7 @@ const PracticeAreaContent = ({
             rel="noopener noreferrer"
             className="bg-law-gold hover:bg-law-gold-light text-law-purple font-medium py-3 px-8 rounded transition-colors inline-block"
           >
-            Schedule a Free Consultation
+            Schedule Your Consultation Today
           </a>
         </section>
       </div>
