@@ -138,7 +138,7 @@ const DTPAPage = () => {
         subtitle="Protecting Consumers & Businesses in The Woodlands"
         description="We help consumers and businesses fight back against deceptive, misleading, and fraudulent business practices. Our attorneys have extensive experience with Texas DTPA cases and know how to effectively pursue or defend these specialized claims."
         image="/lawlibrary.webp"
-        ctaText="Free DTPA Claim Evaluation"
+        ctaText="Discuss Your DTPA Claim With Us"
         onCtaClick={handleOpenForm}
       />
       
@@ -305,14 +305,14 @@ const DTPAPage = () => {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-serif text-white mb-6">Have You Been a Victim of Deceptive Business Practices?</h2>
           <p className="text-white/90 mb-8 max-w-2xl mx-auto">
-            Our experienced Texas DTPA attorneys are ready to review your potential claim and explain your legal options in a free, confidential consultation.
+            Our experienced Texas DTPA attorneys will review your potential claim and provide clear guidance on your legal options during a comprehensive, confidential consultation.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button 
               onClick={handleOpenForm}
               className="bg-law-gold hover:bg-law-gold-light text-law-purple font-medium py-3 px-8 rounded transition-colors"
             >
-              Schedule a Free DTPA Evaluation
+              Book a Comprehensive DTPA Claim Review
             </Button>
             <Link
               to="/practice-areas/deceptive-trade-practices-act/guide"
