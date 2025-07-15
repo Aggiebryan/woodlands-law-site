@@ -107,7 +107,7 @@ const DTPAConsultationForm = ({ open, onOpenChange }: DTPAConsultationFormProps)
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-[500px] max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle className="text-xl font-serif text-law-purple">Free DTPA Claim Evaluation</DialogTitle>
+          <DialogTitle className="text-xl font-serif text-law-purple">Schedule a Comprehensive DTPA Claim Review</DialogTitle>
           <DialogDescription>
             Fill out the form below and our DTPA attorneys will review your potential claim.
           </DialogDescription>
