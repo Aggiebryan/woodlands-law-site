@@ -44,6 +44,7 @@ const CaseEvaluationForm = ({
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [currentStep, setCurrentStep] = useState<'evaluation' | 'booking'>('evaluation');
   const [submissionComplete, setSubmissionComplete] = useState(false);
+  const [submittedFormData, setSubmittedFormData] = useState<FormValues | null>(null);
   const { toast } = useToast();
 
   const form = useForm<FormValues>({
@@ -80,6 +81,8 @@ const CaseEvaluationForm = ({
         throw new Error('Network response was not ok');
       }
 
+      // Store the form data for use in booking URL
+      setSubmittedFormData(data);
       setSubmissionComplete(true);
       toast({
         title: "Case Evaluation Submitted",
@@ -109,7 +112,33 @@ const CaseEvaluationForm = ({
     form.reset();
     setCurrentStep('evaluation');
     setSubmissionComplete(false);
+    setSubmittedFormData(null);
     onOpenChange(false);
+  };
+
+  const openBookingPage = () => {
+    const baseUrl = 'https://woodlandslaw.cliogrow.com/book/75b00066bd4e140e9ddb2f15927c4d05';
+    
+    if (submittedFormData) {
+      // Create URL parameters from the submitted form data
+      const params = new URLSearchParams({
+        first_name: submittedFormData.firstName,
+        last_name: submittedFormData.lastName,
+        email: submittedFormData.email,
+        phone: submittedFormData.phone,
+        // Some booking systems also accept these alternative parameter names
+        firstName: submittedFormData.firstName,
+        lastName: submittedFormData.lastName,
+        // Add any additional context that might be useful
+        source: 'case_evaluation_form'
+      });
+      
+      const urlWithParams = `${baseUrl}?${params.toString()}`;
+      window.open(urlWithParams, '_blank');
+    } else {
+      // Fallback to base URL if no form data available
+      window.open(baseUrl, '_blank');
+    }
   };
 
   const injuryOptions = [
@@ -365,9 +394,7 @@ const CaseEvaluationForm = ({
               
               <div className="pt-4">
                 <Button 
-                  onClick={() => {
-                    window.open('https://woodlandslaw.cliogrow.com/book/75b00066bd4e140e9ddb2f15927c4d05', '_blank');
-                  }}
+                  onClick={openBookingPage}
                   className="bg-law-purple hover:bg-law-purple-light text-white px-8 py-3 text-lg"
                 >
                   Schedule Your Consultation
