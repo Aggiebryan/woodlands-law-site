@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { format } from "date-fns";
-import { Calendar as CalendarIcon, ArrowLeft, ArrowRight } from "lucide-react";
+import { Calendar as CalendarIcon, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
@@ -45,7 +45,7 @@ const CaseEvaluationForm = ({
   const [currentStep, setCurrentStep] = useState<'evaluation' | 'booking'>('evaluation');
   const [submissionComplete, setSubmissionComplete] = useState(false);
   const [submittedFormData, setSubmittedFormData] = useState<FormValues | null>(null);
-  const [calendlyLoaded, setCalendlyLoaded] = useState(false);
+
   const { toast } = useToast();
 
   const form = useForm<FormValues>({
@@ -61,11 +61,10 @@ const CaseEvaluationForm = ({
 
   // Load Calendly script when booking step is active
   useEffect(() => {
-    if (currentStep === 'booking' && !calendlyLoaded) {
+    if (currentStep === 'booking') {
       const script = document.createElement('script');
       script.src = 'https://assets.calendly.com/assets/external/widget.js';
       script.async = true;
-      script.onload = () => setCalendlyLoaded(true);
       document.head.appendChild(script);
 
       // Cleanup function to remove script when component unmounts
@@ -76,7 +75,7 @@ const CaseEvaluationForm = ({
         }
       };
     }
-  }, [currentStep, calendlyLoaded]);
+  }, [currentStep]);
 
   const onSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
@@ -133,7 +132,6 @@ const CaseEvaluationForm = ({
     setCurrentStep('evaluation');
     setSubmissionComplete(false);
     setSubmittedFormData(null);
-    setCalendlyLoaded(false);
     onOpenChange(false);
   };
 
@@ -156,20 +154,19 @@ const CaseEvaluationForm = ({
   return (
     <Dialog open={open} onOpenChange={handleCloseDialog}>
       <DialogContent className={cn(
-        "overflow-y-auto max-h-[90vh]",
-        currentStep === 'booking' ? "max-w-4xl w-full" : "max-w-md md:max-w-lg"
+        "overflow-hidden",
+        currentStep === 'booking' ? "max-w-4xl w-full h-[800px]" : "max-w-md md:max-w-lg max-h-[90vh] overflow-y-auto"
       )}>
-        <DialogHeader>
-          <DialogTitle className="text-2xl font-serif text-law-purple">
-            {currentStep === 'evaluation' ? 'Free Case Evaluation' : 'Schedule Your Consultation'}
-          </DialogTitle>
-          <DialogDescription>
-            {currentStep === 'evaluation' 
-              ? 'Complete the form below for a free evaluation of your personal injury case.'
-              : 'Select a convenient time for your consultation appointment.'
-            }
-          </DialogDescription>
-        </DialogHeader>
+        {currentStep === 'evaluation' && (
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-serif text-law-purple">
+              Free Case Evaluation
+            </DialogTitle>
+            <DialogDescription>
+              Complete the form below for a free evaluation of your personal injury case.
+            </DialogDescription>
+          </DialogHeader>
+        )}
 
         {currentStep === 'evaluation' ? (
           <Form {...form}>
@@ -332,59 +329,13 @@ const CaseEvaluationForm = ({
             </form>
           </Form>
         ) : (
-          <div className="space-y-4">
-            <div className="flex items-center justify-between mb-4">
-              <Button 
-                variant="outline" 
-                size="sm" 
-                onClick={handleBackToEvaluation}
-                className="flex items-center gap-2"
-              >
-                <ArrowLeft className="h-4 w-4" />
-                Back to Form
-              </Button>
-              <Button 
-                variant="outline" 
-                size="sm"
-                onClick={handleCloseDialog}
-              >
-                Close
-              </Button>
-            </div>
-            
-            {submissionComplete && (
-              <div className="text-center py-4 mb-4 bg-green-50 rounded-lg border border-green-200">
-                <div className="mx-auto w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-3">
-                  <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  Case Evaluation Submitted Successfully
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  Your case evaluation has been submitted. Please schedule your consultation below.
-                </p>
-              </div>
-            )}
-            
-            {/* Calendly Embedded Widget */}
-            <div className="w-full">
-              <div 
-                className="calendly-inline-widget" 
-                data-url="https://calendly.com/bryan-woodlands" 
-                style={{ minWidth: '320px', height: '700px', width: '100%' }}
-              />
-              {!calendlyLoaded && (
-                <div className="flex items-center justify-center h-[700px] bg-gray-50 rounded-lg">
-                  <div className="text-center">
-                    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-law-purple mx-auto mb-4"></div>
-                    <p className="text-gray-600">Loading calendar...</p>
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
+          /* Calendly inline widget */
+          <div 
+            className="calendly-inline-widget" 
+            data-url="https://calendly.com/bryan-woodlands" 
+            style={{ minWidth: '320px', height: '700px' }}
+          />
+        )}
         )}
       </DialogContent>
     </Dialog>
