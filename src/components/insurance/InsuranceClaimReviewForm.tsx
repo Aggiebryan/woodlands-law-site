@@ -324,30 +324,7 @@ const InsuranceClaimReviewForm = ({ open, onOpenChange }: InsuranceClaimReviewFo
                   </FormItem>
                 )}
               />
-              
-              <FormField
-                control={form.control}
-                name="bestTimeToCall"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Best Time to Contact You</FormLabel>
-                    <Select onValueChange={field.onChange} defaultValue={field.value}>
-                      <FormControl>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Select a time" />
-                        </SelectTrigger>
-                      </FormControl>
-                      <SelectContent>
-                        <SelectItem value="Morning">Morning</SelectItem>
-                        <SelectItem value="Lunch">Lunch</SelectItem>
-                        <SelectItem value="Afternoon">Afternoon</SelectItem>
-                      </SelectContent>
-                    </Select>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              
+                                          
               <div className="flex justify-end gap-3 pt-2">
                 <Button 
                   type="button" 
