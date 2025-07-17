@@ -1,7 +1,7 @@
 
 import PageHeader from "@/components/schedule/PageHeader";
 import ContactInfoSection from "@/components/schedule/ContactInfoSection";
-import ConsultationForm from "@/components/schedule/ConsultationForm";
+import CalendlyWidget from "@/components/schedule/CalendlyWidget";
 
 const SchedulePage = () => {
   return (
@@ -15,13 +15,13 @@ const SchedulePage = () => {
       
       {/* Contact Form Section */}
       <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Left Column - Contact Information */}
-            <ContactInfoSection />
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="space-y-12">
+            {/* Calendly Widget */}
+            <CalendlyWidget />
             
-            {/* Right Column - Form */}
-            <ConsultationForm />
+            {/* Contact Information */}
+            <ContactInfoSection />
           </div>
         </div>
       </section>
