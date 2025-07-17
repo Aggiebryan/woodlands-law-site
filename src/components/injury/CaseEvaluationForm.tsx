@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -45,6 +45,7 @@ const CaseEvaluationForm = ({
   const [currentStep, setCurrentStep] = useState<'evaluation' | 'booking'>('evaluation');
   const [submissionComplete, setSubmissionComplete] = useState(false);
   const [submittedFormData, setSubmittedFormData] = useState<FormValues | null>(null);
+  const [calendlyLoaded, setCalendlyLoaded] = useState(false);
   const { toast } = useToast();
 
   const form = useForm<FormValues>({
@@ -57,6 +58,25 @@ const CaseEvaluationForm = ({
       description: ""
     }
   });
+
+  // Load Calendly script when booking step is active
+  useEffect(() => {
+    if (currentStep === 'booking' && !calendlyLoaded) {
+      const script = document.createElement('script');
+      script.src = 'https://assets.calendly.com/assets/external/widget.js';
+      script.async = true;
+      script.onload = () => setCalendlyLoaded(true);
+      document.head.appendChild(script);
+
+      // Cleanup function to remove script when component unmounts
+      return () => {
+        const existingScript = document.querySelector('script[src="https://assets.calendly.com/assets/external/widget.js"]');
+        if (existingScript) {
+          document.head.removeChild(existingScript);
+        }
+      };
+    }
+  }, [currentStep, calendlyLoaded]);
 
   const onSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
@@ -81,7 +101,7 @@ const CaseEvaluationForm = ({
         throw new Error('Network response was not ok');
       }
 
-      // Store the form data for use in booking URL
+      // Store the form data for potential future use
       setSubmittedFormData(data);
       setSubmissionComplete(true);
       toast({
@@ -113,32 +133,8 @@ const CaseEvaluationForm = ({
     setCurrentStep('evaluation');
     setSubmissionComplete(false);
     setSubmittedFormData(null);
+    setCalendlyLoaded(false);
     onOpenChange(false);
-  };
-
-  const openBookingPage = () => {
-    const baseUrl = 'https://woodlandslaw.cliogrow.com/book/75b00066bd4e140e9ddb2f15927c4d05';
-    
-    if (submittedFormData) {
-      // Create URL parameters from the submitted form data
-      const params = new URLSearchParams({
-        first_name: submittedFormData.firstName,
-        last_name: submittedFormData.lastName,
-        email: submittedFormData.email,
-        phone: submittedFormData.phone,
-        // Some booking systems also accept these alternative parameter names
-        firstName: submittedFormData.firstName,
-        lastName: submittedFormData.lastName,
-        // Add any additional context that might be useful
-        source: 'case_evaluation_form'
-      });
-      
-      const urlWithParams = `${baseUrl}?${params.toString()}`;
-      window.open(urlWithParams, '_blank');
-    } else {
-      // Fallback to base URL if no form data available
-      window.open(baseUrl, '_blank');
-    }
   };
 
   const injuryOptions = [
@@ -161,7 +157,7 @@ const CaseEvaluationForm = ({
     <Dialog open={open} onOpenChange={handleCloseDialog}>
       <DialogContent className={cn(
         "overflow-y-auto max-h-[90vh]",
-        currentStep === 'booking' ? "max-w-4xl" : "max-w-md md:max-w-lg"
+        currentStep === 'booking' ? "max-w-4xl w-full" : "max-w-md md:max-w-lg"
       )}>
         <DialogHeader>
           <DialogTitle className="text-2xl font-serif text-law-purple">
@@ -336,8 +332,8 @@ const CaseEvaluationForm = ({
             </form>
           </Form>
         ) : (
-          <div className="space-y-6">
-            <div className="flex items-center gap-2 mb-4">
+          <div className="space-y-4">
+            <div className="flex items-center justify-between mb-4">
               <Button 
                 variant="outline" 
                 size="sm" 
@@ -347,48 +343,46 @@ const CaseEvaluationForm = ({
                 <ArrowLeft className="h-4 w-4" />
                 Back to Form
               </Button>
-              <span className="text-sm text-muted-foreground">
-                Case evaluation submitted successfully
-              </span>
-            </div>
-            
-            <div className="text-center space-y-4 py-8">
-              <div className="mx-auto w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
-                <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-              </div>
-              
-              <h3 className="text-xl font-semibold text-gray-900">
-                Case Evaluation Submitted Successfully
-              </h3>
-              
-              <p className="text-gray-600 max-w-md mx-auto">
-                Your case evaluation has been submitted. Now let's schedule your consultation appointment to discuss your case in detail.
-              </p>
-              
-              <div className="pt-4">
-                <Button 
-                  onClick={openBookingPage}
-                  className="bg-law-purple hover:bg-law-purple-light text-white px-8 py-3 text-lg"
-                >
-                  Schedule Your Consultation
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </div>
-              
-              <p className="text-sm text-muted-foreground">
-                This will open our scheduling system in a new tab
-              </p>
-            </div>
-            
-            <div className="flex justify-center pt-4 border-t">
               <Button 
                 variant="outline" 
+                size="sm"
                 onClick={handleCloseDialog}
               >
                 Close
               </Button>
+            </div>
+            
+            {submissionComplete && (
+              <div className="text-center py-4 mb-4 bg-green-50 rounded-lg border border-green-200">
+                <div className="mx-auto w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-3">
+                  <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  Case Evaluation Submitted Successfully
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  Your case evaluation has been submitted. Please schedule your consultation below.
+                </p>
+              </div>
+            )}
+            
+            {/* Calendly Embedded Widget */}
+            <div className="w-full">
+              <div 
+                className="calendly-inline-widget" 
+                data-url="https://calendly.com/bryan-woodlands" 
+                style={{ minWidth: '320px', height: '700px', width: '100%' }}
+              />
+              {!calendlyLoaded && (
+                <div className="flex items-center justify-center h-[700px] bg-gray-50 rounded-lg">
+                  <div className="text-center">
+                    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-law-purple mx-auto mb-4"></div>
+                    <p className="text-gray-600">Loading calendar...</p>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         )}
