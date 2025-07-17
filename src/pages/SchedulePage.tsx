@@ -15,7 +15,7 @@ const SchedulePage = () => {
       
       {/* Contact Form Section */}
       <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 max-w-6x1">
           <div className="space-y-12">
             {/* Calendly Widget */}
             <CalendlyWidget />
