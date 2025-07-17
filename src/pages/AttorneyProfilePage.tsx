@@ -1,6 +1,15 @@
 import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 
+// Declare Calendly for TypeScript at top level
+declare global {
+  interface Window {
+    Calendly: {
+      initPopupWidget: (options: { url: string }) => void;
+    };
+  }
+}
+
 interface AttorneyInfo {
   id: string;
   name: string;
@@ -13,11 +22,7 @@ interface AttorneyInfo {
 }
 
 const AttorneyProfilePage = () => {
-  const {
-    id
-  } = useParams<{
-    id: string;
-  }>();
+  const { id } = useParams<{ id: string }>();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -45,15 +50,6 @@ const AttorneyProfilePage = () => {
       };
     }
   }, [id]);
-
-  // Declare Calendly for TypeScript
-  declare global {
-    interface Window {
-      Calendly: {
-        initPopupWidget: (options: { url: string }) => void;
-      };
-    }
-  }
 
   const attorneys: Record<string, AttorneyInfo> = {
     "gwendolyn-simpson": {
@@ -160,7 +156,8 @@ const AttorneyProfilePage = () => {
   const attorney = attorneys[id as string];
 
   if (!attorney) {
-    return <div className="pt-20">
+    return (
+      <div className="pt-20">
         <div className="container mx-auto px-4 py-16 text-center">
           <h1 className="text-3xl font-serif text-law-purple mb-4">Team Member Not Found</h1>
           <p className="mb-6">The team member profile you are looking for does not exist.</p>
@@ -168,7 +165,8 @@ const AttorneyProfilePage = () => {
             Back to Our Team
           </Link>
         </div>
-      </div>;
+      </div>
+    );
   }
 
   const handleCalendlyClick = (e: React.MouseEvent) => {
