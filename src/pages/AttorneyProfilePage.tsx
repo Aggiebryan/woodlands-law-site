@@ -1,6 +1,6 @@
-
 import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
+
 interface AttorneyInfo {
   id: string;
   name: string;
@@ -11,15 +11,50 @@ interface AttorneyInfo {
   admissions?: string[];
   awards?: string[];
 }
+
 const AttorneyProfilePage = () => {
   const {
     id
   } = useParams<{
     id: string;
   }>();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  // Load Calendly scripts for Bryan Holman
+  useEffect(() => {
+    if (id === 'bryan-holman') {
+      // Load Calendly CSS
+      const link = document.createElement('link');
+      link.href = 'https://assets.calendly.com/assets/external/widget.css';
+      link.rel = 'stylesheet';
+      document.head.appendChild(link);
+
+      // Load Calendly JS
+      const script = document.createElement('script');
+      script.src = 'https://assets.calendly.com/assets/external/widget.js';
+      script.async = true;
+      document.head.appendChild(script);
+
+      return () => {
+        // Cleanup
+        document.head.removeChild(link);
+        document.head.removeChild(script);
+      };
+    }
+  }, [id]);
+
+  // Declare Calendly for TypeScript
+  declare global {
+    interface Window {
+      Calendly: {
+        initPopupWidget: (options: { url: string }) => void;
+      };
+    }
+  }
+
   const attorneys: Record<string, AttorneyInfo> = {
     "gwendolyn-simpson": {
       id: "gwendolyn-simpson",
@@ -121,7 +156,9 @@ const AttorneyProfilePage = () => {
       education: ["Education Studies, Sam Houston State University"]
     }
   };
+
   const attorney = attorneys[id as string];
+
   if (!attorney) {
     return <div className="pt-20">
         <div className="container mx-auto px-4 py-16 text-center">
@@ -133,6 +170,15 @@ const AttorneyProfilePage = () => {
         </div>
       </div>;
   }
+
+  const handleCalendlyClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (window.Calendly) {
+      window.Calendly.initPopupWidget({ url: 'https://calendly.com/bryan-woodlands' });
+    }
+    return false;
+  };
+
   return <div className="pt-20">
       {/* Page Header */}
       <div className="relative bg-law-purple py-16">
@@ -176,9 +222,19 @@ const AttorneyProfilePage = () => {
                   </ul>
                 </div>}
               
-              <Link to="/contact" className="bg-law-gold hover:bg-law-gold-light text-law-purple font-medium py-3 px-6 rounded transition-colors inline-block w-full text-center">
-                Schedule a Consultation
-              </Link>
+              {id === 'bryan-holman' ? (
+                <a
+                  href="#"
+                  onClick={handleCalendlyClick}
+                  className="bg-law-gold hover:bg-law-gold-light text-law-purple font-medium py-3 px-6 rounded transition-colors inline-block w-full text-center"
+                >
+                  Schedule a Consultation with Bryan
+                </a>
+              ) : (
+                <Link to="/contact" className="bg-law-gold hover:bg-law-gold-light text-law-purple font-medium py-3 px-6 rounded transition-colors inline-block w-full text-center">
+                  Schedule a Consultation
+                </Link>
+              )}
             </div>
             
             {/* Main Content */}
@@ -199,4 +255,5 @@ const AttorneyProfilePage = () => {
       </section>
     </div>;
 };
+
 export default AttorneyProfilePage;
