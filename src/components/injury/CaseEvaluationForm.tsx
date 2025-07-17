@@ -45,7 +45,6 @@ const CaseEvaluationForm = ({
   const [currentStep, setCurrentStep] = useState<'evaluation' | 'booking'>('evaluation');
   const [submissionComplete, setSubmissionComplete] = useState(false);
   const [submittedFormData, setSubmittedFormData] = useState<FormValues | null>(null);
-
   const { toast } = useToast();
 
   const form = useForm<FormValues>({
@@ -59,21 +58,12 @@ const CaseEvaluationForm = ({
     }
   });
 
-  // Load Calendly script when booking step is active
   useEffect(() => {
     if (currentStep === 'booking') {
       const script = document.createElement('script');
       script.src = 'https://assets.calendly.com/assets/external/widget.js';
       script.async = true;
       document.head.appendChild(script);
-
-      // Cleanup function to remove script when component unmounts
-      return () => {
-        const existingScript = document.querySelector('script[src="https://assets.calendly.com/assets/external/widget.js"]');
-        if (existingScript) {
-          document.head.removeChild(existingScript);
-        }
-      };
     }
   }, [currentStep]);
 
@@ -100,7 +90,6 @@ const CaseEvaluationForm = ({
         throw new Error('Network response was not ok');
       }
 
-      // Store the form data for potential future use
       setSubmittedFormData(data);
       setSubmissionComplete(true);
       toast({
@@ -108,7 +97,6 @@ const CaseEvaluationForm = ({
         description: "Now let's schedule your consultation appointment.",
       });
 
-      // Move to booking step
       setCurrentStep('booking');
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -122,12 +110,7 @@ const CaseEvaluationForm = ({
     }
   };
 
-  const handleBackToEvaluation = () => {
-    setCurrentStep('evaluation');
-  };
-
   const handleCloseDialog = () => {
-    // Reset everything when closing
     form.reset();
     setCurrentStep('evaluation');
     setSubmissionComplete(false);
@@ -154,8 +137,7 @@ const CaseEvaluationForm = ({
   return (
     <Dialog open={open} onOpenChange={handleCloseDialog}>
       <DialogContent className={cn(
-        "overflow-hidden",
-        currentStep === 'booking' ? "max-w-4xl w-full h-[800px]" : "max-w-md md:max-w-lg max-h-[90vh] overflow-y-auto"
+        currentStep === 'booking' ? "max-w-4xl w-full h-[800px] p-0" : "max-w-md md:max-w-lg max-h-[90vh] overflow-y-auto"
       )}>
         {currentStep === 'evaluation' && (
           <DialogHeader>
@@ -329,13 +311,11 @@ const CaseEvaluationForm = ({
             </form>
           </Form>
         ) : (
-          /* Calendly inline widget */
           <div 
             className="calendly-inline-widget" 
             data-url="https://calendly.com/bryan-woodlands" 
             style={{ minWidth: '320px', height: '700px' }}
           />
-        )}
         )}
       </DialogContent>
     </Dialog>
