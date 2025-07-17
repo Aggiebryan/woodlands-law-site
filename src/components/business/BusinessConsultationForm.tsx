@@ -258,29 +258,7 @@ const BusinessConsultationForm = ({ open, onOpenChange }: BusinessConsultationFo
               )}
             />
             
-            <FormField
-              control={form.control}
-              name="bestTimeToContact"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Best time to contact you</FormLabel>
-                  <Select onValueChange={field.onChange} defaultValue={field.value}>
-                    <FormControl>
-                      <SelectTrigger>
-                        <SelectValue placeholder="Select a time" />
-                      </SelectTrigger>
-                    </FormControl>
-                    <SelectContent>
-                      <SelectItem value="Morning">Morning</SelectItem>
-                      <SelectItem value="Lunch">Lunch</SelectItem>
-                      <SelectItem value="Afternoon">Afternoon</SelectItem>
-                    </SelectContent>
-                  </Select>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            
+                        
             <div className="flex justify-end pt-4">
               <Button 
                 type="submit" 
