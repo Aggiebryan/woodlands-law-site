@@ -322,32 +322,7 @@ const CaseEvaluationForm = ({
                   </FormItem>
                 )}
               />
-
-              <FormField
-                control={form.control}
-                name="bestTimeToCall"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Best time to call</FormLabel>
-                    <Select onValueChange={field.onChange} defaultValue={field.value}>
-                      <FormControl>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Select preferred time" />
-                        </SelectTrigger>
-                      </FormControl>
-                      <SelectContent>
-                        {callTimeOptions.map((option) => (
-                          <SelectItem key={option} value={option}>
-                            {option}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-
+              
               <div className="pt-4">
                 <Button 
                   type="submit" 
