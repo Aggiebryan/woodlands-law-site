@@ -1,5 +1,6 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 
 // 
 
@@ -21,9 +22,8 @@ const AttorneyProfilePage = () => {
     window.scrollTo(0, 0);
   }, []);
 
-// Cal.com embed uses inline iframe; no external script needed
-const [showScheduler, setShowScheduler] = useState(false);
-const schedulerRef = useRef<HTMLDivElement>(null);
+// Cal.com modal state
+const [openScheduler, setOpenScheduler] = useState(false);
 
   const attorneys: Record<string, AttorneyInfo> = {
     "gwendolyn-simpson": {
@@ -145,10 +145,7 @@ const schedulerRef = useRef<HTMLDivElement>(null);
 
   const handleScheduleClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    setShowScheduler(true);
-    setTimeout(() => {
-      schedulerRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 0);
+    setOpenScheduler(true);
     return false;
   };
 
@@ -197,7 +194,7 @@ const schedulerRef = useRef<HTMLDivElement>(null);
               
               {id === 'bryan-holman' ? (
                 <a
-                  href="#schedule-bryan"
+                  href="#"
                   onClick={handleScheduleClick}
                   className="bg-law-gold hover:bg-law-gold-light text-law-purple font-medium py-3 px-6 rounded transition-colors inline-block w-full text-center"
                 >
@@ -224,28 +221,26 @@ const schedulerRef = useRef<HTMLDivElement>(null);
               </div>
             </div>
             </div>
-            {id === 'bryan-holman' && (
-              <div ref={schedulerRef} id="schedule-bryan" className="mt-12">
-                {showScheduler && (
-                  <section aria-labelledby="schedule-bryan-title">
-                    <h2 id="schedule-bryan-title" className="text-3xl font-serif text-law-purple mb-6">
-                      Schedule a Consultation with Bryan
-                    </h2>
-                    <div className="rounded-lg overflow-hidden border border-gray-200">
-                      <iframe
-                        src="https://cal.com/bryanholman?embed=true"
-                        title="Schedule a consultation with Bryan Holman - Cal.com"
-                        className="w-full h-[900px]"
-                        loading="lazy"
-                        referrerPolicy="no-referrer-when-downgrade"
-                      />
-                    </div>
-                  </section>
-                )}
-              </div>
-            )}
         </div>
       </section>
+      {id === 'bryan-holman' && (
+        <Dialog open={openScheduler} onOpenChange={setOpenScheduler}>
+          <DialogContent className="max-w-5xl w-[96vw] p-0 overflow-hidden">
+            <DialogHeader>
+              <DialogTitle>Schedule a Consultation with Bryan</DialogTitle>
+            </DialogHeader>
+            <div className="h-[80vh] min-h-[600px]">
+              <iframe
+                src="https://cal.com/bryanholman?embed=inline"
+                title="Schedule a consultation with Bryan Holman - Cal.com"
+                className="w-full h-full"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+          </DialogContent>
+        </Dialog>
+      )}
     </div>;
 };
 
