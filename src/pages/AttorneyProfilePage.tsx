@@ -1,14 +1,7 @@
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
-// Declare Calendly for TypeScript at top level
-declare global {
-  interface Window {
-    Calendly: {
-      initPopupWidget: (options: { url: string }) => void;
-    };
-  }
-}
+// 
 
 interface AttorneyInfo {
   id: string;
@@ -28,28 +21,9 @@ const AttorneyProfilePage = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  // Load Calendly scripts for Bryan Holman
-  useEffect(() => {
-    if (id === 'bryan-holman') {
-      // Load Calendly CSS
-      const link = document.createElement('link');
-      link.href = 'https://assets.calendly.com/assets/external/widget.css';
-      link.rel = 'stylesheet';
-      document.head.appendChild(link);
-
-      // Load Calendly JS
-      const script = document.createElement('script');
-      script.src = 'https://assets.calendly.com/assets/external/widget.js';
-      script.async = true;
-      document.head.appendChild(script);
-
-      return () => {
-        // Cleanup
-        document.head.removeChild(link);
-        document.head.removeChild(script);
-      };
-    }
-  }, [id]);
+// Cal.com embed uses inline iframe; no external script needed
+const [showScheduler, setShowScheduler] = useState(false);
+const schedulerRef = useRef<HTMLDivElement>(null);
 
   const attorneys: Record<string, AttorneyInfo> = {
     "gwendolyn-simpson": {
@@ -169,11 +143,12 @@ const AttorneyProfilePage = () => {
     );
   }
 
-  const handleCalendlyClick = (e: React.MouseEvent) => {
+  const handleScheduleClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    if (window.Calendly) {
-      window.Calendly.initPopupWidget({ url: 'https://calendly.com/bryan-woodlands' });
-    }
+    setShowScheduler(true);
+    setTimeout(() => {
+      schedulerRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 0);
     return false;
   };
 
@@ -222,8 +197,8 @@ const AttorneyProfilePage = () => {
               
               {id === 'bryan-holman' ? (
                 <a
-                  href="#"
-                  onClick={handleCalendlyClick}
+                  href="#schedule-bryan"
+                  onClick={handleScheduleClick}
                   className="bg-law-gold hover:bg-law-gold-light text-law-purple font-medium py-3 px-6 rounded transition-colors inline-block w-full text-center"
                 >
                   Schedule a Consultation with Bryan
@@ -248,7 +223,27 @@ const AttorneyProfilePage = () => {
                 </Link>
               </div>
             </div>
-          </div>
+            </div>
+            {id === 'bryan-holman' && (
+              <div ref={schedulerRef} id="schedule-bryan" className="mt-12">
+                {showScheduler && (
+                  <section aria-labelledby="schedule-bryan-title">
+                    <h2 id="schedule-bryan-title" className="text-3xl font-serif text-law-purple mb-6">
+                      Schedule a Consultation with Bryan
+                    </h2>
+                    <div className="rounded-lg overflow-hidden border border-gray-200">
+                      <iframe
+                        src="https://cal.com/bryanholman?embed=true"
+                        title="Schedule a consultation with Bryan Holman - Cal.com"
+                        className="w-full h-[900px]"
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                      />
+                    </div>
+                  </section>
+                )}
+              </div>
+            )}
         </div>
       </section>
     </div>;
