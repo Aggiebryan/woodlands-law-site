@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { getCalApi } from "@calcom/embed-react";
 
 // 
 
@@ -21,6 +22,16 @@ const AttorneyProfilePage = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  // Initialize Cal.com embed for Gwendolyn Simpson
+  useEffect(() => {
+    if (id === 'gwendolyn-simpson') {
+      (async function () {
+        const cal = await getCalApi({ namespace: "gwendolyn-simpson" });
+        cal("ui", { hideEventTypeDetails: false, layout: "month_view" });
+      })();
+    }
+  }, [id]);
 
 // Cal.com modal state
 const [openScheduler, setOpenScheduler] = useState(false);
@@ -200,6 +211,16 @@ const [openScheduler, setOpenScheduler] = useState(false);
                 >
                   Schedule a Consultation with Bryan
                 </a>
+              ) : id === 'gwendolyn-simpson' ? (
+                <button
+                  type="button"
+                  data-cal-namespace="gwendolyn-simpson"
+                  data-cal-link="gwensimpson"
+                  data-cal-config='{"layout":"month_view"}'
+                  className="bg-law-gold hover:bg-law-gold-light text-law-purple font-medium py-3 px-6 rounded transition-colors inline-block w-full text-center"
+                >
+                  Schedule a Consultation
+                </button>
               ) : (
                 <Link to="/contact" className="bg-law-gold hover:bg-law-gold-light text-law-purple font-medium py-3 px-6 rounded transition-colors inline-block w-full text-center">
                   Schedule a Consultation
