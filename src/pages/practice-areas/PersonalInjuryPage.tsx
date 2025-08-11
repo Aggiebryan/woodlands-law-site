@@ -13,12 +13,20 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import CaseEvaluationForm from "@/components/injury/CaseEvaluationForm";
+import { getCalApi } from "@calcom/embed-react";
 
 const PersonalInjuryPage = () => {
   const [showCaseEvaluationForm, setShowCaseEvaluationForm] = useState(false);
   
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi({ namespace: "personalinjury" });
+      cal("ui", { hideEventTypeDetails: false, layout: "month_view" });
+    })();
   }, []);
 
   const caseTypes = [
@@ -110,7 +118,12 @@ const PersonalInjuryPage = () => {
         description="When you've been injured due to someone else's negligence, you need an experienced legal team to fight for the compensation you deserve. Our personal injury attorneys have the knowledge, resources, and determination to hold responsible parties accountable."
         image="/lovable-uploads/c63dc061-b55b-4ecb-a111-23cc282089a8.png"
         ctaText="Free Case Evaluation"
-        onCtaClick={() => setShowCaseEvaluationForm(true)}
+        onCtaClick={() => {}}
+        ctaButtonProps={{
+          'data-cal-namespace': 'personalinjury',
+          'data-cal-link': 'team/the-woodlands-law-firm/personalinjury',
+          'data-cal-config': '{"layout":"month_view"}'
+        } as any}
       />
       
       <PracticeAreaContent
@@ -254,7 +267,9 @@ const PersonalInjuryPage = () => {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button 
-              onClick={() => setShowCaseEvaluationForm(true)}
+              data-cal-namespace="personalinjury"
+              data-cal-link="team/the-woodlands-law-firm/personalinjury"
+              data-cal-config='{"layout":"month_view"}'
               className="bg-law-gold hover:bg-law-gold-light text-law-purple font-medium py-3 px-8 rounded transition-colors inline-block"
             >
               Free Case Evaluation

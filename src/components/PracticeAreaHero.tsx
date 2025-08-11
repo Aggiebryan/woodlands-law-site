@@ -1,5 +1,6 @@
 
 import { Link } from "react-router-dom";
+import type { ButtonHTMLAttributes } from "react";
 
 interface PracticeAreaHeroProps {
   title: string;
@@ -9,6 +10,7 @@ interface PracticeAreaHeroProps {
   ctaText: string;
   ctaLink?: string;
   onCtaClick?: () => void;
+  ctaButtonProps?: ButtonHTMLAttributes<HTMLButtonElement>;
 }
 
 const PracticeAreaHero = ({ 
@@ -18,7 +20,8 @@ const PracticeAreaHero = ({
   image,
   ctaText,
   ctaLink,
-  onCtaClick 
+  onCtaClick,
+  ctaButtonProps
 }: PracticeAreaHeroProps) => {
   return (
     <section 
@@ -45,6 +48,7 @@ const PracticeAreaHero = ({
             <button
               onClick={onCtaClick}
               className="bg-law-gold hover:bg-law-gold-light text-law-purple font-medium py-3 px-8 rounded transition-colors inline-block"
+              {...ctaButtonProps}
             >
               {ctaText}
             </button>
