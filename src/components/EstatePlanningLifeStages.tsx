@@ -1,6 +1,7 @@
 
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Link } from "react-router-dom";
 
 const EstatePlanningLifeStages = () => {
   const lifeStages = [
@@ -97,14 +98,12 @@ const EstatePlanningLifeStages = () => {
             No matter where you are in life's journey, having the right estate plan 
             gives you and your loved ones security and peace of mind.
           </p>
-          <a 
-            href="https://woodlandslaw.cliogrow.com/book"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link 
+            to="/schedule"
             className="bg-law-gold hover:bg-law-gold-light text-law-purple font-medium py-3 px-8 rounded transition-colors inline-block"
           >
             Schedule Your Personalized Consultation
-          </a>
+          </Link>
         </div>
       </div>
     </section>

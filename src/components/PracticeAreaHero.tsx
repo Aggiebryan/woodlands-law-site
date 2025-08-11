@@ -60,14 +60,12 @@ const PracticeAreaHero = ({
               {ctaText}
             </Link>
           ) : (
-            <a 
-              href="https://woodlandslaw.cliogrow.com/book"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link 
+              to="/schedule"
               className="bg-law-gold hover:bg-law-gold-light text-law-purple font-medium py-3 px-8 rounded transition-colors inline-block"
             >
               {ctaText}
-            </a>
+            </Link>
           )}
         </div>
       </div>

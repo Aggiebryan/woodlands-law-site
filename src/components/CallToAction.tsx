@@ -47,14 +47,12 @@ const CallToAction = ({
               {primaryButtonText}
             </Link>
           ) : (
-            <a 
-              href="https://woodlandslaw.cliogrow.com/book" 
-              target="_blank" 
-              rel="noopener noreferrer"
+            <Link 
+              to="/schedule"
               className="bg-law-gold hover:bg-law-gold-light text-law-navy font-medium py-3 px-8 rounded transition-colors inline-block"
             >
               {primaryButtonText}
-            </a>
+            </Link>
           )}
           
           {secondaryButtonText && (secondaryButtonOnClick ? (

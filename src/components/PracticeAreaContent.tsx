@@ -116,14 +116,12 @@ const PracticeAreaContent = ({
             Schedule a consultation with one of our experienced attorneys to discuss your specific legal needs 
             and how we can help protect your interests.
           </p>
-          <a 
-            href="https://woodlandslaw.cliogrow.com/book"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link 
+            to="/schedule"
             className="bg-law-gold hover:bg-law-gold-light text-law-purple font-medium py-3 px-8 rounded transition-colors inline-block"
           >
             Schedule Your Consultation Today
-          </a>
+          </Link>
         </section>
       </div>
     </div>
