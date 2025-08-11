@@ -58,14 +58,6 @@ const CaseEvaluationForm = ({
     }
   });
 
-  useEffect(() => {
-    if (currentStep === 'booking') {
-      const script = document.createElement('script');
-      script.src = 'https://assets.calendly.com/assets/external/widget.js';
-      script.async = true;
-      document.head.appendChild(script);
-    }
-  }, [currentStep]);
 
   const onSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
@@ -311,11 +303,17 @@ const CaseEvaluationForm = ({
             </form>
           </Form>
         ) : (
-          <div 
-            className="calendly-inline-widget" 
-            data-url="https://calendly.com/bryan-woodlands" 
-            style={{ minWidth: '320px', height: '700px' }}
-          />
+          <div className="p-6 space-y-4">
+            <DialogHeader>
+              <DialogTitle className="text-2xl font-serif text-law-purple">Thank you</DialogTitle>
+              <DialogDescription>
+                We received your case details. Our office will contact you shortly to schedule your consultation.
+              </DialogDescription>
+            </DialogHeader>
+            <div className="flex justify-end gap-3">
+              <Button onClick={handleCloseDialog} className="bg-law-purple hover:bg-law-purple-light">Close</Button>
+            </div>
+          </div>
         )}
       </DialogContent>
     </Dialog>

@@ -1,7 +1,7 @@
 
 import PageHeader from "@/components/schedule/PageHeader";
 import ContactInfoSection from "@/components/schedule/ContactInfoSection";
-import CalendlyWidget from "@/components/schedule/CalendlyWidget";
+
 
 const SchedulePage = () => {
   return (
@@ -17,9 +17,6 @@ const SchedulePage = () => {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 max-w-6x1">
           <div className="space-y-12">
-            {/* Calendly Widget */}
-            <CalendlyWidget />
-            
             {/* Contact Information */}
             <ContactInfoSection />
           </div>
