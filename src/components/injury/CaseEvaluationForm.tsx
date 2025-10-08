@@ -25,7 +25,7 @@ const formSchema = z.object({
   dateOfAccident: z.date({ required_error: "Date of accident is required" }),
   injuryType: z.string({ required_error: "Please select how the injury occurred" }),
   description: z.string().min(10, { message: "Please provide some details about the accident" }),
-  bestTimeToCall: z.string({ required_error: "Please select the best time to call" })
+  bestTimeToCall: z.string({ required_error: "Please select the best time to call" }),
 });
 
 type FormValues = z.infer<typeof formSchema>;
@@ -36,13 +36,13 @@ interface CaseEvaluationFormProps {
   webhookUrl?: string;
 }
 
-const CaseEvaluationForm = ({ 
-  open, 
+const CaseEvaluationForm = ({
+  open,
   onOpenChange,
-  webhookUrl = "https://n8n.twlf.dev/webhook/PersonalInjury"
+  webhookUrl = "https://n8n.twlf.dev/webhook-test/1330964f-f83a-4943-9e1a-21fc1ab43446/webhook",
 }: CaseEvaluationFormProps) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [currentStep, setCurrentStep] = useState<'evaluation' | 'booking'>('evaluation');
+  const [currentStep, setCurrentStep] = useState<"evaluation" | "booking">("evaluation");
   const [submissionComplete, setSubmissionComplete] = useState(false);
   const [submittedFormData, setSubmittedFormData] = useState<FormValues | null>(null);
   const { toast } = useToast();
@@ -54,10 +54,9 @@ const CaseEvaluationForm = ({
       lastName: "",
       phone: "",
       email: "",
-      description: ""
-    }
+      description: "",
+    },
   });
-
 
   const onSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
@@ -65,11 +64,11 @@ const CaseEvaluationForm = ({
     try {
       const formattedData = {
         ...data,
-        dateOfAccident: format(data.dateOfAccident, "yyyy-MM-dd")
+        dateOfAccident: format(data.dateOfAccident, "yyyy-MM-dd"),
       };
 
       console.log("Submitting case evaluation:", formattedData);
-      
+
       const response = await fetch(webhookUrl, {
         method: "POST",
         headers: {
@@ -79,7 +78,7 @@ const CaseEvaluationForm = ({
       });
 
       if (!response.ok) {
-        throw new Error('Network response was not ok');
+        throw new Error("Network response was not ok");
       }
 
       setSubmittedFormData(data);
@@ -89,7 +88,7 @@ const CaseEvaluationForm = ({
         description: "Now let's schedule your consultation appointment.",
       });
 
-      setCurrentStep('booking');
+      setCurrentStep("booking");
     } catch (error) {
       console.error("Error submitting form:", error);
       toast({
@@ -104,7 +103,7 @@ const CaseEvaluationForm = ({
 
   const handleCloseDialog = () => {
     form.reset();
-    setCurrentStep('evaluation');
+    setCurrentStep("evaluation");
     setSubmissionComplete(false);
     setSubmittedFormData(null);
     onOpenChange(false);
@@ -121,28 +120,30 @@ const CaseEvaluationForm = ({
     "Motor vehicle accident",
     "Slip or trip and fall",
     "Water-related accident",
-    "Other"
+    "Other",
   ];
 
   const callTimeOptions = ["Morning", "Lunch", "Afternoon"];
 
   return (
     <Dialog open={open} onOpenChange={handleCloseDialog}>
-      <DialogContent className={cn(
-        currentStep === 'booking' ? "max-w-4xl w-full h-[800px] p-0" : "max-w-md md:max-w-lg max-h-[90vh] overflow-y-auto"
-      )}>
-        {currentStep === 'evaluation' && (
+      <DialogContent
+        className={cn(
+          currentStep === "booking"
+            ? "max-w-4xl w-full h-[800px] p-0"
+            : "max-w-md md:max-w-lg max-h-[90vh] overflow-y-auto",
+        )}
+      >
+        {currentStep === "evaluation" && (
           <DialogHeader>
-            <DialogTitle className="text-2xl font-serif text-law-purple">
-              Free Case Evaluation
-            </DialogTitle>
+            <DialogTitle className="text-2xl font-serif text-law-purple">Free Case Evaluation</DialogTitle>
             <DialogDescription>
               Complete the form below for a free evaluation of your personal injury case.
             </DialogDescription>
           </DialogHeader>
         )}
 
-        {currentStep === 'evaluation' ? (
+        {currentStep === "evaluation" ? (
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -159,7 +160,7 @@ const CaseEvaluationForm = ({
                     </FormItem>
                   )}
                 />
-                
+
                 <FormField
                   control={form.control}
                   name="lastName"
@@ -189,7 +190,7 @@ const CaseEvaluationForm = ({
                     </FormItem>
                   )}
                 />
-                
+
                 <FormField
                   control={form.control}
                   name="email"
@@ -216,16 +217,9 @@ const CaseEvaluationForm = ({
                         <FormControl>
                           <Button
                             variant={"outline"}
-                            className={cn(
-                              "w-full pl-3 text-left font-normal",
-                              !field.value && "text-muted-foreground"
-                            )}
+                            className={cn("w-full pl-3 text-left font-normal", !field.value && "text-muted-foreground")}
                           >
-                            {field.value ? (
-                              format(field.value, "PPP")
-                            ) : (
-                              <span>Select date</span>
-                            )}
+                            {field.value ? format(field.value, "PPP") : <span>Select date</span>}
                             <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
                           </Button>
                         </FormControl>
@@ -235,9 +229,7 @@ const CaseEvaluationForm = ({
                           mode="single"
                           selected={field.value}
                           onSelect={field.onChange}
-                          disabled={(date) =>
-                            date > new Date() || date < new Date("1900-01-01")
-                          }
+                          disabled={(date) => date > new Date() || date < new Date("1900-01-01")}
                           initialFocus
                         />
                       </PopoverContent>
@@ -279,20 +271,20 @@ const CaseEvaluationForm = ({
                   <FormItem>
                     <FormLabel>Describe how injury occurred</FormLabel>
                     <FormControl>
-                      <Textarea 
-                        placeholder="Please provide details about your accident..." 
+                      <Textarea
+                        placeholder="Please provide details about your accident..."
                         className="h-24"
-                        {...field} 
+                        {...field}
                       />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
                 )}
               />
-              
+
               <div className="pt-4">
-                <Button 
-                  type="submit" 
+                <Button
+                  type="submit"
                   className="w-full bg-law-purple hover:bg-law-purple-light"
                   disabled={isSubmitting}
                 >
@@ -311,7 +303,9 @@ const CaseEvaluationForm = ({
               </DialogDescription>
             </DialogHeader>
             <div className="flex justify-end gap-3">
-              <Button onClick={handleCloseDialog} className="bg-law-purple hover:bg-law-purple-light">Close</Button>
+              <Button onClick={handleCloseDialog} className="bg-law-purple hover:bg-law-purple-light">
+                Close
+              </Button>
             </div>
           </div>
         )}
