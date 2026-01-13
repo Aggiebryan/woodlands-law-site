@@ -153,7 +153,6 @@ const DTPAPage = () => {
               involving knowing or intentional conduct, Texas law allows enhanced damages and recovery of attorney’s
               fees.
             </p>
-          </br>
             <p>
               We help consumers and businesses fight back against deceptive, misleading, and fraudulent business
               practices. Our attorneys have extensive experience with Texas DTPA cases and know how to effectively
