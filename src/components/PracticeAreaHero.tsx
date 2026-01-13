@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import type { ButtonHTMLAttributes } from "react";
+import type { ButtonHTMLAttributes, ReactNode } from "react";
 
 interface PracticeAreaHeroProps {
   title: string;
   subtitle: string;
-  description: string;
+  description: ReactNode;
   image: string;
   ctaText: string;
   ctaLink?: string;
@@ -35,7 +35,7 @@ const PracticeAreaHero = ({
 
           <h2 className="text-xl md:text-2xl text-white/80 mb-6">{subtitle}</h2>
 
-          <p className="text-white/80 text-lg leading-relaxed mb-8 text-justify space-y-4">{description}</p>
+          <div className="text-white/80 text-lg leading-relaxed mb-8 text-justify space-y-4">{description}</div>
 
           {onCtaClick ? (
             <button
