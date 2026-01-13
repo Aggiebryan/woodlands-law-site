@@ -14,6 +14,7 @@ interface PracticeAreaContentProps {
   caseTypes: CaseType[];
   process?: { title: string; steps: string[] };
   faq?: { question: string; answer: string }[];
+  afterOverview?: React.ReactNode;
 }
 
 const PracticeAreaContent = ({
@@ -21,7 +22,8 @@ const PracticeAreaContent = ({
   whyChooseUs,
   caseTypes,
   process,
-  faq
+  faq,
+  afterOverview
 }: PracticeAreaContentProps) => {
   return (
     <div className="py-16">
@@ -32,6 +34,10 @@ const PracticeAreaContent = ({
           <div className="gold-underline mb-8"></div>
           <p className="text-gray-600">{overview}</p>
         </section>
+
+        {/* Custom content after overview */}
+        {afterOverview}
+        
         
         {/* Cases We Handle */}
         <section className="mb-16">
