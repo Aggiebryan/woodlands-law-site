@@ -4,7 +4,9 @@ import PracticeAreaContent from "@/components/PracticeAreaContent";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import DTPAViolationList from "@/components/DTPAViolationList";
-<!-- import DTPATestimonials from "@/components/DTPATestimonials"; -->
+{
+  /* import DTPATestimonials from "@/components/DTPATestimonials"; */
+}
 import TexasDTPAInfo from "@/components/TexasDTPAInfo";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -209,9 +211,9 @@ const DTPAPage = () => {
               <h2 className="text-3xl font-serif text-law-purple mb-4">Texas DTPA Resource Center</h2>
               <div className="gold-underline mb-6"></div>
               <p className="text-gray-600 max-w-4xl mb-10">
-                The Texas DTPA contains detailed rules governing deceptive conduct, who qualifies as a consumer, available
-                damages, deadlines, and defenses. The following resources provide Texas-specific answers to common DTPA
-                questions.
+                The Texas DTPA contains detailed rules governing deceptive conduct, who qualifies as a consumer,
+                available damages, deadlines, and defenses. The following resources provide Texas-specific answers to
+                common DTPA questions.
               </p>
 
               {/* Clusters */}
