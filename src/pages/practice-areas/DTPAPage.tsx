@@ -299,7 +299,7 @@ const DTPAPage = () => {
                     {/* ✅ NEW (3) */}
                     <li>
                       <Link
-                        to="/texas-dtpa/contract-reliance/merger-integration-clause"
+                        to="/texas-dtpa/ontract-reliance/merger-integration-clause"
                         className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
                       >
                         Can a merger or integration clause defeat a Texas DTPA claim?
