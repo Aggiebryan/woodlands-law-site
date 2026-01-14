@@ -166,7 +166,39 @@ const DTPAPage = () => {
       />
 
       <PracticeAreaContent
-        overview={`The Texas Deceptive Trade Practices–Consumer Protection Act (DTPA) is a consumer protection statute that allows qualifying consumers to recover damages for false, misleading, or deceptive business practices committed in the course of trade or commerce. The statute applies to a wide range of transactions, including consumer purchases, service contracts, insurance claims, construction projects, and automobile sales. A DTPA claim may arise from affirmative misrepresentations, misleading advertising, failures to disclose material information, breaches of warranty, or other deceptive conduct identified by Texas law. To bring a DTPA claim, a claimant must generally qualify as a "consumer" under the statute and show that a deceptive act was a producing cause of economic damages. Intent to deceive is not required to establish liability, although a defendant's knowledge or intent may affect the damages available. In cases involving knowing or intentional conduct, Texas law permits enhanced damages and recovery of reasonable attorney's fees, making the DTPA a powerful enforcement tool for consumer rights. The DTPA also imposes specific procedural requirements, including mandatory pre-suit notice and strict limitations periods. Businesses accused of DTPA violations may raise statutory defenses, exemptions, or settlement offers that can limit or eliminate liability. Because DTPA claims are technical and fact-dependent, proper evaluation of eligibility, notice compliance, damages, and defenses is critical. The sections below provide Texas-specific answers to common questions about how the DTPA works, who can bring a claim, what conduct is prohibited, what damages may be recovered, and how these cases are prosecuted and defended under Texas law.`}
+        overview={
+          <>
+            <p>
+              The Texas Deceptive Trade Practices–Consumer Protection Act (DTPA) is a consumer protection statute that
+              allows qualifying consumers to recover damages for false, misleading, or deceptive business practices
+              committed in the course of trade or commerce. The statute applies to a wide range of transactions,
+              including consumer purchases, service contracts, insurance claims, construction projects, and automobile
+              sales. A DTPA claim may arise from affirmative misrepresentations, misleading advertising, failures to
+              disclose material information, breaches of warranty, or other deceptive conduct identified by Texas law.
+            </p>
+
+            <p>
+              To bring a DTPA claim, a claimant must generally qualify as a “consumer” under the statute and show that a
+              deceptive act was a producing cause of economic damages. Intent to deceive is not required to establish
+              liability, although a defendant’s knowledge or intent may affect the damages available. In cases involving
+              knowing or intentional conduct, Texas law permits enhanced damages and recovery of reasonable attorney’s
+              fees.
+            </p>
+
+            <p>
+              The DTPA also imposes specific procedural requirements, including mandatory pre-suit notice and strict
+              limitations periods. Businesses accused of DTPA violations may raise statutory defenses, exemptions, or
+              settlement offers that can limit or eliminate liability. Because DTPA claims are technical and
+              fact-dependent, proper evaluation of eligibility, notice compliance, damages, and defenses is critical.
+            </p>
+
+            <p>
+              The sections below provide Texas-specific answers to common questions about how the DTPA works, who can
+              bring a claim, what conduct is prohibited, what damages may be recovered, and how these cases are
+              prosecuted and defended under Texas law.
+            </p>
+          </>
+        }
         whyChooseUs={whyChooseUs}
         caseTypes={caseTypes}
         process={process}
@@ -176,26 +208,39 @@ const DTPAPage = () => {
             <h2 className="text-3xl font-serif text-law-purple mb-4">Texas DTPA Resource Center</h2>
             <div className="gold-underline mb-6"></div>
             <p className="text-gray-600 max-w-4xl mb-10">
-              The Texas DTPA contains detailed rules governing deceptive conduct, who qualifies as a consumer, available damages, deadlines, and defenses. The following resources provide Texas-specific answers to common DTPA questions.
+              The Texas DTPA contains detailed rules governing deceptive conduct, who qualifies as a consumer, available
+              damages, deadlines, and defenses. The following resources provide Texas-specific answers to common DTPA
+              questions.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {/* Deceptive Conduct */}
               <div>
-                <h3 className="text-xl font-serif text-law-purple mb-4 border-b border-law-gold pb-2">Deceptive Conduct</h3>
+                <h3 className="text-xl font-serif text-law-purple mb-4 border-b border-law-gold pb-2">
+                  Deceptive Conduct
+                </h3>
                 <ul className="space-y-3">
                   <li>
-                    <Link to="/texas-dtpa/deceptive-acts" className="text-gray-700 hover:text-law-purple hover:underline transition-colors">
+                    <Link
+                      to="/texas-dtpa/deceptive-acts"
+                      className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
+                    >
                       What qualifies as a deceptive act under the Texas DTPA
                     </Link>
                   </li>
                   <li>
-                    <Link to="/texas-dtpa/false-verbal-statements" className="text-gray-700 hover:text-law-purple hover:underline transition-colors">
+                    <Link
+                      to="/texas-dtpa/false-verbal-statements"
+                      className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
+                    >
                       Can false verbal statements support a DTPA claim?
                     </Link>
                   </li>
                   <li>
-                    <Link to="/texas-dtpa/failure-to-disclose" className="text-gray-700 hover:text-law-purple hover:underline transition-colors">
+                    <Link
+                      to="/texas-dtpa/failure-to-disclose"
+                      className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
+                    >
                       Can failure to disclose information violate the Texas DTPA?
                     </Link>
                   </li>
@@ -207,12 +252,18 @@ const DTPAPage = () => {
                 <h3 className="text-xl font-serif text-law-purple mb-4 border-b border-law-gold pb-2">Who Can Sue</h3>
                 <ul className="space-y-3">
                   <li>
-                    <Link to="/texas-dtpa/consumer-definition" className="text-gray-700 hover:text-law-purple hover:underline transition-colors">
+                    <Link
+                      to="/texas-dtpa/consumer-definition"
+                      className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
+                    >
                       Who qualifies as a consumer under the Texas DTPA?
                     </Link>
                   </li>
                   <li>
-                    <Link to="/texas-dtpa/business-claims" className="text-gray-700 hover:text-law-purple hover:underline transition-colors">
+                    <Link
+                      to="/texas-dtpa/business-claims"
+                      className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
+                    >
                       Can a business bring a Texas DTPA claim?
                     </Link>
                   </li>
@@ -221,25 +272,39 @@ const DTPAPage = () => {
 
               {/* Damages & Deadlines */}
               <div>
-                <h3 className="text-xl font-serif text-law-purple mb-4 border-b border-law-gold pb-2">Damages & Deadlines</h3>
+                <h3 className="text-xl font-serif text-law-purple mb-4 border-b border-law-gold pb-2">
+                  Damages & Deadlines
+                </h3>
                 <ul className="space-y-3">
                   <li>
-                    <Link to="/texas-dtpa/damages" className="text-gray-700 hover:text-law-purple hover:underline transition-colors">
+                    <Link
+                      to="/texas-dtpa/damages"
+                      className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
+                    >
                       What damages are available under the Texas DTPA?
                     </Link>
                   </li>
                   <li>
-                    <Link to="/texas-dtpa/treble-damages" className="text-gray-700 hover:text-law-purple hover:underline transition-colors">
+                    <Link
+                      to="/texas-dtpa/treble-damages"
+                      className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
+                    >
                       When are treble damages available?
                     </Link>
                   </li>
                   <li>
-                    <Link to="/texas-dtpa/statute-of-limitations" className="text-gray-700 hover:text-law-purple hover:underline transition-colors">
+                    <Link
+                      to="/texas-dtpa/statute-of-limitations"
+                      className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
+                    >
                       What is the statute of limitations for a DTPA claim?
                     </Link>
                   </li>
                   <li>
-                    <Link to="/texas-dtpa/pre-suit-notice" className="text-gray-700 hover:text-law-purple hover:underline transition-colors">
+                    <Link
+                      to="/texas-dtpa/pre-suit-notice"
+                      className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
+                    >
                       Is pre-suit notice required?
                     </Link>
                   </li>
@@ -248,20 +313,31 @@ const DTPAPage = () => {
 
               {/* Industry-Specific Claims */}
               <div className="lg:col-span-3 md:col-span-2">
-                <h3 className="text-xl font-serif text-law-purple mb-4 border-b border-law-gold pb-2">Industry-Specific Claims</h3>
+                <h3 className="text-xl font-serif text-law-purple mb-4 border-b border-law-gold pb-2">
+                  Industry-Specific Claims
+                </h3>
                 <ul className="grid grid-cols-1 md:grid-cols-3 gap-3">
                   <li>
-                    <Link to="/texas-dtpa/insurance-misrepresentations" className="text-gray-700 hover:text-law-purple hover:underline transition-colors">
+                    <Link
+                      to="/texas-dtpa/insurance-misrepresentations"
+                      className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
+                    >
                       Insurance misrepresentations and the Texas DTPA
                     </Link>
                   </li>
                   <li>
-                    <Link to="/texas-dtpa/contractor-misconduct" className="text-gray-700 hover:text-law-purple hover:underline transition-colors">
+                    <Link
+                      to="/texas-dtpa/contractor-misconduct"
+                      className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
+                    >
                       Contractor misconduct and poor workmanship
                     </Link>
                   </li>
                   <li>
-                    <Link to="/texas-dtpa/car-dealer-misrepresentations" className="text-gray-700 hover:text-law-purple hover:underline transition-colors">
+                    <Link
+                      to="/texas-dtpa/car-dealer-misrepresentations"
+                      className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
+                    >
                       Car dealer misrepresentations
                     </Link>
                   </li>
