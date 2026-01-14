@@ -34,6 +34,33 @@ import DTPAPage from "./pages/practice-areas/DTPAPage";
 import BusinessPlanningPage from "./pages/practice-areas/BusinessPlanningPage";
 import EstatePlanningPage from "./pages/practice-areas/EstatePlanningPage";
 
+// Import Texas DTPA resource pages
+import WhatQualifiesAsDeceptivePage from "./pages/texas-dtpa/WhatQualifiesAsDeceptivePage";
+import FalseVerbalStatementsPage from "./pages/texas-dtpa/FalseVerbalStatementsPage";
+import IntentRequiredPage from "./pages/texas-dtpa/IntentRequiredPage";
+import MisleadingAdvertisingPage from "./pages/texas-dtpa/MisleadingAdvertisingPage";
+import FailureToDisclosePage from "./pages/texas-dtpa/FailureToDisclosePage";
+import HiddenContractTermsPage from "./pages/texas-dtpa/HiddenContractTermsPage";
+import BreachOfContractPage from "./pages/texas-dtpa/BreachOfContractPage";
+import RelianceRequiredPage from "./pages/texas-dtpa/RelianceRequiredPage";
+import UndisclosedFeesPage from "./pages/texas-dtpa/UndisclosedFeesPage";
+import WhoIsAConsumerPage from "./pages/texas-dtpa/WhoIsAConsumerPage";
+import CanABusinessSuePage from "./pages/texas-dtpa/CanABusinessSuePage";
+import InsuranceMisrepresentationsPage from "./pages/texas-dtpa/InsuranceMisrepresentationsPage";
+import ContractorPoorWorkmanshipPage from "./pages/texas-dtpa/ContractorPoorWorkmanshipPage";
+import CarDealerMisrepresentationsPage from "./pages/texas-dtpa/CarDealerMisrepresentationsPage";
+import StatuteOfLimitationsPage from "./pages/texas-dtpa/StatuteOfLimitationsPage";
+import PreSuitNoticePage from "./pages/texas-dtpa/PreSuitNoticePage";
+import DamagesAvailablePage from "./pages/texas-dtpa/DamagesAvailablePage";
+import TrebleDamagesPage from "./pages/texas-dtpa/TrebleDamagesPage";
+import AttorneysFeesPage from "./pages/texas-dtpa/AttorneysFeesPage";
+import SettlementOfferEffectPage from "./pages/texas-dtpa/SettlementOfferEffectPage";
+import CommonDefensesPage from "./pages/texas-dtpa/CommonDefensesPage";
+import PersonalLiabilityPage from "./pages/texas-dtpa/PersonalLiabilityPage";
+import WhereToFilePage from "./pages/texas-dtpa/WhereToFilePage";
+import ClassActionsPage from "./pages/texas-dtpa/ClassActionsPage";
+import StepsBeforeFilingPage from "./pages/texas-dtpa/StepsBeforeFilingPage";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -72,6 +99,33 @@ const App = () => (
               <Route path="/practice-areas/deceptive-trade-practices-act" element={<DTPAPage />} />
               <Route path="/practice-areas/business-planning" element={<BusinessPlanningPage />} />
               <Route path="/practice-areas/estate-planning" element={<EstatePlanningPage />} />
+              
+              {/* Texas DTPA Resource Pages */}
+              <Route path="/texas-dtpa/what-qualifies-as-deceptive" element={<WhatQualifiesAsDeceptivePage />} />
+              <Route path="/texas-dtpa/false-verbal-statements" element={<FalseVerbalStatementsPage />} />
+              <Route path="/texas-dtpa/intent-required" element={<IntentRequiredPage />} />
+              <Route path="/texas-dtpa/misleading-advertising" element={<MisleadingAdvertisingPage />} />
+              <Route path="/texas-dtpa/failure-to-disclose" element={<FailureToDisclosePage />} />
+              <Route path="/texas-dtpa/hidden-contract-terms" element={<HiddenContractTermsPage />} />
+              <Route path="/texas-dtpa/breach-of-contract" element={<BreachOfContractPage />} />
+              <Route path="/texas-dtpa/reliance-required" element={<RelianceRequiredPage />} />
+              <Route path="/texas-dtpa/undisclosed-fees" element={<UndisclosedFeesPage />} />
+              <Route path="/texas-dtpa/who-is-a-consumer" element={<WhoIsAConsumerPage />} />
+              <Route path="/texas-dtpa/can-a-business-sue" element={<CanABusinessSuePage />} />
+              <Route path="/texas-dtpa/insurance-misrepresentations" element={<InsuranceMisrepresentationsPage />} />
+              <Route path="/texas-dtpa/contractor-poor-workmanship" element={<ContractorPoorWorkmanshipPage />} />
+              <Route path="/texas-dtpa/car-dealer-misrepresentations" element={<CarDealerMisrepresentationsPage />} />
+              <Route path="/texas-dtpa/statute-of-limitations" element={<StatuteOfLimitationsPage />} />
+              <Route path="/texas-dtpa/pre-suit-notice" element={<PreSuitNoticePage />} />
+              <Route path="/texas-dtpa/damages-available" element={<DamagesAvailablePage />} />
+              <Route path="/texas-dtpa/treble-damages" element={<TrebleDamagesPage />} />
+              <Route path="/texas-dtpa/attorneys-fees" element={<AttorneysFeesPage />} />
+              <Route path="/texas-dtpa/settlement-offer-effect" element={<SettlementOfferEffectPage />} />
+              <Route path="/texas-dtpa/common-defenses" element={<CommonDefensesPage />} />
+              <Route path="/texas-dtpa/personal-liability" element={<PersonalLiabilityPage />} />
+              <Route path="/texas-dtpa/where-to-file" element={<WhereToFilePage />} />
+              <Route path="/texas-dtpa/class-actions" element={<ClassActionsPage />} />
+              <Route path="/texas-dtpa/steps-before-filing" element={<StepsBeforeFilingPage />} />
               
               {/* Catch-all route */}
               <Route path="*" element={<NotFound />} />
