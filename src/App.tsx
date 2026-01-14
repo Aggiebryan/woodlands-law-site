@@ -66,6 +66,12 @@ import NonRelianceDisclaimerPage from "./pages/texas-dtpa/NonRelianceDisclaimerP
 import HiddenFeesPage from "./pages/texas-dtpa/HiddenFeesPage";
 import BaitAndSwitchPage from "./pages/texas-dtpa/BaitAndSwitchPage";
 import FinancingTermsAprPage from "./pages/texas-dtpa/FinancingTermsAprPage";
+import PartialBusinessUsePage from "./pages/texas-dtpa/PartialBusinessUsePage";
+import HomeownerContractorPage from "./pages/texas-dtpa/HomeownerContractorPage";
+import FamilyMemberClaimPage from "./pages/texas-dtpa/FamilyMemberClaimPage";
+import CarBuyerUndisclosedDamagePage from "./pages/texas-dtpa/CarBuyerUndisclosedDamagePage";
+import OverchargingUnperformedWorkPage from "./pages/texas-dtpa/OverchargingUnperformedWorkPage";
+import FreeTrialAutoRenewalPage from "./pages/texas-dtpa/FreeTrialAutoRenewalPage";
 
 const queryClient = new QueryClient();
 
@@ -138,6 +144,12 @@ const App = () => (
               <Route path="/texas-dtpa/hidden-fees" element={<HiddenFeesPage />} />
               <Route path="/texas-dtpa/bait-and-switch" element={<BaitAndSwitchPage />} />
               <Route path="/texas-dtpa/financing-terms-apr" element={<FinancingTermsAprPage />} />
+              <Route path="/texas-dtpa/partial-business-use" element={<PartialBusinessUsePage />} />
+              <Route path="/texas-dtpa/homeowner-contractor" element={<HomeownerContractorPage />} />
+              <Route path="/texas-dtpa/family-member-claim" element={<FamilyMemberClaimPage />} />
+              <Route path="/texas-dtpa/car-buyer-undisclosed-damage" element={<CarBuyerUndisclosedDamagePage />} />
+              <Route path="/texas-dtpa/overcharging-unperformed-work" element={<OverchargingUnperformedWorkPage />} />
+              <Route path="/texas-dtpa/free-trial-auto-renewal" element={<FreeTrialAutoRenewalPage />} />
               
               {/* Catch-all route */}
               <Route path="*" element={<NotFound />} />
