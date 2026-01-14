@@ -295,6 +295,32 @@ const DTPAPage = () => {
                         Do I have to rely on the misrepresentation to bring a Texas DTPA claim?
                       </Link>
                     </li>
+
+                    {/* ✅ NEW (3) */}
+                    <li>
+                      <Link
+                        to="/texas-dtpa/contract-reliance/merger-integration-clause"
+                        className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
+                      >
+                        Can a merger or integration clause defeat a Texas DTPA claim?
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/texas-dtpa/contract-reliance/as-is-clause"
+                        className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
+                      >
+                        Does an “as-is” clause waive DTPA liability in Texas?
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/texas-dtpa/contract-reliance/non-reliance-disclaimer"
+                        className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
+                      >
+                        Are non-reliance and disclaimer clauses enforceable against DTPA claims?
+                      </Link>
+                    </li>
                   </ul>
                 </div>
 
@@ -312,12 +338,44 @@ const DTPAPage = () => {
                         Does charging excessive or undisclosed fees violate the Texas DTPA?
                       </Link>
                     </li>
+
+                    {/* NOTE: This was duplicative across clusters (it already appears under Deceptive Conduct).
+       I removed it from Pricing & Fees to avoid repetition and keep this cluster pricing-focused.
+       If you want it retained here too, re-add it below. */}
+                    {/*
+    <li>
+      <Link
+        to="/texas-dtpa/hidden-contract-terms"
+        className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
+      >
+        Can hidden contract terms support a Texas DTPA claim?
+      </Link>
+    </li>
+    */}
+
+                    {/* ✅ NEW (3) */}
                     <li>
                       <Link
-                        to="/texas-dtpa/hidden-contract-terms"
+                        to="/texas-dtpa/pricing-fees/hidden-fees"
                         className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
                       >
-                        Can hidden contract terms support a Texas DTPA claim?
+                        When do hidden fees violate the Texas DTPA?
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/texas-dtpa/pricing-fees/bait-and-switch"
+                        className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
+                      >
+                        Is bait-and-switch pricing illegal under the Texas DTPA?
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/texas-dtpa/pricing-fees/financing-terms-apr"
+                        className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
+                      >
+                        Can misleading financing terms or APR disclosures trigger DTPA claims?
                       </Link>
                     </li>
                   </ul>
