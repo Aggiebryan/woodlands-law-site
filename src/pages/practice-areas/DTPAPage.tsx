@@ -4,7 +4,7 @@ import PracticeAreaContent from "@/components/PracticeAreaContent";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import DTPAViolationList from "@/components/DTPAViolationList";
-/* import DTPATestimonials from "@/components/DTPATestimonials"; */
+import DTPATestimonials from "@/components/DTPATestimonials";
 import TexasDTPAInfo from "@/components/TexasDTPAInfo";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
