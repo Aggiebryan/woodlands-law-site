@@ -60,6 +60,12 @@ import PersonalLiabilityPage from "./pages/texas-dtpa/PersonalLiabilityPage";
 import WhereToFilePage from "./pages/texas-dtpa/WhereToFilePage";
 import ClassActionsPage from "./pages/texas-dtpa/ClassActionsPage";
 import StepsBeforeFilingPage from "./pages/texas-dtpa/StepsBeforeFilingPage";
+import MergerIntegrationClausePage from "./pages/texas-dtpa/MergerIntegrationClausePage";
+import AsIsClausePage from "./pages/texas-dtpa/AsIsClausePage";
+import NonRelianceDisclaimerPage from "./pages/texas-dtpa/NonRelianceDisclaimerPage";
+import HiddenFeesPage from "./pages/texas-dtpa/HiddenFeesPage";
+import BaitAndSwitchPage from "./pages/texas-dtpa/BaitAndSwitchPage";
+import FinancingTermsAprPage from "./pages/texas-dtpa/FinancingTermsAprPage";
 
 const queryClient = new QueryClient();
 
@@ -126,6 +132,12 @@ const App = () => (
               <Route path="/texas-dtpa/where-to-file" element={<WhereToFilePage />} />
               <Route path="/texas-dtpa/class-actions" element={<ClassActionsPage />} />
               <Route path="/texas-dtpa/steps-before-filing" element={<StepsBeforeFilingPage />} />
+              <Route path="/texas-dtpa/merger-integration-clause" element={<MergerIntegrationClausePage />} />
+              <Route path="/texas-dtpa/as-is-clause" element={<AsIsClausePage />} />
+              <Route path="/texas-dtpa/non-reliance-disclaimer" element={<NonRelianceDisclaimerPage />} />
+              <Route path="/texas-dtpa/hidden-fees" element={<HiddenFeesPage />} />
+              <Route path="/texas-dtpa/bait-and-switch" element={<BaitAndSwitchPage />} />
+              <Route path="/texas-dtpa/financing-terms-apr" element={<FinancingTermsAprPage />} />
               
               {/* Catch-all route */}
               <Route path="*" element={<NotFound />} />
