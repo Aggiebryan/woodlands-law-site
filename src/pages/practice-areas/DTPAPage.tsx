@@ -576,8 +576,6 @@ const DTPAPage = () => {
 
       <TexasDTPAInfo />
 
-      <DTPATestimonials />
-
       <section className="py-16 bg-law-gray-light">
         <div className="container mx-auto px-4">
           <div className="text-center mb-10">
