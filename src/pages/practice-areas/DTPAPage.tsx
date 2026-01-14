@@ -127,10 +127,10 @@ const DTPAPage = () => {
               "description": "Texas Deceptive Trade Practices Act attorneys protecting consumers and businesses against deceptive and fraudulent practices.",
               "areaServed": ["The Woodlands", "Houston", "Montgomery County", "Harris County", "Texas"],
               "serviceType": "Consumer Protection Law",
-              "telephone": "+1-281-771-0611",
+              "telephone": "+1-832-626-0116",
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "21 Waterway Avenue, Suite 300",
+                "streetAddress": "2219 Sawdust Rd., Suite 803",
                 "addressLocality": "The Woodlands",
                 "addressRegion": "TX",
                 "postalCode": "77380",
