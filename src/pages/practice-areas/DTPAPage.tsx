@@ -403,7 +403,7 @@ const DTPAPage = () => {
                     </li>
                     <li>
                       <Link
-                        to="/texas-dtpa/who-can-sue/mixed-business-personal-use"
+                        to="/texas-dtpa/mixed-business-personal-use"
                         className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
                       >
                         Can an individual sue under the Texas DTPA if the purchase was partly for business use?
@@ -411,7 +411,7 @@ const DTPAPage = () => {
                     </li>
                     <li>
                       <Link
-                        to="/texas-dtpa/who-can-sue/homeowner-contractor-work"
+                        to="/texas-dtpa/homeowner-contractor-work"
                         className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
                       >
                         Can a homeowner sue under the Texas DTPA for contractor or repair work?
@@ -419,7 +419,7 @@ const DTPAPage = () => {
                     </li>
                     <li>
                       <Link
-                        to="/texas-dtpa/who-can-sue/third-party-family-member"
+                        to="/texas-dtpa/third-party-family-member"
                         className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
                       >
                         Can a family member sue under the Texas DTPA if the contract was in someone else’s name?
@@ -460,7 +460,7 @@ const DTPAPage = () => {
                     </li>
                     <li>
                       <Link
-                        to="/texas-dtpa/industry-examples/undisclosed-vehicle-damage"
+                        to="/texas-dtpa/undisclosed-vehicle-damage"
                         className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
                       >
                         Can a car buyer sue under the Texas DTPA for undisclosed vehicle damage or history?
@@ -468,7 +468,7 @@ const DTPAPage = () => {
                     </li>
                     <li>
                       <Link
-                        to="/texas-dtpa/industry-examples/service-provider-overbilling"
+                        to="/texas-dtpa/service-provider-overbilling"
                         className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
                       >
                         Can service providers violate the Texas DTPA by overcharging or billing for unperformed work?
@@ -476,7 +476,7 @@ const DTPAPage = () => {
                     </li>
                     <li>
                       <Link
-                        to="/texas-dtpa/industry-examples/subscription-auto-renewal"
+                        to="/texas-dtpa/subscription-auto-renewal"
                         className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
                       >
                         Can misleading “free trial” or auto-renewal subscription terms violate the Texas DTPA?
