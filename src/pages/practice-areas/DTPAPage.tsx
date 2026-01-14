@@ -299,7 +299,7 @@ const DTPAPage = () => {
                     {/* ✅ NEW (3) */}
                     <li>
                       <Link
-                        to="/texas-dtpa/ontract-reliance/merger-integration-clause"
+                        to="/texas-dtpa/merger-integration-clause"
                         className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
                       >
                         Can a merger or integration clause defeat a Texas DTPA claim?
@@ -307,7 +307,7 @@ const DTPAPage = () => {
                     </li>
                     <li>
                       <Link
-                        to="/texas-dtpa/contract-reliance/as-is-clause"
+                        to="/texas-dtpa/as-is-clause"
                         className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
                       >
                         Does an “as-is” clause waive DTPA liability in Texas?
@@ -315,7 +315,7 @@ const DTPAPage = () => {
                     </li>
                     <li>
                       <Link
-                        to="/texas-dtpa/contract-reliance/non-reliance-disclaimer"
+                        to="/texas-dtpa/non-reliance-disclaimer"
                         className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
                       >
                         Are non-reliance and disclaimer clauses enforceable against DTPA claims?
@@ -356,7 +356,7 @@ const DTPAPage = () => {
                     {/* ✅ NEW (3) */}
                     <li>
                       <Link
-                        to="/texas-dtpa/pricing-fees/hidden-fees"
+                        to="/texas-dtpa/hidden-fees"
                         className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
                       >
                         When do hidden fees violate the Texas DTPA?
@@ -364,7 +364,7 @@ const DTPAPage = () => {
                     </li>
                     <li>
                       <Link
-                        to="/texas-dtpa/pricing-fees/bait-and-switch"
+                        to="/texas-dtpa/bait-and-switch"
                         className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
                       >
                         Is bait-and-switch pricing illegal under the Texas DTPA?
@@ -372,7 +372,7 @@ const DTPAPage = () => {
                     </li>
                     <li>
                       <Link
-                        to="/texas-dtpa/pricing-fees/financing-terms-apr"
+                        to="/texas-dtpa/financing-terms-apr"
                         className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
                       >
                         Can misleading financing terms or APR disclosures trigger DTPA claims?
