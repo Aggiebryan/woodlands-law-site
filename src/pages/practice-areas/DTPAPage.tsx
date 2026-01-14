@@ -401,9 +401,32 @@ const DTPAPage = () => {
                         Can a business bring a Texas DTPA claim?
                       </Link>
                     </li>
+                    <li>
+                      <Link
+                        to="/texas-dtpa/mixed-business-personal-use"
+                        className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
+                      >
+                        Can an individual sue under the Texas DTPA if the purchase was partly for business use?
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/texas-dtpa/homeowner-contractor-work"
+                        className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
+                      >
+                        Can a homeowner sue under the Texas DTPA for contractor or repair work?
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/texas-dtpa/third-party-family-member"
+                        className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
+                      >
+                        Can a family member sue under the Texas DTPA if the contract was in someone else’s name?
+                      </Link>
+                    </li>
                   </ul>
                 </div>
-
                 {/* Cluster E: Industry-specific applications */}
                 <div className="bg-white rounded-lg p-5 border border-gray-100">
                   <h3 className="text-xl font-serif text-law-purple mb-4 border-b border-law-gold pb-2">
