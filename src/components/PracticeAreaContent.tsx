@@ -9,7 +9,7 @@ interface CaseType {
 }
 
 interface PracticeAreaContentProps {
-  overview: string;
+  overview: React.ReactNode;
   whyChooseUs: string[];
   caseTypes: CaseType[];
   process?: { title: string; steps: string[] };
@@ -32,7 +32,7 @@ const PracticeAreaContent = ({
         <section className="mb-16">
           <h2 className="text-3xl font-serif text-law-purple mb-6">Overview</h2>
           <div className="gold-underline mb-8"></div>
-          <p className="text-gray-600">{overview}</p>
+          <div className="text-gray-600 space-y-4">{overview}</div>
         </section>
 
         {/* Custom content after overview */}
