@@ -205,284 +205,286 @@ const DTPAPage = () => {
         faq={faq}
         afterOverview={
           <section className="mb-16">
-            <h2 className="text-3xl font-serif text-law-purple mb-4">Texas DTPA Resource Center</h2>
-            <div className="gold-underline mb-6"></div>
-            <p className="text-gray-600 max-w-4xl mb-10">
-              The Texas DTPA contains detailed rules governing deceptive conduct, who qualifies as a consumer, available
-              damages, deadlines, and defenses. The following resources provide Texas-specific answers to common DTPA
-              questions.
-            </p>
+            <div className="border border-gray-200 rounded-xl bg-gray-50 p-8 shadow-sm">
+              <h2 className="text-3xl font-serif text-law-purple mb-4">Texas DTPA Resource Center</h2>
+              <div className="gold-underline mb-6"></div>
+              <p className="text-gray-600 max-w-4xl mb-10">
+                The Texas DTPA contains detailed rules governing deceptive conduct, who qualifies as a consumer, available
+                damages, deadlines, and defenses. The following resources provide Texas-specific answers to common DTPA
+                questions.
+              </p>
 
-            {/* Clusters */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {/* Cluster A: Deceptive conduct and misrepresentation types */}
-              <div>
-                <h3 className="text-xl font-serif text-law-purple mb-4 border-b border-law-gold pb-2">
-                  Deceptive Conduct
-                </h3>
-                <ul className="space-y-3">
-                  <li>
-                    <Link
-                      to="/texas-dtpa/what-qualifies-as-deceptive"
-                      className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
-                    >
-                      What qualifies as a deceptive act under the Texas DTPA?
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/texas-dtpa/false-verbal-statements"
-                      className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
-                    >
-                      Can false verbal statements support a Texas DTPA claim?
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/texas-dtpa/intent-required"
-                      className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
-                    >
-                      Does a business have to intend to deceive to violate the Texas DTPA?
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/texas-dtpa/misleading-advertising"
-                      className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
-                    >
-                      Can misleading advertising violate the Texas DTPA?
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/texas-dtpa/failure-to-disclose"
-                      className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
-                    >
-                      Can a business violate the Texas DTPA by failing to disclose material information?
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/texas-dtpa/hidden-contract-terms"
-                      className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
-                    >
-                      Can hidden contract terms support a Texas DTPA claim?
-                    </Link>
-                  </li>
-                </ul>
-              </div>
+              {/* Clusters */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {/* Cluster A: Deceptive conduct and misrepresentation types */}
+                <div className="bg-white rounded-lg p-5 border border-gray-100">
+                  <h3 className="text-xl font-serif text-law-purple mb-4 border-b border-law-gold pb-2">
+                    Deceptive Conduct
+                  </h3>
+                  <ul className="space-y-3">
+                    <li>
+                      <Link
+                        to="/texas-dtpa/what-qualifies-as-deceptive"
+                        className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
+                      >
+                        What qualifies as a deceptive act under the Texas DTPA?
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/texas-dtpa/false-verbal-statements"
+                        className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
+                      >
+                        Can false verbal statements support a Texas DTPA claim?
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/texas-dtpa/intent-required"
+                        className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
+                      >
+                        Does a business have to intend to deceive to violate the Texas DTPA?
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/texas-dtpa/misleading-advertising"
+                        className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
+                      >
+                        Can misleading advertising violate the Texas DTPA?
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/texas-dtpa/failure-to-disclose"
+                        className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
+                      >
+                        Can a business violate the Texas DTPA by failing to disclose material information?
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/texas-dtpa/hidden-contract-terms"
+                        className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
+                      >
+                        Can hidden contract terms support a Texas DTPA claim?
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
 
-              {/* Cluster B: Reliance, causation, and contract overlap */}
-              <div>
-                <h3 className="text-xl font-serif text-law-purple mb-4 border-b border-law-gold pb-2">
-                  Contract &amp; Reliance
-                </h3>
-                <ul className="space-y-3">
-                  <li>
-                    <Link
-                      to="/texas-dtpa/breach-of-contract"
-                      className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
-                    >
-                      Is a breach of contract automatically a Texas DTPA violation?
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/texas-dtpa/reliance-required"
-                      className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
-                    >
-                      Do I have to rely on the misrepresentation to bring a Texas DTPA claim?
-                    </Link>
-                  </li>
-                </ul>
-              </div>
+                {/* Cluster B: Reliance, causation, and contract overlap */}
+                <div className="bg-white rounded-lg p-5 border border-gray-100">
+                  <h3 className="text-xl font-serif text-law-purple mb-4 border-b border-law-gold pb-2">
+                    Contract &amp; Reliance
+                  </h3>
+                  <ul className="space-y-3">
+                    <li>
+                      <Link
+                        to="/texas-dtpa/breach-of-contract"
+                        className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
+                      >
+                        Is a breach of contract automatically a Texas DTPA violation?
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/texas-dtpa/reliance-required"
+                        className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
+                      >
+                        Do I have to rely on the misrepresentation to bring a Texas DTPA claim?
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
 
-              {/* Cluster C: Pricing, fees, and hidden terms */}
-              <div>
-                <h3 className="text-xl font-serif text-law-purple mb-4 border-b border-law-gold pb-2">
-                  Pricing &amp; Fees
-                </h3>
-                <ul className="space-y-3">
-                  <li>
-                    <Link
-                      to="/texas-dtpa/undisclosed-fees"
-                      className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
-                    >
-                      Does charging excessive or undisclosed fees violate the Texas DTPA?
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/texas-dtpa/hidden-contract-terms"
-                      className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
-                    >
-                      Can hidden contract terms support a Texas DTPA claim?
-                    </Link>
-                  </li>
-                </ul>
-              </div>
+                {/* Cluster C: Pricing, fees, and hidden terms */}
+                <div className="bg-white rounded-lg p-5 border border-gray-100">
+                  <h3 className="text-xl font-serif text-law-purple mb-4 border-b border-law-gold pb-2">
+                    Pricing &amp; Fees
+                  </h3>
+                  <ul className="space-y-3">
+                    <li>
+                      <Link
+                        to="/texas-dtpa/undisclosed-fees"
+                        className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
+                      >
+                        Does charging excessive or undisclosed fees violate the Texas DTPA?
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/texas-dtpa/hidden-contract-terms"
+                        className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
+                      >
+                        Can hidden contract terms support a Texas DTPA claim?
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
 
-              {/* Cluster D: Standing and who can sue */}
-              <div>
-                <h3 className="text-xl font-serif text-law-purple mb-4 border-b border-law-gold pb-2">Who Can Sue</h3>
-                <ul className="space-y-3">
-                  <li>
-                    <Link
-                      to="/texas-dtpa/who-is-a-consumer"
-                      className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
-                    >
-                      Who qualifies as a “consumer” under the Texas DTPA?
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/texas-dtpa/can-a-business-sue"
-                      className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
-                    >
-                      Can a business bring a Texas DTPA claim?
-                    </Link>
-                  </li>
-                </ul>
-              </div>
+                {/* Cluster D: Standing and who can sue */}
+                <div className="bg-white rounded-lg p-5 border border-gray-100">
+                  <h3 className="text-xl font-serif text-law-purple mb-4 border-b border-law-gold pb-2">Who Can Sue</h3>
+                  <ul className="space-y-3">
+                    <li>
+                      <Link
+                        to="/texas-dtpa/who-is-a-consumer"
+                        className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
+                      >
+                        Who qualifies as a "consumer" under the Texas DTPA?
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/texas-dtpa/can-a-business-sue"
+                        className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
+                      >
+                        Can a business bring a Texas DTPA claim?
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
 
-              {/* Cluster E: Industry-specific applications */}
-              <div>
-                <h3 className="text-xl font-serif text-law-purple mb-4 border-b border-law-gold pb-2">
-                  Industry Examples
-                </h3>
-                <ul className="space-y-3">
-                  <li>
-                    <Link
-                      to="/texas-dtpa/insurance-misrepresentations"
-                      className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
-                    >
-                      Can insurance claim misrepresentations violate the Texas DTPA?
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/texas-dtpa/contractor-poor-workmanship"
-                      className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
-                    >
-                      Can a contractor’s poor workmanship support a Texas DTPA claim?
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/texas-dtpa/car-dealer-misrepresentations"
-                      className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
-                    >
-                      Can a car dealer’s misrepresentations violate the Texas DTPA?
-                    </Link>
-                  </li>
-                </ul>
-              </div>
+                {/* Cluster E: Industry-specific applications */}
+                <div className="bg-white rounded-lg p-5 border border-gray-100">
+                  <h3 className="text-xl font-serif text-law-purple mb-4 border-b border-law-gold pb-2">
+                    Industry Examples
+                  </h3>
+                  <ul className="space-y-3">
+                    <li>
+                      <Link
+                        to="/texas-dtpa/insurance-misrepresentations"
+                        className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
+                      >
+                        Can insurance claim misrepresentations violate the Texas DTPA?
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/texas-dtpa/contractor-poor-workmanship"
+                        className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
+                      >
+                        Can a contractor's poor workmanship support a Texas DTPA claim?
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/texas-dtpa/car-dealer-misrepresentations"
+                        className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
+                      >
+                        Can a car dealer's misrepresentations violate the Texas DTPA?
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
 
-              {/* Cluster F: Deadlines, notice, damages, fees, and enhanced damages */}
-              <div>
-                <h3 className="text-xl font-serif text-law-purple mb-4 border-b border-law-gold pb-2">
-                  Damages &amp; Deadlines
-                </h3>
-                <ul className="space-y-3">
-                  <li>
-                    <Link
-                      to="/texas-dtpa/statute-of-limitations"
-                      className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
-                    >
-                      What is the statute of limitations for a Texas DTPA claim?
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/texas-dtpa/pre-suit-notice"
-                      className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
-                    >
-                      Is pre-suit notice required before filing a Texas DTPA lawsuit?
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/texas-dtpa/damages-available"
-                      className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
-                    >
-                      What damages are available under the Texas DTPA?
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/texas-dtpa/treble-damages"
-                      className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
-                    >
-                      When can a consumer recover treble damages under the Texas DTPA?
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/texas-dtpa/attorneys-fees"
-                      className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
-                    >
-                      Can a prevailing consumer recover attorney’s fees under the Texas DTPA?
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/texas-dtpa/settlement-offer-effect"
-                      className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
-                    >
-                      How does a settlement offer affect a Texas DTPA claim?
-                    </Link>
-                  </li>
-                </ul>
-              </div>
+                {/* Cluster F: Deadlines, notice, damages, fees, and enhanced damages */}
+                <div className="bg-white rounded-lg p-5 border border-gray-100">
+                  <h3 className="text-xl font-serif text-law-purple mb-4 border-b border-law-gold pb-2">
+                    Damages &amp; Deadlines
+                  </h3>
+                  <ul className="space-y-3">
+                    <li>
+                      <Link
+                        to="/texas-dtpa/statute-of-limitations"
+                        className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
+                      >
+                        What is the statute of limitations for a Texas DTPA claim?
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/texas-dtpa/pre-suit-notice"
+                        className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
+                      >
+                        Is pre-suit notice required before filing a Texas DTPA lawsuit?
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/texas-dtpa/damages-available"
+                        className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
+                      >
+                        What damages are available under the Texas DTPA?
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/texas-dtpa/treble-damages"
+                        className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
+                      >
+                        When can a consumer recover treble damages under the Texas DTPA?
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/texas-dtpa/attorneys-fees"
+                        className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
+                      >
+                        Can a prevailing consumer recover attorney's fees under the Texas DTPA?
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/texas-dtpa/settlement-offer-effect"
+                        className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
+                      >
+                        How does a settlement offer affect a Texas DTPA claim?
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
 
-              {/* Cluster G: Defenses, liability scope, and procedure */}
-              <div className="lg:col-span-3 md:col-span-2">
-                <h3 className="text-xl font-serif text-law-purple mb-4 border-b border-law-gold pb-2">
-                  Defenses &amp; Procedure
-                </h3>
+                {/* Cluster G: Defenses, liability scope, and procedure */}
+                <div className="lg:col-span-3 md:col-span-2 bg-white rounded-lg p-5 border border-gray-100">
+                  <h3 className="text-xl font-serif text-law-purple mb-4 border-b border-law-gold pb-2">
+                    Defenses &amp; Procedure
+                  </h3>
 
-                <ul className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                  <li>
-                    <Link
-                      to="/texas-dtpa/common-defenses"
-                      className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
-                    >
-                      What are common defenses to a Texas DTPA claim?
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/texas-dtpa/personal-liability"
-                      className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
-                    >
-                      Can an individual be personally liable under the Texas DTPA?
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/texas-dtpa/where-to-file"
-                      className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
-                    >
-                      Where can a Texas DTPA lawsuit be filed?
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/texas-dtpa/class-actions"
-                      className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
-                    >
-                      Can Texas DTPA claims be brought as a class action?
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/texas-dtpa/steps-before-filing"
-                      className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
-                    >
-                      What steps should a consumer take before filing a Texas DTPA claim?
-                    </Link>
-                  </li>
-                </ul>
+                  <ul className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                    <li>
+                      <Link
+                        to="/texas-dtpa/common-defenses"
+                        className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
+                      >
+                        What are common defenses to a Texas DTPA claim?
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/texas-dtpa/personal-liability"
+                        className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
+                      >
+                        Can an individual be personally liable under the Texas DTPA?
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/texas-dtpa/where-to-file"
+                        className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
+                      >
+                        Where can a Texas DTPA lawsuit be filed?
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/texas-dtpa/class-actions"
+                        className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
+                      >
+                        Can Texas DTPA claims be brought as a class action?
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/texas-dtpa/steps-before-filing"
+                        className="text-gray-700 hover:text-law-purple hover:underline transition-colors"
+                      >
+                        What steps should a consumer take before filing a Texas DTPA claim?
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </section>
