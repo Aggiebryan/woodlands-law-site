@@ -85,27 +85,27 @@ const DTPAPage = () => {
     {
       question: "What deceptive practices are covered under the Texas DTPA?",
       answer:
-        "The Texas DTPA covers a wide range of deceptive practices, including false, misleading, or deceptive acts; unconscionable actions; breaches of warranty; insurance code violations; and certain tie-in statutes. Common examples include false advertising, bait-and-switch tactics, misrepresentations about products or services, and failing to disclose material information. The statute contains a 'laundry list' of specifically prohibited acts, but also includes broader provisions to address other deceptive practices.",
+        "The Texas Deceptive Trade Practices–Consumer Protection Act covers false, misleading, or deceptive acts in trade or commerce that affect a consumer. The statute includes a specific list of prohibited conduct, often called the “laundry list,” and it also reaches other deceptive practices that mislead a reasonable consumer. Common examples include false advertising, bait-and-switch tactics, misrepresentations about goods or services, and failure to disclose material information when the omission is material to the transaction.",
     },
     {
-      question: "What damages can I recover in a DTPA case?",
+      question: "What damages can I recover in a Texas DTPA case?",
       answer:
-        "Under the DTPA, consumers may recover economic damages (actual losses), and in cases involving knowing or intentional conduct, up to three times those damages (treble damages). The statute also allows for recovery of court costs and reasonable attorney's fees for prevailing consumers. In cases involving mental anguish, those damages may be recoverable if the conduct was committed knowingly. Additionally, the court may issue injunctions to stop the deceptive practices.",
+        "A prevailing consumer may recover economic damages under the Texas DTPA. If the defendant acted knowingly or intentionally, Texas law may allow enhanced damages up to three times economic damages, and mental anguish damages may be available in knowing cases. The statute also allows recovery of reasonable attorney’s fees and court costs for prevailing consumers, and a court may grant injunctive relief in appropriate cases.",
     },
     {
-      question: "How long do I have to file a DTPA claim in Texas?",
+      question: "What is the statute of limitations for a Texas DTPA claim?",
       answer:
-        "The statute of limitations for most DTPA claims in Texas is two years from the date you discovered or should have discovered the deceptive act or practice. There is also a separate provision requiring that the action be brought within two years after the consumer discovered or should have discovered the occurrence of the false, misleading, or deceptive act or practice. Additionally, the DTPA has a specific notice requirement - you must provide written notice to the defendant at least 60 days before filing suit, giving them an opportunity to settle.",
+        "Most Texas DTPA claims must be filed within two years. The limitations period generally runs from the date the deceptive act occurred or from when the consumer discovered or should have discovered the deceptive act, depending on the facts. The DTPA also requires a written pre-suit notice at least 60 days before filing suit, which is separate from the two-year limitations deadline.",
     },
     {
-      question: "Can businesses sue under the Texas DTPA?",
+      question: "Can a business sue under the Texas DTPA?",
       answer:
-        "While the DTPA was primarily designed to protect individual consumers, certain businesses can qualify as 'consumers' under the statute if they meet specific criteria. Generally, a business can be a consumer if it has assets of less than $25 million and sought or acquired goods or services by purchase or lease. There are exceptions and limitations to business claims, making it important to consult with an attorney experienced in DTPA matters to determine eligibility.",
+        "A business may sue under the Texas DTPA only if it qualifies as a “consumer,” meaning it sought or acquired goods or services by purchase or lease and those goods or services form the basis of the complaint. Texas law also limits business-claim eligibility based on statutory exclusions and the claimant’s characteristics, which can be fact-specific. Whether a business qualifies depends on the transaction and the statutory requirements.",
     },
     {
-      question: "What is the pre-suit notice requirement for DTPA claims?",
+      question: "What is the Texas DTPA pre-suit notice requirement?",
       answer:
-        "The DTPA requires that at least 60 days before filing a lawsuit, the consumer must provide written notice to the potential defendant. This notice must describe the specific complaint in reasonable detail and the amount of economic damages, damages for mental anguish, and attorney's fees being sought. The defendant then has an opportunity to settle by making a written settlement offer. This requirement is designed to encourage pre-suit settlements, and failure to comply can limit the damages recoverable.",
+        "Before filing a Texas DTPA lawsuit, the consumer must generally give the defendant written notice at least 60 days in advance. The notice must describe the consumer’s complaint in reasonable detail and state the amount of economic damages, mental anguish damages (if claimed), and attorney’s fees being sought. The defendant may respond with a written settlement offer, and compliance with the notice requirement can affect the damages and attorney’s fees available in the case.",
     },
   ];
 
