@@ -13,6 +13,19 @@ export default {
       },
     },
     extend: {
+      backgroundImage: {
+        "law-gold-metal": `
+          linear-gradient(
+            135deg,
+            #F3E3A1 0%,
+            #E0C26E 18%,
+            #C6A75E 38%,
+            #A8842F 58%,
+            #F0D48A 78%,
+            #B9963A 100%
+          )
+        `,
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
