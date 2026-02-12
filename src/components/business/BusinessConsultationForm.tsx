@@ -262,7 +262,7 @@ const BusinessConsultationForm = ({ open, onOpenChange }: BusinessConsultationFo
             <div className="flex justify-end pt-4">
               <Button 
                 type="submit" 
-                className="bg-law-gold hover:bg-law-gold-light text-law-navy"
+                className="btn-gold-metallic"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? "Submitting..." : "Submit Request"}

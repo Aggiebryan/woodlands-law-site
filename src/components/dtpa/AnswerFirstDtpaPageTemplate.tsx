@@ -39,7 +39,7 @@ export default function AnswerFirstDtpaPageTemplate({
         />
       </Helmet>
 
-      <div className="py-16">
+      <div className="pt-28 pb-16">
         <div className="container mx-auto px-4 max-w-5xl">
           {/* Breadcrumbs */}
           <nav className="text-sm text-muted-foreground mb-6" aria-label="Breadcrumb">
@@ -172,7 +172,7 @@ export default function AnswerFirstDtpaPageTemplate({
             </p>
             <Link
               to="/schedule"
-              className="bg-law-gold hover:bg-law-gold-light text-law-purple font-medium py-3 px-8 rounded transition-colors inline-block"
+              className="btn-gold-metallic py-3 px-8 rounded inline-block"
             >
               Schedule a Consultation
             </Link>

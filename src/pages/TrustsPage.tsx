@@ -115,7 +115,7 @@ const TrustsPage = () => {
               
               <Link 
                 to="/contact" 
-                className="bg-law-gold hover:bg-law-gold-light text-law-navy font-medium py-3 px-8 rounded transition-colors inline-block"
+                className="btn-gold-metallic py-3 px-8 rounded inline-block"
               >
                 Contact Us Today
               </Link>

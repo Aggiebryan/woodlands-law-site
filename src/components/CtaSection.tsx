@@ -91,7 +91,7 @@ const CtaSection = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <Link 
               to="/schedule"
-              className="bg-law-gold hover:bg-law-gold-light text-law-purple font-semibold py-4 px-8 rounded-lg transition-colors text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200"
+              className="btn-gold-metallic py-4 px-8 rounded-lg text-lg"
             >
               Schedule Consultation
             </Link>

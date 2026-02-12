@@ -40,7 +40,7 @@ const PracticeAreaHero = ({
           {onCtaClick ? (
             <button
               onClick={onCtaClick}
-              className="bg-law-gold hover:bg-law-gold-light text-law-purple font-medium py-3 px-8 rounded transition-colors inline-block"
+              className="btn-gold-metallic py-3 px-8 rounded inline-block"
               {...ctaButtonProps}
             >
               {ctaText}
@@ -48,14 +48,14 @@ const PracticeAreaHero = ({
           ) : ctaLink ? (
             <Link
               to={ctaLink}
-              className="bg-law-gold hover:bg-law-gold-light text-law-purple font-medium py-3 px-8 rounded transition-colors inline-block"
+              className="btn-gold-metallic py-3 px-8 rounded inline-block"
             >
               {ctaText}
             </Link>
           ) : (
             <Link
               to="/schedule"
-              className="bg-law-gold hover:bg-law-gold-light text-law-purple font-medium py-3 px-8 rounded transition-colors inline-block"
+              className="btn-gold-metallic py-3 px-8 rounded inline-block"
             >
               {ctaText}
             </Link>

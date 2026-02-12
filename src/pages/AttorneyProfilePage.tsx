@@ -207,7 +207,7 @@ const [openScheduler, setOpenScheduler] = useState(false);
                 <a
                   href="#"
                   onClick={handleScheduleClick}
-                  className="bg-law-gold hover:bg-law-gold-light text-law-purple font-medium py-3 px-6 rounded transition-colors inline-block w-full text-center"
+                  className="btn-gold-metallic py-3 px-6 rounded inline-block w-full text-center"
                 >
                   Schedule a Consultation with Bryan
                 </a>
@@ -217,12 +217,12 @@ const [openScheduler, setOpenScheduler] = useState(false);
                   data-cal-namespace="gwendolyn-simpson"
                   data-cal-link="gwensimpson"
                   data-cal-config='{"layout":"month_view"}'
-                  className="bg-law-gold hover:bg-law-gold-light text-law-purple font-medium py-3 px-6 rounded transition-colors inline-block w-full text-center"
+                  className="btn-gold-metallic py-3 px-6 rounded inline-block w-full text-center"
                 >
                   Schedule a Consultation
                 </button>
               ) : (
-                <Link to="/contact" className="bg-law-gold hover:bg-law-gold-light text-law-purple font-medium py-3 px-6 rounded transition-colors inline-block w-full text-center">
+                <Link to="/contact" className="btn-gold-metallic py-3 px-6 rounded inline-block w-full text-center">
                   Schedule a Consultation
                 </Link>
               )}

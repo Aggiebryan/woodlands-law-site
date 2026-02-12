@@ -766,7 +766,7 @@ const DTPAPage = () => {
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button
               onClick={handleOpenForm}
-              className="bg-law-gold hover:bg-law-gold-light text-law-purple font-medium py-3 px-8 rounded transition-colors"
+              className="btn-gold-metallic py-3 px-8 rounded"
             >
               Book a Comprehensive DTPA Claim Review
             </Button>

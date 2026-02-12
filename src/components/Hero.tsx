@@ -52,7 +52,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4">
             <Link 
               to="/schedule" 
-              className="bg-law-gold hover:bg-law-gold-light text-law-purple font-medium py-3 px-8 rounded transition-colors inline-block text-center"
+              className="btn-gold-metallic py-3 px-8 rounded inline-block text-center"
             >
               Schedule a Consultation
             </Link>

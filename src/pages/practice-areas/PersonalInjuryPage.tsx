@@ -270,7 +270,7 @@ const PersonalInjuryPage = () => {
               data-cal-namespace="personalinjury"
               data-cal-link="team/the-woodlands-law-firm/personalinjury"
               data-cal-config='{"layout":"month_view"}'
-              className="bg-law-gold hover:bg-law-gold-light text-law-purple font-medium py-3 px-8 rounded transition-colors inline-block"
+              className="btn-gold-metallic py-3 px-8 rounded inline-block"
             >
               Free Case Evaluation
             </Button>

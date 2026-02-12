@@ -239,7 +239,7 @@ const EventsListPage = () => {
                             {!isPast && (
                               <Link 
                                 to={getRegistrationLink(event)}
-                                className="bg-law-gold hover:bg-law-gold-light text-law-purple font-medium py-2 px-4 rounded text-sm transition-colors inline-flex items-center justify-center"
+                                className="btn-gold-metallic py-2 px-4 rounded text-sm inline-flex items-center justify-center"
                               >
                                 <Users className="w-4 h-4 mr-2" />
                                 Register
