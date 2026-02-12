@@ -25,6 +25,7 @@ import SitemapPage from "./pages/SitemapPage";
 import TermsOfServicePage from "./pages/TermsOfServicePage";
 import EventsListPage from "./pages/EventsListPage";
 import EventPage from "./pages/EventPage";
+import TexasCivilTimeLimitsPage from "./pages/TexasCivilTimeLimitsPage";
 
 // Import practice area pages
 import PersonalInjuryPage from "./pages/practice-areas/PersonalInjuryPage";
@@ -103,6 +104,7 @@ const App = () => (
               <Route path="/sitemap" element={<SitemapPage />} />
               <Route path="/events" element={<EventsListPage />} />
               <Route path="/events/:slug" element={<EventPage />} />
+              <Route path="/legal-tools/texas-civil-time-limits" element={<TexasCivilTimeLimitsPage />} />
               
               {/* Practice Area Routes */}
               <Route path="/practice-areas/personal-injury" element={<PersonalInjuryPage />} />
