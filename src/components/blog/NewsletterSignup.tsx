@@ -10,7 +10,7 @@ const NewsletterSignup = () => {
           placeholder="Your Email Address" 
           className="w-full p-2 mb-3 rounded text-gray-800 font-serif"
         />
-        <button type="submit" className="w-full bg-law-gold text-law-purple font-medium py-2 rounded hover:bg-law-gold-light transition-colors font-serif">
+        <button type="submit" className="w-full btn-gold-metallic py-2 rounded font-serif">
           Subscribe
         </button>
       </form>

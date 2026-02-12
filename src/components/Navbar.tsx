@@ -108,7 +108,7 @@ const Navbar = () => {
           
           <Link 
             to="/schedule"
-            className="bg-law-gold hover:bg-law-gold-light text-law-purple font-medium py-2 px-4 rounded transition-colors inline-block"
+            className="btn-gold-metallic py-2 px-4 rounded inline-block"
           >
             Schedule a Consultation
           </Link>
@@ -159,7 +159,7 @@ const Navbar = () => {
             <MobileNavLink to="/about" label="About Us" onClick={toggleMenu} />
             <Link 
               to="/schedule"
-              className="bg-law-gold hover:bg-law-gold-light text-law-purple font-medium py-2 px-4 rounded transition-colors inline-block text-center"
+              className="btn-gold-metallic py-2 px-4 rounded inline-block text-center"
               onClick={toggleMenu}
             >
               Schedule a Consultation
