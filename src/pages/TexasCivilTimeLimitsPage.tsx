@@ -1,9 +1,28 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import { Clock, AlertTriangle, FileText, Scale, Building2, Car, CreditCard, ShieldAlert, Gavel, CalendarDays } from "lucide-react";
+import {
+  Clock,
+  AlertTriangle,
+  FileText,
+  Scale,
+  Building2,
+  Car,
+  CreditCard,
+  ShieldAlert,
+  Gavel,
+  CalendarDays,
+} from "lucide-react";
 
-const Section = ({ icon: Icon, title, children }: { icon: React.ElementType; title: string; children: React.ReactNode }) => (
+const Section = ({
+  icon: Icon,
+  title,
+  children,
+}: {
+  icon: React.ElementType;
+  title: string;
+  children: React.ReactNode;
+}) => (
   <section className="mb-12">
     <div className="flex items-center gap-3 mb-3">
       <Icon className="h-6 w-6 text-law-gold flex-shrink-0" />
@@ -14,7 +33,17 @@ const Section = ({ icon: Icon, title, children }: { icon: React.ElementType; tit
   </section>
 );
 
-const DeadlineCard = ({ label, deadline, cite, note }: { label: string; deadline: string; cite?: string; note?: string }) => (
+const DeadlineCard = ({
+  label,
+  deadline,
+  cite,
+  note,
+}: {
+  label: string;
+  deadline: string;
+  cite?: string;
+  note?: string;
+}) => (
   <div className="border border-border rounded-lg p-4 hover:border-law-gold hover:shadow-sm transition-all">
     <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
       <div className="flex-1">
@@ -46,7 +75,11 @@ const TexasCivilTimeLimitsPage = () => {
         <div className="container mx-auto px-4 max-w-5xl">
           <nav className="text-sm text-white/60 mb-6" aria-label="Breadcrumb">
             <ol className="flex flex-wrap items-center gap-2">
-              <li><Link to="/" className="hover:text-law-gold hover:underline">Home</Link></li>
+              <li>
+                <Link to="/" className="hover:text-law-gold hover:underline">
+                  Home
+                </Link>
+              </li>
               <li aria-hidden="true">/</li>
               <li className="text-white">Texas Civil Law Time Limits</li>
             </ol>
@@ -54,15 +87,15 @@ const TexasCivilTimeLimitsPage = () => {
           <h1 className="text-4xl md:text-5xl font-serif mb-4">Texas Civil Law Time Limits</h1>
           <div className="gold-underline mb-6"></div>
           <p className="text-lg text-white/80 max-w-3xl leading-relaxed">
-            A practical calendaring guide for Texas civil litigators. This page collects common Texas civil deadlines that affect day-to-day calendaring.
+            A practical calendaring guide for Texas civil litigators. This page collects common Texas civil deadlines
+            that affect day-to-day calendaring.
           </p>
-          <p className="text-sm text-white/60 mt-4">By Bryan C. Holman, The Woodlands Law Firm (Texas)</p>
+          <p className="text-sm text-white/60 mt-4">By Bryan C. Holman</p>
         </div>
       </div>
 
       <div className="py-16">
         <div className="container mx-auto px-4 max-w-5xl">
-
           {/* Important Note */}
           <div className="bg-muted border border-border rounded-lg p-6 mb-12">
             <div className="flex items-start gap-3">
@@ -70,7 +103,10 @@ const TexasCivilTimeLimitsPage = () => {
               <div>
                 <p className="font-medium text-law-purple mb-2">Important Practice Note</p>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  Texas procedure is judge-driven. A docket control order can shorten or expand many dates. Always calendar the rule-based deadline <strong>and</strong> any scheduling-order deadline that is earlier. This page provides general information for calendaring — it is not legal advice and may not reflect the latest rule amendments, local rules, or standing orders.
+                  Texas procedure is judge-driven. A docket control order can shorten or expand many dates. Always
+                  calendar the rule-based deadline <strong>and</strong> any scheduling-order deadline that is earlier.
+                  This page provides general information for calendaring — it is not legal advice and may not reflect
+                  the latest rule amendments, local rules, or standing orders.
                 </p>
               </div>
             </div>
@@ -109,7 +145,8 @@ const TexasCivilTimeLimitsPage = () => {
           <div id="statutes-of-limitations">
             <Section icon={Scale} title="Statutes of Limitations (Tex. Civ. Prac. & Rem. Code Ch. 16)">
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                Unlike some jurisdictions, Texas does not have a single fixed time for all civil cases. Chapter 16 sets specific limitations for particular causes of action.
+                Unlike some jurisdictions, Texas does not have a single fixed time for all civil cases. Chapter 16 sets
+                specific limitations for particular causes of action.
               </p>
               <div className="space-y-3">
                 <DeadlineCard
@@ -134,11 +171,7 @@ const TexasCivilTimeLimitsPage = () => {
                   deadline="4 Years"
                   cite="Tex. Civ. Prac. & Rem. Code § 16.004"
                 />
-                <DeadlineCard
-                  label="Fraud"
-                  deadline="4 Years"
-                  cite="Tex. Civ. Prac. & Rem. Code § 16.004"
-                />
+                <DeadlineCard label="Fraud" deadline="4 Years" cite="Tex. Civ. Prac. & Rem. Code § 16.004" />
                 <DeadlineCard
                   label="Breach of Fiduciary Duty"
                   deadline="4 Years"
@@ -192,7 +225,9 @@ const TexasCivilTimeLimitsPage = () => {
           <div id="service-of-process">
             <Section icon={FileText} title="Service of Process & Answers">
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                Texas does not use a "60 days after filing" service rule. The key practical rule is <strong>diligence in service</strong> — lack of diligence can defeat limitations even if you filed on time.
+                Texas does not use a "60 days after filing" service rule. The key practical rule is{" "}
+                <strong>diligence in service</strong> — lack of diligence can defeat limitations even if you filed on
+                time.
               </p>
               <div className="space-y-3">
                 <DeadlineCard
@@ -238,7 +273,8 @@ const TexasCivilTimeLimitsPage = () => {
           <div id="written-discovery">
             <Section icon={FileText} title="Written Discovery Deadlines (Texas Rules 192–215)">
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                Texas discovery timing is controlled by the discovery control plan (Level 1, 2, or 3) and rule-based response deadlines.
+                Texas discovery timing is controlled by the discovery control plan (Level 1, 2, or 3) and rule-based
+                response deadlines.
               </p>
               <div className="space-y-3">
                 <DeadlineCard
@@ -267,7 +303,8 @@ const TexasCivilTimeLimitsPage = () => {
           <div id="discovery-cutoffs">
             <Section icon={CalendarDays} title="Discovery Period Cutoffs (Level 2 Cases)">
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                Most Texas cases are under Level 2 discovery. The discovery "end date" is one of the most important dates to calendar early.
+                Most Texas cases are under Level 2 discovery. The discovery "end date" is one of the most important
+                dates to calendar early.
               </p>
               <div className="space-y-3">
                 <DeadlineCard
@@ -284,7 +321,8 @@ const TexasCivilTimeLimitsPage = () => {
           <div id="depositions">
             <Section icon={FileText} title="Depositions & Subpoenas">
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                Texas deposition practice turns on "reasonable notice," subpoena compliance deadlines, and quick objections when needed.
+                Texas deposition practice turns on "reasonable notice," subpoena compliance deadlines, and quick
+                objections when needed.
               </p>
               <div className="space-y-3">
                 <DeadlineCard
@@ -330,7 +368,8 @@ const TexasCivilTimeLimitsPage = () => {
                 />
               </div>
               <p className="text-sm text-muted-foreground mt-4 leading-relaxed">
-                <strong>Note:</strong> Texas rules have been updated in recent years. Confirm the current text of Rule 166a and your court's standing order if using a modern briefing schedule.
+                <strong>Note:</strong> Texas rules have been updated in recent years. Confirm the current text of Rule
+                166a and your court's standing order if using a modern briefing schedule.
               </p>
             </Section>
           </div>
@@ -339,7 +378,8 @@ const TexasCivilTimeLimitsPage = () => {
           <div id="government-claims">
             <Section icon={Building2} title="Claims Against Government Entities (Texas Tort Claims Act)">
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                Government cases have early notice traps. Calendar governmental notice deadlines on day one of case intake.
+                Government cases have early notice traps. Calendar governmental notice deadlines on day one of case
+                intake.
               </p>
               <div className="space-y-3">
                 <DeadlineCard
@@ -357,7 +397,9 @@ const TexasCivilTimeLimitsPage = () => {
               </div>
               <div className="bg-muted border border-border rounded-lg p-4 mt-4">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  <strong>Best Practice:</strong> Treat governmental notice as an "immediate" deadline. Investigate the specific entity's notice rules the day the file comes in. Failure to timely present a claim can bar the cause of action entirely.
+                  <strong>Best Practice:</strong> Treat governmental notice as an "immediate" deadline. Investigate the
+                  specific entity's notice rules the day the file comes in. Failure to timely present a claim can bar
+                  the cause of action entirely.
                 </p>
               </div>
             </Section>
@@ -367,11 +409,13 @@ const TexasCivilTimeLimitsPage = () => {
           <div id="um-uim">
             <Section icon={Car} title="UM/UIM Claims">
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                UM/UIM limitation and accrual can be fact-dependent. A common Texas framing is that UM/UIM suits often proceed under a contractual limitations analysis.
+                UM/UIM limitation and accrual can be fact-dependent. A common Texas framing is that UM/UIM suits often
+                proceed under a contractual limitations analysis.
               </p>
               <div className="bg-muted border border-border rounded-lg p-4">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  <strong>Calendar these dates:</strong> (1) the crash date, (2) any denial date, (3) policy notice deadlines, and (4) any suit-limitation clauses in the policy.
+                  <strong>Calendar these dates:</strong> (1) the crash date, (2) any denial date, (3) policy notice
+                  deadlines, and (4) any suit-limitation clauses in the policy.
                 </p>
               </div>
             </Section>
@@ -434,7 +478,9 @@ const TexasCivilTimeLimitsPage = () => {
           <div className="bg-muted border border-border rounded-lg p-6 mb-12">
             <h3 className="text-lg font-serif text-law-purple mb-2">Disclaimer</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              This page provides general information for calendaring and case management. It is not legal advice, and it may not reflect the latest rule amendments, local rules, standing orders, or your court's scheduling order. If you need advice for a specific case, you should consult counsel.
+              This page provides general information for calendaring and case management. It is not legal advice, and it
+              may not reflect the latest rule amendments, local rules, standing orders, or your court's scheduling
+              order. If you need advice for a specific case, you should consult counsel.
             </p>
           </div>
 
@@ -442,12 +488,10 @@ const TexasCivilTimeLimitsPage = () => {
           <section className="bg-law-purple p-8 rounded-lg text-center">
             <h2 className="text-2xl font-serif text-white mb-3">Need Help With a Texas Civil Case?</h2>
             <p className="text-white/80 mb-6 max-w-2xl mx-auto">
-              If you have questions about deadlines, limitations, or procedural requirements for your Texas civil matter, our attorneys can help.
+              If you have questions about deadlines, limitations, or procedural requirements for your Texas civil
+              matter, our attorneys can help.
             </p>
-            <Link
-              to="/schedule"
-              className="btn-gold-metallic py-3 px-8 rounded inline-block"
-            >
+            <Link to="/schedule" className="btn-gold-metallic py-3 px-8 rounded inline-block">
               Schedule a Consultation
             </Link>
           </section>
