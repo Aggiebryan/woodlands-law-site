@@ -35,15 +35,13 @@ const Hero = () => {
       ))}
 
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/40 z-0"></div>
+      <div className="absolute inset-0 bg-black/50 z-0"></div>
 
       <div className="container mx-auto px-4 py-16 relative z-10">
         <div className="max-w-3xl">
           <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-serif font-semibold mb-6">
             Building Trust Through <br />
-            <span className="text-law-gold bg-law-gold-metal bg-clip-text text-transparent font-semibold tracking-wide drop-shadow-sm">
-              Legal Excellence
-            </span>
+            <span className="text-law-gold">Legal Excellence</span>
           </h1>
 
           <p className="text-white/80 text-lg md:text-xl mb-10 max-w-2xl">
