@@ -26,6 +26,10 @@ const Navbar = () => {
     { title: "Estate Planning", path: "/practice-areas/estate-planning" }
   ];
 
+  const legalTools = [
+    { title: "Texas Civil Law Time Limits", path: "/legal-tools/texas-civil-time-limits" },
+  ];
+
   return (
     <nav className="bg-white py-4 fixed w-full z-50 shadow-sm">
       <div className="container mx-auto px-4 flex justify-between items-center">
@@ -66,6 +70,30 @@ const Navbar = () => {
                           className="block px-4 py-2 text-law-purple hover:text-law-gold hover:bg-gray-50 transition-colors font-medium rounded-md"
                         >
                           {area.title}
+                        </Link>
+                      ))}
+                    </div>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
+
+            {/* Legal Tools Dropdown */}
+            <NavigationMenu className="z-50">
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="text-law-purple hover:text-law-gold transition-colors font-medium bg-transparent hover:bg-transparent focus:bg-transparent p-0 h-auto">
+                    Legal Tools
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent className="bg-white rounded-md shadow-lg p-2 min-w-[250px]">
+                    <div className="grid gap-1">
+                      {legalTools.map((tool) => (
+                        <Link 
+                          key={tool.path} 
+                          to={tool.path} 
+                          className="block px-4 py-2 text-law-purple hover:text-law-gold hover:bg-gray-50 transition-colors font-medium rounded-md"
+                        >
+                          {tool.title}
                         </Link>
                       ))}
                     </div>
@@ -116,6 +144,17 @@ const Navbar = () => {
               ))}
             </div>
             
+            <MobileNavLink to="/legal-tools/texas-civil-time-limits" label="Legal Tools" onClick={toggleMenu} />
+            <div className="ml-4 flex flex-col space-y-2">
+              {legalTools.map((tool) => (
+                <MobileNavLink 
+                  key={tool.path} 
+                  to={tool.path} 
+                  label={tool.title} 
+                  onClick={toggleMenu} 
+                />
+              ))}
+            </div>
             <MobileNavLink to="/news-events" label="News & Events" onClick={toggleMenu} />
             <MobileNavLink to="/about" label="About Us" onClick={toggleMenu} />
             <Link 
