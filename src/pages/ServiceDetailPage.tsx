@@ -340,7 +340,7 @@ const ServiceDetailPage = () => {
                 <div className="md:col-span-2 text-center">
                   <button 
                     type="submit"
-                    className="bg-law-gold hover:bg-law-gold-light text-law-purple font-medium py-3 px-8 rounded transition-colors inline-block"
+                    className="btn-gold-metallic py-3 px-8 rounded inline-block"
                   >
                     Request Consultation
                   </button>

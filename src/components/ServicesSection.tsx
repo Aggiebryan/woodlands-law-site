@@ -233,7 +233,7 @@ const ServicesSection = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
                 to="/schedule"
-                className="bg-law-gold hover:bg-law-gold-light text-law-purple font-semibold py-4 px-8 rounded-lg transition-colors text-lg"
+                className="btn-gold-metallic py-4 px-8 rounded-lg text-lg"
               >
                 Schedule Consultation
               </Link>

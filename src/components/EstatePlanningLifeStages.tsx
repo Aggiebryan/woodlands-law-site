@@ -100,7 +100,7 @@ const EstatePlanningLifeStages = () => {
           </p>
           <Link 
             to="/schedule"
-            className="bg-law-gold hover:bg-law-gold-light text-law-purple font-medium py-3 px-8 rounded transition-colors inline-block"
+            className="btn-gold-metallic py-3 px-8 rounded inline-block"
           >
             Schedule Your Personalized Consultation
           </Link>

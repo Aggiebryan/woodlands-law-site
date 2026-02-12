@@ -192,7 +192,7 @@ const CivilConsultationForm = ({ open, onOpenChange }: CivilConsultationFormProp
 
             <Button 
               type="submit" 
-              className="w-full bg-law-gold hover:bg-law-gold-light text-law-purple"
+              className="w-full btn-gold-metallic"
               disabled={isSubmitting}
             >
               {isSubmitting ? "Submitting..." : "Submit Case Strategy Request"}

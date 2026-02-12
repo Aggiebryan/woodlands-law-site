@@ -27,7 +27,7 @@ const InsuranceResourcesSection = () => {
               <p className="text-gray-600 mb-6">
                 Download our free checklist of essential steps to take when your insurance claim has been denied or underpaid.
               </p>
-              <Button className="w-full bg-law-gold hover:bg-law-gold-light text-law-purple">
+              <Button className="w-full btn-gold-metallic">
                 Download PDF Guide
               </Button>
             </div>
@@ -43,7 +43,7 @@ const InsuranceResourcesSection = () => {
               <p className="text-gray-600 mb-6">
                 Understanding complex insurance policy language is crucial. Our glossary breaks down common terms that affect your coverage.
               </p>
-              <Button className="w-full bg-law-gold hover:bg-law-gold-light text-law-purple" asChild>
+              <Button className="w-full btn-gold-metallic" asChild>
                 <Link to="/insurance-glossary">View Insurance Glossary</Link>
               </Button>
             </div>
@@ -59,7 +59,7 @@ const InsuranceResourcesSection = () => {
               <p className="text-gray-600 mb-6">
                 Watch our video explaining common insurance bad faith tactics and how our attorneys combat them in Texas courts.
               </p>
-              <Button className="w-full bg-law-gold hover:bg-law-gold-light text-law-purple">
+              <Button className="w-full btn-gold-metallic">
                 Watch Video Explainer
               </Button>
             </div>
