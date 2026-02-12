@@ -97,7 +97,7 @@ const CtaSection = () => {
             </Link>
             <Link 
               to="/services"
-              className="border-2 border-white text-white hover:bg-white hover:text-law-purple font-semibold py-4 px-8 rounded-lg transition-all text-lg"
+              className="btn-purple-metallic py-4 px-8 rounded-lg text-lg"
             >
               View Practice Areas
             </Link>
