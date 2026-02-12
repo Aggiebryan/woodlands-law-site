@@ -56,7 +56,7 @@ const Hero = () => {
 
             <Link
               to="/services"
-              className="bg-law-purple hover:bg-law-purple-light text-white font-medium py-3 px-8 rounded transition-colors inline-block text-center"
+              className="btn-purple-metallic py-3 px-8 rounded inline-block text-center"
             >
               Our Services
             </Link>

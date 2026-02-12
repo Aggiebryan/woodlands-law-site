@@ -58,14 +58,14 @@ const CallToAction = ({
           {secondaryButtonText && (secondaryButtonOnClick ? (
             <button
               onClick={secondaryButtonOnClick}
-              className="border-2 border-white text-white hover:bg-white/10 font-medium py-3 px-8 rounded transition-colors inline-block"
+              className="btn-purple-metallic py-3 px-8 rounded inline-block"
             >
               {secondaryButtonText}
             </button>
           ) : secondaryButtonLink ? (
             <Link 
               to={secondaryButtonLink} 
-              className="border-2 border-white text-white hover:bg-white/10 font-medium py-3 px-8 rounded transition-colors inline-block"
+              className="btn-purple-metallic py-3 px-8 rounded inline-block"
             >
               {secondaryButtonText}
             </Link>

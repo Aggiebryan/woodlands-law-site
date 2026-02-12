@@ -142,3 +142,80 @@
     0 1px 3px rgba(0, 0, 0, 0.3),
     inset 0 1px 2px rgba(0, 0, 0, 0.1);
 }
+
+.btn-purple-metallic {
+  background: linear-gradient(
+    170deg,
+    #6e6a9a 0%,
+    #5a5688 8%,
+    #4d4878 16%,
+    #3e3a6a 28%,
+    #2d2a4a 42%,
+    #3e3a6a 56%,
+    #5a5688 68%,
+    #7a76a8 80%,
+    #3e3a6a 90%,
+    #2d2a4a 100%
+  );
+  color: #ffffff;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.3),
+    0 4px 12px rgba(45, 42, 74, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+  border: 1px solid #2d2a4a;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-purple-metallic::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.btn-purple-metallic:hover::before {
+  left: 120%;
+}
+
+.btn-purple-metallic:hover {
+  background: linear-gradient(
+    170deg,
+    #7e7aaa 0%,
+    #6a6698 8%,
+    #5d5888 16%,
+    #4d487a 28%,
+    #3e3a6a 42%,
+    #4d487a 56%,
+    #6a6698 68%,
+    #8a86b8 80%,
+    #4d487a 90%,
+    #3e3a6a 100%
+  );
+  box-shadow:
+    0 3px 8px rgba(0, 0, 0, 0.3),
+    0 6px 20px rgba(45, 42, 74, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px);
+}
+
+.btn-purple-metallic:active {
+  transform: translateY(0);
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.3),
+    inset 0 1px 2px rgba(0, 0, 0, 0.15);
+}
