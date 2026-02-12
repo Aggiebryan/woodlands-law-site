@@ -42,7 +42,7 @@ const TexasCivilTimeLimitsPage = () => {
       </Helmet>
 
       {/* Hero */}
-      <div className="bg-law-purple text-white py-16">
+      <div className="bg-law-purple text-white pt-28 pb-16">
         <div className="container mx-auto px-4 max-w-5xl">
           <nav className="text-sm text-white/60 mb-6" aria-label="Breadcrumb">
             <ol className="flex flex-wrap items-center gap-2">
