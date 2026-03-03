@@ -30,6 +30,8 @@ export default function AnswerFirstDtpaPageTemplate({
   damages,
   related,
   note,
+  metaTitle,
+  metaDescription,
 }: AnswerFirstDtpaPageProps) {
   return (
     <>
