@@ -6,7 +6,6 @@ import CtaSection from "../components/CtaSection";
 import { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
-import { Link } from "react-router-dom";
 import { Scale, Shield, FileText, Users, MapPin, Gavel } from "lucide-react";
 
 const Index = () => {
