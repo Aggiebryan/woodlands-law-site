@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Calendar } from "lucide-react";
+import { Helmet } from "react-helmet";
 import BlogPostsGrid from "@/components/BlogPostsGrid";
 import { fetchCategories, fetchEvents, type WordPressEvent } from "@/services/wordPressService";
 import NewsletterSignup from "@/components/blog/NewsletterSignup";
