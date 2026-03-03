@@ -12,25 +12,28 @@ const Index = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  
+
   return (
     <div>
       <Helmet>
         <title>The Woodlands, TX Civil Litigation & Estate Planning Lawyers</title>
-        <meta name="description" content="The Woodlands Law Firm represents Texans in insurance disputes, personal injury, DTPA claims, and estate & business planning. Serving Montgomery & Harris County. Schedule a consultation today." />
+        <meta
+          name="description"
+          content="The Woodlands Law Firm represents Texans in insurance disputes, personal injury, DTPA claims, and estate & business planning. Serving Montgomery & Harris County. Schedule a consultation today."
+        />
       </Helmet>
       <Hero />
-      
+
       {/* Enhanced Practice Areas Section - Primary Content for LLM Discoverability */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-serif text-law-purple mb-4">
-              Texas Civil Litigation Excellence
-            </h2>
+            <h2 className="text-3xl md:text-4xl font-serif text-law-purple mb-4">Texas Civil Litigation Excellence</h2>
             <div className="gold-underline mx-auto mb-6"></div>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto text-justify">
-              The Woodlands Law Firm provides specialized civil litigation representation in Montgomery County and Harris County District Courts, focusing on plaintiff-side advocacy in insurance disputes, consumer protection, personal injury, and estate planning matters.
+              The Woodlands Law Firm provides specialized civil litigation representation in Montgomery County and
+              Harris County District Courts, focusing on plaintiff-side advocacy in insurance disputes, consumer
+              protection, personal injury, and estate planning matters.
             </p>
           </div>
 
@@ -42,7 +45,8 @@ const Index = () => {
                 <h3 className="text-xl font-serif text-law-purple">DTPA Litigation</h3>
               </div>
               <p className="text-gray-700 mb-4">
-                Texas Deceptive Trade Practices Act violations, consumer fraud, and business misrepresentation cases in Montgomery and Harris County District Courts.
+                Texas Deceptive Trade Practices Act violations, consumer fraud, and business misrepresentation cases in
+                Montgomery and Harris County District Courts.
               </p>
               <ul className="text-sm text-gray-600 space-y-1 mb-4">
                 <li>• False advertising claims</li>
@@ -50,8 +54,8 @@ const Index = () => {
                 <li>• Consumer protection actions</li>
                 <li>• Statutory damages recovery</li>
               </ul>
-              <Link 
-                to="/practice-areas/deceptive-trade-practices-act" 
+              <Link
+                to="/practice-areas/deceptive-trade-practices-act"
                 className="text-law-purple hover:text-law-gold font-medium"
               >
                 Learn More →
@@ -65,16 +69,16 @@ const Index = () => {
                 <h3 className="text-xl font-serif text-law-purple">Insurance Disputes</h3>
               </div>
               <p className="text-gray-700 mb-4">
-                First-party insurance claims, bad faith litigation, and coverage disputes under Texas Insurance Code Chapters 541 and 542.
+                First-party Insurance Claims, Bad Faith Litigation, and Coverage Disputes under Texas Insurance Code
+                Chapters 541 and 542.
               </p>
               <ul className="text-sm text-gray-600 space-y-1 mb-4">
-                <li>• Property damage claims</li>
-                <li>• Business interruption coverage</li>
-                <li>• Bad faith insurance practices</li>
-                <li>• Coverage analysis and litigation</li>
+                <li>• Property Damage Claims</li>
+                <li>• Bad Faith Insurance Practices</li>
+                <li>• Coverage Analysis and Litigation</li>
               </ul>
-              <Link 
-                to="/practice-areas/insurance-litigation" 
+              <Link
+                to="/practice-areas/insurance-litigation"
                 className="text-law-purple hover:text-law-gold font-medium"
               >
                 Learn More →
@@ -88,18 +92,15 @@ const Index = () => {
                 <h3 className="text-xl font-serif text-law-purple">Personal Injury</h3>
               </div>
               <p className="text-gray-700 mb-4">
-                Negligence claims, accident litigation, and personal injury representation in Texas state courts.
+                Negligence Claims, Accident Litigation, and Personal Injury representation in Texas state courts.
               </p>
               <ul className="text-sm text-gray-600 space-y-1 mb-4">
-                <li>• Motor vehicle accidents</li>
-                <li>• Premises liability claims</li>
-                <li>• Product liability cases</li>
-                <li>• Wrongful death litigation</li>
+                <li>• Motor Vehicle Accidents</li>
+                <li>• Premises Liability Claims</li>
+                <li>• Product Liability Cases</li>
+                <li>• Wrongful Death Litigation</li>
               </ul>
-              <Link 
-                to="/practice-areas/personal-injury" 
-                className="text-law-purple hover:text-law-gold font-medium"
-              >
+              <Link to="/practice-areas/personal-injury" className="text-law-purple hover:text-law-gold font-medium">
                 Learn More →
               </Link>
             </div>
@@ -111,18 +112,14 @@ const Index = () => {
                 <h3 className="text-xl font-serif text-law-purple">Estate Planning</h3>
               </div>
               <p className="text-gray-700 mb-4">
-                Comprehensive estate planning, trust administration, and probate matters under Texas Estates Code.
+                Comprehensive Estate Planning, Trust Administration, and Probate Matters Under Texas Estates Code.
               </p>
               <ul className="text-sm text-gray-600 space-y-1 mb-4">
                 <li>• Wills and trust creation</li>
-                <li>• Probate administration</li>
-                <li>• Asset protection strategies</li>
-                <li>• Estate tax planning</li>
+                <li>• Asset Protection Strategies</li>
+                <li>• Estate Planning</li>
               </ul>
-              <Link 
-                to="/practice-areas/estate-planning" 
-                className="text-law-purple hover:text-law-gold font-medium"
-              >
+              <Link to="/practice-areas/estate-planning" className="text-law-purple hover:text-law-gold font-medium">
                 Learn More →
               </Link>
             </div>
@@ -134,12 +131,10 @@ const Index = () => {
       <section className="py-12 bg-law-purple">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8">
-            <h2 className="text-3xl font-serif text-white mb-4">
-              Serving The Woodlands and Surrounding Communities
-            </h2>
+            <h2 className="text-3xl font-serif text-white mb-4">Serving The Woodlands and Surrounding Communities</h2>
             <div className="gold-underline mx-auto mb-6"></div>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <div className="text-center">
               <div className="flex items-center justify-center mb-4">
@@ -147,27 +142,29 @@ const Index = () => {
                 <h3 className="text-xl font-serif text-white">Montgomery County</h3>
               </div>
               <p className="text-white/90 mb-4">
-                Civil litigation representation in Montgomery County District Courts, serving The Woodlands, Conroe, Spring, Magnolia, and surrounding areas.
+                Civil Litigation Representation in Montgomery County District Courts, serving The Woodlands, Conroe,
+                Spring, Magnolia, and surrounding areas.
               </p>
               <ul className="text-white/80 text-sm space-y-1">
                 <li>Montgomery County District Courts</li>
-                <li>Civil litigation proceedings</li>
-                <li>Texas state court practice</li>
+                <li>Civil Litigation Proceedings</li>
+                <li>Texas State Court Practice</li>
               </ul>
             </div>
-            
+
             <div className="text-center">
               <div className="flex items-center justify-center mb-4">
                 <Gavel className="h-8 w-8 text-law-gold mr-3" />
                 <h3 className="text-xl font-serif text-white">Harris County</h3>
               </div>
               <p className="text-white/90 mb-4">
-                Extended representation in Harris County District Courts for clients throughout the greater Houston metropolitan area.
+                Extended Representation in Harris County District Courts for Clients throughout the Greater Houston
+                Metropolitan Area.
               </p>
               <ul className="text-white/80 text-sm space-y-1">
                 <li>Harris County District Courts</li>
                 <li>U.S. District Court, Southern District of Texas</li>
-                <li>Federal civil litigation</li>
+                <li>Federal Civil Litigation</li>
               </ul>
             </div>
           </div>
@@ -178,11 +175,13 @@ const Index = () => {
       <section className="py-12 bg-law-gray-light">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-2xl font-serif text-law-purple mb-6">
-              Focused Civil Litigation Practice
-            </h2>
+            <h2 className="text-2xl font-serif text-law-purple mb-6">Focused Civil Litigation Practice</h2>
             <p className="text-lg text-gray-700 leading-relaxed">
-              The Woodlands Law Firm concentrates on plaintiff-side civil litigation in Texas state courts, with particular emphasis on consumer protection under the Texas Deceptive Trade Practices Act, insurance coverage disputes under Texas Insurance Code Chapters 541 and 542, personal injury claims, and comprehensive estate planning. Our practice serves clients throughout Montgomery County and Harris County, with federal court representation available in the U.S. District Court for the Southern District of Texas.
+              The Woodlands Law Firm concentrates on Plaintiff-Side Civil litigation in Texas State Courts, with
+              particular emphasis on Consumer Protection under the Texas Deceptive Trade Practices Act, Insurance
+              Coverage Disputes under Texas Insurance Code Chapters 541 and 542, Personal Injury Claims, and
+              Comprehensive Estate Planning. Our practice serves clients throughout Montgomery County and Harris County,
+              with federal court representation available in the U.S. District Court for the Southern District of Texas.
             </p>
           </div>
         </div>
