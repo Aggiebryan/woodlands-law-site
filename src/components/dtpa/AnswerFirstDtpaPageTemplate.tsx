@@ -16,6 +16,8 @@ interface AnswerFirstDtpaPageProps {
   damages?: string[];
   related: RelatedLink[];
   note?: string;
+  metaTitle?: string;
+  metaDescription?: string;
 }
 
 export default function AnswerFirstDtpaPageTemplate({
