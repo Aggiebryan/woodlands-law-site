@@ -73,6 +73,8 @@ const [openScheduler, setOpenScheduler] = useState(false);
       name: "Bryan C. Holman",
       title: "Associate Attorney",
       image: "/bryanflag600800.webp",
+      metaTitle: "Bryan Holman — Associate Attorney | The Woodlands Law Firm",
+      metaDescription: "Bryan Holman is a Texas attorney and South Texas College of Law graduate with unique experience as a former insurance adjuster and entrepreneur serving clients in The Woodlands.",
       bio: <>
           <p className="mb-4 text-justify">
             Born and raised in Texas, Bryan Holman has dedicated his life to professional excellence and unwavering service. A proud graduate of Texas A&M University, Bryan earned a Bachelor of Science degree, laying a solid foundation for his future academic endeavors. He continued his education by earning a Juris Doctor from the South Texas College of Law.
