@@ -1,6 +1,7 @@
 
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
@@ -10,6 +11,10 @@ const OurTeamPage = () => {
   }, []);
   
   return <div className="pt-20">
+      <Helmet>
+        <title>Our Attorneys & Legal Staff | The Woodlands Law Firm</title>
+        <meta name="description" content="Meet the experienced attorneys and legal team at The Woodlands Law Firm. We serve clients throughout The Woodlands, Conroe, Spring, and the greater Houston area." />
+      </Helmet>
       {/* Page Header */}
       <div className="relative bg-law-purple py-16">
         <div className="container mx-auto px-4">

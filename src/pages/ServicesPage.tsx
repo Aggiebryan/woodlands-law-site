@@ -1,5 +1,6 @@
 
 import { useEffect } from "react";
+import { Helmet } from "react-helmet";
 import ServicesPageHeader from "../components/ServicesPageHeader";
 import ServicesOverview from "../components/ServicesOverview";
 import ServicesDetails from "../components/ServicesDetails";
@@ -138,6 +139,10 @@ const ServicesPage = () => {
 
   return (
     <div className="pt-20">
+      <Helmet>
+        <title>Legal Services in The Woodlands, TX</title>
+        <meta name="description" content="The Woodlands Law Firm offers civil litigation, insurance disputes, personal injury, DTPA, business planning, and estate planning services throughout Texas." />
+      </Helmet>
       {/* Page Header */}
       <ServicesPageHeader 
         title="Our Services"

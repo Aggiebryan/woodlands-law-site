@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import PracticeAreaHero from "@/components/PracticeAreaHero";
 import PracticeAreaContent from "@/components/PracticeAreaContent";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import EstatePlanningComparison from "@/components/EstatePlanningComparison";
 import CallToAction from "@/components/CallToAction";
 import EstatePlanningLifeStages from "@/components/EstatePlanningLifeStages";
@@ -100,6 +101,10 @@ const EstatePlanningPage = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Estate Planning Lawyer in The Woodlands, TX | Wills & Trusts</title>
+        <meta name="description" content="Protect your legacy with a personalized estate plan. Our Texas estate planning attorneys draft wills, trusts, powers of attorney, and healthcare directives for Texas families." />
+      </Helmet>
       <PracticeAreaHero
         title="Securing Your Legacy"
         subtitle="Personalized Estate Planning for Texas Families"

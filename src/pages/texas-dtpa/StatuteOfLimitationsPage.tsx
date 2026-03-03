@@ -3,6 +3,8 @@ import AnswerFirstDtpaPageTemplate from "@/components/dtpa/AnswerFirstDtpaPageTe
 export default function StatuteOfLimitationsPage() {
   return (
     <AnswerFirstDtpaPageTemplate
+      metaTitle="Texas DTPA Statute of Limitations: How Long Do You Have to Sue?"
+      metaDescription="The Texas DTPA has a 2-year statute of limitations that runs from the date of discovery. Learn how the discovery rule works and when the clock starts ticking on your claim."
       title="What is the statute of limitations for a Texas DTPA claim?"
       directAnswer="The statute of limitations for most Texas DTPA claims is two years. The limitations period begins to run when the consumer discovers or, in the exercise of reasonable diligence, should have discovered the deceptive act or practice. This 'discovery rule' can extend the time to file, but consumers should act promptly once they become aware of potential claims."
       rule={[

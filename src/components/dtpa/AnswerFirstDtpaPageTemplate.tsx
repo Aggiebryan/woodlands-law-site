@@ -16,6 +16,8 @@ interface AnswerFirstDtpaPageProps {
   damages?: string[];
   related: RelatedLink[];
   note?: string;
+  metaTitle?: string;
+  metaDescription?: string;
 }
 
 export default function AnswerFirstDtpaPageTemplate({
@@ -28,14 +30,16 @@ export default function AnswerFirstDtpaPageTemplate({
   damages,
   related,
   note,
+  metaTitle,
+  metaDescription,
 }: AnswerFirstDtpaPageProps) {
   return (
     <>
       <Helmet>
-        <title>{title} | Texas DTPA | The Woodlands Law Firm</title>
+        <title>{metaTitle || `${title} | Texas DTPA | The Woodlands Law Firm`}</title>
         <meta
           name="description"
-          content={directAnswer.slice(0, 155) + "..."}
+          content={metaDescription || directAnswer.slice(0, 155) + "..."}
         />
       </Helmet>
 

@@ -3,6 +3,8 @@ import AnswerFirstDtpaPageTemplate from "@/components/dtpa/AnswerFirstDtpaPageTe
 export default function TrebleDamagesPage() {
   return (
     <AnswerFirstDtpaPageTemplate
+      metaTitle="Treble Damages Under the Texas DTPA | When Can You Recover 3x?"
+      metaDescription="Texas DTPA allows recovery of up to three times your economic damages for intentional conduct. Learn when treble damages apply and how to prove intentional violations."
       title="When can a consumer recover treble damages under the Texas DTPA?"
       directAnswer="A consumer can recover treble damages (up to three times economic damages) under the Texas DTPA when the defendant acted intentionally. For knowing conduct (awareness that the act was deceptive), the consumer may recover up to two times economic damages. The distinction between knowing and intentional conduct affects the multiplier applied to damages."
       rule={[

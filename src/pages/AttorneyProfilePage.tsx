@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { getCalApi } from "@calcom/embed-react";
 
@@ -14,6 +15,8 @@ interface AttorneyInfo {
   education?: string[];
   admissions?: string[];
   awards?: string[];
+  metaTitle?: string;
+  metaDescription?: string;
 }
 
 const AttorneyProfilePage = () => {
@@ -42,6 +45,8 @@ const [openScheduler, setOpenScheduler] = useState(false);
       name: "Gwendolyn Simpson",
       title: "Managing Attorney",
       image: "/gwen600800flag.webp",
+      metaTitle: "Gwendolyn Simpson — Managing Attorney | The Woodlands Law Firm",
+      metaDescription: "Gwendolyn Simpson is a Baylor Law graduate and managing attorney with decades of experience in civil litigation, probate, and personal injury in Montgomery County, TX.",
       bio: <>
           <p className="mb-4 text-justify">
             Gwendolyn Simpson is a native Houstonian and a graduate of Baylor Law School. Experienced in the legal field since 1998, and licensed in 2007, Ms. Simpson founded a general practice civil firm and has been assisting clients with legal matters involving civil litigation, transactions, probate, and personal injury ever since. In addition to her private practice, Ms. Simpson was the staff attorney to the Honorable Kathleen Hamilton in the 359th Judicial District Court in Montgomery County, Texas.
@@ -68,6 +73,8 @@ const [openScheduler, setOpenScheduler] = useState(false);
       name: "Bryan C. Holman",
       title: "Associate Attorney",
       image: "/bryanflag600800.webp",
+      metaTitle: "Bryan Holman — Associate Attorney | The Woodlands Law Firm",
+      metaDescription: "Bryan Holman is a Texas attorney and South Texas College of Law graduate with unique experience as a former insurance adjuster and entrepreneur serving clients in The Woodlands.",
       bio: <>
           <p className="mb-4 text-justify">
             Born and raised in Texas, Bryan Holman has dedicated his life to professional excellence and unwavering service. A proud graduate of Texas A&M University, Bryan earned a Bachelor of Science degree, laying a solid foundation for his future academic endeavors. He continued his education by earning a Juris Doctor from the South Texas College of Law.
@@ -93,6 +100,8 @@ const [openScheduler, setOpenScheduler] = useState(false);
       name: "Courtney Fields",
       title: "Legal Assistant",
       image: "/Courtneyblack background.webp",
+      metaTitle: "Courtney Fields — Legal Assistant | The Woodlands Law Firm",
+      metaDescription: "Courtney Fields is a skilled legal assistant at The Woodlands Law Firm, managing case documentation, client communication, and office coordination.",
       bio: <>
           <p className="mb-4 text-justify">
             Courtney Fields is a dedicated legal assistant with several years of experience in the legal field. Her meticulous attention to detail and exceptional organizational skills are vital to the smooth operation of our firm. She manages client communications, document preparation, and case file organization with remarkable efficiency.
@@ -117,6 +126,8 @@ const [openScheduler, setOpenScheduler] = useState(false);
       name: "Julie Dunlap",
       title: "Office Manager",
       image: "/lovable-uploads/22e7fa10-9dd9-40c8-afa7-eee7672da620.png",
+      metaTitle: "Julie Dunlap — Office Manager | The Woodlands Law Firm",
+      metaDescription: "Julie Dunlap is the office manager at The Woodlands Law Firm, bringing experience as a Certified Real Estate Appraiser and small business owner to our team.",
       bio: <>
           <p className="mb-4 text-justify">
             Julie Dunlap brings a wealth of diverse professional experience to her role as Office Manager at Woodlands Law. With 18 years as a Certified Real Estate Appraiser, Julie developed exceptional analytical skills and attention to detail that serve her well in managing the administrative operations of our firm.
@@ -161,6 +172,10 @@ const [openScheduler, setOpenScheduler] = useState(false);
   };
 
   return <div className="pt-20">
+      <Helmet>
+        <title>{attorney.metaTitle || `${attorney.name} — ${attorney.title} | The Woodlands Law Firm`}</title>
+        <meta name="description" content={attorney.metaDescription || `Learn about ${attorney.name}, ${attorney.title} at The Woodlands Law Firm.`} />
+      </Helmet>
       {/* Page Header */}
       <div className="relative bg-law-purple py-16">
         <div className="container mx-auto px-4">

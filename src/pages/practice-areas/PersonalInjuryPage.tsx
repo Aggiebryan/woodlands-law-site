@@ -86,8 +86,8 @@ const PersonalInjuryPage = () => {
   return (
     <>
       <Helmet>
-        <title>Personal Injury Attorneys in The Woodlands, TX | The Woodlands Law Firm</title>
-        <meta name="description" content="Experienced personal injury attorneys in The Woodlands and Houston area providing dedicated representation for auto accidents, slip and falls, and serious injury cases throughout Texas." />
+        <title>Personal Injury Lawyer in The Woodlands, TX | The Woodlands Law Firm</title>
+        <meta name="description" content="Injured in an accident? Our personal injury attorneys help Texas victims recover compensation for auto accidents, premises liability, and wrongful death. No fee unless we win." />
         {/* Schema markup for attorney services */}
         <script type="application/ld+json">
           {`

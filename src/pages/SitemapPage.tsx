@@ -2,6 +2,7 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FileText } from "lucide-react";
+import { Helmet } from "react-helmet";
 
 interface SitemapCategory {
   title: string;
@@ -54,6 +55,10 @@ const SitemapPage = () => {
 
   return (
     <div className="pt-20">
+      <Helmet>
+        <title>Sitemap | The Woodlands Law Firm</title>
+        <meta name="description" content="Browse the complete sitemap for woodlands.law to find all pages, practice areas, attorney profiles, and legal resources on our website." />
+      </Helmet>
       {/* Page Header */}
       <div className="relative bg-law-purple py-12">
         <div className="container mx-auto px-4">

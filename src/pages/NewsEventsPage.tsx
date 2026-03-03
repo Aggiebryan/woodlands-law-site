@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Calendar } from "lucide-react";
+import { Helmet } from "react-helmet";
 import BlogPostsGrid from "@/components/BlogPostsGrid";
 import { fetchCategories, fetchEvents, type WordPressEvent } from "@/services/wordPressService";
 import NewsletterSignup from "@/components/blog/NewsletterSignup";
@@ -101,6 +102,10 @@ const NewsEventsPage = () => {
 
   return (
     <div className="pt-20">
+      <Helmet>
+        <title>Legal News & Updates | The Woodlands Law Firm</title>
+        <meta name="description" content="Stay informed with the latest legal news, firm updates, and Texas law insights from the attorneys at The Woodlands Law Firm." />
+      </Helmet>
       {/* Page Header */}
       <div className="relative bg-law-purple py-16">
         <div className="container mx-auto px-4">

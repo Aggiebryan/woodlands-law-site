@@ -4,6 +4,7 @@ import AboutSection from "../components/AboutSection";
 import TestimonialsSection from "../components/TestimonialsSection";
 import CtaSection from "../components/CtaSection";
 import { useEffect } from "react";
+import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { Scale, Shield, FileText, Users, MapPin, Gavel } from "lucide-react";
 
@@ -14,6 +15,10 @@ const Index = () => {
   
   return (
     <div>
+      <Helmet>
+        <title>The Woodlands, TX Civil Litigation & Estate Planning Lawyers</title>
+        <meta name="description" content="The Woodlands Law Firm represents Texans in insurance disputes, personal injury, DTPA claims, and estate & business planning. Serving Montgomery & Harris County. Schedule a consultation today." />
+      </Helmet>
       <Hero />
       
       {/* Enhanced Practice Areas Section - Primary Content for LLM Discoverability */}
