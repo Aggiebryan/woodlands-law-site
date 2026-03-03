@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import PracticeAreaHero from "@/components/PracticeAreaHero";
 import PracticeAreaContent from "@/components/PracticeAreaContent";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import EstatePlanningComparison from "@/components/EstatePlanningComparison";
 import CallToAction from "@/components/CallToAction";
 import EstatePlanningLifeStages from "@/components/EstatePlanningLifeStages";
