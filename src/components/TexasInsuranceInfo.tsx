@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Gavel, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -11,7 +10,8 @@ const TexasInsuranceInfo = () => {
           <h2 className="text-3xl font-serif text-law-purple mb-4">Texas Insurance Law Expertise</h2>
           <div className="gold-underline mx-auto"></div>
           <p className="mt-6 text-gray-600 max-w-3xl mx-auto">
-            Our attorneys have deep knowledge of Texas-specific insurance laws and regulations that protect policyholders.
+            Our attorneys have deep knowledge of Texas-specific insurance laws and regulations that protect
+            policyholders.
           </p>
         </div>
 
@@ -19,7 +19,8 @@ const TexasInsuranceInfo = () => {
           <div className="bg-white p-8 rounded-lg shadow-md border-l-4 border-law-gold">
             <h3 className="text-2xl font-serif text-law-purple mb-4">Texas Insurance Code</h3>
             <p className="text-gray-700 mb-4">
-              Chapters 541 and 542 of the Texas Insurance Code provide powerful protections against unfair claim practices and delayed payments. These statutes enable recovery of:
+              Chapters 541 and 542 of the Texas Insurance Code provide powerful protections against unfair claim
+              practices and delayed payments. These statutes enable recovery of:
             </p>
             <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-6">
               <li>Compensation for the original claim amount</li>
@@ -41,34 +42,46 @@ const TexasInsuranceInfo = () => {
               <div className="border-b border-gray-200 pb-4">
                 <div className="flex items-center">
                   <Gavel className="h-5 w-5 text-law-gold mr-3" />
-                  <h4 className="font-medium text-law-purple">USAA Texas Lloyd's Co. v. Menchaca (2017)</h4>
+                  <h4 className="font-medium text-law-purple">USAA Texas Lloyd's Co. v. Menchaca (2018)</h4>
                 </div>
-                <p className="text-gray-700 mt-2">Clarified when policyholders can recover damages for statutory violations even when the policy doesn't provide coverage.</p>
+                <p className="text-gray-700 mt-2">
+                  Clarified when policyholders can recover damages for statutory violations even when the policy doesn't
+                  provide coverage.
+                </p>
               </div>
               <div className="border-b border-gray-200 pb-4">
                 <div className="flex items-center">
                   <Gavel className="h-5 w-5 text-law-gold mr-3" />
                   <h4 className="font-medium text-law-purple">Barbara Technologies v. State Farm (2019)</h4>
                 </div>
-                <p className="text-gray-700 mt-2">Addressed prompt payment requirements in appraisal situations, impacting how deadlines are calculated.</p>
+                <p className="text-gray-700 mt-2">
+                  Addressed prompt payment requirements in appraisal situations, impacting how deadlines are calculated.
+                </p>
               </div>
               <div>
                 <div className="flex items-center">
                   <Gavel className="h-5 w-5 text-law-gold mr-3" />
                   <h4 className="font-medium text-law-purple">Ortiz v. State Farm Lloyds (2019)</h4>
                 </div>
-                <p className="text-gray-700 mt-2">Determined that payment of an appraisal award does not absolve insurers from statutory violations committed prior to appraisal.</p>
+                <p className="text-gray-700 mt-2">
+                  Determined that payment of an appraisal award does not absolve insurers from statutory violations
+                  committed prior to appraisal.
+                </p>
               </div>
             </div>
             <div className="mt-6 pt-4 border-t border-gray-200">
               <div className="flex items-center">
                 <Shield className="h-5 w-5 text-law-gold mr-3" />
-                <Link to="/insurance-glossary" className="font-medium text-law-purple hover:text-law-gold transition-colors">
+                <Link
+                  to="/insurance-glossary"
+                  className="font-medium text-law-purple hover:text-law-gold transition-colors"
+                >
                   View our Insurance Terms Glossary
                 </Link>
               </div>
               <p className="text-gray-700 mt-2">
-                Understanding policy language is critical to protecting your rights. Our comprehensive glossary explains common insurance terms in plain language.
+                Understanding policy language is critical to protecting your rights. Our comprehensive glossary explains
+                common insurance terms in plain language.
               </p>
             </div>
           </div>
