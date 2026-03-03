@@ -172,6 +172,10 @@ const [openScheduler, setOpenScheduler] = useState(false);
   };
 
   return <div className="pt-20">
+      <Helmet>
+        <title>{attorney.metaTitle || `${attorney.name} — ${attorney.title} | The Woodlands Law Firm`}</title>
+        <meta name="description" content={attorney.metaDescription || `Learn about ${attorney.name}, ${attorney.title} at The Woodlands Law Firm.`} />
+      </Helmet>
       {/* Page Header */}
       <div className="relative bg-law-purple py-16">
         <div className="container mx-auto px-4">

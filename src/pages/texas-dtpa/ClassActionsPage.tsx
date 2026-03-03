@@ -3,6 +3,8 @@ import AnswerFirstDtpaPageTemplate from "@/components/dtpa/AnswerFirstDtpaPageTe
 export default function ClassActionsPage() {
   return (
     <AnswerFirstDtpaPageTemplate
+      metaTitle="Texas DTPA Class Action Lawsuits | Requirements & Limitations"
+      metaDescription="Can a Texas DTPA claim be brought as a class action? Learn about the requirements under Texas Rule of Civil Procedure 42 and why individual issues often prevent certification."
       title="Can Texas DTPA claims be brought as a class action?"
       directAnswer="Yes, but with significant limitations. Texas DTPA claims can be brought as class actions if they meet the standard class action requirements under Texas Rule of Civil Procedure 42. However, the individual nature of DTPA claims—particularly the need to prove that each class member is a consumer, relied on the misrepresentation, and suffered damages—often makes class certification difficult."
       rule={[

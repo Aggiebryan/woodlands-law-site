@@ -3,6 +3,8 @@ import AnswerFirstDtpaPageTemplate from "@/components/dtpa/AnswerFirstDtpaPageTe
 export default function DamagesAvailablePage() {
   return (
     <AnswerFirstDtpaPageTemplate
+      metaTitle="What Damages Can You Recover Under the Texas DTPA?"
+      metaDescription="Learn about economic damages, mental anguish damages, and treble damages available to consumers under the Texas Deceptive Trade Practices Act (DTPA § 17.50)."
       title="What damages are available under the Texas DTPA?"
       directAnswer="Consumers who prevail on a DTPA claim can recover economic damages (actual out-of-pocket losses). If the defendant acted knowingly, the consumer may recover up to two times economic damages plus mental anguish damages. If the defendant acted intentionally, the consumer may recover up to three times economic damages. Prevailing consumers are also entitled to reasonable and necessary attorney's fees."
       rule={[

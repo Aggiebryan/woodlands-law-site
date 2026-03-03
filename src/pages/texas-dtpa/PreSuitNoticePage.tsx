@@ -3,6 +3,8 @@ import AnswerFirstDtpaPageTemplate from "@/components/dtpa/AnswerFirstDtpaPageTe
 export default function PreSuitNoticePage() {
   return (
     <AnswerFirstDtpaPageTemplate
+      metaTitle="Texas DTPA Pre-Suit Notice: The 60-Day Requirement Explained"
+      metaDescription="Before filing a DTPA lawsuit in Texas, you must send a written 60-day pre-suit notice. Learn what the notice must include and what happens if you skip this step."
       title="Is pre-suit notice required before filing a Texas DTPA lawsuit?"
       directAnswer="Yes. Before filing a DTPA lawsuit, the consumer must send written notice to the defendant at least 60 days before filing. The notice must describe the specific complaint in reasonable detail and state the amount of economic damages, mental anguish damages, and attorney's fees claimed. Failure to provide proper notice can limit the damages recoverable and may result in abatement of the lawsuit."
       rule={[
