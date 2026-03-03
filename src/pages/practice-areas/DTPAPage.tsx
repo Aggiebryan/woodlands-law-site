@@ -90,7 +90,7 @@ const DTPAPage = () => {
     {
       question: "What damages can I recover in a DTPA case?",
       answer:
-        "Under the DTPA, consumers may recover economic damages (actual losses), and in cases involving knowing or intentional conduct, up to three times those damages (treble damages). The statute also allows for recovery of court costs and reasonable attorney's fees for prevailing consumers. In cases involving mental anguish, those damages may be recoverable if the conduct was committed knowingly. Additionally, the court may issue injunctions to stop the deceptive practices.",
+        "Under the DTPA, a prevailing consumer may recover economic damages (actual losses). If the defendant’s conduct was committed knowingly, the court may award up to three times the consumer’s economic damages. In that circumstance, the consumer may also recover damages for mental anguish. The statute further authorizes recovery of court costs and reasonable and necessary attorney’s fees for a prevailing consumer, and the court may grant injunctive relief to prevent or restrain the deceptive practice. See Tex. Bus. & Com. Code § 17.50.",
     },
     {
       question: "How long do I have to file a DTPA claim in Texas?",
@@ -764,10 +764,7 @@ const DTPAPage = () => {
             legal options during a comprehensive, confidential consultation.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button
-              onClick={handleOpenForm}
-              className="btn-gold-metallic py-3 px-8 rounded"
-            >
+            <Button onClick={handleOpenForm} className="btn-gold-metallic py-3 px-8 rounded">
               Book a Comprehensive DTPA Claim Review
             </Button>
             <Link
