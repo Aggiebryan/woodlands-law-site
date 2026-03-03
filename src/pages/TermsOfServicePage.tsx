@@ -10,6 +10,10 @@ const TermsOfServicePage = () => {
 
   return (
     <div className="pt-20">
+      <Helmet>
+        <title>Terms of Service | The Woodlands Law Firm</title>
+        <meta name="description" content="Review the terms of service governing your use of the woodlands.law website, including disclaimers, limitations of liability, and intellectual property notices." />
+      </Helmet>
       {/* Page Header */}
       <div className="relative bg-law-purple py-12">
         <div className="container mx-auto px-4">

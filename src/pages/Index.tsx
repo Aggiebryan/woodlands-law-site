@@ -16,6 +16,10 @@ const Index = () => {
   
   return (
     <div>
+      <Helmet>
+        <title>The Woodlands, TX Civil Litigation & Estate Planning Lawyers</title>
+        <meta name="description" content="The Woodlands Law Firm represents Texans in insurance disputes, personal injury, DTPA claims, and estate & business planning. Serving Montgomery & Harris County. Schedule a consultation today." />
+      </Helmet>
       <Hero />
       
       {/* Enhanced Practice Areas Section - Primary Content for LLM Discoverability */}

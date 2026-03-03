@@ -101,6 +101,10 @@ const EstatePlanningPage = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Estate Planning Lawyer in The Woodlands, TX | Wills & Trusts</title>
+        <meta name="description" content="Protect your legacy with a personalized estate plan. Our Texas estate planning attorneys draft wills, trusts, powers of attorney, and healthcare directives for Texas families." />
+      </Helmet>
       <PracticeAreaHero
         title="Securing Your Legacy"
         subtitle="Personalized Estate Planning for Texas Families"

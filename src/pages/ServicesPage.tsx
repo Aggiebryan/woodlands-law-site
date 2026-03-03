@@ -139,6 +139,10 @@ const ServicesPage = () => {
 
   return (
     <div className="pt-20">
+      <Helmet>
+        <title>Legal Services in The Woodlands, TX</title>
+        <meta name="description" content="The Woodlands Law Firm offers civil litigation, insurance disputes, personal injury, DTPA, business planning, and estate planning services throughout Texas." />
+      </Helmet>
       {/* Page Header */}
       <ServicesPageHeader 
         title="Our Services"

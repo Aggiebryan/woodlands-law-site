@@ -102,10 +102,10 @@ const InsuranceLitigationPage = () => {
   return (
     <>
       <Helmet>
-        <title>Texas Insurance Litigation Attorneys | The Woodlands Law Firm</title>
+        <title>Insurance Litigation Lawyer in The Woodlands, TX</title>
         <meta
           name="description"
-          content="Experienced Texas insurance litigation attorneys fighting for policyholders' rights against denied, delayed, and underpaid insurance claims in The Woodlands and Houston area."
+          content="Insurance company denied or underpaid your claim? Our Texas insurance litigation attorneys fight for policyholders under Insurance Code Chapters 541 & 542. Call today."
         />
         {/* Schema markup for attorney services */}
         <script type="application/ld+json">

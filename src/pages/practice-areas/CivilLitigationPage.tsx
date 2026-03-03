@@ -103,6 +103,10 @@ const CivilLitigationPage = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Civil Litigation Attorney in The Woodlands, TX</title>
+        <meta name="description" content="Our civil litigation lawyers handle contract disputes, business torts, partnership conflicts, and commercial claims in Montgomery and Harris County, Texas." />
+      </Helmet>
       <PracticeAreaHero
         title="Strategic Civil Litigation Attorneys"
         subtitle="Results-Focused Advocacy for Complex Legal Disputes in Texas"

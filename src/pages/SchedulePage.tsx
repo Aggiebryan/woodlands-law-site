@@ -14,6 +14,10 @@ const SchedulePage = () => {
   }, []);
   return (
     <div className="min-h-screen pt-20 pb-16">
+      <Helmet>
+        <title>Schedule a Consultation | The Woodlands Law Firm</title>
+        <meta name="description" content="Ready to discuss your legal matter? Schedule a consultation with our Texas attorneys today. We serve clients in The Woodlands, Conroe, Houston, and surrounding areas." />
+      </Helmet>
       {/* Page Header */}
       <PageHeader 
         title="Schedule a Consultation"

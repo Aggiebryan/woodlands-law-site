@@ -5,6 +5,10 @@ import { Helmet } from "react-helmet";
 const TrustsPage = () => {
   return (
     <div className="pt-20">
+      <Helmet>
+        <title>Texas Trust Lawyer | Revocable, Irrevocable & Special Needs Trusts</title>
+        <meta name="description" content="Learn about the types of trusts available in Texas. Our attorneys help clients create revocable living trusts, irrevocable trusts, and special needs trusts to protect their assets." />
+      </Helmet>
       {/* Hero Section */}
       <div className="bg-law-navy py-16 md:py-24">
         <div className="container mx-auto px-4">

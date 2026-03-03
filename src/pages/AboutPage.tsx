@@ -8,6 +8,10 @@ const AboutPage = () => {
     window.scrollTo(0, 0);
   }, []);
   return <div className="pt-20">
+      <Helmet>
+        <title>About The Woodlands Law Firm</title>
+        <meta name="description" content="Learn about The Woodlands Law Firm — our founding, legal philosophy, and commitment to providing aggressive, personalized legal representation throughout Texas." />
+      </Helmet>
       {/* Page Header */}
       <div className="relative bg-law-purple py-16">
         <div className="container mx-auto px-4">

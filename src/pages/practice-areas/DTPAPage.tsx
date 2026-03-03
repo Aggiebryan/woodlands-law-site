@@ -112,10 +112,10 @@ const DTPAPage = () => {
   return (
     <>
       <Helmet>
-        <title>Texas Deceptive Trade Practices Act Attorneys | The Woodlands Law Firm</title>
+        <title>Texas DTPA Lawyer | Deceptive Trade Practices Act Claims</title>
         <meta
           name="description"
-          content="Experienced DTPA attorneys protecting consumers and businesses against deceptive, misleading, and fraudulent business practices in The Woodlands and throughout Texas."
+          content="Deceived by a business? Our Texas DTPA attorneys help consumers recover economic damages, treble damages, and attorney's fees for false and deceptive business practices."
         />
         {/* Schema markup for attorney services */}
         <script type="application/ld+json">

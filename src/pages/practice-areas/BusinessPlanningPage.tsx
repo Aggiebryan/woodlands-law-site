@@ -101,6 +101,10 @@ const BusinessPlanningPage = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Business Planning Attorney in The Woodlands, TX</title>
+        <meta name="description" content="Our business attorneys help Texas entrepreneurs and owners with entity formation, contract drafting, risk management, succession planning, and business acquisitions." />
+      </Helmet>
       <PracticeAreaHero
         title="Strategic Business Legal Counsel"
         subtitle="Forward-Thinking Solutions for Texas Entrepreneurs and Companies"

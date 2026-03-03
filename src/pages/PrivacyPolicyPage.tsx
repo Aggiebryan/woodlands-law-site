@@ -10,6 +10,10 @@ const PrivacyPolicyPage = () => {
 
   return (
     <div className="pt-20">
+      <Helmet>
+        <title>Privacy Policy | The Woodlands Law Firm</title>
+        <meta name="description" content="Read the privacy policy for woodlands.law to understand how The Woodlands Law Firm collects, uses, and protects your personal information when you visit our website." />
+      </Helmet>
       {/* Page Header */}
       <div className="relative bg-law-purple py-12">
         <div className="container mx-auto px-4">
