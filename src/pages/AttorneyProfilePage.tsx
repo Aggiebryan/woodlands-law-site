@@ -45,6 +45,8 @@ const [openScheduler, setOpenScheduler] = useState(false);
       name: "Gwendolyn Simpson",
       title: "Managing Attorney",
       image: "/gwen600800flag.webp",
+      metaTitle: "Gwendolyn Simpson — Managing Attorney | The Woodlands Law Firm",
+      metaDescription: "Gwendolyn Simpson is a Baylor Law graduate and managing attorney with decades of experience in civil litigation, probate, and personal injury in Montgomery County, TX.",
       bio: <>
           <p className="mb-4 text-justify">
             Gwendolyn Simpson is a native Houstonian and a graduate of Baylor Law School. Experienced in the legal field since 1998, and licensed in 2007, Ms. Simpson founded a general practice civil firm and has been assisting clients with legal matters involving civil litigation, transactions, probate, and personal injury ever since. In addition to her private practice, Ms. Simpson was the staff attorney to the Honorable Kathleen Hamilton in the 359th Judicial District Court in Montgomery County, Texas.
