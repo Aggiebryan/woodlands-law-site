@@ -100,6 +100,8 @@ const [openScheduler, setOpenScheduler] = useState(false);
       name: "Courtney Fields",
       title: "Legal Assistant",
       image: "/Courtneyblack background.webp",
+      metaTitle: "Courtney Fields — Legal Assistant | The Woodlands Law Firm",
+      metaDescription: "Courtney Fields is a skilled legal assistant at The Woodlands Law Firm, managing case documentation, client communication, and office coordination.",
       bio: <>
           <p className="mb-4 text-justify">
             Courtney Fields is a dedicated legal assistant with several years of experience in the legal field. Her meticulous attention to detail and exceptional organizational skills are vital to the smooth operation of our firm. She manages client communications, document preparation, and case file organization with remarkable efficiency.
