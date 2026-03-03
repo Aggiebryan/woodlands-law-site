@@ -36,10 +36,10 @@ export default function AnswerFirstDtpaPageTemplate({
   return (
     <>
       <Helmet>
-        <title>{title} | Texas DTPA | The Woodlands Law Firm</title>
+        <title>{metaTitle || `${title} | Texas DTPA | The Woodlands Law Firm`}</title>
         <meta
           name="description"
-          content={directAnswer.slice(0, 155) + "..."}
+          content={metaDescription || directAnswer.slice(0, 155) + "..."}
         />
       </Helmet>
 
