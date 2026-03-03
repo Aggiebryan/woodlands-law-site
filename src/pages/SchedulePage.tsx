@@ -3,6 +3,7 @@ import PageHeader from "@/components/schedule/PageHeader";
 import ContactInfoSection from "@/components/schedule/ContactInfoSection";
 import Cal, { getCalApi } from "@calcom/embed-react";
 import { useEffect } from "react";
+import { Helmet } from "react-helmet";
 
 const SchedulePage = () => {
   useEffect(() => {
