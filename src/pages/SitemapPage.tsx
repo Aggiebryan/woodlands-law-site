@@ -2,6 +2,7 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FileText } from "lucide-react";
+import { Helmet } from "react-helmet";
 
 interface SitemapCategory {
   title: string;
