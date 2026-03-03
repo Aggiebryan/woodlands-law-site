@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import PracticeAreaHero from "@/components/PracticeAreaHero";
 import PracticeAreaContent from "@/components/PracticeAreaContent";
@@ -17,7 +16,7 @@ const showCaseResults = false; // Set to false to hide, true to show
 
 const InsuranceLitigationPage = () => {
   const [showClaimReviewForm, setShowClaimReviewForm] = useState(false);
-  
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -30,34 +29,34 @@ const InsuranceLitigationPage = () => {
   }, []);
 
   const caseTypes = [
-    { 
+    {
       title: "First-Party Insurance Disputes",
-      description: "Claims against your own insurance company for coverage denials or underpayments"
+      description: "Claims against your own insurance company for coverage denials or underpayments",
     },
-    { 
+    {
       title: "Coverage Analysis",
-      description: "Detailed review of policy language to identify potential coverage arguments"
+      description: "Detailed review of policy language to identify potential coverage arguments",
     },
-    { 
+    {
       title: "Property Damage Claims",
-      description: "Representation for hurricane, fire, water, and other property damage claim disputes"
+      description: "Representation for hurricane, fire, water, and other property damage claim disputes",
     },
-    { 
+    {
       title: "Health Insurance Disputes",
-      description: "Fighting denied medical claims and securing coverage for necessary treatments"
+      description: "Fighting denied medical claims and securing coverage for necessary treatments",
     },
-    { 
+    {
       title: "Bad Faith Claims",
-      description: "Legal action when insurers unreasonably deny, delay, or underpay valid claims"
+      description: "Legal action when insurers unreasonably deny, delay, or underpay valid claims",
     },
-    { 
+    {
       title: "Business Interruption Claims",
-      description: "Recovering lost income when operations are disrupted by covered events"
+      description: "Recovering lost income when operations are disrupted by covered events",
     },
-    { 
+    {
       title: "Negotiation and Litigation",
-      description: "Aggressive advocacy from initial demand through trial if necessary"
-    }
+      description: "Aggressive advocacy from initial demand through trial if necessary",
+    },
   ];
 
   const whyChooseUs = [
@@ -67,7 +66,7 @@ const InsuranceLitigationPage = () => {
     "Skilled negotiators with insurance adjusters and legal teams",
     "Trial-ready approach that incentivizes fair settlement offers",
     "Experience with Texas Insurance Code Chapters 541 and 542 claims",
-    "Personalized strategy for each client's unique situation"
+    "Personalized strategy for each client's unique situation",
   ];
 
   const process = {
@@ -78,30 +77,36 @@ const InsuranceLitigationPage = () => {
       "Strategic Demand Preparation",
       "Settlement Negotiations",
       "Litigation if Necessary",
-      "Resolution & Recovery"
-    ]
+      "Resolution & Recovery",
+    ],
   };
 
   const faq = [
     {
       question: "My insurance claim was denied. What should I do?",
-      answer: "If your claim has been denied, it's important to request a written explanation for the denial, review your policy carefully, and gather supporting documentation. Our attorneys can review your case, identify potential legal grounds for challenging the denial, and help you pursue all available remedies."
+      answer:
+        "If your claim has been denied, it's important to request a written explanation for the denial, review your policy carefully, and gather supporting documentation. Our attorneys can review your case, identify potential legal grounds for challenging the denial, and help you pursue all available remedies.",
     },
     {
       question: "What is insurance bad faith?",
-      answer: "Insurance bad faith occurs when an insurance company unreasonably denies, delays, or underpays a valid claim. This can include failing to properly investigate claims, misrepresenting policy provisions, or making unreasonably low settlement offers. If proven, bad faith claims can result in additional damages beyond the policy limits."
+      answer:
+        "Insurance bad faith occurs when an insurance company unreasonably denies, delays, or underpays a valid claim. This can include failing to properly investigate claims, misrepresenting policy provisions, or making unreasonably low settlement offers. If proven, bad faith claims can result in additional damages beyond the policy limits.",
     },
     {
       question: "How long does an insurance company have to settle a claim in Texas?",
-      answer: "Under Texas law, insurance companies must acknowledge receipt of a claim within 15 days, begin investigation within 15 days, and accept or reject a claim within 45 days (though this period can be extended in certain circumstances). Failing to meet these deadlines may constitute a violation of the Texas Insurance Code."
-    }
+      answer:
+        "Under Texas law, an insurer must acknowledge receipt of a claim within 15 business days, commence its investigation within that same 15-business-day period, and accept or reject the claim within 45 business days, unless a statutory extension applies. These deadlines are measured in business days as defined by the Texas Department of Insurance, not calendar days. An insurer’s failure to comply with these statutory timeframes may constitute a violation of the Texas Insurance Code.",
+    },
   ];
 
   return (
     <>
       <Helmet>
         <title>Texas Insurance Litigation Attorneys | The Woodlands Law Firm</title>
-        <meta name="description" content="Experienced Texas insurance litigation attorneys fighting for policyholders' rights against denied, delayed, and underpaid insurance claims in The Woodlands and Houston area." />
+        <meta
+          name="description"
+          content="Experienced Texas insurance litigation attorneys fighting for policyholders' rights against denied, delayed, and underpaid insurance claims in The Woodlands and Houston area."
+        />
         {/* Schema markup for attorney services */}
         <script type="application/ld+json">
           {`
@@ -125,7 +130,7 @@ const InsuranceLitigationPage = () => {
           `}
         </script>
       </Helmet>
-      
+
       <PracticeAreaHero
         title="Texas Insurance Litigation Attorneys"
         subtitle="Fighting for Policyholders' Rights in The Woodlands"
@@ -133,13 +138,15 @@ const InsuranceLitigationPage = () => {
         image="/out-2.webp"
         ctaText="Reserve Your Personalized Claim Evaluation"
         onCtaClick={() => {}}
-        ctaButtonProps={{
-          'data-cal-namespace': 'insurance-claim',
-          'data-cal-link': 'team/the-woodlands-law-firm/insurance-claim',
-          'data-cal-config': '{"layout":"month_view"}'
-        } as any}
+        ctaButtonProps={
+          {
+            "data-cal-namespace": "insurance-claim",
+            "data-cal-link": "team/the-woodlands-law-firm/insurance-claim",
+            "data-cal-config": '{"layout":"month_view"}',
+          } as any
+        }
       />
-      
+
       <PracticeAreaContent
         overview="The Woodlands Law Firm specializes in representing policyholders in disputes with insurance companies throughout Texas. Our insurance litigation attorneys have extensive experience helping clients recover what they're owed under their policies when insurance companies act in bad faith or wrongfully deny claims. We understand the complex language of insurance policies and the tactics insurers use to minimize payments, and we use this knowledge to advocate effectively for our clients."
         whyChooseUs={whyChooseUs}
@@ -147,24 +154,25 @@ const InsuranceLitigationPage = () => {
         process={process}
         faq={faq}
       />
-      
+
       <InsuranceClaimProcess />
-      
+
       {showCaseResults && <SettlementComparisons />}
-      
+
       <InsuranceTestimonialCarousel />
-      
+
       <TexasInsuranceInfo />
-      
+
       <InsuranceFAQSection />
-      
+
       <InsuranceResourcesSection />
-      
+
       <section className="bg-law-purple py-16 text-center">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-serif text-white mb-6">Ready to Fight Your Insurance Claim Denial?</h2>
           <p className="text-white/90 mb-8 max-w-2xl mx-auto">
-            Don't let insurance companies deny you the coverage you paid for. Our experienced Texas insurance litigation attorneys are ready to review your case.
+            Don't let insurance companies deny you the coverage you paid for. Our experienced Texas insurance litigation
+            attorneys are ready to review your case.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <button
@@ -175,8 +183,8 @@ const InsuranceLitigationPage = () => {
             >
               Request an Insurance Claim Consultation
             </button>
-            <a 
-              href="tel:+18326260116" 
+            <a
+              href="tel:+18326260116"
               className="bg-white hover:bg-gray-100 text-law-purple font-medium py-3 px-8 rounded transition-colors inline-block"
             >
               Call (832) 626-0116
@@ -184,12 +192,9 @@ const InsuranceLitigationPage = () => {
           </div>
         </div>
       </section>
-      
+
       {/* Insurance Claim Review Form */}
-      <InsuranceClaimReviewForm 
-        open={showClaimReviewForm}
-        onOpenChange={setShowClaimReviewForm}
-      />
+      <InsuranceClaimReviewForm open={showClaimReviewForm} onOpenChange={setShowClaimReviewForm} />
     </>
   );
 };
