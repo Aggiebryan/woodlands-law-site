@@ -126,6 +126,8 @@ const [openScheduler, setOpenScheduler] = useState(false);
       name: "Julie Dunlap",
       title: "Office Manager",
       image: "/lovable-uploads/22e7fa10-9dd9-40c8-afa7-eee7672da620.png",
+      metaTitle: "Julie Dunlap — Office Manager | The Woodlands Law Firm",
+      metaDescription: "Julie Dunlap is the office manager at The Woodlands Law Firm, bringing experience as a Certified Real Estate Appraiser and small business owner to our team.",
       bio: <>
           <p className="mb-4 text-justify">
             Julie Dunlap brings a wealth of diverse professional experience to her role as Office Manager at Woodlands Law. With 18 years as a Certified Real Estate Appraiser, Julie developed exceptional analytical skills and attention to detail that serve her well in managing the administrative operations of our firm.
