@@ -15,6 +15,8 @@ interface AttorneyInfo {
   education?: string[];
   admissions?: string[];
   awards?: string[];
+  metaTitle?: string;
+  metaDescription?: string;
 }
 
 const AttorneyProfilePage = () => {
