@@ -75,8 +75,8 @@ const SchedulePage = () => {
                   <span className="text-xs text-muted-foreground">Direct Line</span>
                 </div>
                 <div className="text-center">
-                  <strong className="block text-sm text-foreground font-medium">bryan@woodlands.law</strong>
-                  <span className="text-xs text-muted-foreground">Attorney Email</span>
+                  <strong className="block text-sm text-foreground font-medium">admin@woodlands.law</strong>
+                  <span className="text-xs text-muted-foreground">Firm Email</span>
                 </div>
               </div>
             </div>
