@@ -7,7 +7,7 @@ import { Helmet } from "react-helmet";
 import BusinessEntityComparison from "@/components/BusinessEntityComparison";
 import CallToAction from "@/components/CallToAction";
 import BusinessLifecycle from "@/components/BusinessLifecycle";
-import BusinessConsultationForm from "@/components/business/BusinessConsultationForm";
+import IntakeSchedulerDialog from "@/components/schedule/IntakeSchedulerDialog";
 
 const BusinessPlanningPage = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
