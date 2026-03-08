@@ -7,14 +7,16 @@ import InsuranceTestimonialCarousel from "@/components/InsuranceTestimonialCarou
 import TexasInsuranceInfo from "@/components/TexasInsuranceInfo";
 import InsuranceFAQSection from "@/components/InsuranceFAQSection";
 import InsuranceResourcesSection from "@/components/InsuranceResourcesSection";
-import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import IntakeSchedulerDialog from "@/components/schedule/IntakeSchedulerDialog";
 import InsuranceClaimReviewForm from "@/components/insurance/InsuranceClaimReviewForm";
 import { getCalApi } from "@calcom/embed-react";
+import { Link } from "react-router-dom";
 
-const showCaseResults = false; // Set to false to hide, true to show
+const showCaseResults = false;
 
 const InsuranceLitigationPage = () => {
+  const [showIntakeDialog, setShowIntakeDialog] = useState(false);
   const [showClaimReviewForm, setShowClaimReviewForm] = useState(false);
 
   useEffect(() => {
@@ -107,7 +109,6 @@ const InsuranceLitigationPage = () => {
           name="description"
           content="Insurance company denied or underpaid your claim? Our Texas insurance litigation attorneys fight for policyholders under Insurance Code Chapters 541 & 542. Call today."
         />
-        {/* Schema markup for attorney services */}
         <script type="application/ld+json">
           {`
             {
@@ -137,14 +138,7 @@ const InsuranceLitigationPage = () => {
         description="When insurance companies deny, delay, or underpay legitimate claims, our litigation team steps in to fight for the coverage you're entitled to receive. We have the expertise to level the playing field against powerful insurance companies."
         image="/out-2.webp"
         ctaText="Reserve Your Personalized Claim Evaluation"
-        onCtaClick={() => {}}
-        ctaButtonProps={
-          {
-            "data-cal-namespace": "insurance-claim",
-            "data-cal-link": "team/the-woodlands-law-firm/insurance-claim",
-            "data-cal-config": '{"layout":"month_view"}',
-          } as any
-        }
+        onCtaClick={() => setShowIntakeDialog(true)}
       />
 
       <PracticeAreaContent
@@ -176,9 +170,7 @@ const InsuranceLitigationPage = () => {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <button
-              data-cal-namespace="insurance-claim"
-              data-cal-link="team/the-woodlands-law-firm/insurance-claim"
-              data-cal-config='{"layout":"month_view"}'
+              onClick={() => setShowIntakeDialog(true)}
               className="btn-gold-metallic py-3 px-8 rounded inline-block"
             >
               Request an Insurance Claim Consultation
@@ -193,6 +185,12 @@ const InsuranceLitigationPage = () => {
         </div>
       </section>
 
+      <IntakeSchedulerDialog
+        open={showIntakeDialog}
+        onOpenChange={setShowIntakeDialog}
+        calLink="team/the-woodlands-law-firm/insurance-claim"
+        calNamespace="insurance-claim"
+      />
       {/* Insurance Claim Review Form */}
       <InsuranceClaimReviewForm open={showClaimReviewForm} onOpenChange={setShowClaimReviewForm} />
     </>
