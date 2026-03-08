@@ -14,7 +14,7 @@ import { PhoneInput } from "@/components/ui/phone-input";
 
 // --- CONFIGURATION ---
 const CAL_URL = "https://cal.com/woodlandslaw/consultation";
-const WEBHOOK_URL = "https://n8n.twlf.dev/webhook-test/intake-web";
+const WEBHOOK_URL = "https://n8n.twlf.dev/webhook/intake-web";
 // ---------------------
 
 const formSchema = z.object({
