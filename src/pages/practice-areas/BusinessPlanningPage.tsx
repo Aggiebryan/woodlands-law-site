@@ -135,9 +135,11 @@ const BusinessPlanningPage = () => {
         secondaryButtonLink="/resources/business-formation-guide"
       />
 
-      <BusinessConsultationForm
+      <IntakeSchedulerDialog
         open={isFormOpen}
         onOpenChange={setIsFormOpen}
+        calLink="team/the-woodlands-law-firm"
+        calNamespace="business-planning"
       />
     </>
   );

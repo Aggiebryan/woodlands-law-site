@@ -136,9 +136,11 @@ const EstatePlanningPage = () => {
         secondaryButtonLink="/resources/estate-planning-guide"
       />
 
-      <EstateConsultationForm
+      <IntakeSchedulerDialog
         open={isFormOpen}
         onOpenChange={setIsFormOpen}
+        calLink="team/the-woodlands-law-firm"
+        calNamespace="estate-planning"
       />
     </>
   );

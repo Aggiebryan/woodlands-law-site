@@ -137,7 +137,12 @@ const CivilLitigationPage = () => {
         secondaryButtonLink="/services"
       />
 
-      <CivilConsultationForm open={formOpen} onOpenChange={setFormOpen} />
+      <IntakeSchedulerDialog
+        open={formOpen}
+        onOpenChange={setFormOpen}
+        calLink="team/the-woodlands-law-firm"
+        calNamespace="civil-litigation"
+      />
     </>
   );
 };

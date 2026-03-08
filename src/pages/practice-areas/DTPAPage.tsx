@@ -777,7 +777,12 @@ const DTPAPage = () => {
         </div>
       </section>
 
-      <DTPAConsultationForm open={isFormOpen} onOpenChange={setIsFormOpen} />
+      <IntakeSchedulerDialog
+        open={isFormOpen}
+        onOpenChange={setIsFormOpen}
+        calLink="team/the-woodlands-law-firm"
+        calNamespace="dtpa"
+      />
     </>
   );
 };
