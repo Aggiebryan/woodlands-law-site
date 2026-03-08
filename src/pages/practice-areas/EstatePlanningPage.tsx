@@ -7,7 +7,7 @@ import { Helmet } from "react-helmet";
 import EstatePlanningComparison from "@/components/EstatePlanningComparison";
 import CallToAction from "@/components/CallToAction";
 import EstatePlanningLifeStages from "@/components/EstatePlanningLifeStages";
-import EstateConsultationForm from "@/components/estate/EstateConsultationForm";
+import IntakeSchedulerDialog from "@/components/schedule/IntakeSchedulerDialog";
 
 const EstatePlanningPage = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
@@ -136,9 +136,11 @@ const EstatePlanningPage = () => {
         secondaryButtonLink="/resources/estate-planning-guide"
       />
 
-      <EstateConsultationForm
+      <IntakeSchedulerDialog
         open={isFormOpen}
         onOpenChange={setIsFormOpen}
+        calLink="team/the-woodlands-law-firm"
+        calNamespace="estate-planning"
       />
     </>
   );

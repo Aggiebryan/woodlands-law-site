@@ -7,7 +7,7 @@ import { Helmet } from "react-helmet";
 import BusinessEntityComparison from "@/components/BusinessEntityComparison";
 import CallToAction from "@/components/CallToAction";
 import BusinessLifecycle from "@/components/BusinessLifecycle";
-import BusinessConsultationForm from "@/components/business/BusinessConsultationForm";
+import IntakeSchedulerDialog from "@/components/schedule/IntakeSchedulerDialog";
 
 const BusinessPlanningPage = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
@@ -135,9 +135,11 @@ const BusinessPlanningPage = () => {
         secondaryButtonLink="/resources/business-formation-guide"
       />
 
-      <BusinessConsultationForm
+      <IntakeSchedulerDialog
         open={isFormOpen}
         onOpenChange={setIsFormOpen}
+        calLink="team/the-woodlands-law-firm"
+        calNamespace="business-planning"
       />
     </>
   );

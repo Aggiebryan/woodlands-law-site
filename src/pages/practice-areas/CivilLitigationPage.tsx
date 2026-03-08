@@ -6,7 +6,7 @@ import { Helmet } from "react-helmet";
 import CivilLitigationProcess from "@/components/CivilLitigationProcess";
 import CivilCaseResults from "@/components/CivilCaseResults";
 import CallToAction from "@/components/CallToAction";
-import CivilConsultationForm from "@/components/civil/CivilConsultationForm";
+import IntakeSchedulerDialog from "@/components/schedule/IntakeSchedulerDialog";
 
 const showCaseResults = false; // Set to false to hide, true to show
 
@@ -137,7 +137,12 @@ const CivilLitigationPage = () => {
         secondaryButtonLink="/services"
       />
 
-      <CivilConsultationForm open={formOpen} onOpenChange={setFormOpen} />
+      <IntakeSchedulerDialog
+        open={formOpen}
+        onOpenChange={setFormOpen}
+        calLink="team/the-woodlands-law-firm"
+        calNamespace="civil-litigation"
+      />
     </>
   );
 };

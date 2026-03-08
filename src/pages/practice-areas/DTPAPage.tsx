@@ -9,7 +9,7 @@ import TexasDTPAInfo from "@/components/TexasDTPAInfo";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import DTPAConsultationForm from "@/components/dtpa/DTPAConsultationForm";
+import IntakeSchedulerDialog from "@/components/schedule/IntakeSchedulerDialog";
 
 const DTPAPage = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
@@ -777,7 +777,12 @@ const DTPAPage = () => {
         </div>
       </section>
 
-      <DTPAConsultationForm open={isFormOpen} onOpenChange={setIsFormOpen} />
+      <IntakeSchedulerDialog
+        open={isFormOpen}
+        onOpenChange={setIsFormOpen}
+        calLink="team/the-woodlands-law-firm"
+        calNamespace="dtpa"
+      />
     </>
   );
 };
