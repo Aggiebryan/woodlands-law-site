@@ -1,10 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { getCalApi } from "@calcom/embed-react";
-
-// 
+import IntakeSchedulerDialog from "@/components/schedule/IntakeSchedulerDialog";
 
 interface AttorneyInfo {
   id: string;
@@ -17,27 +14,17 @@ interface AttorneyInfo {
   awards?: string[];
   metaTitle?: string;
   metaDescription?: string;
+  calLink?: string;
+  calNamespace?: string;
 }
 
 const AttorneyProfilePage = () => {
   const { id } = useParams<{ id: string }>();
+  const [showIntakeDialog, setShowIntakeDialog] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  // Initialize Cal.com embed for Gwendolyn Simpson
-  useEffect(() => {
-    if (id === 'gwendolyn-simpson') {
-      (async function () {
-        const cal = await getCalApi({ namespace: "gwendolyn-simpson" });
-        cal("ui", { hideEventTypeDetails: false, layout: "month_view" });
-      })();
-    }
-  }, [id]);
-
-// Cal.com modal state
-const [openScheduler, setOpenScheduler] = useState(false);
 
   const attorneys: Record<string, AttorneyInfo> = {
     "gwendolyn-simpson": {
@@ -47,6 +34,8 @@ const [openScheduler, setOpenScheduler] = useState(false);
       image: "/gwen600800flag.webp",
       metaTitle: "Gwendolyn Simpson — Managing Attorney | The Woodlands Law Firm",
       metaDescription: "Gwendolyn Simpson is a Baylor Law graduate and managing attorney with decades of experience in civil litigation, probate, and personal injury in Montgomery County, TX.",
+      calLink: "gwensimpson",
+      calNamespace: "gwendolyn-simpson",
       bio: <>
           <p className="mb-4 text-justify">
             Gwendolyn Simpson is a native Houstonian and a graduate of Baylor Law School. Experienced in the legal field since 1998, and licensed in 2007, Ms. Simpson founded a general practice civil firm and has been assisting clients with legal matters involving civil litigation, transactions, probate, and personal injury ever since. In addition to her private practice, Ms. Simpson was the staff attorney to the Honorable Kathleen Hamilton in the 359th Judicial District Court in Montgomery County, Texas.
@@ -75,6 +64,8 @@ const [openScheduler, setOpenScheduler] = useState(false);
       image: "/bryanflag600800.webp",
       metaTitle: "Bryan Holman — Associate Attorney | The Woodlands Law Firm",
       metaDescription: "Bryan Holman is a Texas attorney and South Texas College of Law graduate with unique experience as a former insurance adjuster and entrepreneur serving clients in The Woodlands.",
+      calLink: "bryanholman",
+      calNamespace: "bryan-holman",
       bio: <>
           <p className="mb-4 text-justify">
             Born and raised in Texas, Bryan Holman has dedicated his life to professional excellence and unwavering service. A proud graduate of Texas A&M University, Bryan earned a Bachelor of Science degree, laying a solid foundation for his future academic endeavors. He continued his education by earning a Juris Doctor from the South Texas College of Law.
@@ -165,18 +156,11 @@ const [openScheduler, setOpenScheduler] = useState(false);
     );
   }
 
-  const handleScheduleClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    setOpenScheduler(true);
-    return false;
-  };
-
   return <div className="pt-20">
       <Helmet>
         <title>{attorney.metaTitle || `${attorney.name} — ${attorney.title} | The Woodlands Law Firm`}</title>
         <meta name="description" content={attorney.metaDescription || `Learn about ${attorney.name}, ${attorney.title} at The Woodlands Law Firm.`} />
       </Helmet>
-      {/* Page Header */}
       <div className="relative bg-law-purple py-16">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-5xl text-white font-serif font-semibold mb-2">
@@ -187,11 +171,9 @@ const [openScheduler, setOpenScheduler] = useState(false);
         </div>
       </div>
 
-      {/* Attorney Profile */}
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            {/* Sidebar */}
             <div className="lg:col-span-1">
               <div className="rounded-lg overflow-hidden mb-6">
                 <img src={attorney.image} alt={attorney.name} className="w-full h-auto object-cover" />
@@ -218,32 +200,20 @@ const [openScheduler, setOpenScheduler] = useState(false);
                   </ul>
                 </div>}
               
-              {id === 'bryan-holman' ? (
-                <a
-                  href="#"
-                  onClick={handleScheduleClick}
-                  className="btn-gold-metallic py-3 px-6 rounded inline-block w-full text-center"
-                >
-                  Schedule a Consultation with Bryan
-                </a>
-              ) : id === 'gwendolyn-simpson' ? (
+              {attorney.calLink ? (
                 <button
-                  type="button"
-                  data-cal-namespace="gwendolyn-simpson"
-                  data-cal-link="gwensimpson"
-                  data-cal-config='{"layout":"month_view"}'
+                  onClick={() => setShowIntakeDialog(true)}
                   className="btn-gold-metallic py-3 px-6 rounded inline-block w-full text-center"
                 >
-                  Schedule a Consultation
+                  Schedule a Consultation{attorney.id === 'bryan-holman' ? ' with Bryan' : ''}
                 </button>
               ) : (
-                <Link to="/contact" className="btn-gold-metallic py-3 px-6 rounded inline-block w-full text-center">
+                <Link to="/schedule" className="btn-gold-metallic py-3 px-6 rounded inline-block w-full text-center">
                   Schedule a Consultation
                 </Link>
               )}
             </div>
             
-            {/* Main Content */}
             <div className="lg:col-span-2">
               <h2 className="text-3xl font-serif text-law-purple mb-6">Biography</h2>
               <div className="prose max-w-none text-gray-600">
@@ -256,26 +226,17 @@ const [openScheduler, setOpenScheduler] = useState(false);
                 </Link>
               </div>
             </div>
-            </div>
+          </div>
         </div>
       </section>
-      {id === 'bryan-holman' && (
-        <Dialog open={openScheduler} onOpenChange={setOpenScheduler}>
-          <DialogContent className="max-w-5xl w-[96vw] p-0 overflow-hidden">
-            <DialogHeader>
-              <DialogTitle>Schedule a Consultation with Bryan</DialogTitle>
-            </DialogHeader>
-            <div className="h-[80vh] min-h-[600px]">
-              <iframe
-                src="https://cal.com/bryanholman?embed=inline"
-                title="Schedule a consultation with Bryan Holman - Cal.com"
-                className="w-full h-full"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-            </div>
-          </DialogContent>
-        </Dialog>
+
+      {attorney.calLink && attorney.calNamespace && (
+        <IntakeSchedulerDialog
+          open={showIntakeDialog}
+          onOpenChange={setShowIntakeDialog}
+          calLink={attorney.calLink}
+          calNamespace={attorney.calNamespace}
+        />
       )}
     </div>;
 };

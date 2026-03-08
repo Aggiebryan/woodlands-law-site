@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import PracticeAreaHero from "@/components/PracticeAreaHero";
 import PracticeAreaContent from "@/components/PracticeAreaContent";
@@ -8,25 +7,15 @@ import PersonalInjuryProcess from "@/components/PersonalInjuryProcess";
 import InjuryCaseTimeline from "@/components/InjuryCaseTimeline";
 import PersonalInjuryTestimonials from "@/components/PersonalInjuryTestimonials";
 import TexasInjuryInfo from "@/components/TexasInjuryInfo";
-import CallToAction from "@/components/CallToAction";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import CaseEvaluationForm from "@/components/injury/CaseEvaluationForm";
-import { getCalApi } from "@calcom/embed-react";
+import IntakeSchedulerDialog from "@/components/schedule/IntakeSchedulerDialog";
 
 const PersonalInjuryPage = () => {
-  const [showCaseEvaluationForm, setShowCaseEvaluationForm] = useState(false);
+  const [showIntakeDialog, setShowIntakeDialog] = useState(false);
   
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
-
-  useEffect(() => {
-    (async function () {
-      const cal = await getCalApi({ namespace: "personalinjury" });
-      cal("ui", { hideEventTypeDetails: false, layout: "month_view" });
-    })();
   }, []);
 
   const caseTypes = [
@@ -88,7 +77,6 @@ const PersonalInjuryPage = () => {
       <Helmet>
         <title>Personal Injury Lawyer in The Woodlands, TX | The Woodlands Law Firm</title>
         <meta name="description" content="Injured in an accident? Our personal injury attorneys help Texas victims recover compensation for auto accidents, premises liability, and wrongful death. No fee unless we win." />
-        {/* Schema markup for attorney services */}
         <script type="application/ld+json">
           {`
             {
@@ -118,12 +106,7 @@ const PersonalInjuryPage = () => {
         description="When you've been injured due to someone else's negligence, you need an experienced legal team to fight for the compensation you deserve. Our personal injury attorneys have the knowledge, resources, and determination to hold responsible parties accountable."
         image="/lovable-uploads/c63dc061-b55b-4ecb-a111-23cc282089a8.png"
         ctaText="Free Case Evaluation"
-        onCtaClick={() => {}}
-        ctaButtonProps={{
-          'data-cal-namespace': 'personalinjury',
-          'data-cal-link': 'team/the-woodlands-law-firm/personalinjury',
-          'data-cal-config': '{"layout":"month_view"}'
-        } as any}
+        onCtaClick={() => setShowIntakeDialog(true)}
       />
       
       <PracticeAreaContent
@@ -148,68 +131,39 @@ const PersonalInjuryPage = () => {
           <div className="gold-underline mb-8"></div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <Card>
-              <CardHeader>
-                <CardTitle>Traumatic Brain Injuries</CardTitle>
-              </CardHeader>
+              <CardHeader><CardTitle>Traumatic Brain Injuries</CardTitle></CardHeader>
               <CardContent>
-                <p className="text-gray-600">
-                  We handle complex TBI cases, working with medical experts to document the full impact on your life and secure compensation for long-term care needs and diminished quality of life.
-                </p>
+                <p className="text-gray-600">We handle complex TBI cases, working with medical experts to document the full impact on your life and secure compensation for long-term care needs and diminished quality of life.</p>
               </CardContent>
             </Card>
-            
             <Card>
-              <CardHeader>
-                <CardTitle>Spinal Cord Injuries</CardTitle>
-              </CardHeader>
+              <CardHeader><CardTitle>Spinal Cord Injuries</CardTitle></CardHeader>
               <CardContent>
-                <p className="text-gray-600">
-                  Our team has extensive experience with catastrophic spinal cord injury cases, fighting for compensation that covers lifetime medical care, home modifications, and lost earning capacity.
-                </p>
+                <p className="text-gray-600">Our team has extensive experience with catastrophic spinal cord injury cases, fighting for compensation that covers lifetime medical care, home modifications, and lost earning capacity.</p>
               </CardContent>
             </Card>
-            
             <Card>
-              <CardHeader>
-                <CardTitle>Broken Bones & Fractures</CardTitle>
-              </CardHeader>
+              <CardHeader><CardTitle>Broken Bones & Fractures</CardTitle></CardHeader>
               <CardContent>
-                <p className="text-gray-600">
-                  From simple breaks to complex fractures requiring surgery, we ensure your recovery includes all medical costs, rehabilitation, and compensation for any permanent limitations.
-                </p>
+                <p className="text-gray-600">From simple breaks to complex fractures requiring surgery, we ensure your recovery includes all medical costs, rehabilitation, and compensation for any permanent limitations.</p>
               </CardContent>
             </Card>
-            
             <Card>
-              <CardHeader>
-                <CardTitle>Burn Injuries</CardTitle>
-              </CardHeader>
+              <CardHeader><CardTitle>Burn Injuries</CardTitle></CardHeader>
               <CardContent>
-                <p className="text-gray-600">
-                  Burn injuries often require extensive treatment and may cause permanent scarring. We fight for compensation that covers reconstructive surgery, physical therapy, and emotional trauma.
-                </p>
+                <p className="text-gray-600">Burn injuries often require extensive treatment and may cause permanent scarring. We fight for compensation that covers reconstructive surgery, physical therapy, and emotional trauma.</p>
               </CardContent>
             </Card>
-            
             <Card>
-              <CardHeader>
-                <CardTitle>Soft Tissue Injuries</CardTitle>
-              </CardHeader>
+              <CardHeader><CardTitle>Soft Tissue Injuries</CardTitle></CardHeader>
               <CardContent>
-                <p className="text-gray-600">
-                  We understand how to properly document and present evidence of whiplash, sprains, and other soft tissue injuries that are often minimized by insurance companies.
-                </p>
+                <p className="text-gray-600">We understand how to properly document and present evidence of whiplash, sprains, and other soft tissue injuries that are often minimized by insurance companies.</p>
               </CardContent>
             </Card>
-            
             <Card>
-              <CardHeader>
-                <CardTitle>Wrongful Death</CardTitle>
-              </CardHeader>
+              <CardHeader><CardTitle>Wrongful Death</CardTitle></CardHeader>
               <CardContent>
-                <p className="text-gray-600">
-                  Our compassionate attorneys help families seek justice and financial security after losing a loved one, pursuing compensation for lost support, funeral expenses, and loss of companionship.
-                </p>
+                <p className="text-gray-600">Our compassionate attorneys help families seek justice and financial security after losing a loved one, pursuing compensation for lost support, funeral expenses, and loss of companionship.</p>
               </CardContent>
             </Card>
           </div>
@@ -220,7 +174,6 @@ const PersonalInjuryPage = () => {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-serif text-law-purple mb-4">Understanding Texas Personal Injury Damages</h2>
           <div className="gold-underline mb-8"></div>
-          
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             <div>
               <h3 className="text-2xl font-serif text-law-purple mb-4">Economic Damages</h3>
@@ -235,7 +188,6 @@ const PersonalInjuryPage = () => {
                 <li>Transportation to medical appointments</li>
               </ul>
             </div>
-            
             <div>
               <h3 className="text-2xl font-serif text-law-purple mb-4">Non-Economic Damages</h3>
               <ul className="list-disc pl-6 space-y-2 text-gray-600">
@@ -250,7 +202,6 @@ const PersonalInjuryPage = () => {
               </ul>
             </div>
           </div>
-          
           <div className="mt-8">
             <Link to="/schedule" className="bg-law-purple hover:bg-law-purple-light text-white font-medium py-3 px-8 rounded transition-colors inline-block">
               Calculate Your Potential Damages
@@ -267,9 +218,7 @@ const PersonalInjuryPage = () => {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button 
-              data-cal-namespace="personalinjury"
-              data-cal-link="team/the-woodlands-law-firm/personalinjury"
-              data-cal-config='{"layout":"month_view"}'
+              onClick={() => setShowIntakeDialog(true)}
               className="btn-gold-metallic py-3 px-8 rounded inline-block"
             >
               Free Case Evaluation
@@ -283,11 +232,12 @@ const PersonalInjuryPage = () => {
           </div>
         </div>
       </section>
-      
-      {/* Case Evaluation Form */}
-      <CaseEvaluationForm
-        open={showCaseEvaluationForm}
-        onOpenChange={setShowCaseEvaluationForm}
+
+      <IntakeSchedulerDialog
+        open={showIntakeDialog}
+        onOpenChange={setShowIntakeDialog}
+        calLink="team/the-woodlands-law-firm/personalinjury"
+        calNamespace="personalinjury"
       />
     </>
   );
