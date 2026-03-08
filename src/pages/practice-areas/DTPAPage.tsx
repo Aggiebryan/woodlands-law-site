@@ -9,7 +9,7 @@ import TexasDTPAInfo from "@/components/TexasDTPAInfo";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import DTPAConsultationForm from "@/components/dtpa/DTPAConsultationForm";
+import IntakeSchedulerDialog from "@/components/schedule/IntakeSchedulerDialog";
 
 const DTPAPage = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
