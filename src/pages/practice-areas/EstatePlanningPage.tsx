@@ -7,7 +7,7 @@ import { Helmet } from "react-helmet";
 import EstatePlanningComparison from "@/components/EstatePlanningComparison";
 import CallToAction from "@/components/CallToAction";
 import EstatePlanningLifeStages from "@/components/EstatePlanningLifeStages";
-import EstateConsultationForm from "@/components/estate/EstateConsultationForm";
+import IntakeSchedulerDialog from "@/components/schedule/IntakeSchedulerDialog";
 
 const EstatePlanningPage = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
