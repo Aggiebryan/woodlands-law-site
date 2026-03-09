@@ -6,7 +6,7 @@ export default function AsIsClausePage() {
       title='Does an "as-is" clause waive DTPA liability in Texas?'
       directAnswer='An "as-is" clause can provide a defense to certain DTPA claims, but it does not provide blanket immunity. Texas law recognizes that a valid as-is clause may bar claims based on the condition of goods or property, but it generally cannot defeat claims based on affirmative misrepresentations made by the seller. The enforceability depends on factors including whether the clause was conspicuous, negotiated, and whether the buyer was a sophisticated party.'
       rule={[
-        "Under Prudential Ins. Co. v. Jefferson Assocs. and related cases, an as-is clause may bar claims for conditions the buyer could have discovered through inspection.",
+        "In Prudential Ins. Co. v. Jefferson Assocs., the court held that an “as is” clause did not bar the buyer’s fraud and DTPA claims where the seller allegedly made affirmative misrepresentations and concealed the building’s asbestos condition, even though the buyer had inspected the property.",
         "An as-is clause does not protect a seller who makes affirmative misrepresentations about the goods or property.",
         "The clause must be clear, unambiguous, and agreed to voluntarily—not buried in fine print.",
         "Courts consider the relative sophistication of the parties and whether the clause was meaningfully negotiated.",
