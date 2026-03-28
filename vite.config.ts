@@ -21,5 +21,7 @@ export default defineConfig(({ mode }) => ({
   ssr: {
     // Externalize browser-only packages during SSR build
     external: ['@calcom/embed-react'],
+    // Bundle CJS packages that don't work with Node ESM named imports
+    noExternal: ['react-helmet-async'],
   },
 }));
