@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import PracticeAreaHero from "@/components/PracticeAreaHero";
 import PracticeAreaContent from "@/components/PracticeAreaContent";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import EstatePlanningComparison from "@/components/EstatePlanningComparison";
 import CallToAction from "@/components/CallToAction";
 import EstatePlanningLifeStages from "@/components/EstatePlanningLifeStages";
@@ -109,7 +109,7 @@ const EstatePlanningPage = () => {
         title="Securing Your Legacy"
         subtitle="Personalized Estate Planning for Texas Families"
         description="Our estate planning team creates comprehensive strategies that protect your assets, minimize taxes, and ensure your wishes are honored. We help you create a meaningful legacy that provides for your loved ones according to your values while preserving family harmony."
-        image="/lovable-uploads/d2d3dd5c-4df2-4af8-8fd5-95612381080d.png"
+        image="/images/d2d3dd5c-4df2-4af8-8fd5-95612381080d.png"
         ctaText="Schedule Your Estate Planning Consultation"
         onCtaClick={handleOpenForm}
       />

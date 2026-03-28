@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import PracticeAreaHero from "@/components/PracticeAreaHero";
 import PracticeAreaContent from "@/components/PracticeAreaContent";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import CivilLitigationProcess from "@/components/CivilLitigationProcess";
 import CivilCaseResults from "@/components/CivilCaseResults";
 import CallToAction from "@/components/CallToAction";
@@ -111,7 +111,7 @@ const CivilLitigationPage = () => {
         title="Strategic Civil Litigation Attorneys"
         subtitle="Results-Focused Advocacy for Complex Legal Disputes in Texas"
         description="Our civil litigation team brings strategic, results-focused representation to businesses and individuals facing high-stakes legal challenges. Whether you're dealing with contract disputes, partnership conflicts, or complex commercial matters, we provide the sophisticated counsel needed to protect your interests effectively."
-        image="/lovable-uploads/00199770-5714-4215-8a45-1c186a049246.png"
+        image="/images/00199770-5714-4215-8a45-1c186a049246.png"
         ctaText="Schedule a Case Strategy Session"
         onCtaClick={handleOpenForm}
       />

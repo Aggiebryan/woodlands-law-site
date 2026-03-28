@@ -1,6 +1,7 @@
 
 import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Check } from "lucide-react";
 
 interface ServiceInfo {
@@ -233,6 +234,13 @@ const ServiceDetailPage = () => {
 
   return (
     <div className="pt-20">
+      <Helmet>
+        <title>{service.title} Attorney in The Woodlands, TX | The Woodlands Law Firm</title>
+        <meta name="description" content={`${service.description} Experienced ${service.title.toLowerCase()} attorneys serving Montgomery County and Harris County, Texas.`} />
+        <meta property="og:title" content={`${service.title} | The Woodlands Law Firm`} />
+        <meta property="og:description" content={service.description} />
+        <link rel="canonical" href={`https://woodlands.law/service/${id}`} />
+      </Helmet>
       {/* Page Header */}
       <div className="relative bg-law-purple py-16">
         <div className="container mx-auto px-4">

@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import ServicesPageHeader from "@/components/ServicesPageHeader";
 import BlogPostLoading from "@/components/blog/BlogPostLoading";
 import BlogPostError from "@/components/blog/BlogPostError";
@@ -57,10 +58,28 @@ const BlogPostPage = () => {
     return <BlogPostError error={error} />;
   }
 
+  // Strip HTML tags for meta description
+  const stripHtml = (html: string) => html.replace(/<[^>]*>/g, '').trim();
+  const metaDescription = stripHtml(post.excerpt.rendered).slice(0, 160);
+  const featuredImage = post._embedded?.["wp:featuredmedia"]?.[0]?.source_url;
+
   return (
     <div className="pt-20 font-serif">
-      <ServicesPageHeader 
-        title={post.title.rendered} 
+      <Helmet>
+        <title>{stripHtml(post.title.rendered)} | The Woodlands Law Firm Blog</title>
+        <meta name="description" content={metaDescription} />
+        <meta property="og:title" content={stripHtml(post.title.rendered)} />
+        <meta property="og:description" content={metaDescription} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={`https://woodlands.law/wp/${slug}`} />
+        {featuredImage && <meta property="og:image" content={featuredImage} />}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={stripHtml(post.title.rendered)} />
+        <meta name="twitter:description" content={metaDescription} />
+        <link rel="canonical" href={`https://woodlands.law/wp/${slug}`} />
+      </Helmet>
+      <ServicesPageHeader
+        title={post.title.rendered}
         description={post.category_names?.[0] || "Blog"}
       />
       

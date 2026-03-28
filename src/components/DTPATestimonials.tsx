@@ -94,9 +94,9 @@ const DTPATestimonials = () => {
         </div>
         
         <div className="mt-12 flex justify-center flex-wrap gap-6">
-          <img src="/lovable-uploads/d2d3dd5c-4df2-4af8-8fd5-95612381080d.png" alt="Texas Consumer Law Section" className="h-16 opacity-80 hover:opacity-100 transition-opacity" />
-          <img src="/lovable-uploads/d2d3dd5c-4df2-4af8-8fd5-95612381080d.png" alt="National Association of Consumer Advocates" className="h-16 opacity-80 hover:opacity-100 transition-opacity" />
-          <img src="/lovable-uploads/d2d3dd5c-4df2-4af8-8fd5-95612381080d.png" alt="Consumer Attorneys Association" className="h-16 opacity-80 hover:opacity-100 transition-opacity" />
+          <img src="/images/d2d3dd5c-4df2-4af8-8fd5-95612381080d.png" alt="Texas Consumer Law Section" className="h-16 opacity-80 hover:opacity-100 transition-opacity" />
+          <img src="/images/d2d3dd5c-4df2-4af8-8fd5-95612381080d.png" alt="National Association of Consumer Advocates" className="h-16 opacity-80 hover:opacity-100 transition-opacity" />
+          <img src="/images/d2d3dd5c-4df2-4af8-8fd5-95612381080d.png" alt="Consumer Attorneys Association" className="h-16 opacity-80 hover:opacity-100 transition-opacity" />
         </div>
       </div>
     </section>

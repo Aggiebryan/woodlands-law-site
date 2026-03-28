@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 
 const Hero = () => {
   const images = [
-    "/lovable-uploads/846098cf-1b95-4252-ad7d-ecf6b1180d90.png", // gwenwithclient.webp
-    "/lovable-uploads/577d394a-a6e5-4fa4-bb3f-92f9ab114264.png", // woodlands1a.webp
-    "/lovable-uploads/00199770-5714-4215-8a45-1c186a049246.png", // bryanatdesk.webp
-    "/lovable-uploads/e3c160e5-506d-47fc-93c3-51f48fa0f980.png", // woodlands1b.webp
+    "/images/846098cf-1b95-4252-ad7d-ecf6b1180d90.png", // gwenwithclient.webp
+    "/images/577d394a-a6e5-4fa4-bb3f-92f9ab114264.png", // woodlands1a.webp
+    "/images/00199770-5714-4215-8a45-1c186a049246.png", // bryanatdesk.webp
+    "/images/e3c160e5-506d-47fc-93c3-51f48fa0f980.png", // woodlands1b.webp
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);

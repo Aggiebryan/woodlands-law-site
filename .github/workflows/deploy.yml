@@ -22,11 +22,17 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build the project
-        run: npm run build
+      - name: Build client bundle
+        run: npm run build:client
+
+      - name: Build SSR server bundle
+        run: npm run build:server
+
+      - name: Pre-render static pages
+        run: npm run build:prerender
 
       - name: Copy .htaccess to build directory
-        run: cp .htaccess ./dist/
+        run: cp .htaccess ./dist/client/
 
       - name: Deploy to HostGator via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
@@ -34,5 +40,5 @@ jobs:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./dist/
+          local-dir: ./dist/client/
           server-dir: ${{ secrets.FTP_TARGET_DIR }}

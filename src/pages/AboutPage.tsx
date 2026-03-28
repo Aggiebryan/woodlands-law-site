@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Check, Clock, MapPin, Phone } from "lucide-react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import GoogleMap from "../components/GoogleMap";
 const AboutPage = () => {
   useEffect(() => {

@@ -94,10 +94,10 @@ const PersonalInjuryTestimonials = () => {
         </div>
         
         <div className="mt-12 flex justify-center flex-wrap gap-6">
-          <img src="/lovable-uploads/d2d3dd5c-4df2-4af8-8fd5-95612381080d.png" alt="Texas Trial Lawyers Association" className="h-16 opacity-80 hover:opacity-100 transition-opacity" />
-          <img src="/lovable-uploads/d2d3dd5c-4df2-4af8-8fd5-95612381080d.png" alt="Super Lawyers" className="h-16 opacity-80 hover:opacity-100 transition-opacity" />
-          <img src="/lovable-uploads/d2d3dd5c-4df2-4af8-8fd5-95612381080d.png" alt="American Association for Justice" className="h-16 opacity-80 hover:opacity-100 transition-opacity" />
-          <img src="/lovable-uploads/d2d3dd5c-4df2-4af8-8fd5-95612381080d.png" alt="Million Dollar Advocates Forum" className="h-16 opacity-80 hover:opacity-100 transition-opacity" />
+          <img src="/images/d2d3dd5c-4df2-4af8-8fd5-95612381080d.png" alt="Texas Trial Lawyers Association" className="h-16 opacity-80 hover:opacity-100 transition-opacity" />
+          <img src="/images/d2d3dd5c-4df2-4af8-8fd5-95612381080d.png" alt="Super Lawyers" className="h-16 opacity-80 hover:opacity-100 transition-opacity" />
+          <img src="/images/d2d3dd5c-4df2-4af8-8fd5-95612381080d.png" alt="American Association for Justice" className="h-16 opacity-80 hover:opacity-100 transition-opacity" />
+          <img src="/images/d2d3dd5c-4df2-4af8-8fd5-95612381080d.png" alt="Million Dollar Advocates Forum" className="h-16 opacity-80 hover:opacity-100 transition-opacity" />
         </div>
       </div>
     </section>

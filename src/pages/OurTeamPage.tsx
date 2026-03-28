@@ -1,7 +1,7 @@
 
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
@@ -100,7 +100,7 @@ const OurTeamPage = () => {
             <div className="flex flex-col">
               <div className="rounded-lg overflow-hidden mb-4 aspect-[3/4] bg-gray-100 relative">
                 <img 
-                  src="/lovable-uploads/22e7fa10-9dd9-40c8-afa7-eee7672da620.png" 
+                  src="/images/22e7fa10-9dd9-40c8-afa7-eee7672da620.png" 
                   alt="Julie Dunlap" 
                   className="w-full h-full object-cover"
                   onError={(e) => {

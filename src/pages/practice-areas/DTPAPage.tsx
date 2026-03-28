@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import PracticeAreaHero from "@/components/PracticeAreaHero";
 import PracticeAreaContent from "@/components/PracticeAreaContent";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import DTPAViolationList from "@/components/DTPAViolationList";
 import DTPATestimonials from "@/components/DTPATestimonials";
 import TexasDTPAInfo from "@/components/TexasDTPAInfo";

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import ServicesPageHeader from "@/components/ServicesPageHeader";
 import { fetchPosts, fetchCategories, WordPressPost } from "@/services/wordPressService";
 import NewsletterSignup from "@/components/blog/NewsletterSignup";
@@ -75,7 +76,14 @@ const BlogCategoryPage = () => {
 
   return (
     <div className="pt-20 font-serif">
-      <ServicesPageHeader 
+      <Helmet>
+        <title>{categoryName ? `${categoryName} Articles` : 'Blog'} | The Woodlands Law Firm</title>
+        <meta name="description" content={`Read ${categoryName || 'legal'} articles and insights from The Woodlands Law Firm. Trusted legal guidance for Texas residents.`} />
+        <meta property="og:title" content={`${categoryName || 'Blog'} | The Woodlands Law Firm`} />
+        <meta property="og:description" content={`Read ${categoryName || 'legal'} articles and insights from The Woodlands Law Firm.`} />
+        <link rel="canonical" href={`https://woodlands.law/wp/category/${categoryId}`} />
+      </Helmet>
+      <ServicesPageHeader
         title={categoryName || "Category"}
         description="Blog Posts"
       />

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import IntakeSchedulerDialog from "@/components/schedule/IntakeSchedulerDialog";
 
 interface AttorneyInfo {
@@ -116,7 +116,7 @@ const AttorneyProfilePage = () => {
       id: "julie-dunlap",
       name: "Julie Dunlap",
       title: "Office Manager",
-      image: "/lovable-uploads/22e7fa10-9dd9-40c8-afa7-eee7672da620.png",
+      image: "/images/22e7fa10-9dd9-40c8-afa7-eee7672da620.png",
       metaTitle: "Julie Dunlap — Office Manager | The Woodlands Law Firm",
       metaDescription: "Julie Dunlap is the office manager at The Woodlands Law Firm, bringing experience as a Certified Real Estate Appraiser and small business owner to our team.",
       bio: <>

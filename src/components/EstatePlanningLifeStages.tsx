@@ -7,7 +7,7 @@ const EstatePlanningLifeStages = () => {
   const lifeStages = [
     {
       title: "Young Families",
-      image: "/lovable-uploads/307c4d37-d87e-4a89-8107-73533778d172.png",
+      image: "/images/307c4d37-d87e-4a89-8107-73533778d172.png",
       priorities: [
         "Naming guardians for minor children",
         "Creating trusts for children's education",
@@ -18,7 +18,7 @@ const EstatePlanningLifeStages = () => {
     },
     {
       title: "Mid-Life Planning",
-      image: "/lovable-uploads/846098cf-1b95-4252-ad7d-ecf6b1180d90.png",
+      image: "/images/846098cf-1b95-4252-ad7d-ecf6b1180d90.png",
       priorities: [
         "Reviewing and updating existing estate plans",
         "Incorporating business succession planning",
@@ -29,7 +29,7 @@ const EstatePlanningLifeStages = () => {
     },
     {
       title: "Retirement & Beyond",
-      image: "/lovable-uploads/d2d3dd5c-4df2-4af8-8fd5-95612381080d.png",
+      image: "/images/d2d3dd5c-4df2-4af8-8fd5-95612381080d.png",
       priorities: [
         "Asset protection and preservation",
         "Advanced healthcare planning",
@@ -40,7 +40,7 @@ const EstatePlanningLifeStages = () => {
     },
     {
       title: "Blended Families",
-      image: "/lovable-uploads/577d394a-a6e5-4fa4-bb3f-92f9ab114264.png",
+      image: "/images/577d394a-a6e5-4fa4-bb3f-92f9ab114264.png",
       priorities: [
         "Balancing care for current spouse and children from previous marriages",
         "Creating clear inheritance divisions",

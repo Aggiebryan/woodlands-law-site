@@ -4,7 +4,7 @@ import AboutSection from "../components/AboutSection";
 import TestimonialsSection from "../components/TestimonialsSection";
 import CtaSection from "../components/CtaSection";
 import { useEffect } from "react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { Scale, Shield, FileText, Users, MapPin, Gavel } from "lucide-react";
 

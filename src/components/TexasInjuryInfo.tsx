@@ -148,7 +148,7 @@ const TexasInjuryInfo = () => {
         
         <div className="mt-10 text-center">
           <a
-            href="/lovable-uploads/d2d3dd5c-4df2-4af8-8fd5-95612381080d.png"
+            href="/images/d2d3dd5c-4df2-4af8-8fd5-95612381080d.png"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center text-law-purple hover:text-law-purple-light"

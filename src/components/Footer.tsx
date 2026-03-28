@@ -10,7 +10,7 @@ const Footer = () => {
           {/* Column 1: Logo and Description */}
           <div>
             <Link to="/" className="flex items-center mb-4">
-              <img src="/lovable-uploads/d2d3dd5c-4df2-4af8-8fd5-95612381080d.png" alt="The Woodlands Law Firm" className="h-28 object-fill" />
+              <img src="/images/d2d3dd5c-4df2-4af8-8fd5-95612381080d.png" alt="The Woodlands Law Firm" className="h-28 object-fill" />
             </Link>
             <div className="flex space-x-4 mt-4 mb-4">
               <a href="https://www.facebook.com/woodlandslaw/" className="text-white hover:text-law-gold transition-colors">

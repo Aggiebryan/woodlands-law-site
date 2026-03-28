@@ -3,7 +3,7 @@ import PageHeader from "@/components/schedule/PageHeader";
 import ContactInfoSection from "@/components/schedule/ContactInfoSection";
 import IntakeForm from "@/components/schedule/IntakeForm";
 import Cal, { getCalApi } from "@calcom/embed-react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import { Check } from "lucide-react";
 
 const SchedulePage = () => {

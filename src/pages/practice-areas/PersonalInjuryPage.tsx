@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import PracticeAreaHero from "@/components/PracticeAreaHero";
 import PracticeAreaContent from "@/components/PracticeAreaContent";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import PersonalInjuryProcess from "@/components/PersonalInjuryProcess";
 import InjuryCaseTimeline from "@/components/InjuryCaseTimeline";
 import PersonalInjuryTestimonials from "@/components/PersonalInjuryTestimonials";
@@ -104,7 +104,7 @@ const PersonalInjuryPage = () => {
         title="Dedicated Personal Injury Representation in The Woodlands and Throughout Texas"
         subtitle="Fighting For Maximum Compensation For Injury Victims"
         description="When you've been injured due to someone else's negligence, you need an experienced legal team to fight for the compensation you deserve. Our personal injury attorneys have the knowledge, resources, and determination to hold responsible parties accountable."
-        image="/lovable-uploads/c63dc061-b55b-4ecb-a111-23cc282089a8.png"
+        image="/images/c63dc061-b55b-4ecb-a111-23cc282089a8.png"
         ctaText="Free Case Evaluation"
         onCtaClick={() => setShowIntakeDialog(true)}
       />

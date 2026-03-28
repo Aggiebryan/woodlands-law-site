@@ -7,7 +7,7 @@ import InsuranceTestimonialCarousel from "@/components/InsuranceTestimonialCarou
 import TexasInsuranceInfo from "@/components/TexasInsuranceInfo";
 import InsuranceFAQSection from "@/components/InsuranceFAQSection";
 import InsuranceResourcesSection from "@/components/InsuranceResourcesSection";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import IntakeSchedulerDialog from "@/components/schedule/IntakeSchedulerDialog";
 import InsuranceClaimReviewForm from "@/components/insurance/InsuranceClaimReviewForm";
 import { getCalApi } from "@calcom/embed-react";

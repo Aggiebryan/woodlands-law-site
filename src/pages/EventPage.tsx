@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Calendar, Clock, MapPin, Users } from "lucide-react";
 import ServicesPageHeader from "@/components/ServicesPageHeader";
 import { Button } from "@/components/ui/button";
@@ -158,10 +159,21 @@ const EventPage = () => {
 
   const isPast = isEventPast(event);
 
+  const stripHtml = (html: string) => html.replace(/<[^>]*>/g, '').trim();
+  const eventDescription = stripHtml(event.excerpt.rendered).slice(0, 160);
+
   return (
     <div className="pt-20 font-serif">
-      <ServicesPageHeader 
-        title={event.title.rendered} 
+      <Helmet>
+        <title>{stripHtml(event.title.rendered)} | The Woodlands Law Firm Events</title>
+        <meta name="description" content={eventDescription} />
+        <meta property="og:title" content={stripHtml(event.title.rendered)} />
+        <meta property="og:description" content={eventDescription} />
+        <meta property="og:type" content="article" />
+        <link rel="canonical" href={`https://woodlands.law/events/${slug}`} />
+      </Helmet>
+      <ServicesPageHeader
+        title={event.title.rendered}
         description="Event Details"
       />
       

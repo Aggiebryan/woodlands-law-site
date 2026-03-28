@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Calendar, Clock, MapPin, Users } from "lucide-react";
 import ServicesPageHeader from "@/components/ServicesPageHeader";
 import { Card, CardContent } from "@/components/ui/card";
@@ -109,8 +110,15 @@ const EventsListPage = () => {
 
   return (
     <div className="pt-20 font-serif">
-      <ServicesPageHeader 
-        title="Events" 
+      <Helmet>
+        <title>Legal Events & Workshops | The Woodlands Law Firm</title>
+        <meta name="description" content="Attend legal workshops, seminars, and community events hosted by The Woodlands Law Firm. Free educational events on estate planning, consumer protection, and more in Montgomery County, TX." />
+        <meta property="og:title" content="Legal Events & Workshops | The Woodlands Law Firm" />
+        <meta property="og:description" content="Attend legal workshops and seminars hosted by The Woodlands Law Firm in Montgomery County, TX." />
+        <link rel="canonical" href="https://woodlands.law/events" />
+      </Helmet>
+      <ServicesPageHeader
+        title="Events"
         description="Legal workshops, seminars, and community events"
       />
       

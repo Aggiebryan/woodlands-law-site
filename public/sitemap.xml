@@ -1,72 +1,83 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-   <url>
-      <loc>https://woodlands.law/</loc>
-      <priority>1.0</priority>
-   </url>
-   <url>
-      <loc>https://woodlands.law/our-team</loc>
-      <priority>0.9</priority>
-   </url>
-   <url>
-      <loc>https://woodlands.law/services</loc>
-      <priority>0.9</priority>
-   </url>
-   <url>
-      <loc>https://woodlands.law/news-events</loc>
-      <priority>0.8</priority>
-   </url>
-   <url>
-      <loc>https://woodlands.law/about</loc>
-      <priority>0.8</priority>
-   </url>
-   <url>
-      <loc>https://woodlands.law/schedule</loc>
-      <priority>0.9</priority>
-   </url>
-   <url>
-      <loc>https://woodlands.law/practice-areas/insurance-litigation</loc>
-      <priority>0.8</priority>
-   </url>
-   <url>
-      <loc>https://woodlands.law/practice-areas/personal-injury</loc>
-      <priority>0.8</priority>
-   </url>
-   <url>
-      <loc>https://woodlands.law/practice-areas/civil-litigation</loc>
-      <priority>0.8</priority>
-   </url>
-   <url>
-      <loc>https://woodlands.law/practice-areas/deceptive-trade-practices-act</loc>
-      <priority>0.8</priority>
-   </url>
-   <url>
-      <loc>https://woodlands.law/practice-areas/business-planning</loc>
-      <priority>0.8</priority>
-   </url>
-   <url>
-      <loc>https://woodlands.law/practice-areas/estate-planning</loc>
-      <priority>0.8</priority>
-   </url>
-   <url>
-      <loc>https://woodlands.law/insurance-glossary</loc>
-      <priority>0.7</priority>
-   </url>
-   <url>
-      <loc>https://woodlands.law/attorney-advertising</loc>
-      <priority>0.6</priority>
-   </url>
-   <url>
-      <loc>https://woodlands.law/privacy-policy</loc>
-      <priority>0.6</priority>
-   </url>
-   <url>
-      <loc>https://woodlands.law/trusts</loc>
-      <priority>0.7</priority>
-   </url>
-   <url>
-      <loc>https://woodlands.law/sitemap</loc>
-      <priority>0.6</priority>
-   </url>
+  <!-- Core Pages -->
+  <url><loc>https://woodlands.law/</loc><priority>1.0</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://woodlands.law/our-team</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://woodlands.law/services</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://woodlands.law/about</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://woodlands.law/schedule</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://woodlands.law/news-events</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://woodlands.law/events</loc><priority>0.7</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://woodlands.law/trusts</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+
+  <!-- Attorney Profiles -->
+  <url><loc>https://woodlands.law/team/gwendolyn-simpson</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://woodlands.law/team/bryan-holman</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://woodlands.law/team/courtney-fields</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://woodlands.law/team/julie-dunlap</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+
+  <!-- Practice Areas -->
+  <url><loc>https://woodlands.law/practice-areas/personal-injury</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://woodlands.law/practice-areas/insurance-litigation</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://woodlands.law/practice-areas/civil-litigation</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://woodlands.law/practice-areas/deceptive-trade-practices-act</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://woodlands.law/practice-areas/business-planning</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://woodlands.law/practice-areas/estate-planning</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+
+  <!-- Service Detail Pages -->
+  <url><loc>https://woodlands.law/service/insurance-litigation</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://woodlands.law/service/personal-injury</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://woodlands.law/service/civil-litigation</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://woodlands.law/service/deceptive-trade-practices-act</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://woodlands.law/service/business-planning</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://woodlands.law/service/estate-planning</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+
+  <!-- Texas DTPA Resource Pages -->
+  <url><loc>https://woodlands.law/texas-dtpa/what-qualifies-as-deceptive</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://woodlands.law/texas-dtpa/false-verbal-statements</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://woodlands.law/texas-dtpa/intent-required</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://woodlands.law/texas-dtpa/misleading-advertising</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://woodlands.law/texas-dtpa/failure-to-disclose</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://woodlands.law/texas-dtpa/hidden-contract-terms</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://woodlands.law/texas-dtpa/breach-of-contract</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://woodlands.law/texas-dtpa/reliance-required</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://woodlands.law/texas-dtpa/undisclosed-fees</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://woodlands.law/texas-dtpa/who-is-a-consumer</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://woodlands.law/texas-dtpa/can-a-business-sue</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://woodlands.law/texas-dtpa/insurance-misrepresentations</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://woodlands.law/texas-dtpa/contractor-poor-workmanship</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://woodlands.law/texas-dtpa/car-dealer-misrepresentations</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://woodlands.law/texas-dtpa/statute-of-limitations</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://woodlands.law/texas-dtpa/pre-suit-notice</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://woodlands.law/texas-dtpa/damages-available</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://woodlands.law/texas-dtpa/treble-damages</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://woodlands.law/texas-dtpa/attorneys-fees</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://woodlands.law/texas-dtpa/settlement-offer-effect</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://woodlands.law/texas-dtpa/common-defenses</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://woodlands.law/texas-dtpa/personal-liability</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://woodlands.law/texas-dtpa/where-to-file</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://woodlands.law/texas-dtpa/class-actions</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://woodlands.law/texas-dtpa/steps-before-filing</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://woodlands.law/texas-dtpa/merger-integration-clause</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://woodlands.law/texas-dtpa/as-is-clause</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://woodlands.law/texas-dtpa/non-reliance-disclaimer</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://woodlands.law/texas-dtpa/hidden-fees</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://woodlands.law/texas-dtpa/bait-and-switch</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://woodlands.law/texas-dtpa/financing-terms-apr</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://woodlands.law/texas-dtpa/partial-business-use</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://woodlands.law/texas-dtpa/homeowner-contractor</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://woodlands.law/texas-dtpa/family-member-claim</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://woodlands.law/texas-dtpa/car-buyer-undisclosed-damage</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://woodlands.law/texas-dtpa/overcharging-unperformed-work</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://woodlands.law/texas-dtpa/free-trial-auto-renewal</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+
+  <!-- Legal Tools -->
+  <url><loc>https://woodlands.law/legal-tools/texas-civil-time-limits</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://woodlands.law/insurance-glossary</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+
+  <!-- Legal Pages -->
+  <url><loc>https://woodlands.law/attorney-advertising</loc><priority>0.3</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://woodlands.law/privacy-policy</loc><priority>0.3</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://woodlands.law/terms-of-service</loc><priority>0.3</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://woodlands.law/sitemap</loc><priority>0.3</priority><changefreq>monthly</changefreq></url>
 </urlset>

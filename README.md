@@ -1,73 +1,40 @@
-# Welcome to your Lovable project
+# The Woodlands Law Firm Website
 
-## Project info
+The official website for The Woodlands Law Firm — a civil litigation and estate planning firm serving Montgomery County and Harris County, Texas.
 
-**URL**: https://lovable.dev/projects/09b47cd3-1188-4bd9-b6e1-44fa9c0cfbd2
+**URL:** [https://woodlands.law](https://woodlands.law)
 
-## How can I edit this code?
+## Tech Stack
 
-There are several ways of editing your application.
+- **Framework:** React 18 + TypeScript
+- **Build:** Vite 5 with SSG (Static Site Generation)
+- **Styling:** Tailwind CSS + shadcn/ui (Radix UI)
+- **Routing:** React Router DOM v6
+- **Blog:** WordPress REST API integration
+- **Hosting:** HostGator (static files via FTP)
 
-**Use Lovable**
+## Development
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/09b47cd3-1188-4bd9-b6e1-44fa9c0cfbd2) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```bash
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Build
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+The build generates pre-rendered static HTML for all 60+ routes:
 
-**Use GitHub Codespaces**
+```bash
+npm run build
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+This runs three stages:
+1. `build:client` — Vite client bundle (JS/CSS)
+2. `build:server` — Vite SSR bundle for pre-rendering
+3. `build:prerender` — Generates static HTML for every route
 
-## What technologies are used for this project?
+Output goes to `dist/client/`.
 
-This project is built with:
+## Deployment
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/09b47cd3-1188-4bd9-b6e1-44fa9c0cfbd2) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Pushes to `main` trigger GitHub Actions which builds and deploys to HostGator via FTP.

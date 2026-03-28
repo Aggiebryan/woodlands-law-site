@@ -1,6 +1,7 @@
 
 import { useLocation, Link } from "react-router-dom";
 import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 
 const NotFound = () => {
   const location = useLocation();
@@ -14,6 +15,10 @@ const NotFound = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-law-gray-light pt-20">
+      <Helmet>
+        <title>Page Not Found | The Woodlands Law Firm</title>
+        <meta name="robots" content="noindex, nofollow" />
+      </Helmet>
       <div className="text-center px-4">
         <h1 className="text-8xl font-serif font-bold text-law-navy mb-6">404</h1>
         <div className="gold-underline mx-auto mb-6"></div>
