@@ -17,6 +17,21 @@ const SchedulePage = () => {
     })();
   }, []);
 
+  // Track Cal.com booking completion in GTM/GA4
+  useEffect(() => {
+    const handleMessage = (e: MessageEvent) => {
+      if (e.data?.type === 'CAL:booking_successful') {
+        (window as any).dataLayer = (window as any).dataLayer || [];
+        (window as any).dataLayer.push({
+          event: 'consultation_booked',
+          booking_type: 'consultation',
+        });
+      }
+    };
+    window.addEventListener('message', handleMessage);
+    return () => window.removeEventListener('message', handleMessage);
+  }, []);
+
   const handleIntakeSuccess = (data: any) => {
     setIntakeData(data);
     setIntakeComplete(true);

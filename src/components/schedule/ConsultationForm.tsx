@@ -76,6 +76,13 @@ const ConsultationForm = () => {
       });
 
       if (response.ok) {
+        // Track form submission in GTM/GA4
+        (window as any).dataLayer = (window as any).dataLayer || [];
+        (window as any).dataLayer.push({
+          event: 'form_submission',
+          form_name: 'consultation_request',
+          matter_type: data.service,
+        });
         setShowConfirmation(true);
       } else {
         throw new Error();

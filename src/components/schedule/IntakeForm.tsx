@@ -130,6 +130,13 @@ const IntakeForm = ({ onSubmitSuccess }: IntakeFormProps) => {
       });
 
       if (!res.ok) throw new Error("Server error");
+      // Track form submission in GTM/GA4
+      (window as any).dataLayer = (window as any).dataLayer || [];
+      (window as any).dataLayer.push({
+        event: 'form_submission',
+        form_name: 'intake_form',
+        matter_type: data.matterType,
+      });
       onSubmitSuccess(data);
     } catch {
       toast({
