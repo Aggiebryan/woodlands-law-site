@@ -89,7 +89,7 @@ const CivilLitigationPage = () => {
     },
     {
       question: "What costs can I expect with civil litigation?",
-      answer: "Civil litigation costs typically include attorney fees, court filing fees, expert witness fees, deposition expenses, and potentially other costs specific to your case. We provide transparent estimates upfront and discuss fee arrangements that align with your budget and case objectives. Depending on your case, options may include hourly billing, contingency arrangements, or hybrid structures. We work to ensure that litigation costs don't outweigh the potential benefits of pursuing your case."
+      answer: "Civil litigation costs typically include attorney fees, court filing fees, expert witness fees, deposition expenses, and potentially other costs specific to your case. We provide transparent estimates upfront and discuss fee arrangements that align with your budget and case objectives. Available fee arrangements depend on our review of your case and require a separate written agreement. We discuss anticipated costs and potential benefits before representation begins."
     },
     {
       question: "How do I know if I have a strong civil litigation case?",

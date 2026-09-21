@@ -4,8 +4,8 @@ import React from "react";
 const processSteps = [
   {
     step: "1",
-    title: "Free Consultation",
-    description: "We meet to discuss your case, injuries, and legal options at no cost to you."
+    title: "Initial Consultation",
+    description: "Qualifying personal-injury matters are eligible for a free initial consultation. We evaluate your matter before deciding whether to offer representation."
   },
   {
     step: "2",

@@ -1,3 +1,4 @@
+import ConsultationFees from "@/components/schedule/ConsultationFees";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -153,6 +154,7 @@ const IntakeForm = ({ onSubmitSuccess }: IntakeFormProps) => {
 
   return (
     <div className="max-w-3xl mx-auto">
+      <ConsultationFees />
       {/* Progress Steps */}
       <div className="flex items-center justify-center mb-10 px-4">
         {steps.map((s, i) => (

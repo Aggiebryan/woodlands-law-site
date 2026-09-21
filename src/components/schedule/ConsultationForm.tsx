@@ -1,3 +1,4 @@
+import ConsultationFees from "@/components/schedule/ConsultationFees";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -114,6 +115,7 @@ const ConsultationForm = () => {
 
   return (
     <div className="max-w-3xl mx-auto border border-gray-200 p-6 md:p-10 rounded-xl bg-white shadow-sm">
+      <ConsultationFees />
       <div className="mb-8">
         <h3 className="text-3xl font-serif text-law-purple mb-2">New Client Intake</h3>
         <p className="text-muted-foreground italic">Confidential Evaluation — Step {step} of 3</p>
