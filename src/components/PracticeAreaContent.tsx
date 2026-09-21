@@ -1,3 +1,4 @@
+import ConsultationFees from "@/components/schedule/ConsultationFees";
 
 import { CheckCircle } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
@@ -28,6 +29,7 @@ const PracticeAreaContent = ({
   return (
     <div className="py-16">
       <div className="container mx-auto px-4">
+        <ConsultationFees />
         {/* Overview */}
         <section className="mb-16">
           <h2 className="text-3xl font-serif text-law-purple mb-6">Overview</h2>

@@ -1,5 +1,6 @@
 
 import { useEffect } from "react";
+import ConsultationFees from "@/components/schedule/ConsultationFees";
 import { Link, useParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Check } from "lucide-react";
@@ -299,6 +300,7 @@ const ServiceDetailPage = () => {
                 Complete the form below to schedule a consultation with our experienced attorneys.
               </p>
               
+              <ConsultationFees />
               <form className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <label htmlFor="firstName" className="text-sm font-medium text-gray-700">First Name</label>

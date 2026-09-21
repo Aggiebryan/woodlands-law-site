@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import PersonalInjuryProcess from "@/components/PersonalInjuryProcess";
 import InjuryCaseTimeline from "@/components/InjuryCaseTimeline";
-import PersonalInjuryTestimonials from "@/components/PersonalInjuryTestimonials";
+
 import TexasInjuryInfo from "@/components/TexasInjuryInfo";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -30,7 +30,7 @@ const PersonalInjuryPage = () => {
   const whyChooseUs = [
     "Dedicated personal injury attorneys with proven results in Texas courts",
     "Personalized attention to your specific case needs and circumstances",
-    "No fee unless we win your case - contingency fee representation",
+    "Fee arrangements explained before representation begins",
     "Extensive experience with complex injury claims in Montgomery and Harris counties",
     "Direct access to your attorney throughout your case, not just paralegals",
     "Thorough investigation and strong case preparation from day one"
@@ -39,7 +39,7 @@ const PersonalInjuryPage = () => {
   const process = {
     title: "Our Personal Injury Process",
     steps: [
-      "Free Initial Consultation & Case Evaluation",
+      "Free Initial Consultation for Qualifying Personal-Injury Matters",
       "Investigation and Evidence Collection",
       "Medical Treatment Coordination and Documentation",
       "Case Valuation and Demand Preparation",
@@ -64,11 +64,11 @@ const PersonalInjuryPage = () => {
     },
     {
       question: "Do I need a lawyer for a personal injury case in Texas?",
-      answer: "While you can technically represent yourself, studies consistently show that injury victims who hire attorneys receive significantly higher settlements, even after legal fees. Insurance companies have teams of adjusters and lawyers working to minimize your compensation. Having an experienced personal injury attorney levels the playing field. We handle the investigation, evidence gathering, negotiations, and if necessary, litigation, allowing you to focus on your recovery."
+      answer: "You may represent yourself, but an attorney can help you evaluate the evidence, applicable law, and available options. No particular settlement or outcome is guaranteed. Insurance companies have teams of adjusters and lawyers working to minimize your compensation. Having an experienced personal injury attorney levels the playing field. We handle the investigation, evidence gathering, negotiations, and if necessary, litigation, allowing you to focus on your recovery."
     },
     {
       question: "How long does a personal injury case typically take in Texas?",
-      answer: "The timeline varies significantly depending on the complexity of your case, the severity of injuries, and whether the case settles or goes to trial. Simple cases might resolve in 3-6 months, while complex cases or those involving serious injuries may take 1-2 years or longer. We work efficiently to resolve your case as quickly as possible while still ensuring you receive full compensation. We'll keep you informed about your case progress throughout the process."
+      answer: "The timeline varies significantly depending on the complexity of your case, the severity of injuries, and whether the case settles or goes to trial. Simple cases might resolve in 3-6 months, while complex cases or those involving serious injuries may take 1-2 years or longer. We work efficiently to resolve your case as quickly as possible while pursuing the compensation supported by your case. We'll keep you informed about your case progress throughout the process."
     }
   ];
 
@@ -76,7 +76,7 @@ const PersonalInjuryPage = () => {
     <>
       <Helmet>
         <title>Personal Injury Lawyer in The Woodlands, TX | The Woodlands Law Firm</title>
-        <meta name="description" content="Injured in an accident? Our personal injury attorneys help Texas victims recover compensation for auto accidents, premises liability, and wrongful death. No fee unless we win." />
+        <meta name="description" content="Injured in an accident? Our personal injury attorneys help Texas victims recover compensation for auto accidents, premises liability, and wrongful death. Free initial consultations for qualifying personal-injury matters." />
         <script type="application/ld+json">
           {`
             {
@@ -105,12 +105,12 @@ const PersonalInjuryPage = () => {
         subtitle="Fighting For Maximum Compensation For Injury Victims"
         description="When you've been injured due to someone else's negligence, you need an experienced legal team to fight for the compensation you deserve. Our personal injury attorneys have the knowledge, resources, and determination to hold responsible parties accountable."
         image="/images/c63dc061-b55b-4ecb-a111-23cc282089a8.png"
-        ctaText="Free Case Evaluation"
+        ctaText="Request a Personal-Injury Evaluation"
         onCtaClick={() => setShowIntakeDialog(true)}
       />
       
       <PracticeAreaContent
-        overview="At The Woodlands Law Firm, our personal injury attorneys are committed to helping accident victims recover maximum compensation for injuries caused by negligence or wrongful acts. We understand the physical, emotional, and financial toll that serious injuries can take on victims and their families. Our team works tirelessly to ensure that our clients receive full and fair compensation for their injuries, medical expenses, lost wages, pain and suffering, and diminished quality of life. With decades of combined experience in Texas courtrooms, we have the knowledge and resources to take on even the most complex injury cases."
+        overview="At The Woodlands Law Firm, our personal injury attorneys are committed to helping accident victims recover maximum compensation for injuries caused by negligence or wrongful acts. We understand the physical, emotional, and financial toll that serious injuries can take on victims and their families. Our team works to pursue fair compensation for their injuries, medical expenses, lost wages, pain and suffering, and diminished quality of life. With decades of combined experience in Texas courtrooms, we have the knowledge and resources to take on even the most complex injury cases."
         whyChooseUs={whyChooseUs}
         caseTypes={caseTypes}
         process={process}
@@ -123,7 +123,7 @@ const PersonalInjuryPage = () => {
       
       <TexasInjuryInfo />
       
-      <PersonalInjuryTestimonials />
+      {/* Results and recognition claims removed pending verification. */}
       
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
@@ -145,7 +145,7 @@ const PersonalInjuryPage = () => {
             <Card>
               <CardHeader><CardTitle>Broken Bones & Fractures</CardTitle></CardHeader>
               <CardContent>
-                <p className="text-gray-600">From simple breaks to complex fractures requiring surgery, we ensure your recovery includes all medical costs, rehabilitation, and compensation for any permanent limitations.</p>
+                <p className="text-gray-600">From simple breaks to complex fractures requiring surgery, we seek compensation for medical costs, rehabilitation, and any permanent limitations. Recovery depends on the facts and applicable law.</p>
               </CardContent>
             </Card>
             <Card>
@@ -214,14 +214,14 @@ const PersonalInjuryPage = () => {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-serif text-white mb-6">Ready to Discuss Your Injury Case?</h2>
           <p className="text-white/90 mb-8 max-w-2xl mx-auto">
-            Our experienced Texas personal injury attorneys are ready to review your case and explain your legal options in a free, no-obligation consultation.
+            Our experienced Texas personal injury attorneys are ready to review your case and explain your legal options in a free initial consultation for qualifying personal-injury matters. Other legal consultations may carry a fee. A consultation does not guarantee representation.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button 
               onClick={() => setShowIntakeDialog(true)}
               className="btn-gold-metallic py-3 px-8 rounded inline-block"
             >
-              Free Case Evaluation
+              Request a Personal-Injury Evaluation
             </Button>
             <a 
               href="tel:+18326260116" 

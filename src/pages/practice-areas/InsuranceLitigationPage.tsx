@@ -3,7 +3,7 @@ import PracticeAreaHero from "@/components/PracticeAreaHero";
 import PracticeAreaContent from "@/components/PracticeAreaContent";
 import InsuranceClaimProcess from "@/components/InsuranceClaimProcess";
 import SettlementComparisons from "@/components/SettlementComparisons";
-import InsuranceTestimonialCarousel from "@/components/InsuranceTestimonialCarousel";
+
 import TexasInsuranceInfo from "@/components/TexasInsuranceInfo";
 import InsuranceFAQSection from "@/components/InsuranceFAQSection";
 import InsuranceResourcesSection from "@/components/InsuranceResourcesSection";
@@ -153,7 +153,7 @@ const InsuranceLitigationPage = () => {
 
       {showCaseResults && <SettlementComparisons />}
 
-      <InsuranceTestimonialCarousel />
+      {/* Client results removed pending verification. */}
 
       <TexasInsuranceInfo />
 

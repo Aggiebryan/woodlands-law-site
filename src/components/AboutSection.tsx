@@ -1,3 +1,4 @@
+import ConsultationFees from "@/components/schedule/ConsultationFees";
 import { Shield, Scale, Users, Award, MapPin, Building } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -123,6 +124,7 @@ const AboutSection = () => {
           </div>
         </div>
 
+        <ConsultationFees />
         {/* Legal Philosophy & Approach */}
         <div className="bg-law-gray-light p-8 rounded-lg text-center">
           <h3 className="text-2xl font-serif text-law-purple mb-6">Our Legal Philosophy</h3>
@@ -130,7 +132,7 @@ const AboutSection = () => {
             Effective civil litigation requires thorough preparation, aggressive advocacy, and deep understanding of applicable law. We believe in holding defendants accountable for their actions, whether through insurance bad faith, deceptive trade practices, negligence, or other wrongful conduct. Our approach combines meticulous case preparation with strategic negotiation and trial-ready advocacy.
           </p>
           <p className="text-gray-700 max-w-4xl mx-auto leading-relaxed text-justify">
-            Every client receives personal attention from experienced attorneys who understand both the legal complexities and practical realities of civil litigation in Texas courts. We work on a contingency fee basis for most litigation matters, ensuring our interests align with achieving the best possible outcome for our clients.
+            Every client receives personal attention from experienced attorneys who understand both the legal complexities and practical realities of civil litigation in Texas courts. We evaluate each matter individually and discuss available fee arrangements before representation begins.
           </p>
         </div>
       </div>

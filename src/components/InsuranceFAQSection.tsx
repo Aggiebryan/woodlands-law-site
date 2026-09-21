@@ -30,7 +30,7 @@ const faqItems = [
   },
   {
     question: "How much does it cost to hire an insurance litigation attorney?",
-    answer: "We typically handle insurance dispute cases on a contingency fee basis, meaning we only get paid if we recover money for you. This arrangement allows you to obtain quality legal representation without paying upfront legal fees."
+    answer: "Our 15-minute telephone consultation costs $150. The consultation fee is credited toward your retainer if you hire the firm. After reviewing your matter, we will determine whether we can offer representation and discuss available fee arrangements. A consultation does not guarantee that we will accept your case. Representation requires a separate written agreement."
   },
   {
     question: "My claim was denied due to a policy exclusion. Can you still help me?",
