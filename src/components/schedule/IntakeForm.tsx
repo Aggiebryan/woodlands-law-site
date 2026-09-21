@@ -12,7 +12,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Check, Loader2, Shield } from "lucide-react";
 
-const WEBHOOK_URL = "https://n8n.twlf.dev/webhook/intake-web";
+const WEBHOOK_URL = "https://n8n.twlf.app/webhook/intake-web";
 
 const formSchema = z.object({
   firstName: z.string().min(1, "Please enter your first name."),
