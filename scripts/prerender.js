@@ -15,6 +15,7 @@ async function prerender() {
 
   // 2. Read the client HTML template
   const template = fs.readFileSync(path.join(clientDir, 'index.html'), 'utf-8');
+  fs.writeFileSync(path.join(rootDir, 'dist', 'template.html'), template);
 
   // 3. Get all routes to pre-render
   const routes = await getAllRoutes();

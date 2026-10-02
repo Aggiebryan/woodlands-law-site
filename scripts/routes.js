@@ -1,4 +1,4 @@
-const WP_API = 'https://woodlands.law/blog/wp-json/wp/v2';
+import fs from 'node:fs';
 
 const staticRoutes = [
   '/',
@@ -78,58 +78,9 @@ const staticRoutes = [
   '/texas-dtpa/free-trial-auto-renewal',
 ];
 
-async function fetchJSON(url) {
-  try {
-    const res = await fetch(url);
-    if (!res.ok) return [];
-    return await res.json();
-  } catch {
-    return [];
-  }
-}
-
-async function getWordPressRoutes() {
-  const routes = [];
-
-  // Fetch all blog post slugs (paginated)
-  let page = 1;
-  let hasMore = true;
-  while (hasMore) {
-    const posts = await fetchJSON(
-      `${WP_API}/posts?per_page=100&page=${page}&_fields=slug`
-    );
-    for (const p of posts) {
-      routes.push(`/wp/${p.slug}`);
-    }
-    hasMore = posts.length === 100;
-    page++;
-  }
-
-  // Fetch event slugs
-  const events = await fetchJSON(
-    `${WP_API}/events?per_page=100&_fields=slug`
-  );
-  for (const e of events) {
-    routes.push(`/events/${e.slug}`);
-  }
-
-  // Fetch category IDs
-  const cats = await fetchJSON(
-    `${WP_API}/categories?per_page=100&_fields=id`
-  );
-  for (const c of cats) {
-    routes.push(`/wp/category/${c.id}`);
-  }
-
-  return routes;
-}
-
 export async function getAllRoutes() {
-  console.log('Fetching WordPress routes...');
-  const wpRoutes = await getWordPressRoutes();
-  console.log(`  Found ${wpRoutes.length} WordPress routes`);
-
-  const allRoutes = [...staticRoutes, ...wpRoutes];
-  console.log(`  Total routes to pre-render: ${allRoutes.length}`);
-  return allRoutes;
+ const posts=JSON.parse(fs.readFileSync(new URL('../content/posts.json',import.meta.url)));
+ const events=JSON.parse(fs.readFileSync(new URL('../content/events.json',import.meta.url)));
+ const categories=JSON.parse(fs.readFileSync(new URL('../content/categories.json',import.meta.url)));
+ return [...new Set([...staticRoutes,'/blog',...posts.flatMap(p=>['/wp/'+p.slug,'/blog/'+p.slug]),...events.map(e=>'/events/'+e.slug),...Object.keys(categories).flatMap(id=>['/wp/category/'+id,'/blog/category/'+id])])];
 }

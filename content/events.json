@@ -1,0 +1,33 @@
+[
+  {
+    "id": 697,
+    "title": {
+      "rendered": "Wine and Wills"
+    },
+    "excerpt": {
+      "rendered": "",
+      "protected": false
+    },
+    "content": {
+      "rendered": "\n<p class=\"has-text-color has-link-color wp-elements-0260f54cc7d03f9ad1e383bcfbfe467a wp-block-paragraph\" style=\"color:#9f0025\"></p>\n\n\n\n<p class=\"wp-block-paragraph\"></p>\n",
+      "protected": false
+    },
+    "date": "2025-05-30T03:36:06",
+    "slug": "wine-and-wills",
+    "categories": [],
+    "category_names": [],
+    "_embedded": {
+      "wp:featuredmedia": [
+        {
+          "source_url": "/blog-media/5c4579350e998eb2a7fd.webp",
+          "alt_text": ""
+        }
+      ]
+    },
+    "event_date": "2026-05-15",
+    "event_time": "19:00",
+    "event_end_time": "21:00",
+    "event_location": "The Clubhouse",
+    "registration_link": ""
+  }
+]

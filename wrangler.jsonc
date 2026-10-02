@@ -1,0 +1,14 @@
+{
+  "name": "woodlands-law-site",
+  "account_id": "4ac7a249b4f7b07274a23dd62cfa2d23",
+  "main": "dist/worker/index.js",
+  "compatibility_date": "2026-10-02",
+  "compatibility_flags": ["nodejs_compat"],
+  "keep_vars": true,
+  "d1_databases": [{ "binding": "DB", "database_name": "woodlands-law-blog", "database_id": "255410da-0cd3-4658-956a-81ce0a892849", "migrations_dir": "migrations" }],
+  "assets": {
+    "directory": "./dist/client",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/blog/*", "/admin/*", "/blog", "/blog/*", "/wp/*", "/news-events", "/news-events/"]
+  }
+}

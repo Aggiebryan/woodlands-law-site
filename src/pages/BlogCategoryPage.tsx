@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
+import { useInitialPosts } from '@/components/blog/BlogDataContext';
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import ServicesPageHeader from "@/components/ServicesPageHeader";
-import { fetchPosts, fetchCategories, WordPressPost } from "@/services/wordPressService";
+import { fetchPosts, fetchCategories, initialCategories, WordPressPost } from "@/services/wordPressService";
 import NewsletterSignup from "@/components/blog/NewsletterSignup";
 import { Card } from "@/components/ui/card";
 import { Calendar } from "lucide-react";
@@ -10,13 +11,14 @@ import { Calendar } from "lucide-react";
 const BlogCategoryPage = () => {
   const { categoryId } = useParams<{ categoryId: string }>();
   const navigate = useNavigate();
-  const [posts, setPosts] = useState<WordPressPost[]>([]);
-  const [loading, setLoading] = useState(true);
+  const initialPosts = useInitialPosts().filter(p => p.categories.includes(Number(categoryId)));
+  const [posts, setPosts] = useState<WordPressPost[]>(initialPosts.slice(0, 10));
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [categoryName, setCategoryName] = useState<string>("");
+  const [categoryName, setCategoryName] = useState<string>(initialCategories[Number(categoryId)] || '');
   const [currentPage, setCurrentPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(1);
-  const [allCategories, setAllCategories] = useState<Record<number, string>>({});
+  const [totalPages, setTotalPages] = useState(Math.max(1, Math.ceil(initialPosts.length / 10)));
+  const [allCategories, setAllCategories] = useState<Record<number, string>>(initialCategories);
 
   useEffect(() => {
     window.scrollTo(0, 0);

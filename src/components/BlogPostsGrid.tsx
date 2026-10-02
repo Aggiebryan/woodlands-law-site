@@ -5,7 +5,7 @@ import BlogPostsLoading from "./blog/BlogPostsLoading";
 import BlogPostsError from "./blog/BlogPostsError";
 import BlogPostsPagination from "./blog/BlogPostsPagination";
 import { fetchPosts, type WordPressPost } from "@/services/wordPressService";
-import { toast } from "@/components/ui/use-toast";
+import { useInitialPosts } from '@/components/blog/BlogDataContext';
 
 interface BlogPostsGridProps {
   categories?: number[];
@@ -13,32 +13,22 @@ interface BlogPostsGridProps {
 }
 
 const BlogPostsGrid = ({ categories, limit = 6 }: BlogPostsGridProps) => {
-  const [posts, setPosts] = useState<WordPressPost[]>([]);
-  const [loading, setLoading] = useState(true);
+  const initialPosts = useInitialPosts().filter(p => !categories?.length || p.categories.some(id => categories.includes(id)));
+  const [posts, setPosts] = useState<WordPressPost[]>(initialPosts.slice(0, limit));
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(1);
+  const [totalPages, setTotalPages] = useState(Math.max(1, Math.ceil(initialPosts.length / limit)));
 
   const loadPosts = async () => {
     setLoading(true);
     setError(null);
     
     try {
-      console.log("Fetching posts with params:", { currentPage, limit, categories });
       const { posts: fetchedPosts, totalPages } = await fetchPosts(currentPage, limit, categories);
-      console.log("Fetched posts:", fetchedPosts);
-      console.log("Total pages:", totalPages);
       setPosts(fetchedPosts);
       setTotalPages(totalPages);
       
-      // If we got mock data, show a toast notification
-      if (fetchedPosts.length > 0 && fetchedPosts[0].id <= 6) {
-        toast({
-          title: "Using sample blog posts",
-          description: "We're currently showing sample content since the WordPress blog is unavailable.",
-          duration: 5000,
-        });
-      }
     } catch (err) {
       console.error("Error fetching posts:", err);
       setError(err instanceof Error ? err.message : "Failed to fetch posts");

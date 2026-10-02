@@ -1,5 +1,7 @@
 
 import { useState, useEffect } from "react";
+import { useInitialPosts } from '@/components/blog/BlogDataContext';
+import { blogText as stripHtml } from '@/lib/blog-text';
 import { useParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import ServicesPageHeader from "@/components/ServicesPageHeader";
@@ -11,10 +13,12 @@ import { fetchPostBySlug, fetchRelatedPosts, type WordPressPost } from "@/servic
 
 const BlogPostPage = () => {
   const { slug } = useParams<{ slug: string }>();
-  const [post, setPost] = useState<WordPressPost | null>(null);
-  const [loading, setLoading] = useState(true);
+  const initialPosts = useInitialPosts();
+  const initialPost = initialPosts.find(p => p.slug === slug) ?? null;
+  const [post, setPost] = useState<WordPressPost | null>(initialPost);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [relatedPosts, setRelatedPosts] = useState<WordPressPost[]>([]);
+  const [relatedPosts, setRelatedPosts] = useState<WordPressPost[]>(initialPosts.filter(p => p.id !== initialPost?.id && p.categories.some(c => initialPost?.categories.includes(c))).slice(0, 3));
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -59,7 +63,6 @@ const BlogPostPage = () => {
   }
 
   // Strip HTML tags for meta description
-  const stripHtml = (html: string) => html.replace(/<[^>]*>/g, '').trim();
   const metaDescription = stripHtml(post.excerpt.rendered).slice(0, 160);
   const featuredImage = post._embedded?.["wp:featuredmedia"]?.[0]?.source_url;
 
@@ -79,7 +82,7 @@ const BlogPostPage = () => {
         <link rel="canonical" href={`https://woodlands.law/wp/${slug}`} />
       </Helmet>
       <ServicesPageHeader
-        title={post.title.rendered}
+        title={stripHtml(post.title.rendered)}
         description={post.category_names?.[0] || "Blog"}
       />
       

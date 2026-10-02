@@ -11,6 +11,7 @@ import AboutPage from "./pages/AboutPage";
 import NewsEventsPage from "./pages/NewsEventsPage";
 import BlogPostPage from "./pages/BlogPostPage";
 import BlogCategoryPage from "./pages/BlogCategoryPage";
+import BlogEditorPage from './pages/BlogEditorPage';
 import NotFound from "./pages/NotFound";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -89,6 +90,10 @@ const AppShell = () => (
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/service/:id" element={<ServiceDetailPage />} />
           <Route path="/news-events" element={<NewsEventsPage />} />
+          <Route path="/blog" element={<NewsEventsPage />} />
+          <Route path="/blog/:slug" element={<BlogPostPage />} />
+          <Route path="/blog/category/:categoryId" element={<BlogCategoryPage />} />
+          <Route path="/admin/blog" element={<BlogEditorPage />} />
           <Route path="/wp/:slug" element={<BlogPostPage />} />
           <Route path="/wp/category/:categoryId" element={<BlogCategoryPage />} />
           <Route path="/about" element={<AboutPage />} />
