@@ -32,12 +32,12 @@ const OurTeamPage = () => {
             {/* Attorney 1 */}
             <div className="flex flex-col">
               <div className="rounded-lg overflow-hidden mb-4 aspect-[3/4] bg-gray-200">
-                <img src="/gwen600800flag.webp" alt="Gwendolyn Simpson" className="w-full h-full object-cover" />
+                <img src="/gwen600800flag.webp" alt="Gwendolyn Rees" className="w-full h-full object-cover" />
               </div>
-              <h3 className="text-2xl font-serif text-law-purple mb-1">Gwendolyn Simpson</h3>
+              <h3 className="text-2xl font-serif text-law-purple mb-1">Gwendolyn Rees</h3>
               <p className="text-law-gold font-medium mb-2">Managing Attorney</p>
               <p className="text-gray-600 mb-4 text-justify">
-                Gwendolyn Simpson is a native Houstonian and a graduate of Baylor Law School with decades of experience in civil litigation, transactions, probate, and personal injury.
+                Gwendolyn Rees is a native Houstonian and a graduate of Baylor Law School with decades of experience in civil litigation, transactions, probate, and personal injury.
               </p>
               <Link to="/team/gwendolyn-simpson" className="text-law-purple hover:text-law-gold transition-colors font-medium mt-auto">
                 View Profile

@@ -29,7 +29,7 @@ const AttorneyAdvertisingPage = () => {
               This website provides general information about legal matters. It does not constitute legal advice and
               does not create an attorney–client relationship. An attorney–client relationship is formed only through a
               written agreement signed by the firm and the client in accordance with Texas law. The principal office of
-              The Woodlands Law Firm, PLLC is located in The Woodlands, Texas. Attorneys Gwendolyn Simpson and Bryan C.
+              The Woodlands Law Firm, PLLC is located in The Woodlands, Texas. Attorneys Gwendolyn Rees and Bryan C.
               Holman are responsible for the content of this website.
             </p>
 
