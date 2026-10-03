@@ -7,12 +7,15 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { fetchEventBySlug, type WordPressEvent } from "@/services/wordPressService";
 import NewsletterSignup from "@/components/blog/NewsletterSignup";
+import { useInitialEvents } from '@/components/blog/BlogDataContext';
+import { formatEventDate as eventDateLabel, formatEventTime, isPastEvent } from '@/lib/event-date';
 
 const EventPage = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
-  const [event, setEvent] = useState<WordPressEvent | null>(null);
-  const [loading, setLoading] = useState(true);
+  const initialEvent = useInitialEvents().find(event => event.slug === slug) || null;
+  const [event, setEvent] = useState<WordPressEvent | null>(initialEvent);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -37,61 +40,8 @@ const EventPage = () => {
     }
   };
 
-  // Function to format date
-  const formatDate = (dateString: string) => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', { 
-      year: 'numeric', 
-      month: 'long', 
-      day: 'numeric' 
-    });
-  };
-
-  // Function to format event date with day of week
-  const formatEventDate = (event: WordPressEvent) => {
-    const eventDate = event.event_date;
-    if (eventDate) {
-      const date = new Date(eventDate);
-      return date.toLocaleDateString('en-US', { 
-        weekday: 'long',
-        year: 'numeric', 
-        month: 'long', 
-        day: 'numeric' 
-      });
-    }
-    return formatDate(event.date);
-  };
-
-  // Function to get event time
-  const getEventTime = (event: WordPressEvent) => {
-    const startTime = event.event_time;
-    const endTime = event.event_end_time;
-    
-    if (startTime && endTime) {
-      // Convert 24-hour format to 12-hour format for display
-      const formatTime = (time: string) => {
-        if (!time) return '';
-        const [hours, minutes] = time.split(':');
-        const hour = parseInt(hours);
-        const ampm = hour >= 12 ? 'PM' : 'AM';
-        const displayHour = hour % 12 || 12;
-        return `${displayHour}:${minutes} ${ampm}`;
-      };
-      
-      return `${formatTime(startTime)} - ${formatTime(endTime)}`;
-    } else if (startTime) {
-      const formatTime = (time: string) => {
-        if (!time) return '';
-        const [hours, minutes] = time.split(':');
-        const hour = parseInt(hours);
-        const ampm = hour >= 12 ? 'PM' : 'AM';
-        const displayHour = hour % 12 || 12;
-        return `${displayHour}:${minutes} ${ampm}`;
-      };
-      return formatTime(startTime);
-    }
-    return "Time TBA";
-  };
+  const formatEventDate = eventDateLabel;
+  const getEventTime = formatEventTime;
 
   // Function to get event location
   const getEventLocation = (event: WordPressEvent) => {
@@ -103,16 +53,7 @@ const EventPage = () => {
     return event.registration_link || "/schedule";
   };
 
-  // Function to check if event is in the past
-  const isEventPast = (event: WordPressEvent) => {
-    const eventDate = event.event_date;
-    if (eventDate) {
-      const today = new Date();
-      const eventDateObj = new Date(eventDate);
-      return eventDateObj < today;
-    }
-    return false;
-  };
+  const isEventPast = isPastEvent;
 
   if (loading) {
     return (

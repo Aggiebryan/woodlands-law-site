@@ -6,13 +6,17 @@ import ServicesPageHeader from "@/components/ServicesPageHeader";
 import { Card, CardContent } from "@/components/ui/card";
 import { fetchEvents, type WordPressEvent } from "@/services/wordPressService";
 import NewsletterSignup from "@/components/blog/NewsletterSignup";
+import { useInitialEvents } from '@/components/blog/BlogDataContext';
+import { selectEvents, formatEventDate as eventDateLabel, formatEventTime, isPastEvent } from '@/lib/event-date';
+import { blogText } from '@/lib/blog-text';
 
 const EventsListPage = () => {
-  const [events, setEvents] = useState<WordPressEvent[]>([]);
-  const [loading, setLoading] = useState(true);
+  const initialEvents = selectEvents(useInitialEvents());
+  const [events, setEvents] = useState<WordPressEvent[]>(initialEvents.slice(0, 12));
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(1);
+  const [totalPages, setTotalPages] = useState(Math.max(1, Math.ceil(initialEvents.length / 12)));
   const [showPastEvents, setShowPastEvents] = useState(false);
 
   useEffect(() => {
@@ -40,43 +44,8 @@ const EventsListPage = () => {
     }
   };
 
-  // Function to format date
-  const formatDate = (dateString: string) => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', { 
-      year: 'numeric', 
-      month: 'long', 
-      day: 'numeric' 
-    });
-  };
-
-  // Function to format event date with day of week
-  const formatEventDate = (event: WordPressEvent) => {
-    const eventDate = event.event_date;
-    if (eventDate) {
-      const date = new Date(eventDate);
-      return date.toLocaleDateString('en-US', { 
-        weekday: 'short',
-        year: 'numeric', 
-        month: 'short', 
-        day: 'numeric' 
-      });
-    }
-    return formatDate(event.date);
-  };
-
-  // Function to get event time
-  const getEventTime = (event: WordPressEvent) => {
-    const startTime = event.event_time;
-    const endTime = event.event_end_time;
-    
-    if (startTime && endTime) {
-      return `${startTime} - ${endTime}`;
-    } else if (startTime) {
-      return startTime;
-    }
-    return "Time TBA";
-  };
+  const formatEventDate = eventDateLabel;
+  const getEventTime = formatEventTime;
 
   // Function to get event location
   const getEventLocation = (event: WordPressEvent) => {
@@ -88,16 +57,7 @@ const EventsListPage = () => {
     return event.registration_link || "/schedule";
   };
 
-  // Function to check if event is in the past
-  const isEventPast = (event: WordPressEvent) => {
-    const eventDate = event.event_date;
-    if (eventDate) {
-      const today = new Date();
-      const eventDateObj = new Date(eventDate);
-      return eventDateObj < today;
-    }
-    return false;
-  };
+  const isEventPast = isPastEvent;
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
@@ -193,6 +153,7 @@ const EventsListPage = () => {
                     return (
                       <Card key={event.id} className="bg-white hover:shadow-lg transition-shadow">
                         <CardContent className="p-6">
+                          {event._embedded?.['wp:featuredmedia']?.[0] && <img src={event._embedded['wp:featuredmedia'][0].source_url} alt={event._embedded['wp:featuredmedia'][0].alt_text || blogText(event.title.rendered)} className="w-full h-auto rounded mb-4" loading="lazy" />}
                           {/* Event Status Badge */}
                           {isPast && (
                             <div className="mb-4">

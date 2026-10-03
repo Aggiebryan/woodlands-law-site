@@ -9,8 +9,10 @@ import { Textarea } from '@/components/ui/textarea';
 import { Checkbox } from '@/components/ui/checkbox';
 import { initialCategories, type WordPressPost } from '@/services/wordPressService';
 import { Plus, Save, ArrowUpRight, Bold, Italic, List, ListOrdered } from 'lucide-react';
+import EventEditor from '@/components/blog/EventEditor';
 type Entry={post:WordPressPost;revision:number;published:boolean;hasDraft:boolean};
 const BlogEditorPage=()=>{
+ const [section,setSection]=useState<'articles'|'events'>('articles');
  const [items,setItems]=useState<Entry[]>([]),[current,setCurrent]=useState<Entry|null>(null),[search,setSearch]=useState(''),[message,setMessage]=useState(''),[busy,setBusy]=useState(false),[dirty,setDirty]=useState(false),[loaded,setLoaded]=useState(false),[access,setAccess]=useState(true);
  const editor=useRef<HTMLDivElement>(null);
  const [preview,setPreview]=useState(false);
@@ -42,7 +44,9 @@ const BlogEditorPage=()=>{
  const format=(command:string,value?:string)=>{editor.current?.focus();document.execCommand(command,false,value);setDirty(true);};
  return <div className="blog-editor-page">
   <Helmet><title>Blog Editor | The Woodlands Law Firm</title><meta name="robots" content="noindex,nofollow" /></Helmet>
-  <header className="editor-heading"><div><p className="editor-kicker">PRIVATE EDITOR</p><h1>Your articles.</h1><p>Write, save drafts, and publish to your website.</p><a href="/cdn-cgi/access/logout" className="underline">Sign out</a></div><Button onClick={newPost} disabled={!loaded||!access}><Plus /> New article</Button></header>
+  <header className="editor-heading"><div><p className="editor-kicker">PRIVATE EDITOR</p><h1>Your articles and events.</h1><p>Write, save drafts, and publish to your website.</p><a href="/cdn-cgi/access/logout" className="underline">Sign out</a></div>{section==='articles'&&<Button onClick={newPost} disabled={!loaded||!access}><Plus /> New article</Button>}</header>
+  <nav className="editor-tabs" aria-label="Editor sections"><Button variant={section==='articles'?'default':'outline'} aria-pressed={section==='articles'} onClick={()=>setSection('articles')}>Articles</Button><Button variant={section==='events'?'default':'outline'} aria-pressed={section==='events'} onClick={()=>setSection('events')}>Events</Button></nav>
+  <div hidden={section!=='articles'}>
   <p role="status" className="editor-status">{message||(!loaded?'Loading your articles…':dirty?'Unsaved changes':'')}</p>
   {pendingAction&&<div className="editor-confirm" role="alert"><p>{pendingAction==='publish'?'Publish this version for website visitors?':'Remove this article from the public blog and keep it as a draft?'}</p><Button onClick={()=>save(pendingAction,true)}>{pendingAction==='publish'?'Confirm publish':'Confirm move to drafts'}</Button><Button variant="outline" onClick={()=>setPendingAction(null)}>Cancel</Button></div>}
   {pendingEntry&&<div className="editor-confirm" role="alert"><p>Discard unsaved changes and open the other article?</p><Button onClick={()=>choose(pendingEntry,true)}>Discard changes</Button><Button variant="outline" onClick={()=>setPendingEntry(null)}>Keep writing</Button></div>}
@@ -67,6 +71,8 @@ const BlogEditorPage=()=>{
     {current.published&&<div className="editor-bottom"><a href={'/blog/'+current.post.slug} target="_blank" rel="noreferrer">View published article ↗</a><Button variant="outline" disabled={busy} onClick={()=>save('unpublish')}>Move to drafts</Button></div>}
    </>}</section>
   </div>}
+  </div>
+  <div hidden={section!=='events'}><EventEditor /></div>
  </div>;
 };
 export default BlogEditorPage;

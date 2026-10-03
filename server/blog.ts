@@ -79,7 +79,7 @@ export async function handleApi(request:Request,env:Env):Promise<Response> {
  }
  return json({post,revision:input.revision+1,published:!!published,hasDraft:draft!==published});
 }
-async function boundedBody(request:Request,limit:number):Promise<ArrayBuffer|null> {
+export async function boundedBody(request:Request,limit:number):Promise<ArrayBuffer|null> {
  if(Number(request.headers.get('Content-Length'))>limit)return null;
  const reader=request.body?.getReader();if(!reader)return new ArrayBuffer(0);
  const chunks:Uint8Array[]=[];let length=0;

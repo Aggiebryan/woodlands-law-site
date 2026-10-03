@@ -3,10 +3,11 @@ import fs from 'node:fs';
 import { DatabaseSync } from 'node:sqlite';
 import { generateKeyPair, exportJWK, SignJWT } from 'jose';
 import worker from '../dist/worker/index.js';
+import { transform } from 'esbuild';
 
 // All storage and signing keys are isolated here. No production credentials or posts are changed.
 const database = new DatabaseSync(':memory:');
-database.exec(fs.readFileSync('migrations/0001_blog.sql', 'utf8'));
+for (const file of fs.readdirSync('migrations').filter(file => file.endsWith('.sql')).sort()) database.exec(fs.readFileSync('migrations/' + file, 'utf8'));
 const env = { ACCESS_TEAM_DOMAIN: 'blog-test.cloudflareaccess.com', ACCESS_AUD: 'test-editor-audience', ASSETS: { fetch: async () => new Response('static page') }, DB: { prepare(sql) { const statement = database.prepare(sql); let values = []; return { bind(...args) { values = args.map(v => v instanceof ArrayBuffer ? new Uint8Array(v) : v); return this; }, async all() { return { results: statement.all(...values) }; }, async first() { return statement.get(...values) ?? null; }, async run() { return { meta: statement.run(...values) }; } }; } } };
 const { publicKey, privateKey } = await generateKeyPair('RS256', { extractable: true });
 const jwk = await exportJWK(publicKey); jwk.kid = 'isolated-test-key'; jwk.alg = 'RS256';
@@ -57,4 +58,47 @@ response = await call(image.url, { jwt: null }); assert.equal(response.status, 2
 assert.equal((await call('/api/blog/admin/media', { method: 'POST', type: 'image/svg+xml', body: '<svg/>' })).status, 415);
 assert.equal((await call('/api/blog/admin/media', { method: 'POST', type: 'image/png', body: 'fake image' })).status, 400);
 assert.equal((await call('/api/blog/admin/media', { method: 'POST', type: 'image/png', body: new Uint8Array(1000001) })).status, 413);
-console.log('PASS: 83 recovered posts and media; verified domain-wide JWT sign-in; rejected forged, expired, wrong-audience and outsider tokens; private drafts; publishing; unpublishing; safe HTML; concurrent-edit protection; image persistence and validation; legacy article routes and static-page forwarding.');
+// Events share sign-in and image storage, but retain independent draft/public versions.
+const seeds = JSON.parse(fs.readFileSync('content/events.json'));
+assert.equal((await (await call('/api/blog/events', { jwt: null })).json()).length, seeds.length);
+for (const jwt of [null, 'forged', await token('outsider@example.com'), await token('bryan@woodlands.law', 'wrong-audience')]) assert.equal((await call('/api/blog/admin/events', { jwt })).status, 403);
+const event = { id: 99888, slug: 'isolated-event-test', date: '2026-10-02T12:00:00', event_date: '2099-10-15', event_time: '18:30', event_end_time: '20:00', title: { rendered: 'Isolated community event' }, excerpt: { rendered: '' }, content: { rendered: '<p>A community workshop description.</p><p>A second paragraph.</p><script>bad()</script>' }, _embedded: { 'wp:featuredmedia': [{ source_url: image.url, alt_text: 'Event photo' }] } };
+const saveEvent = (action, revision, value = event, options = {}) => call('/api/blog/admin/events', { method: 'PUT', body: { event: value, action, revision }, ...options });
+assert.equal((await saveEvent('publish', 0, event, { origin: 'https://evil.invalid' })).status, 403);
+assert.equal((await saveEvent('publish', 0, event, { jwt: null })).status, 403);
+for (const patch of [{ event_date: '2026-02-30' }, { event_time: '25:30' }, { event_end_time: '17:00' }, { registration_link: 'javascript:alert(1)' }, { _embedded: { 'wp:featuredmedia': [{ source_url: 'javascript:alert(1)' }] } }]) assert.equal((await saveEvent('publish', 0, { ...event, ...patch })).status, 400);
+assert.equal((await saveEvent('publish', 0, { ...event, content: { rendered: '<p> </p>' } })).status, 400);
+response = await saveEvent('draft', 0); assert.equal(response.status, 200); const eventDraft = await response.json();
+assert.ok(!eventDraft.event.content.rendered.includes('<script>'));
+assert.ok(!(await (await call('/api/blog/events', { jwt: null })).json()).some(e => e.slug === event.slug));
+assert.equal((await call('/events/' + event.slug, { jwt: null })).status, 404);
+assert.equal((await saveEvent('publish', 1)).status, 200);
+const publicEvent = (await (await call('/api/blog/events', { jwt: null })).json()).find(e => e.slug === event.slug);
+assert.equal(publicEvent.event_date, '2099-10-15'); assert.equal(publicEvent.event_time, '18:30'); assert.equal(publicEvent._embedded['wp:featuredmedia'][0].source_url, image.url);
+assert.ok(publicEvent.excerpt.rendered.includes('description.\n\nA second paragraph.'));
+for (const route of ['/news-events', '/events', '/events/' + event.slug]) {
+ response = await call(route, { jwt: null }); assert.equal(response.status, 200); const html = await response.text();
+ assert.ok(html.includes(event.title.rendered), route); assert.ok(html.includes('October 15, 2099'), route); assert.ok(html.includes('6:30 PM'), route); assert.ok(html.includes('Central Time'), route); assert.ok(html.includes('community workshop description'), route); assert.ok(html.includes(image.url), route);
+}
+const updatedEvent = { ...event, title: { rendered: 'Private revised event title' } };
+assert.equal((await saveEvent('draft', 2, updatedEvent)).status, 200);
+assert.equal((await (await call('/api/blog/events', { jwt: null })).json()).find(e => e.slug === event.slug).title.rendered, event.title.rendered);
+assert.equal((await saveEvent('publish', 2, updatedEvent)).status, 409);
+assert.equal((await saveEvent('unpublish', 3, updatedEvent)).status, 200);
+assert.equal((await call('/events/' + event.slug, { jwt: null })).status, 404);
+assert.ok(!(await (await call('/api/blog/events', { jwt: null })).json()).some(e => e.slug === event.slug));
+assert.equal((await (await call('/api/blog/admin/events')).json()).find(e => e.event.slug === event.slug).event.title.rendered, updatedEvent.title.rendered);
+assert.equal((await saveEvent('draft', 0, { ...seeds[0], title: { rendered: 'Archived event draft' } })).status, 200);
+assert.equal((await (await call('/api/blog/events', { jwt: null })).json()).find(e => e.slug === seeds[0].slug).title.rendered, seeds[0].title.rendered);
+assert.equal((await saveEvent('unpublish', 1, seeds[0])).status, 200);
+assert.ok(!(await (await call('/api/blog/events', { jwt: null })).json()).some(e => e.slug === seeds[0].slug));
+const dateModule = await transform(fs.readFileSync('src/lib/event-date.ts', 'utf8'), { loader: 'ts', format: 'esm' });
+const dates = await import('data:text/javascript;base64,' + Buffer.from(dateModule.code).toString('base64'));
+assert.equal(dates.centralDate(new Date('2026-10-03T02:00:00Z')), '2026-10-02');
+assert.equal(dates.centralDate(new Date('2026-01-03T02:00:00Z')), '2026-01-02');
+assert.equal(dates.isPastEvent({ ...event, event_date: '2026-10-02' }, '2026-10-02'), false);
+assert.equal(dates.formatEventDate({ ...event, event_date: '2026-10-02' }), 'October 2, 2026');
+const datedEvents = [{ ...event, slug: 'later', event_date: '2026-10-04' }, { ...event, slug: 'past', event_date: '2026-10-01' }, { ...event, slug: 'today', event_date: '2026-10-02' }];
+assert.deepEqual(dates.selectEvents(datedEvents, true, '2026-10-02').map(e => e.slug), ['today', 'later']);
+assert.deepEqual(dates.selectEvents(datedEvents, false, '2026-10-02').map(e => e.slug), ['past']);
+console.log('PASS: 83 recovered posts and media; verified domain-wide JWT sign-in; rejected forged, expired, wrong-audience and outsider tokens; private article and event drafts; publishing and unpublishing; event photos, descriptions and SSR routes; valid Central dates and times; safe HTML; concurrent-edit protection; image persistence; legacy routes.');

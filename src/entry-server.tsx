@@ -3,10 +3,10 @@ import { StaticRouter } from 'react-router-dom/server';
 import { HelmetProvider, type HelmetServerState } from 'react-helmet-async';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import AppShell from './AppShell';
-import { BlogDataProvider } from './components/blog/BlogDataContext';
-import { initialPosts, type WordPressPost } from './services/wordPressService';
+import { BlogDataProvider, EventDataProvider } from './components/blog/BlogDataContext';
+import { initialPosts, initialEvents, type WordPressPost, type WordPressEvent } from './services/wordPressService';
 
-export function render(url: string, posts: WordPressPost[] = initialPosts) {
+export function render(url: string, posts: WordPressPost[] = initialPosts, events: WordPressEvent[] = initialEvents) {
   const helmetContext = {} as { helmet: HelmetServerState };
   const queryClient = new QueryClient();
 
@@ -14,7 +14,7 @@ export function render(url: string, posts: WordPressPost[] = initialPosts) {
     <HelmetProvider context={helmetContext}>
       <QueryClientProvider client={queryClient}>
         <StaticRouter location={url}>
-          <BlogDataProvider posts={posts}><AppShell /></BlogDataProvider>
+          <BlogDataProvider posts={posts}><EventDataProvider events={events}><AppShell /></EventDataProvider></BlogDataProvider>
         </StaticRouter>
       </QueryClientProvider>
     </HelmetProvider>

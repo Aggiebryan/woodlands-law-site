@@ -17,3 +17,11 @@ Cloudflare Access must protect both `woodlands.law/admin/*` and `www.woodlands.l
 Run `npm run build`, `npm run test:blog`, and `npx tsc --noEmit -p tsconfig.app.json` before publishing code. The tests use isolated SQLite storage and temporary signing keys, never the production database. Cloudflare's D1 Time Travel provides recovery within the account's retention period; the original content and media export remains tracked in GitHub.
 
 The production Access application is **Woodlands Law Blog Editor**, ID `ad1a823a-be07-41ad-89ca-0b23099d9af6`. Its Allow policy is **Woodlands Law staff**, restricted to `@woodlands.law` addresses, and its sole identity provider is **One-time PIN**. The actual team hostname and application audience are recorded in `wrangler.jsonc` and in the Worker's production runtime variables. If the Access application is replaced, update both values before deploying.
+
+## Events
+
+Open the **Events** tab in the same editor and choose **New event**, or select an existing event. Enter the title, event date, start time, description, and event photo. Photo description, end time, location, and registration link are also available. Photos accept JPEG, PNG, or WebP up to 1 MB. Times use Central Time; an optional end time must be later on the same day.
+
+**Save event draft** keeps new events private and leaves a published event unchanged while you revise it. **Preview event** shows the photo and details. **Publish event**, then **Confirm publish event**, updates the website immediately. Upcoming events appear with photos and descriptions on the News & Events page, ordered by date and start time. An event remains upcoming through its event date, then appears under Past Events. **Move event to drafts** removes it from the public website and keeps it available to edit. Article and event changes remain open when switching editor tabs; leaving the page warns about unsaved changes.
+
+Events are stored in the D1 `event_entries` table. Apply the additive migration `migrations/0002_events.sql` before deploying event editing. Existing WordPress event addresses and photos remain available.

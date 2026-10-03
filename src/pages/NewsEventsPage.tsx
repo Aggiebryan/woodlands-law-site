@@ -3,14 +3,18 @@ import { Link } from "react-router-dom";
 import { Calendar } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import BlogPostsGrid from "@/components/BlogPostsGrid";
-import { fetchCategories, fetchEvents, type WordPressEvent } from "@/services/wordPressService";
+import { fetchCategories, fetchEvents, initialCategories, type WordPressEvent } from "@/services/wordPressService";
+import { useInitialEvents } from '@/components/blog/BlogDataContext';
+import { selectEvents, formatEventDate as eventDateLabel, formatEventTime } from '@/lib/event-date';
+import { blogText } from '@/lib/blog-text';
 import NewsletterSignup from "@/components/blog/NewsletterSignup";
 
 const NewsEventsPage = () => {
-  const [categories, setCategories] = useState<Record<number, string>>({});
-  const [loadingCategories, setLoadingCategories] = useState(true);
-  const [events, setEvents] = useState<WordPressEvent[]>([]);
-  const [loadingEvents, setLoadingEvents] = useState(true);
+  const initialEvents = useInitialEvents();
+  const [categories, setCategories] = useState<Record<number, string>>(initialCategories);
+  const [loadingCategories, setLoadingCategories] = useState(false);
+  const [events, setEvents] = useState<WordPressEvent[]>(() => selectEvents(initialEvents).slice(0, 6));
+  const [loadingEvents, setLoadingEvents] = useState(false);
   const [eventsError, setEventsError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -45,55 +49,8 @@ const NewsEventsPage = () => {
     }
   };
 
-  // Function to format date
-  const formatDate = (dateString: string) => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', { 
-      year: 'numeric', 
-      month: 'long', 
-      day: 'numeric' 
-    });
-  };
-
-  // Function to format event date (from custom field or fallback to post date)
-  const formatEventDate = (event: WordPressEvent) => {
-    const eventDate = event.event_date;
-    if (eventDate) {
-      return formatDate(eventDate);
-    }
-    return formatDate(event.date);
-  };
-
-  // Function to get event time
-  const getEventTime = (event: WordPressEvent) => {
-    const startTime = event.event_time;
-    const endTime = event.event_end_time;
-    
-    if (startTime && endTime) {
-      // Convert 24-hour format to 12-hour format for display
-      const formatTime = (time: string) => {
-        if (!time) return '';
-        const [hours, minutes] = time.split(':');
-        const hour = parseInt(hours);
-        const ampm = hour >= 12 ? 'PM' : 'AM';
-        const displayHour = hour % 12 || 12;
-        return `${displayHour}:${minutes} ${ampm}`;
-      };
-      
-      return `${formatTime(startTime)} - ${formatTime(endTime)}`;
-    } else if (startTime) {
-      const formatTime = (time: string) => {
-        if (!time) return '';
-        const [hours, minutes] = time.split(':');
-        const hour = parseInt(hours);
-        const ampm = hour >= 12 ? 'PM' : 'AM';
-        const displayHour = hour % 12 || 12;
-        return `${displayHour}:${minutes} ${ampm}`;
-      };
-      return formatTime(startTime);
-    }
-    return "Time TBA";
-  };
+  const formatEventDate = eventDateLabel;
+  const getEventTime = formatEventTime;
 
   // Function to get event location
   const getEventLocation = (event: WordPressEvent) => {
@@ -196,6 +153,7 @@ const NewsEventsPage = () => {
                   <>
                     {events.map(event => (
                       <div key={event.id} className="mb-6 pb-6 border-b border-gray-300 last:border-0 last:mb-0 last:pb-0">
+                        {event._embedded?.['wp:featuredmedia']?.[0] && <img src={event._embedded['wp:featuredmedia'][0].source_url} alt={event._embedded['wp:featuredmedia'][0].alt_text || blogText(event.title.rendered)} className="w-full h-auto rounded mb-4" loading="lazy" />}
                         <div className="flex items-start">
                           <Calendar className="text-law-gold w-5 h-5 mt-1 mr-3 flex-shrink-0" />
                           <div>
@@ -211,6 +169,7 @@ const NewsEventsPage = () => {
                             <p className="text-gray-700 text-sm mb-3">
                               <strong>Location:</strong> {getEventLocation(event)}
                             </p>
+                            <p className="text-gray-700 text-sm mb-3 whitespace-pre-line">{blogText(event.excerpt.rendered || event.content?.rendered || '')}</p>
                             <div className="space-y-2">
                               <Link 
                                 to={`/events/${event.slug}`}
