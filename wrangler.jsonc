@@ -5,6 +5,10 @@
   "compatibility_date": "2026-10-02",
   "compatibility_flags": ["nodejs_compat"],
   "keep_vars": true,
+  "vars": {
+    "ACCESS_TEAM_DOMAIN": "aged-fire-c0da.cloudflareaccess.com",
+    "ACCESS_AUD": "5cf11fbe932311b0fc490dd675d032cadeef6cc2997c58a0f5d2201fe992e7a7"
+  },
   "d1_databases": [{ "binding": "DB", "database_name": "woodlands-law-blog", "database_id": "255410da-0cd3-4658-956a-81ce0a892849", "migrations_dir": "migrations" }],
   "assets": {
     "directory": "./dist/client",
