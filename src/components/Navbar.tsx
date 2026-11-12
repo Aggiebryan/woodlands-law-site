@@ -33,11 +33,13 @@ const Navbar = () => {
   return (
     <nav className="bg-white py-4 fixed w-full z-50 shadow-sm">
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <Link to="/" className="flex items-center">
+        <Link to="/" className="flex items-center shrink-0" aria-label="Woodlands Law home">
           <img 
-            src="/images/307c4d37-d87e-4a89-8107-73533778d172.png" 
-            alt="The Woodlands Law Firm" 
-            className="h-10" 
+            src="/images/woodlands-law-horizontal.svg" 
+            alt="Woodlands Law" 
+            width={2400}
+            height={600}
+            className="h-10 w-40 object-contain" 
           />
         </Link>
 

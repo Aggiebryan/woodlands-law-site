@@ -9,8 +9,8 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Column 1: Logo and Description */}
           <div>
-            <Link to="/" className="flex items-center mb-4">
-              <img src="/images/d2d3dd5c-4df2-4af8-8fd5-95612381080d.png" alt="The Woodlands Law Firm" className="h-28 object-fill" />
+            <Link to="/" className="inline-flex items-center mb-4" aria-label="Woodlands Law home">
+              <img src="/images/woodlands-law-stacked.svg" alt="Woodlands Law" width={2000} height={2200} className="h-40 w-auto max-w-full object-contain" />
             </Link>
             <div className="flex space-x-4 mt-4 mb-4">
               <a href="https://www.facebook.com/woodlandslaw/" className="text-white hover:text-law-gold transition-colors">
@@ -83,7 +83,7 @@ const Footer = () => {
         <div className="border-t border-white/10 mt-10 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm opacity-70 mb-4 md:mb-0">
-              &copy; {currentYear} The Woodlands Law Firm. All rights reserved.
+              &copy; {currentYear} Woodlands Law. All rights reserved.
             </p>
             <div className="flex space-x-4">
               <Link to="/attorney-advertising" className="text-sm opacity-70 hover:opacity-100 hover:text-law-gold transition-colors">
