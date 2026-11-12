@@ -115,7 +115,7 @@ const EstatePlanningPage = () => {
       />
       
       <PracticeAreaContent
-        overview="The Woodlands Law Firm provides thoughtful estate planning services designed to give you peace of mind about your family's future. Our estate planning attorneys work closely with you to understand your unique circumstances, family dynamics, financial situation, and long-term goals. We then craft personalized plans that address your specific concerns while maximizing asset protection and minimizing tax implications. Whether you need basic will preparation or sophisticated trust structures for complex estates, we provide clear guidance through every step of the process, ensuring your legacy is preserved exactly as you intend."
+        overview="Woodlands Law provides thoughtful estate planning services designed to give you peace of mind about your family's future. Our estate planning attorneys work closely with you to understand your unique circumstances, family dynamics, financial situation, and long-term goals. We then craft personalized plans that address your specific concerns while maximizing asset protection and minimizing tax implications. Whether you need basic will preparation or sophisticated trust structures for complex estates, we provide clear guidance through every step of the process, ensuring your legacy is preserved exactly as you intend."
         whyChooseUs={whyChooseUs}
         caseTypes={caseTypes}
         process={process}

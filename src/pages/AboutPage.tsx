@@ -9,14 +9,14 @@ const AboutPage = () => {
   }, []);
   return <div className="pt-20">
       <Helmet>
-        <title>About The Woodlands Law Firm</title>
-        <meta name="description" content="Learn about The Woodlands Law Firm — our founding, legal philosophy, and commitment to providing aggressive, personalized legal representation throughout Texas." />
+        <title>About Woodlands Law</title>
+        <meta name="description" content="Learn about Woodlands Law — our founding, legal philosophy, and commitment to providing aggressive, personalized legal representation throughout Texas." />
       </Helmet>
       {/* Page Header */}
       <div className="relative bg-law-purple py-16">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-5xl text-white font-serif font-semibold mb-2">
-            About The Woodlands Law Firm
+            About Woodlands Law
           </h1>
           <div className="gold-underline"></div>
           <p className="text-white/80 max-w-3xl mt-6">
@@ -31,15 +31,15 @@ const AboutPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-16">
             <div>
               <p className="text-gray-600 mb-6 text-justify">
-                At The Woodlands Law Firm, we provide focused, results-driven legal representation for individuals, families, and businesses throughout Texas. Our attorneys bring decades of combined experience across multiple practice areas, offering the skill and sophistication of larger firms with the personalized attention and accessibility of a local practice. From high-stakes litigation to comprehensive estate and business planning, we stand beside our clients at every critical legal moment.
+                At Woodlands Law, we provide focused, results-driven legal representation for individuals, families, and businesses throughout Texas. Our attorneys bring decades of combined experience across multiple practice areas, offering the skill and sophistication of larger firms with the personalized attention and accessibility of a local practice. From high-stakes litigation to comprehensive estate and business planning, we stand beside our clients at every critical legal moment.
               </p>
               <h2 className="text-2xl font-serif text-law-purple mb-4">Our Legacy of Protection and Advocacy</h2>
               <p className="text-gray-600 mb-6 text-justify">
-                Founded on the belief that every client deserves both aggressive representation and thoughtful counsel, The Woodlands Law Firm blends civil litigation, insurance disputes, personal injury claims, business planning, and estate planning into a full-service approach to legal protection. Our diverse practice allows us to deliver tailored strategies that protect clients' rights today and preserve what they've built for tomorrow.
+                Founded on the belief that every client deserves both aggressive representation and thoughtful counsel, Woodlands Law blends civil litigation, insurance disputes, personal injury claims, business planning, and estate planning into a full-service approach to legal protection. Our diverse practice allows us to deliver tailored strategies that protect clients' rights today and preserve what they've built for tomorrow.
               </p>
             </div>
             <div>
-              <img src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?q=80&w=2532&auto=format" alt="The Woodlands Law Firm Office" className="rounded-lg shadow-lg w-full h-auto object-cover" />
+              <img src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?q=80&w=2532&auto=format" alt="Woodlands Law Office" className="rounded-lg shadow-lg w-full h-auto object-cover" />
             </div>
           </div>
           
@@ -74,7 +74,7 @@ const AboutPage = () => {
           <div className="mb-16">
             <h2 className="text-2xl font-serif text-law-purple mb-4">Strategic Business Planning</h2>
             <p className="text-gray-600 mb-6 text-justify">
-              Every business, whether new or established, needs a legal foundation that supports growth, limits liability, and protects owners from future disputes. The Woodlands Law Firm works with entrepreneurs, business owners, and investors to develop clear, customized business strategies and legal structures. Our services include:
+              Every business, whether new or established, needs a legal foundation that supports growth, limits liability, and protects owners from future disputes. Woodlands Law works with entrepreneurs, business owners, and investors to develop clear, customized business strategies and legal structures. Our services include:
             </p>
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
               <li className="flex items-center">
@@ -102,7 +102,7 @@ const AboutPage = () => {
           <div className="mb-16">
             <h2 className="text-2xl font-serif text-law-purple mb-4">Estate Planning and Probate</h2>
             <p className="text-gray-600 mb-6">
-              Protecting your legacy starts with a plan. At The Woodlands Law Firm, we help families and individuals secure their future through personalized estate planning and probate services. Whether you are planning for young children, retirement, or complex business succession, we deliver clear and customized solutions that provide peace of mind. Our services include:
+              Protecting your legacy starts with a plan. At Woodlands Law, we help families and individuals secure their future through personalized estate planning and probate services. Whether you are planning for young children, retirement, or complex business succession, we deliver clear and customized solutions that provide peace of mind. Our services include:
             </p>
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
               <li className="flex items-center">
@@ -141,7 +141,7 @@ const AboutPage = () => {
           <div className="mb-16">
             <h2 className="text-2xl font-serif text-law-purple mb-4">Our Commitment to Clients</h2>
             <p className="text-gray-600 mb-6">
-              At The Woodlands Law Firm, we are more than attorneys—we are trusted advisors dedicated to your success, security, and peace of mind. We are committed to:
+              At Woodlands Law, we are more than attorneys—we are trusted advisors dedicated to your success, security, and peace of mind. We are committed to:
             </p>
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
               <li className="flex items-center">
@@ -170,7 +170,7 @@ const AboutPage = () => {
           <div className="mb-16">
             <h2 className="text-2xl font-serif text-law-purple mb-4">Let's Protect What Matters Most</h2>
             <p className="text-gray-600 mb-8">
-              Whether you are facing a legal dispute, planning for your family's future, or protecting your business, The Woodlands Law Firm is ready to serve as your trusted legal partner. Contact us today to schedule a consultation.
+              Whether you are facing a legal dispute, planning for your family's future, or protecting your business, Woodlands Law is ready to serve as your trusted legal partner. Contact us today to schedule a consultation.
             </p>
             <Link to="/contact" className="bg-law-purple hover:bg-law-purple-light text-white font-medium py-3 px-8 rounded transition-colors inline-block">
               Schedule a Consultation

@@ -236,9 +236,9 @@ const ServiceDetailPage = () => {
   return (
     <div className="pt-20">
       <Helmet>
-        <title>{service.title} Attorney in The Woodlands, TX | The Woodlands Law Firm</title>
+        <title>{service.title} Attorney in The Woodlands, TX | Woodlands Law</title>
         <meta name="description" content={`${service.description} Experienced ${service.title.toLowerCase()} attorneys serving Montgomery County and Harris County, Texas.`} />
-        <meta property="og:title" content={`${service.title} | The Woodlands Law Firm`} />
+        <meta property="og:title" content={`${service.title} | Woodlands Law`} />
         <meta property="og:description" content={service.description} />
         <link rel="canonical" href={`https://woodlands.law/service/${id}`} />
       </Helmet>

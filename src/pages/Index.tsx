@@ -19,7 +19,7 @@ const Index = () => {
         <title>The Woodlands, TX Civil Litigation & Estate Planning Lawyers</title>
         <meta
           name="description"
-          content="The Woodlands Law Firm represents Texans in insurance disputes, personal injury, DTPA claims, and estate & business planning. Serving Montgomery & Harris County. Schedule a consultation today."
+          content="Woodlands Law represents Texans in insurance disputes, personal injury, DTPA claims, and estate & business planning. Serving Montgomery & Harris County. Schedule a consultation today."
         />
       </Helmet>
       <Hero />
@@ -31,7 +31,7 @@ const Index = () => {
             <h2 className="text-3xl md:text-4xl font-serif text-law-purple mb-4">Texas Civil Litigation Excellence</h2>
             <div className="gold-underline mx-auto mb-6"></div>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto text-justify">
-              The Woodlands Law Firm provides specialized civil litigation representation in Montgomery County and
+              Woodlands Law provides specialized civil litigation representation in Montgomery County and
               Harris County District Courts, focusing on plaintiff-side advocacy in insurance disputes, consumer
               protection, personal injury, and estate planning matters.
             </p>
@@ -177,7 +177,7 @@ const Index = () => {
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-2xl font-serif text-law-purple mb-6">Focused Civil Litigation Practice</h2>
             <p className="text-lg text-gray-700 leading-relaxed">
-              The Woodlands Law Firm concentrates on Plaintiff-Side Civil litigation in Texas State Courts, with
+              Woodlands Law concentrates on Plaintiff-Side Civil litigation in Texas State Courts, with
               particular emphasis on Consumer Protection under the Texas Deceptive Trade Practices Act, Insurance
               Coverage Disputes under Texas Insurance Code Chapters 541 and 542, Personal Injury Claims, and
               Comprehensive Estate Planning. Our practice serves clients throughout Montgomery County and Harris County,

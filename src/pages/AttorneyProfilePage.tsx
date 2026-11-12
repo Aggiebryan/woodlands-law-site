@@ -32,7 +32,7 @@ const AttorneyProfilePage = () => {
       name: "Gwendolyn Rees",
       title: "Managing Attorney",
       image: "/gwen600800flag.webp",
-      metaTitle: "Gwendolyn Rees — Managing Attorney | The Woodlands Law Firm",
+      metaTitle: "Gwendolyn Rees — Managing Attorney | Woodlands Law",
       metaDescription: "Gwendolyn Rees is a Baylor Law graduate and managing attorney with decades of experience in civil litigation, probate, and personal injury in Montgomery County, TX.",
       calLink: "gwensimpson",
       calNamespace: "gwendolyn-simpson",
@@ -62,7 +62,7 @@ const AttorneyProfilePage = () => {
       name: "Bryan C. Holman",
       title: "Associate Attorney",
       image: "/bryanflag600800.webp",
-      metaTitle: "Bryan Holman — Associate Attorney | The Woodlands Law Firm",
+      metaTitle: "Bryan Holman — Associate Attorney | Woodlands Law",
       metaDescription: "Bryan Holman is a Texas attorney and South Texas College of Law graduate with unique experience as a former insurance adjuster and entrepreneur serving clients in The Woodlands.",
       calLink: "bryanholman",
       calNamespace: "bryan-holman",
@@ -91,8 +91,8 @@ const AttorneyProfilePage = () => {
       name: "Courtney Fields",
       title: "Legal Assistant",
       image: "/Courtneyblack background.webp",
-      metaTitle: "Courtney Fields — Legal Assistant | The Woodlands Law Firm",
-      metaDescription: "Courtney Fields is a skilled legal assistant at The Woodlands Law Firm, managing case documentation, client communication, and office coordination.",
+      metaTitle: "Courtney Fields — Legal Assistant | Woodlands Law",
+      metaDescription: "Courtney Fields is a skilled legal assistant at Woodlands Law, managing case documentation, client communication, and office coordination.",
       bio: <>
           <p className="mb-4 text-justify">
             Courtney Fields is a dedicated legal assistant with several years of experience in the legal field. Her meticulous attention to detail and exceptional organizational skills are vital to the smooth operation of our firm. She manages client communications, document preparation, and case file organization with remarkable efficiency.
@@ -117,8 +117,8 @@ const AttorneyProfilePage = () => {
       name: "Julie Dunlap",
       title: "Office Manager",
       image: "/images/22e7fa10-9dd9-40c8-afa7-eee7672da620.png",
-      metaTitle: "Julie Dunlap — Office Manager | The Woodlands Law Firm",
-      metaDescription: "Julie Dunlap is the office manager at The Woodlands Law Firm, bringing experience as a Certified Real Estate Appraiser and small business owner to our team.",
+      metaTitle: "Julie Dunlap — Office Manager | Woodlands Law",
+      metaDescription: "Julie Dunlap is the office manager at Woodlands Law, bringing experience as a Certified Real Estate Appraiser and small business owner to our team.",
       bio: <>
           <p className="mb-4 text-justify">
             Julie Dunlap brings a wealth of diverse professional experience to her role as Office Manager at Woodlands Law. With 18 years as a Certified Real Estate Appraiser, Julie developed exceptional analytical skills and attention to detail that serve her well in managing the administrative operations of our firm.
@@ -158,8 +158,8 @@ const AttorneyProfilePage = () => {
 
   return <div className="pt-20">
       <Helmet>
-        <title>{attorney.metaTitle || `${attorney.name} — ${attorney.title} | The Woodlands Law Firm`}</title>
-        <meta name="description" content={attorney.metaDescription || `Learn about ${attorney.name}, ${attorney.title} at The Woodlands Law Firm.`} />
+        <title>{attorney.metaTitle || `${attorney.name} — ${attorney.title} | Woodlands Law`}</title>
+        <meta name="description" content={attorney.metaDescription || `Learn about ${attorney.name}, ${attorney.title} at Woodlands Law.`} />
       </Helmet>
       <div className="relative bg-law-purple py-16">
         <div className="container mx-auto px-4">

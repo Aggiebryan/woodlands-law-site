@@ -56,7 +56,7 @@ const SitemapPage = () => {
   return (
     <div className="pt-20">
       <Helmet>
-        <title>Sitemap | The Woodlands Law Firm</title>
+        <title>Sitemap | Woodlands Law</title>
         <meta name="description" content="Browse the complete sitemap for woodlands.law to find all pages, practice areas, attorney profiles, and legal resources on our website." />
       </Helmet>
       {/* Page Header */}

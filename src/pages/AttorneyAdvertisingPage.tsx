@@ -10,7 +10,7 @@ const AttorneyAdvertisingPage = () => {
   return (
     <div className="pt-20">
       <Helmet>
-        <title>Attorney Advertising Notice | The Woodlands Law Firm</title>
+        <title>Attorney Advertising Notice | Woodlands Law</title>
         <meta name="description" content="This page contains the attorney advertising disclosure for The Woodlands Law Firm, in compliance with the Texas Disciplinary Rules of Professional Conduct." />
       </Helmet>
       {/* Page Header */}

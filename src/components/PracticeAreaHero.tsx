@@ -22,11 +22,12 @@ const PracticeAreaHero = ({
   onCtaClick,
   ctaButtonProps,
 }: PracticeAreaHeroProps) => {
+  const tint = /estate|business|trust/i.test(title) ? "rgba(49,78,69,.88)" : "rgba(16,42,53,.88)";
   return (
     <section
       className="relative bg-cover bg-center py-24 md:py-32"
       style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${image})`,
+        backgroundImage: `linear-gradient(${tint}, ${tint}), url(${image})`,
       }}
     >
       <div className="container mx-auto px-4">

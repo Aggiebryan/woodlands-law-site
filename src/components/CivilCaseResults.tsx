@@ -42,7 +42,7 @@ const CivilCaseResults = () => {
       author: "Manufacturing Company CEO"
     },
     {
-      quote: "When our partnership fell apart, the attorneys at The Woodlands Law Firm helped navigate an incredibly difficult situation with professionalism and clarity. Their guidance was invaluable.",
+      quote: "When our partnership fell apart, the attorneys at Woodlands Law helped navigate an incredibly difficult situation with professionalism and clarity. Their guidance was invaluable.",
       author: "Former Business Partner"
     },
     {

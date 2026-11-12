@@ -106,7 +106,7 @@ const EventPage = () => {
   return (
     <div className="pt-20 font-serif">
       <Helmet>
-        <title>{stripHtml(event.title.rendered)} | The Woodlands Law Firm Events</title>
+        <title>{stripHtml(event.title.rendered)} | Woodlands Law Events</title>
         <meta name="description" content={eventDescription} />
         <meta property="og:title" content={stripHtml(event.title.rendered)} />
         <meta property="og:description" content={eventDescription} />

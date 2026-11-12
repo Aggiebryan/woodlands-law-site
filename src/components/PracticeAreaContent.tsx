@@ -64,7 +64,7 @@ const PracticeAreaContent = ({
         
         {/* Why Choose Us */}
         <section className="mb-16 bg-gray-50 p-8 rounded-lg">
-          <h2 className="text-3xl font-serif text-law-purple mb-6">Why Choose The Woodlands Law Firm</h2>
+          <h2 className="text-3xl font-serif text-law-purple mb-6">Why Choose Woodlands Law</h2>
           <div className="gold-underline mb-8"></div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

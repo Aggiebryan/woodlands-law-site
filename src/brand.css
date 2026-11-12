@@ -1,0 +1,68 @@
+/* Woodlands Law: approved palette and portable website typography. */
+@font-face { font-family: Poppins; src: url('/fonts/Poppins-Regular.ttf') format('truetype'); font-weight: 400; font-display: swap; }
+@font-face { font-family: Poppins; src: url('/fonts/Poppins-SemiBold.ttf') format('truetype'); font-weight: 500 600; font-display: swap; }
+@font-face { font-family: Poppins; src: url('/fonts/Poppins-Bold.ttf') format('truetype'); font-weight: 700 900; font-display: swap; }
+:root:root {
+  --background: 40 42% 94%; --foreground: 300 4% 14%;
+  --card: 0 0% 100%; --card-foreground: 300 4% 14%;
+  --popover: 0 0% 100%; --popover-foreground: 300 4% 14%;
+  --primary: 300 14% 23%; --primary-foreground: 60 56% 91%;
+  --secondary: 40 25% 89%; --secondary-foreground: 300 14% 23%;
+  --muted: 40 25% 89%; --muted-foreground: 300 5% 36%;
+  --accent: 40 25% 89%; --accent-foreground: 300 14% 23%;
+  --border: 35 18% 75%; --input: 35 18% 66%; --ring: 300 14% 23%;
+  --radius: .25rem;
+}
+html { scroll-padding-top: 7rem; }
+body { font-family: Poppins, Arial, sans-serif; line-height: 1.7; color: #242124; }
+h1,h2,h3,h4,h5,h6 { font-family: Georgia, 'Times New Roman', serif; font-weight: 400; line-height: 1.2; letter-spacing: -.025em; text-wrap: balance; }
+p { text-wrap: pretty; }
+a,button,input,textarea,select { -webkit-tap-highlight-color: transparent; }
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,[role=combobox]:focus-visible { outline: 3px solid #B9963A; outline-offset: 4px; }
+.btn-gold-metallic,.btn-purple-metallic {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 48px; border-radius: 3px; font-family: Poppins, Arial, sans-serif;
+  font-weight: 600; font-size: .875rem; line-height: 1.4; text-decoration: none;
+  transition: background-color .2s, box-shadow .2s; text-shadow: none;
+}
+.btn-gold-metallic { background: linear-gradient(120deg,#E2C66E,#D4AF37 55%,#B9963A); color: #423242; border: 1px solid #B9963A; box-shadow: 0 3px 10px #241D2815; }
+.btn-gold-metallic:hover { background: #E2C66E; color: #423242; box-shadow: 0 4px 14px #241D2825; }
+.btn-purple-metallic { background: #423242; color: #F5F5DC; border: 1px solid #725D72; box-shadow: none; }
+.btn-purple-metallic:hover { background: #241D28; color: #F5F5DC; }
+.site-header { border-bottom: 1px solid #B9963A80; box-shadow: 0 3px 16px #241D2820; }
+.site-header .btn-gold-metallic { min-height: 44px; white-space: nowrap; }
+.site-header [data-radix-navigation-menu] { font-family: Poppins,Arial,sans-serif; }
+.brand-hero { background: #241D28; }
+.brand-hero-overlay { background: linear-gradient(90deg, #241D28e8 0%, #423242ad 60%, #241D2866); }
+.brand-hero h1 { font-size: clamp(2.6rem,4.6vw,4.4rem); line-height: 1.1; }
+.brand-hero h1 .text-law-gold { color: #E2C66E; }
+.brand-hero p { color: #F5F5DC; line-height: 1.8; }
+.brand-hero .btn-purple-metallic { background: transparent; border-color: #E2C66E; }
+.brand-hero .btn-purple-metallic:hover { background: #423242; }
+.brand-footer { background: #241D28; color: #F5F5DC; border-top: 1px solid #B9963A; }
+.brand-footer h4 { color: #E2C66E; }
+.brand-footer a:hover { color: #E2C66E; }
+main > .pt-20 { padding-top: 96px; }
+.brand-page-header { border-bottom: 3px solid #B9963A; padding-top: 3.5rem; padding-bottom: 3.5rem; background: linear-gradient(110deg,#423242,#241D28); }
+.brand-page-header h1 { font-size: clamp(2.5rem,4vw,3.5rem); color: #F5F5DC; }
+.brand-page-header p { color: #F5F5DC; line-height: 1.8; }
+.brand-schedule form > div { border-color: #C7BCAF; }
+.brand-schedule label { font-size: .75rem; letter-spacing: .06em; }
+.brand-schedule input,.brand-schedule textarea,.brand-schedule button[role=combobox] { background-color: white; min-height: 46px; border-color: #A699A3; }
+.brand-schedule textarea { min-height: 130px; }
+.brand-schedule .text-law-gold { color: #806323; }
+.bg-white .text-law-gold:not(svg), .bg-law-gray-light a.text-law-gold { color: #806323; }
+.gold-underline::after { background: #D4AF37; }
+.text-justify { text-align: left; }
+/* Hidden carousel slides must not widen the page. */
+main { overflow-x: clip; }
+@media(max-width:639px) {
+  main > .pt-20 { padding-top: 72px; }
+  .brand-hero { padding-top: 4.5rem; }
+  .brand-hero h1 { font-size: 2.6rem; }
+  .brand-hero p { font-size: 1rem; }
+  .brand-page-header { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+}
+@media(prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+
+@media(min-width:1024px) and (max-width:1279px) { .site-header .btn-gold-metallic {font-size:.75rem;padding-left:.75rem;padding-right:.75rem;} }

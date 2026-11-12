@@ -75,14 +75,14 @@ const PersonalInjuryPage = () => {
   return (
     <>
       <Helmet>
-        <title>Personal Injury Lawyer in The Woodlands, TX | The Woodlands Law Firm</title>
+        <title>Personal Injury Lawyer in The Woodlands, TX | Woodlands Law</title>
         <meta name="description" content="Injured in an accident? Our personal injury attorneys help Texas victims recover compensation for auto accidents, premises liability, and wrongful death. Free initial consultations for qualifying personal-injury matters." />
         <script type="application/ld+json">
           {`
             {
               "@context": "https://schema.org",
               "@type": "LegalService",
-              "name": "The Woodlands Law Firm - Personal Injury",
+              "name": "Woodlands Law - Personal Injury",
               "description": "Personal injury attorneys providing dedicated representation for accident victims in The Woodlands and Houston area.",
               "areaServed": ["The Woodlands", "Houston", "Montgomery County", "Harris County", "Texas"],
               "serviceType": "Personal Injury Law",
@@ -110,7 +110,7 @@ const PersonalInjuryPage = () => {
       />
       
       <PracticeAreaContent
-        overview="At The Woodlands Law Firm, our personal injury attorneys are committed to helping accident victims recover maximum compensation for injuries caused by negligence or wrongful acts. We understand the physical, emotional, and financial toll that serious injuries can take on victims and their families. Our team works to pursue fair compensation for their injuries, medical expenses, lost wages, pain and suffering, and diminished quality of life. With decades of combined experience in Texas courtrooms, we have the knowledge and resources to take on even the most complex injury cases."
+        overview="At Woodlands Law, our personal injury attorneys are committed to helping accident victims recover maximum compensation for injuries caused by negligence or wrongful acts. We understand the physical, emotional, and financial toll that serious injuries can take on victims and their families. Our team works to pursue fair compensation for their injuries, medical expenses, lost wages, pain and suffering, and diminished quality of life. With decades of combined experience in Texas courtrooms, we have the knowledge and resources to take on even the most complex injury cases."
         whyChooseUs={whyChooseUs}
         caseTypes={caseTypes}
         process={process}

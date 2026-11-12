@@ -63,7 +63,7 @@ const TexasCivilTimeLimitsPage = () => {
   return (
     <>
       <Helmet>
-        <title>Texas Civil Law Time Limits Cheat Sheet | The Woodlands Law Firm</title>
+        <title>Texas Civil Law Time Limits Cheat Sheet | Woodlands Law</title>
         <meta
           name="description"
           content="Comprehensive cheat sheet for Texas civil litigation deadlines including statutes of limitations, discovery cutoffs, summary judgment timelines, and government claim notice periods."

@@ -16,7 +16,7 @@ const ServicesDetails = ({ serviceDetails }: ServicesDetailsProps) => (
         <h2 className="text-3xl font-serif text-law-purple mb-4">Our Practice Areas</h2>
         <div className="gold-underline mb-6"></div>
         <p className="text-gray-600 max-w-4xl">
-          At The Woodlands Law Firm, we combine aggressive advocacy in civil disputes with thoughtful estate and legacy planning. We serve as trusted counsel, helping Texans protect what they've built and plan for what's next.
+          At Woodlands Law, we combine aggressive advocacy in civil disputes with thoughtful estate and legacy planning. We serve as trusted counsel, helping Texans protect what they've built and plan for what's next.
         </p>
       </div>
 

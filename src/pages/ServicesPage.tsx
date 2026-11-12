@@ -141,12 +141,12 @@ const ServicesPage = () => {
     <div className="pt-20">
       <Helmet>
         <title>Legal Services in The Woodlands, TX</title>
-        <meta name="description" content="The Woodlands Law Firm offers civil litigation, insurance disputes, personal injury, DTPA, business planning, and estate planning services throughout Texas." />
+        <meta name="description" content="Woodlands Law offers civil litigation, insurance disputes, personal injury, DTPA, business planning, and estate planning services throughout Texas." />
       </Helmet>
       {/* Page Header */}
       <ServicesPageHeader 
         title="Our Services"
-        description="The Woodlands Law Firm delivers experienced representation for life's most important legal challenges—from protecting your business and financial future to standing up for your rights in litigation."
+        description="Woodlands Law delivers experienced representation for life's most important legal challenges—from protecting your business and financial future to standing up for your rights in litigation."
       />
 
       {/* Services Overview */}

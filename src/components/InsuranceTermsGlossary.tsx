@@ -321,7 +321,7 @@ const InsuranceTermsGlossary = () => {
   return (
     <>
       <Helmet>
-        <title>Insurance Terms Glossary | The Woodlands Law Firm</title>
+        <title>Insurance Terms Glossary | Woodlands Law</title>
         <meta name="description" content="Comprehensive glossary of insurance terms to help you understand your policy and navigate insurance claims in Texas." />
       </Helmet>
 

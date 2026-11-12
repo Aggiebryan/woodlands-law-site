@@ -69,7 +69,7 @@ const BlogPostPage = () => {
   return (
     <div className="pt-20 font-serif">
       <Helmet>
-        <title>{stripHtml(post.title.rendered)} | The Woodlands Law Firm Blog</title>
+        <title>{stripHtml(post.title.rendered)} | Woodlands Law Blog</title>
         <meta name="description" content={metaDescription} />
         <meta property="og:title" content={stripHtml(post.title.rendered)} />
         <meta property="og:description" content={metaDescription} />

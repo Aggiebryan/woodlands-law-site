@@ -123,7 +123,7 @@ const DTPAPage = () => {
             {
               "@context": "https://schema.org",
               "@type": "LegalService",
-              "name": "The Woodlands Law Firm - DTPA",
+              "name": "Woodlands Law - DTPA",
               "description": "Texas Deceptive Trade Practices Act attorneys protecting consumers and businesses against deceptive and fraudulent practices.",
               "areaServed": ["The Woodlands", "Houston", "Montgomery County", "Harris County", "Texas"],
               "serviceType": "Consumer Protection Law",

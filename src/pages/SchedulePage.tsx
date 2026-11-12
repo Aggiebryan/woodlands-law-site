@@ -47,9 +47,9 @@ const SchedulePage = () => {
   }
 
   return (
-    <div className="min-h-screen pt-20 pb-16">
+    <div className="brand-schedule min-h-screen pt-20 pb-16">
       <Helmet>
-        <title>Schedule a Consultation | The Woodlands Law Firm</title>
+        <title>Schedule a Consultation | Woodlands Law</title>
         <meta name="description" content="Ready to discuss your legal matter? Schedule a consultation with our Texas attorneys today. We serve clients in The Woodlands, Conroe, Houston, and surrounding areas." />
       </Helmet>
 
@@ -81,7 +81,7 @@ const SchedulePage = () => {
               </div>
               <h2 className="font-serif text-3xl text-foreground mb-3">Intake Received</h2>
               <p className="text-sm text-muted-foreground font-light max-w-lg mx-auto leading-relaxed mb-6">
-                Thank you for contacting The Woodlands Law Firm. Your intake has been logged.
+                Thank you for contacting Woodlands Law. Your intake has been logged.
                 Please select a consultation time below to complete the process.
               </p>
               <div className="inline-flex gap-8 border border-border rounded px-8 py-4">

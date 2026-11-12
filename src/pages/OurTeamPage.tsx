@@ -12,8 +12,8 @@ const OurTeamPage = () => {
   
   return <div className="pt-20">
       <Helmet>
-        <title>Our Attorneys & Legal Staff | The Woodlands Law Firm</title>
-        <meta name="description" content="Meet the experienced attorneys and legal team at The Woodlands Law Firm. We serve clients throughout The Woodlands, Conroe, Spring, and the greater Houston area." />
+        <title>Our Attorneys & Legal Staff | Woodlands Law</title>
+        <meta name="description" content="Meet the experienced attorneys and legal team at Woodlands Law. We serve clients throughout The Woodlands, Conroe, Spring, and the greater Houston area." />
       </Helmet>
       {/* Page Header */}
       <div className="relative bg-law-purple py-16">

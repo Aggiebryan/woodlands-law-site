@@ -15,7 +15,7 @@ const AboutSection = () => {
             <div className="gold-underline mb-6"></div>
             
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-              The Woodlands Law Firm represents plaintiffs in complex civil litigation matters throughout Montgomery County and Harris County. Our practice focuses exclusively on cases where individuals and businesses need aggressive advocacy against insurance companies, deceptive business practices, and personal injury claims.
+              Woodlands Law represents plaintiffs in complex civil litigation matters throughout Montgomery County and Harris County. Our practice focuses exclusively on cases where individuals and businesses need aggressive advocacy against insurance companies, deceptive business practices, and personal injury claims.
             </p>
             
             <p className="text-gray-700 mb-6 leading-relaxed">

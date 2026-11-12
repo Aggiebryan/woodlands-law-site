@@ -20,7 +20,7 @@ const Hero = () => {
   }, [images.length]);
 
   return (
-    <div className="relative bg-transparent min-h-[90vh] flex items-center">
+    <div className="brand-hero relative bg-transparent min-h-[90vh] flex items-center">
       {/* Images */}
       {images.map((image, index) => (
         <div
@@ -35,11 +35,11 @@ const Hero = () => {
       ))}
 
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/50 z-0"></div>
+      <div className="absolute inset-0 brand-hero-overlay z-0"></div>
 
       <div className="container mx-auto px-4 py-16 relative z-10">
         <div className="max-w-3xl">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-serif font-semibold mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-serif font-normal mb-6">
             Building Trust Through <br />
             <span className="text-law-gold">Legal Excellence</span>
           </h1>

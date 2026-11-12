@@ -16,7 +16,7 @@ const NotFound = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-law-gray-light pt-20">
       <Helmet>
-        <title>Page Not Found | The Woodlands Law Firm</title>
+        <title>Page Not Found | Woodlands Law</title>
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
       <div className="text-center px-4">

@@ -14,7 +14,7 @@ const CtaSection = () => {
           <div className="gold-underline mx-auto mb-8"></div>
           
           <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
-            When you need aggressive legal representation for DTPA violations, insurance disputes, personal injury claims, or comprehensive estate planning in Montgomery County, The Woodlands Law Firm provides the experience and dedication your case demands.
+            When you need aggressive legal representation for DTPA violations, insurance disputes, personal injury claims, or comprehensive estate planning in Montgomery County, Woodlands Law provides the experience and dedication your case demands.
           </p>
 
           {/* Key Value Propositions */}
@@ -73,7 +73,7 @@ const CtaSection = () => {
                 </h3>
                 <div className="text-white/90">
                   <p className="mb-2">
-                    <strong>The Woodlands Law Firm</strong>
+                    <strong>Woodlands Law</strong>
                   </p>
                   <p className="mb-2">
                     2219 Sawdust Rd., Suite 803<br />

@@ -31,7 +31,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-white py-4 fixed w-full z-50 shadow-sm">
+    <nav className="site-header bg-law-purple py-2 fixed w-full z-50 shadow-sm">
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link to="/" className="flex items-center shrink-0" aria-label="Woodlands Law home">
           <img 
@@ -39,13 +39,13 @@ const Navbar = () => {
             alt="Woodlands Law" 
             width={2400}
             height={600}
-            className="h-10 w-40 object-contain" 
+            className="h-14 w-56 sm:h-20 sm:w-80 lg:w-60 xl:w-80 object-contain" 
           />
         </Link>
 
         {/* Desktop Menu */}
         <div className="hidden lg:flex items-center">
-          <div className="flex space-x-8 mr-8">
+          <div className="flex space-x-3 xl:space-x-5 mr-3 xl:mr-5 text-xs xl:text-sm">
             <NavLink to="/" label="Home" />
             <NavLink to="/our-team" label="Our Team" />
             
@@ -53,7 +53,7 @@ const Navbar = () => {
             <NavigationMenu className="z-50">
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-law-purple hover:text-law-gold transition-colors font-medium bg-transparent hover:bg-transparent focus:bg-transparent p-0 h-auto">
+                  <NavigationMenuTrigger className="text-xs xl:text-sm text-law-white hover:text-law-gold transition-colors font-medium bg-transparent hover:bg-transparent focus:bg-transparent p-0 h-auto">
                     Services
                   </NavigationMenuTrigger>
                   <NavigationMenuContent className="bg-white rounded-md shadow-lg p-2 min-w-[220px]">
@@ -84,7 +84,7 @@ const Navbar = () => {
             <NavigationMenu className="z-50">
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-law-purple hover:text-law-gold transition-colors font-medium bg-transparent hover:bg-transparent focus:bg-transparent p-0 h-auto">
+                  <NavigationMenuTrigger className="text-xs xl:text-sm text-law-white hover:text-law-gold transition-colors font-medium bg-transparent hover:bg-transparent focus:bg-transparent p-0 h-auto">
                     Legal Tools
                   </NavigationMenuTrigger>
                   <NavigationMenuContent className="bg-white rounded-md shadow-lg p-2 min-w-[250px]">
@@ -118,9 +118,10 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="lg:hidden text-law-purple"
+          className="lg:hidden text-law-white"
           onClick={toggleMenu}
           aria-label="Toggle menu"
+          aria-expanded={isOpen}
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -128,7 +129,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="lg:hidden bg-white absolute top-full left-0 right-0 shadow-md">
+        <div className="lg:hidden bg-white absolute top-full left-0 right-0 shadow-md max-h-[calc(100dvh-72px)] sm:max-h-[calc(100dvh-96px)] overflow-y-auto">
           <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
             <MobileNavLink to="/" label="Home" onClick={toggleMenu} />
             <MobileNavLink to="/our-team" label="Our Team" onClick={toggleMenu} />
@@ -181,7 +182,7 @@ interface NavLinkProps {
 const NavLink = ({ to, label }: NavLinkProps) => (
   <Link 
     to={to} 
-    className="text-law-purple hover:text-law-gold transition-colors font-medium"
+    className="text-law-white hover:text-law-gold transition-colors font-medium"
   >
     {label}
   </Link>
@@ -202,3 +203,4 @@ const MobileNavLink = ({ to, label, onClick }: MobileNavLinkProps) => (
 );
 
 export default Navbar;
+

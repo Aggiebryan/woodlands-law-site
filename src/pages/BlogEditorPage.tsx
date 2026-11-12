@@ -33,7 +33,7 @@ const BlogEditorPage=()=>{
  const choose=(entry:Entry,discard=false)=>{if(busy)return;if(dirty&&!discard){setPendingEntry(entry);return;}setPendingEntry(null);setPendingAction(null);setPreview(false);setCurrent(structuredClone(entry));setDirty(false);setMessage('');if(editor.current)editor.current.innerHTML=entry.post.content?.rendered||'';};
  useEffect(()=>{if(editor.current)editor.current.innerHTML=current?.post.content?.rendered||'';},[current?.post.id]);
  const update=(patch:Partial<WordPressPost>)=>{setCurrent(c=>c?{...c,post:{...c.post,...patch}}:null);setDirty(true);};
- const newPost=()=>choose({post:{id:Date.now(),slug:'',date:new Date().toISOString(),title:{rendered:''},excerpt:{rendered:''},content:{rendered:''},categories:[],_embedded:{author:[{name:'The Woodlands Law Firm'}]}},revision:0,published:false,hasDraft:true});
+ const newPost=()=>choose({post:{id:Date.now(),slug:'',date:new Date().toISOString(),title:{rendered:''},excerpt:{rendered:''},content:{rendered:''},categories:[],_embedded:{author:[{name:'Woodlands Law'}]}},revision:0,published:false,hasDraft:true});
  const save=async(action:'draft'|'publish'|'unpublish',confirmed=false)=>{
   if(!current)return;
   if(action!=='draft'&&!confirmed){setPendingAction(action);return;}
@@ -43,7 +43,7 @@ const BlogEditorPage=()=>{
  };
  const format=(command:string,value?:string)=>{editor.current?.focus();document.execCommand(command,false,value);setDirty(true);};
  return <div className="blog-editor-page">
-  <Helmet><title>Blog Editor | The Woodlands Law Firm</title><meta name="robots" content="noindex,nofollow" /></Helmet>
+  <Helmet><title>Blog Editor | Woodlands Law</title><meta name="robots" content="noindex,nofollow" /></Helmet>
   <header className="editor-heading"><div><p className="editor-kicker">PRIVATE EDITOR</p><h1>Your articles and events.</h1><p>Write, save drafts, and publish to your website.</p><a href="/cdn-cgi/access/logout" className="underline">Sign out</a></div>{section==='articles'&&<Button onClick={newPost} disabled={!loaded||!access}><Plus /> New article</Button>}</header>
   <nav className="editor-tabs" aria-label="Editor sections"><Button variant={section==='articles'?'default':'outline'} aria-pressed={section==='articles'} onClick={()=>setSection('articles')}>Articles</Button><Button variant={section==='events'?'default':'outline'} aria-pressed={section==='events'} onClick={()=>setSection('events')}>Events</Button></nav>
   <div hidden={section!=='articles'}>

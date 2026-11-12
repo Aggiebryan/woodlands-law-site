@@ -111,7 +111,7 @@ const ServicesSection = () => {
             </h2>
             <div className="gold-underline mx-auto mb-6"></div>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              The Woodlands Law Firm provides focused legal representation across six core practice areas, with extensive experience in Texas state and federal courts throughout Montgomery County, Harris County, and surrounding jurisdictions.
+              Woodlands Law provides focused legal representation across six core practice areas, with extensive experience in Texas state and federal courts throughout Montgomery County, Harris County, and surrounding jurisdictions.
             </p>
           </div>
 
@@ -228,7 +228,7 @@ const ServicesSection = () => {
               Ready to Discuss Your Legal Matter?
             </h3>
             <p className="text-gray-700 mb-8 max-w-2xl mx-auto">
-              Contact The Woodlands Law Firm to schedule a consultation and discuss how our experience in Texas civil litigation can help protect your interests and achieve your legal objectives.
+              Contact Woodlands Law to schedule a consultation and discuss how our experience in Texas civil litigation can help protect your interests and achieve your legal objectives.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 

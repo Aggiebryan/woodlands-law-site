@@ -114,7 +114,7 @@ const InsuranceLitigationPage = () => {
             {
               "@context": "https://schema.org",
               "@type": "LegalService",
-              "name": "The Woodlands Law Firm - Insurance Litigation",
+              "name": "Woodlands Law - Insurance Litigation",
               "description": "Texas insurance litigation attorneys fighting for policyholders' rights against insurance companies in The Woodlands and Houston area.",
               "areaServed": ["The Woodlands", "Houston", "Montgomery County", "Harris County", "Texas"],
               "serviceType": "Insurance Litigation",
@@ -142,7 +142,7 @@ const InsuranceLitigationPage = () => {
       />
 
       <PracticeAreaContent
-        overview="The Woodlands Law Firm specializes in representing policyholders in disputes with insurance companies throughout Texas. Our insurance litigation attorneys have extensive experience helping clients recover what they're owed under their policies when insurance companies act in bad faith or wrongfully deny claims. We understand the complex language of insurance policies and the tactics insurers use to minimize payments, and we use this knowledge to advocate effectively for our clients."
+        overview="Woodlands Law specializes in representing policyholders in disputes with insurance companies throughout Texas. Our insurance litigation attorneys have extensive experience helping clients recover what they're owed under their policies when insurance companies act in bad faith or wrongfully deny claims. We understand the complex language of insurance policies and the tactics insurers use to minimize payments, and we use this knowledge to advocate effectively for our clients."
         whyChooseUs={whyChooseUs}
         caseTypes={caseTypes}
         process={process}

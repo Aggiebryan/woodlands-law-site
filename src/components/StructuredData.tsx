@@ -3,11 +3,11 @@ import { Helmet } from "react-helmet-async";
 const lawFirmSchema = {
   "@context": "https://schema.org",
   "@type": "LegalService",
-  "name": "The Woodlands Law Firm",
+  "name": "Woodlands Law",
   "url": "https://woodlands.law",
   "logo": "https://woodlands.law/images/307c4d37-d87e-4a89-8107-73533778d172.png",
   "image": "https://woodlands.law/images/846098cf-1b95-4252-ad7d-ecf6b1180d90.png",
-  "description": "The Woodlands Law Firm provides civil litigation, insurance disputes, DTPA claims, personal injury, and estate planning representation in Montgomery County and Harris County, Texas.",
+  "description": "Woodlands Law provides civil litigation, insurance disputes, DTPA claims, personal injury, and estate planning representation in Montgomery County and Harris County, Texas.",
   "telephone": "+1-832-510-2625",
   "address": {
     "@type": "PostalAddress",
@@ -55,7 +55,7 @@ const lawFirmSchema = {
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "The Woodlands Law Firm",
+  "name": "Woodlands Law",
   "url": "https://woodlands.law",
   "potentialAction": {
     "@type": "SearchAction",

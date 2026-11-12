@@ -69,7 +69,7 @@ const IntakeSchedulerDialog = ({
               </div>
               <h2 className="font-serif text-2xl text-foreground mb-2">Intake Received</h2>
               <p className="text-sm text-muted-foreground max-w-lg mx-auto leading-relaxed mb-4">
-                Thank you for contacting The Woodlands Law Firm. Please select a consultation time below.
+                Thank you for contacting Woodlands Law. Please select a consultation time below.
               </p>
               <div className="inline-flex gap-8 border border-border rounded px-6 py-3">
                 <div className="text-center">

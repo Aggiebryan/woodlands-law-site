@@ -117,7 +117,7 @@ const CivilLitigationPage = () => {
       />
       
       <PracticeAreaContent
-        overview="The Woodlands Law Firm represents clients in a wide range of civil disputes, from straightforward contract issues to complex commercial litigation. Our civil litigation attorneys combine thorough legal knowledge with practical business sense to develop strategies that align with your objectives and efficiently resolve disputes. We appreciate that litigation is often a last resort and work diligently to find the most expedient, cost-effective path to resolution while always preparing thoroughly should your case need to go to trial. Our team has significant experience in both Texas state courts and federal courts throughout the region."
+        overview="Woodlands Law represents clients in a wide range of civil disputes, from straightforward contract issues to complex commercial litigation. Our civil litigation attorneys combine thorough legal knowledge with practical business sense to develop strategies that align with your objectives and efficiently resolve disputes. We appreciate that litigation is often a last resort and work diligently to find the most expedient, cost-effective path to resolution while always preparing thoroughly should your case need to go to trial. Our team has significant experience in both Texas state courts and federal courts throughout the region."
         whyChooseUs={whyChooseUs}
         caseTypes={caseTypes}
         process={process}

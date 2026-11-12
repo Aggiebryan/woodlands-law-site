@@ -115,7 +115,7 @@ const BusinessPlanningPage = () => {
       />
       
       <PracticeAreaContent
-        overview="The Woodlands Law Firm delivers strategic legal planning for businesses at all stages, from startups to established companies preparing for succession. Our business planning attorneys help entrepreneurs and business owners navigate legal complexities while focusing on sustainable growth and success. We take the time to understand your business model, industry challenges, and long-term goals, allowing us to provide tailored legal solutions that align with your specific needs rather than one-size-fits-all approaches. Our practical, business-minded counsel helps you make informed decisions that protect your interests while supporting your commercial objectives."
+        overview="Woodlands Law delivers strategic legal planning for businesses at all stages, from startups to established companies preparing for succession. Our business planning attorneys help entrepreneurs and business owners navigate legal complexities while focusing on sustainable growth and success. We take the time to understand your business model, industry challenges, and long-term goals, allowing us to provide tailored legal solutions that align with your specific needs rather than one-size-fits-all approaches. Our practical, business-minded counsel helps you make informed decisions that protect your interests while supporting your commercial objectives."
         whyChooseUs={whyChooseUs}
         caseTypes={caseTypes}
         process={process}

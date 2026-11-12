@@ -71,10 +71,10 @@ const EventsListPage = () => {
   return (
     <div className="pt-20 font-serif">
       <Helmet>
-        <title>Legal Events & Workshops | The Woodlands Law Firm</title>
-        <meta name="description" content="Attend legal workshops, seminars, and community events hosted by The Woodlands Law Firm. Free educational events on estate planning, consumer protection, and more in Montgomery County, TX." />
-        <meta property="og:title" content="Legal Events & Workshops | The Woodlands Law Firm" />
-        <meta property="og:description" content="Attend legal workshops and seminars hosted by The Woodlands Law Firm in Montgomery County, TX." />
+        <title>Legal Events & Workshops | Woodlands Law</title>
+        <meta name="description" content="Attend legal workshops, seminars, and community events hosted by Woodlands Law. Free educational events on estate planning, consumer protection, and more in Montgomery County, TX." />
+        <meta property="og:title" content="Legal Events & Workshops | Woodlands Law" />
+        <meta property="og:description" content="Attend legal workshops and seminars hosted by Woodlands Law in Montgomery County, TX." />
         <link rel="canonical" href="https://woodlands.law/events" />
       </Helmet>
       <ServicesPageHeader
