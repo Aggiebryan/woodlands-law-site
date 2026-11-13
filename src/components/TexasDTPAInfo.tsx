@@ -108,11 +108,11 @@ const TexasDTPAInfo = () => {
                     Several important Texas Supreme Court decisions have shaped DTPA law:
                   </p>
                   <ul className="list-disc pl-6 space-y-2">
-                    <li><strong>Cruz v. Andrews Restoration</strong> - Defined requirements for DTPA damages</li>
-                    <li><strong>PPG Industries v. JMB/Houston Centers</strong> - Limited assignment of DTPA claims</li>
-                    <li><strong>Amstadt v. U.S. Brass Corp.</strong> - Established "upstream" manufacturer liability limitations</li>
-                    <li><strong>Tony Gullo Motors v. Chapa</strong> - Set standards for attorney's fees and segregation of claims</li>
-                    <li><strong>Doe v. Boys Clubs of Greater Dallas</strong> - Established "producing cause" requirement</li>
+                    <li><strong>Cruz v. Andrews Restoration, Inc., 364 S.W.3d 817, 823–26 (Tex. 2012)</strong> — Restoration requires prevailing-consumer status and an accounting for benefits received.</li>
+                    <li><strong>PPG Indus., Inc. v. JMB/Hous. Ctrs. Partners Ltd. P’ship, 146 S.W.3d 79, 82 (Tex. 2004)</strong> — DTPA claims are not assignable.</li>
+                    <li><strong>Amstadt v. U.S. Brass Corp., 919 S.W.2d 644, 649–50 (Tex. 1996)</strong> — The challenged conduct must connect to the consumer transaction; the decision does not grant categorical immunity to upstream manufacturers.</li>
+                    <li><strong>Tony Gullo Motors I, L.P. v. Chapa, 212 S.W.3d 299, 313–14 (Tex. 2006)</strong> — Fees attributable solely to claims for which fees are unavailable must be segregated; discrete services advancing both recoverable and unrecoverable claims need not be.</li>
+                    <li><strong>Doe v. Boys Clubs of Greater Dall., Inc., 907 S.W.2d 472, 481–82 (Tex. 1995)</strong> — Applied producing cause and rejected the DTPA claim because the alleged misrepresentations did not cause the injuries.</li>
                   </ul>
                 </AccordionContent>
               </AccordionItem>
@@ -126,7 +126,7 @@ const TexasDTPAInfo = () => {
                     Key distinctions between DTPA claims and common law fraud:
                   </p>
                   <ul className="list-disc pl-6 space-y-2">
-                    <li>DTPA does not require proof of intent for basic violations (though it does for multiple damages)</li>
+                    <li>Some DTPA misrepresentation claims do not require intent; particular provisions and enhanced remedies have additional mental-state requirements.</li>
                     <li>DTPA provides for automatic recovery of attorney's fees for prevailing consumers</li>
                     <li>DTPA has specific statutory elements rather than common law elements</li>
                     <li>DTPA claims have a shorter statute of limitations (2 years vs. 4 years for fraud)</li>

@@ -4,28 +4,26 @@ export default function AsIsClausePage() {
   return (
     <AnswerFirstDtpaPageTemplate
       title='Does an "as-is" clause waive DTPA liability in Texas?'
-      directAnswer='An "as-is" clause can provide a defense to certain DTPA claims, but it does not provide blanket immunity. Texas law recognizes that a valid as-is clause may bar claims based on the condition of goods or property, but it generally cannot defeat claims based on affirmative misrepresentations made by the seller. The enforceability depends on factors including whether the clause was conspicuous, negotiated, and whether the buyer was a sophisticated party.'
+      directAnswer='A valid as-is agreement can negate causation and defeat fraud, negligence, and DTPA claims concerning property condition. Fraudulent inducement, interference with inspection, and the circumstances of the transaction can affect enforceability. An allegation of misrepresentation alone does not automatically defeat the agreement.'
       rule={[
-        "In Prudential Ins. Co. v. Jefferson Assocs., the court held that an “as is” clause did not bar the buyer’s fraud and DTPA claims where the seller allegedly made affirmative misrepresentations and concealed the building’s asbestos condition, even though the buyer had inspected the property.",
-        "An as-is clause does not protect a seller who makes affirmative misrepresentations about the goods or property.",
-        "The clause must be clear, unambiguous, and agreed to voluntarily—not buried in fine print.",
-        "Courts consider the relative sophistication of the parties and whether the clause was meaningfully negotiated.",
+        "Prudential Ins. Co. of Am. v. Jefferson Assocs., Ltd., 896 S.W.2d 156, 161–62 (Tex. 1995), enforced the buyer’s as-is agreement and rendered a take-nothing judgment. The Court did not find an applicable fraud or inspection-interference exception on that record.",
+        "A buyer who validly agrees to accept property as is generally accepts the risk of its condition, negating causation for claims within the agreement’s scope.",
+        "The Court recognized exceptions for fraudulent inducement and conduct that prevents an independent inspection, and considered bargaining position, sophistication, and the circumstances of the agreement.",
       ]}
       elements={[
-        "For the as-is defense to apply, the defendant must prove the clause was clear and conspicuous.",
-        "The buyer must have had an opportunity to inspect or investigate.",
-        "The claim must relate to conditions discoverable through reasonable inspection, not active concealment.",
+        "Review the agreement’s wording, scope, and circumstances rather than treating every as-is clause alike.",
+        "Determine whether the buyer relied on an independent assessment and voluntarily accepted the risk of the property’s condition.",
+        "Evaluate evidence of fraudulent inducement or interference with inspection; the mere existence of an undiscovered defect does not establish an exception.",
       ]}
       defenses={[
-        "A properly drafted and negotiated as-is clause may bar warranty claims.",
-        "The defense is stronger when both parties are sophisticated commercial entities.",
-        "Courts may enforce as-is clauses when the buyer had access to all relevant information.",
-        "However, the clause fails if the seller made fraudulent or intentionally misleading statements.",
+        "A seller may rely on a valid as-is agreement to negate the causal connection between alleged conduct and claimed damages.",
+        "A buyer may contest enforceability with evidence of fraudulent inducement, inspection interference, or other circumstances recognized by the governing law.",
+        "An as-is agreement and a statutory waiver of DTPA rights present different legal questions.",
       ]}
       damages={[
-        "If the as-is clause is invalid, standard DTPA damages apply including economic damages and potentially treble damages.",
-        "If the clause is enforced, the consumer may be limited to breach of contract remedies.",
-        "Attorney's fees may still be recoverable if the consumer prevails on claims not barred by the clause.",
+        "An enforceable as-is agreement may defeat the affected claims entirely; it does not guarantee an alternative contract recovery.",
+        "If a claim survives, the consumer must still prove its elements, causation, and recoverable damages.",
+        "DTPA enhanced damages require the statutory mental-state findings; attorney’s fees require a qualifying recovery.",
       ]}
       related={[
         { title: "Can a merger clause defeat a DTPA claim?", to: "/texas-dtpa/merger-integration-clause" },

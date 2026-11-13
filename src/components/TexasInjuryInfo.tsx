@@ -106,17 +106,15 @@ const TexasInjuryInfo = () => {
               
               <AccordionItem value="item-5">
                 <AccordionTrigger className="text-lg font-serif text-law-purple">
-                  Recent Texas Supreme Court Decisions
+                  Texas Supreme Court Decisions
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600">
                   <p className="mb-4">
-                    Several recent Texas Supreme Court decisions have impacted personal injury law:
+                    Texas Supreme Court decisions have impacted personal injury law:
                   </p>
                   <ul className="list-disc pl-6 space-y-2">
-                    <li><strong>In re Allstate</strong> - Affecting discovery of insurance company's business practices</li>
-                    <li><strong>In re K&L Auto Crushers</strong> - Regarding discovery of medical provider billing practices</li>
-                    <li><strong>Kingsley v. Brim</strong> - Relating to premises liability for independent contractors</li>
-                    <li><strong>Tarrant County v. Bonner</strong> - Impacting governmental immunity claims</li>
+                    <li><strong>In re K&amp;L Auto Crushers, LLC, 627 S.W.3d 239, 249–53 (Tex. 2021) (orig. proceeding)</strong> — Permitted relevant, proportionate discovery of medical-provider billing rates and practices bearing on the reasonableness of claimed expenses.</li>
+                    <li><strong>Tarrant County v. Bonner, 574 S.W.3d 893, 897–902 (Tex. 2019)</strong> — Applied statutory protection for a county concerning an inmate’s injury during medical treatment, including the heightened culpability standard under Texas Government Code section 497.096.</li>
                   </ul>
                   <p className="mt-4">
                     Our attorneys stay current with evolving case law to provide the most effective representation for your specific circumstances.

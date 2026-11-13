@@ -34,7 +34,7 @@ const TexasInsuranceInfo = () => {
           </div>
 
           <div className="bg-white p-8 rounded-lg shadow-md border-l-4 border-law-gold">
-            <h3 className="text-2xl font-serif text-law-purple mb-4">Recent Texas Supreme Court Decisions</h3>
+            <h3 className="text-2xl font-serif text-law-purple mb-4">Texas Supreme Court Decisions</h3>
             <p className="text-gray-700 mb-4">
               We stay current with evolving case law that affects insurance claims in Texas, including:
             </p>
@@ -42,30 +42,28 @@ const TexasInsuranceInfo = () => {
               <div className="border-b border-gray-200 pb-4">
                 <div className="flex items-center">
                   <Gavel className="h-5 w-5 text-law-gold mr-3" />
-                  <h4 className="font-medium text-law-purple">USAA Texas Lloyd's Co. v. Menchaca (2018)</h4>
+                  <h4 className="font-medium text-law-purple">USAA Tex. Lloyds Co. v. Menchaca, 545 S.W.3d 479, 489–500 (Tex. 2018)</h4>
                 </div>
                 <p className="text-gray-700 mt-2">
-                  Clarified when policyholders can recover damages for statutory violations even when the policy doesn't
-                  provide coverage.
+                  A statutory violation alone does not create coverage. Recovery generally requires a right to policy benefits or an injury independent of that right. The opinion explains the entitled-to-benefits, benefits-lost, and independent-injury rules; without benefits or an independent injury, the insured cannot recover damages for the violation.
                 </p>
               </div>
               <div className="border-b border-gray-200 pb-4">
                 <div className="flex items-center">
                   <Gavel className="h-5 w-5 text-law-gold mr-3" />
-                  <h4 className="font-medium text-law-purple">Barbara Technologies v. State Farm (2019)</h4>
+                  <h4 className="font-medium text-law-purple">Barbara Techs. Corp. v. State Farm Lloyds, 589 S.W.3d 806, 819–23 (Tex. 2019)</h4>
                 </div>
                 <p className="text-gray-700 mt-2">
-                  Addressed prompt payment requirements in appraisal situations, impacting how deadlines are calculated.
+                  Payment of an appraisal award neither establishes policy liability by itself nor automatically forecloses prompt-payment damages. The insured must establish the statutory requirements for recovery.
                 </p>
               </div>
               <div>
                 <div className="flex items-center">
                   <Gavel className="h-5 w-5 text-law-gold mr-3" />
-                  <h4 className="font-medium text-law-purple">Ortiz v. State Farm Lloyds (2019)</h4>
+                  <h4 className="font-medium text-law-purple">Ortiz v. State Farm Lloyds, 589 S.W.3d 127, 132–35 (Tex. 2019)</h4>
                 </div>
                 <p className="text-gray-700 mt-2">
-                  Determined that payment of an appraisal award does not absolve insurers from statutory violations
-                  committed prior to appraisal.
+                  Payment barred the contract claim and bad-faith claims insofar as the only actual damages sought were unpaid benefits. The prompt-payment claim could proceed; an independent injury requires separate proof.
                 </p>
               </div>
             </div>
